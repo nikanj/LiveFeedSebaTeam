@@ -4,11 +4,14 @@ import static play.data.Form.form;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import models.*;
 import play.Routes;
@@ -57,27 +60,30 @@ public class Application extends Controller {
 	}
 
 	
+    private static ArrayList<WebSocket.Out> channels=new ArrayList<>();
+
+    
 	public static WebSocket<String> index() throws SQLException {
 		  return new WebSocket<String>() {
 		      
 			    // Called when the Websocket Handshake is done.
 			    public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
-			      
+
+			    	channels.add(out);
+
+
+			      // Send a single 'Hello!' message
+			    	out.write("40"); //dummy value
+				          
+                  
 			      // For each event received on the socket,
 			      in.onMessage(new Callback<String>() {
 			         public void invoke(String event) {
-			        	 if(event.isEmpty() == false) {
-			        		 
-			        		 vote = Long.parseLong(event);
-			        		 
-			        		 
-			        		 
-			        		 
-			        		 System.out.println("THE INPUT --> " + event);
-			        		 System.out.println("DEBUG --> " + vote);
-			        		 out.write(event.toString());
-			        	 }
-			         } 
+		        		 vote = Long.parseLong(event); 		 
+		        		 System.out.println("THE INPUT --> " + event);
+		        		 System.out.println("DEBUG --> " + vote);
+		        		 out.write(event);
+		        	} 
 			      });
 			      
 			      // When the socket is closed.
@@ -88,9 +94,6 @@ public class Application extends Controller {
 			             out.write("0");
 			         }
 			      });
-			      
-			      // Send a single 'Hello!' message
-//			      out.write("50");
 			      
 			    }
 			    

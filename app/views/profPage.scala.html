@@ -137,6 +137,7 @@
 		
 		<script>
 		$(function () {
+			
 		    $(document).ready(function() {
 		        Highcharts.setOptions({
 		            global: {
@@ -144,30 +145,6 @@
 		            }
 		        });
 		    
-		        //websocket goes here
-		        var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket
-				var chatSocket = new WS("@routes.Application.chat(username).webSocketURL(request)")
-			
-			    var sendMessage = function() {
-			        chatSocket.send(JSON.stringify(
-			            {text: $("#talk").val()}
-			        ))
-			        $("#talk").val('')
-			    }
-			
-			    var receiveEvent = function(event) {
-			        var data = JSON.parse(event.data)
-			
-			        // Handle errors
-			        if(data.error) {
-			            chatSocket.close()
-			            $("#onError span").text(data.error)
-			            $("#onError").show()
-			            return
-			        } else {
-			            $("#onChat").show()
-			        }
-		        
 		        var chart;
 		        $('#container-speed-chart').highcharts({
 		            chart: {
@@ -179,11 +156,34 @@
 		    
 		                        // set up the updating of the chart each second
 		                        var series = this.series[0];
+		                        
+
+		            			var connection = new WebSocket('ws://localhost:9000');
+		            			
+		                        var y;
+		                        
+		            			connection.onopen = function(){
+		            				   /*Send a small message to the console once the connection is established */
+		            				   alert('Connection open!');
+		            				}
+		            			
+		            			var server_message;
+		            			
+		            			connection.onmessage = function(e){
+		            				   server_message = e.data;
+		            				   alert("INITIALIZATION " + server_message);
+		            				}
+		            			
+		            			connection.onclose = function(e) {
+		            				alert("CONNECTION IS CLOSED~");
+		            			}
+		            			
 		                        setInterval(function() {
-		                            var x = (new Date()).getTime(), // current time
-		                                y = Math.random()*100; //random data
-		                                y 
+		                            var x = (new Date()).getTime(); // current time
+		                                //y = Math.random()*100;
+		                            y = parseInt(server_message);
 		                            series.addPoint([x, y], true, true);
+									alert(y);
 		                        }, 2000);
 		                    }
 		                }

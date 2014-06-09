@@ -165,227 +165,252 @@ Seq[Any](format.raw/*1.16*/("""
 		
 		<script>
 		$(function () """),format.raw/*139.17*/("""{"""),format.raw/*139.18*/("""
-		    $(document).ready(function() """),format.raw/*140.36*/("""{"""),format.raw/*140.37*/("""
-		        Highcharts.setOptions("""),format.raw/*141.33*/("""{"""),format.raw/*141.34*/("""
-		            global: """),format.raw/*142.23*/("""{"""),format.raw/*142.24*/("""
+			
+		    $(document).ready(function() """),format.raw/*141.36*/("""{"""),format.raw/*141.37*/("""
+		        Highcharts.setOptions("""),format.raw/*142.33*/("""{"""),format.raw/*142.34*/("""
+		            global: """),format.raw/*143.23*/("""{"""),format.raw/*143.24*/("""
 		                useUTC: false
-		            """),format.raw/*144.15*/("""}"""),format.raw/*144.16*/("""
-		        """),format.raw/*145.11*/("""}"""),format.raw/*145.12*/(""");
+		            """),format.raw/*145.15*/("""}"""),format.raw/*145.16*/("""
+		        """),format.raw/*146.11*/("""}"""),format.raw/*146.12*/(""");
 		    
 		        var chart;
-		        $('#container-speed-chart').highcharts("""),format.raw/*148.50*/("""{"""),format.raw/*148.51*/("""
-		            chart: """),format.raw/*149.22*/("""{"""),format.raw/*149.23*/("""
+		        $('#container-speed-chart').highcharts("""),format.raw/*149.50*/("""{"""),format.raw/*149.51*/("""
+		            chart: """),format.raw/*150.22*/("""{"""),format.raw/*150.23*/("""
 		                type: 'spline',
 		                animation: Highcharts.svg, // don't animate in old IE
 		                marginRight: 5,
-		                events: """),format.raw/*153.27*/("""{"""),format.raw/*153.28*/("""
-		                    load: function() """),format.raw/*154.40*/("""{"""),format.raw/*154.41*/("""
+		                events: """),format.raw/*154.27*/("""{"""),format.raw/*154.28*/("""
+		                    load: function() """),format.raw/*155.40*/("""{"""),format.raw/*155.41*/("""
 		    
 		                        // set up the updating of the chart each second
 		                        var series = this.series[0];
-		                        setInterval(function() """),format.raw/*158.50*/("""{"""),format.raw/*158.51*/("""
-		                            var x = (new Date()).getTime(), // current time
-		                                y = Math.random()*100;
+		                        
+
+		            			var connection = new WebSocket('ws://localhost:9000');
+		            			
+		                        var y;
+		                        
+		            			connection.onopen = function()"""),format.raw/*165.48*/("""{"""),format.raw/*165.49*/("""
+		            				   /*Send a small message to the console once the connection is established */
+		            				   alert('Connection open!');
+		            				"""),format.raw/*168.19*/("""}"""),format.raw/*168.20*/("""
+		            			
+		            			var server_message;
+		            			
+		            			connection.onmessage = function(e)"""),format.raw/*172.52*/("""{"""),format.raw/*172.53*/("""
+		            				   server_message = e.data;
+		            				   alert("INITIALIZATION " + server_message);
+		            				"""),format.raw/*175.19*/("""}"""),format.raw/*175.20*/("""
+		            			
+		            			connection.onclose = function(e) """),format.raw/*177.51*/("""{"""),format.raw/*177.52*/("""
+		            				alert("CONNECTION IS CLOSED~");
+		            			"""),format.raw/*179.18*/("""}"""),format.raw/*179.19*/("""
+		            			
+		                        setInterval(function() """),format.raw/*181.50*/("""{"""),format.raw/*181.51*/("""
+		                            var x = (new Date()).getTime(); // current time
+		                                //y = Math.random()*100;
+		                            y = parseInt(server_message);
 		                            series.addPoint([x, y], true, true);
-		                        """),format.raw/*162.27*/("""}"""),format.raw/*162.28*/(""", 2000);
-		                    """),format.raw/*163.23*/("""}"""),format.raw/*163.24*/("""
-		                """),format.raw/*164.19*/("""}"""),format.raw/*164.20*/("""
-		            """),format.raw/*165.15*/("""}"""),format.raw/*165.16*/(""",
-		            title: """),format.raw/*166.22*/("""{"""),format.raw/*166.23*/("""
+									alert(y);
+		                        """),format.raw/*187.27*/("""}"""),format.raw/*187.28*/(""", 2000);
+		                    """),format.raw/*188.23*/("""}"""),format.raw/*188.24*/("""
+		                """),format.raw/*189.19*/("""}"""),format.raw/*189.20*/("""
+		            """),format.raw/*190.15*/("""}"""),format.raw/*190.16*/(""",
+		            title: """),format.raw/*191.22*/("""{"""),format.raw/*191.23*/("""
 		                text: 'Speed'
-		            """),format.raw/*168.15*/("""}"""),format.raw/*168.16*/(""",
-		            xAxis: """),format.raw/*169.22*/("""{"""),format.raw/*169.23*/("""
-		                title: """),format.raw/*170.26*/("""{"""),format.raw/*170.27*/("""
+		            """),format.raw/*193.15*/("""}"""),format.raw/*193.16*/(""",
+		            xAxis: """),format.raw/*194.22*/("""{"""),format.raw/*194.23*/("""
+		                title: """),format.raw/*195.26*/("""{"""),format.raw/*195.27*/("""
 		                    text: 'Time'
-		                """),format.raw/*172.19*/("""}"""),format.raw/*172.20*/(""",
+		                """),format.raw/*197.19*/("""}"""),format.raw/*197.20*/(""",
 		                type: 'datetime',
 		                tickPixelInterval: 150
-		            """),format.raw/*175.15*/("""}"""),format.raw/*175.16*/(""",
+		            """),format.raw/*200.15*/("""}"""),format.raw/*200.16*/(""",
 		            
-		            yAxis: """),format.raw/*177.22*/("""{"""),format.raw/*177.23*/("""
-		                title: """),format.raw/*178.26*/("""{"""),format.raw/*178.27*/("""
+		            yAxis: """),format.raw/*202.22*/("""{"""),format.raw/*202.23*/("""
+		                title: """),format.raw/*203.26*/("""{"""),format.raw/*203.27*/("""
 		                    text: 'Percentage'
-		                """),format.raw/*180.19*/("""}"""),format.raw/*180.20*/(""",
+		                """),format.raw/*205.19*/("""}"""),format.raw/*205.20*/(""",
 		                min: 0,
 		                max: 100,
-		                 labels: """),format.raw/*183.28*/("""{"""),format.raw/*183.29*/("""
-		                    formatter: function() """),format.raw/*184.45*/("""{"""),format.raw/*184.46*/("""
-		                        if (this.value == 100) """),format.raw/*185.50*/("""{"""),format.raw/*185.51*/("""
+		                 labels: """),format.raw/*208.28*/("""{"""),format.raw/*208.29*/("""
+		                    formatter: function() """),format.raw/*209.45*/("""{"""),format.raw/*209.46*/("""
+		                        if (this.value == 100) """),format.raw/*210.50*/("""{"""),format.raw/*210.51*/("""
 		                            return 'Too Fast';
-		                        """),format.raw/*187.27*/("""}"""),format.raw/*187.28*/("""
+		                        """),format.raw/*212.27*/("""}"""),format.raw/*212.28*/("""
 		                        
-		                        if (this.value == 50) """),format.raw/*189.49*/("""{"""),format.raw/*189.50*/("""
+		                        if (this.value == 50) """),format.raw/*214.49*/("""{"""),format.raw/*214.50*/("""
 		                            return 'OK';
-		                        """),format.raw/*191.27*/("""}"""),format.raw/*191.28*/("""
+		                        """),format.raw/*216.27*/("""}"""),format.raw/*216.28*/("""
 		                        
 		                        
-		                        if (this.value == 0) """),format.raw/*194.48*/("""{"""),format.raw/*194.49*/("""
+		                        if (this.value == 0) """),format.raw/*219.48*/("""{"""),format.raw/*219.49*/("""
 		                            return 'Too Slow';
-		                        """),format.raw/*196.27*/("""}"""),format.raw/*196.28*/("""
-		                    """),format.raw/*197.23*/("""}"""),format.raw/*197.24*/("""
-		                """),format.raw/*198.19*/("""}"""),format.raw/*198.20*/(""",
-		            """),format.raw/*199.15*/("""}"""),format.raw/*199.16*/(""",
-		            tooltip: """),format.raw/*200.24*/("""{"""),format.raw/*200.25*/("""
-		                formatter: function() """),format.raw/*201.41*/("""{"""),format.raw/*201.42*/("""
+		                        """),format.raw/*221.27*/("""}"""),format.raw/*221.28*/("""
+		                    """),format.raw/*222.23*/("""}"""),format.raw/*222.24*/("""
+		                """),format.raw/*223.19*/("""}"""),format.raw/*223.20*/(""",
+		            """),format.raw/*224.15*/("""}"""),format.raw/*224.16*/(""",
+		            tooltip: """),format.raw/*225.24*/("""{"""),format.raw/*225.25*/("""
+		                formatter: function() """),format.raw/*226.41*/("""{"""),format.raw/*226.42*/("""
 		                        return 'At time: ' + Highcharts.dateFormat('%H:%M:%S', this.x) +'<br/>' + 'Average speed requested ' + Highcharts.numberFormat(this.y, 2) + '%';
-		                """),format.raw/*203.19*/("""}"""),format.raw/*203.20*/("""
-		            """),format.raw/*204.15*/("""}"""),format.raw/*204.16*/(""",
-		            legend: """),format.raw/*205.23*/("""{"""),format.raw/*205.24*/("""
+		                """),format.raw/*228.19*/("""}"""),format.raw/*228.20*/("""
+		            """),format.raw/*229.15*/("""}"""),format.raw/*229.16*/(""",
+		            legend: """),format.raw/*230.23*/("""{"""),format.raw/*230.24*/("""
 		                enabled: false
-		            """),format.raw/*207.15*/("""}"""),format.raw/*207.16*/(""",
-		            exporting: """),format.raw/*208.26*/("""{"""),format.raw/*208.27*/("""
+		            """),format.raw/*232.15*/("""}"""),format.raw/*232.16*/(""",
+		            exporting: """),format.raw/*233.26*/("""{"""),format.raw/*233.27*/("""
 		                enabled: false
-		            """),format.raw/*210.15*/("""}"""),format.raw/*210.16*/(""",
-		            series: ["""),format.raw/*211.24*/("""{"""),format.raw/*211.25*/("""
+		            """),format.raw/*235.15*/("""}"""),format.raw/*235.16*/(""",
+		            series: ["""),format.raw/*236.24*/("""{"""),format.raw/*236.25*/("""
 		                name: 'Random data',
-		                data: (function() """),format.raw/*213.37*/("""{"""),format.raw/*213.38*/("""
+		                data: (function() """),format.raw/*238.37*/("""{"""),format.raw/*238.38*/("""
 		                    // generate an array of random data
 		                    var data = [],
 		                        time = (new Date()).getTime(),
 		                        i;
 		    
-		                    for (i = -5; i <= 0; i++) """),format.raw/*219.49*/("""{"""),format.raw/*219.50*/("""
-		                        data.push("""),format.raw/*220.37*/("""{"""),format.raw/*220.38*/("""
+		                    for (i = -5; i <= 0; i++) """),format.raw/*244.49*/("""{"""),format.raw/*244.50*/("""
+		                        data.push("""),format.raw/*245.37*/("""{"""),format.raw/*245.38*/("""
 		                            x: time + i * 1000,
 		                            y: 50
-		                        """),format.raw/*223.27*/("""}"""),format.raw/*223.28*/(""");
-		                    """),format.raw/*224.23*/("""}"""),format.raw/*224.24*/("""
+		                        """),format.raw/*248.27*/("""}"""),format.raw/*248.28*/(""");
+		                    """),format.raw/*249.23*/("""}"""),format.raw/*249.24*/("""
 		                    return data;
-		                """),format.raw/*226.19*/("""}"""),format.raw/*226.20*/(""")()
-		            """),format.raw/*227.15*/("""}"""),format.raw/*227.16*/("""]
-		        """),format.raw/*228.11*/("""}"""),format.raw/*228.12*/(""");
-		    """),format.raw/*229.7*/("""}"""),format.raw/*229.8*/(""");
+		                """),format.raw/*251.19*/("""}"""),format.raw/*251.20*/(""")()
+		            """),format.raw/*252.15*/("""}"""),format.raw/*252.16*/("""]
+		        """),format.raw/*253.11*/("""}"""),format.raw/*253.12*/(""");
+		    """),format.raw/*254.7*/("""}"""),format.raw/*254.8*/(""");
 		    
-		"""),format.raw/*231.3*/("""}"""),format.raw/*231.4*/(""");
+		"""),format.raw/*256.3*/("""}"""),format.raw/*256.4*/(""");
     	</script>
     
     
 		<script>
-		$(function () """),format.raw/*236.17*/("""{"""),format.raw/*236.18*/("""
-		    $(document).ready(function() """),format.raw/*237.36*/("""{"""),format.raw/*237.37*/("""
-		        Highcharts.setOptions("""),format.raw/*238.33*/("""{"""),format.raw/*238.34*/("""
-		            global: """),format.raw/*239.23*/("""{"""),format.raw/*239.24*/("""
+		$(function () """),format.raw/*261.17*/("""{"""),format.raw/*261.18*/("""
+		    $(document).ready(function() """),format.raw/*262.36*/("""{"""),format.raw/*262.37*/("""
+		        Highcharts.setOptions("""),format.raw/*263.33*/("""{"""),format.raw/*263.34*/("""
+		            global: """),format.raw/*264.23*/("""{"""),format.raw/*264.24*/("""
 		                useUTC: false
-		            """),format.raw/*241.15*/("""}"""),format.raw/*241.16*/("""
-		        """),format.raw/*242.11*/("""}"""),format.raw/*242.12*/(""");
+		            """),format.raw/*266.15*/("""}"""),format.raw/*266.16*/("""
+		        """),format.raw/*267.11*/("""}"""),format.raw/*267.12*/(""");
 		    
 		        var chart;
-		        $('#container-loudness-chart').highcharts("""),format.raw/*245.53*/("""{"""),format.raw/*245.54*/("""
-		            chart: """),format.raw/*246.22*/("""{"""),format.raw/*246.23*/("""
+		        $('#container-loudness-chart').highcharts("""),format.raw/*270.53*/("""{"""),format.raw/*270.54*/("""
+		            chart: """),format.raw/*271.22*/("""{"""),format.raw/*271.23*/("""
 		                type: 'spline',
 		                animation: Highcharts.svg, // don't animate in old IE
 		                marginRight: 5,
-		                events: """),format.raw/*250.27*/("""{"""),format.raw/*250.28*/("""
-		                    load: function() """),format.raw/*251.40*/("""{"""),format.raw/*251.41*/("""
+		                events: """),format.raw/*275.27*/("""{"""),format.raw/*275.28*/("""
+		                    load: function() """),format.raw/*276.40*/("""{"""),format.raw/*276.41*/("""
 		    
 		                        // set up the updating of the chart each second
 		                        var series = this.series[0];
-		                        setInterval(function() """),format.raw/*255.50*/("""{"""),format.raw/*255.51*/("""
+		                        setInterval(function() """),format.raw/*280.50*/("""{"""),format.raw/*280.51*/("""
 		                            var x = (new Date()).getTime(), // current time
 		                                y = Math.random()*100;
 		                            series.addPoint([x, y], true, true);
-		                        """),format.raw/*259.27*/("""}"""),format.raw/*259.28*/(""", 2000);
-		                    """),format.raw/*260.23*/("""}"""),format.raw/*260.24*/("""
-		                """),format.raw/*261.19*/("""}"""),format.raw/*261.20*/("""
-		            """),format.raw/*262.15*/("""}"""),format.raw/*262.16*/(""",
-		            title: """),format.raw/*263.22*/("""{"""),format.raw/*263.23*/("""
+		                        """),format.raw/*284.27*/("""}"""),format.raw/*284.28*/(""", 2000);
+		                    """),format.raw/*285.23*/("""}"""),format.raw/*285.24*/("""
+		                """),format.raw/*286.19*/("""}"""),format.raw/*286.20*/("""
+		            """),format.raw/*287.15*/("""}"""),format.raw/*287.16*/(""",
+		            title: """),format.raw/*288.22*/("""{"""),format.raw/*288.23*/("""
 		                text: 'Loudness'
-		            """),format.raw/*265.15*/("""}"""),format.raw/*265.16*/(""",
-		            xAxis: """),format.raw/*266.22*/("""{"""),format.raw/*266.23*/("""
-		                title: """),format.raw/*267.26*/("""{"""),format.raw/*267.27*/("""
+		            """),format.raw/*290.15*/("""}"""),format.raw/*290.16*/(""",
+		            xAxis: """),format.raw/*291.22*/("""{"""),format.raw/*291.23*/("""
+		                title: """),format.raw/*292.26*/("""{"""),format.raw/*292.27*/("""
 		                    text: 'Time'
-		                """),format.raw/*269.19*/("""}"""),format.raw/*269.20*/(""",
+		                """),format.raw/*294.19*/("""}"""),format.raw/*294.20*/(""",
 		                type: 'datetime',
 		                tickPixelInterval: 150
-		            """),format.raw/*272.15*/("""}"""),format.raw/*272.16*/(""",
+		            """),format.raw/*297.15*/("""}"""),format.raw/*297.16*/(""",
 		            
-		            yAxis: """),format.raw/*274.22*/("""{"""),format.raw/*274.23*/("""
-		                title: """),format.raw/*275.26*/("""{"""),format.raw/*275.27*/("""
+		            yAxis: """),format.raw/*299.22*/("""{"""),format.raw/*299.23*/("""
+		                title: """),format.raw/*300.26*/("""{"""),format.raw/*300.27*/("""
 		                    text: 'Percentage'
-		                """),format.raw/*277.19*/("""}"""),format.raw/*277.20*/(""",
+		                """),format.raw/*302.19*/("""}"""),format.raw/*302.20*/(""",
 		                min: 0,
 		                max: 100,
-		                 labels: """),format.raw/*280.28*/("""{"""),format.raw/*280.29*/("""
-		                    formatter: function() """),format.raw/*281.45*/("""{"""),format.raw/*281.46*/("""
-		                        if (this.value == 100) """),format.raw/*282.50*/("""{"""),format.raw/*282.51*/("""
+		                 labels: """),format.raw/*305.28*/("""{"""),format.raw/*305.29*/("""
+		                    formatter: function() """),format.raw/*306.45*/("""{"""),format.raw/*306.46*/("""
+		                        if (this.value == 100) """),format.raw/*307.50*/("""{"""),format.raw/*307.51*/("""
 		                            return 'Too Loud';
-		                        """),format.raw/*284.27*/("""}"""),format.raw/*284.28*/("""
+		                        """),format.raw/*309.27*/("""}"""),format.raw/*309.28*/("""
 		                        
-		                        if (this.value == 50) """),format.raw/*286.49*/("""{"""),format.raw/*286.50*/("""
+		                        if (this.value == 50) """),format.raw/*311.49*/("""{"""),format.raw/*311.50*/("""
 		                            return 'OK';
-		                        """),format.raw/*288.27*/("""}"""),format.raw/*288.28*/("""
+		                        """),format.raw/*313.27*/("""}"""),format.raw/*313.28*/("""
 		                        
 		                        
-		                        if (this.value == 0) """),format.raw/*291.48*/("""{"""),format.raw/*291.49*/("""
+		                        if (this.value == 0) """),format.raw/*316.48*/("""{"""),format.raw/*316.49*/("""
 		                            return 'Too Quiet';
-		                        """),format.raw/*293.27*/("""}"""),format.raw/*293.28*/("""
-		                    """),format.raw/*294.23*/("""}"""),format.raw/*294.24*/("""
-		                """),format.raw/*295.19*/("""}"""),format.raw/*295.20*/(""",
-		            """),format.raw/*296.15*/("""}"""),format.raw/*296.16*/(""",
-		            tooltip: """),format.raw/*297.24*/("""{"""),format.raw/*297.25*/("""
-		                formatter: function() """),format.raw/*298.41*/("""{"""),format.raw/*298.42*/("""
+		                        """),format.raw/*318.27*/("""}"""),format.raw/*318.28*/("""
+		                    """),format.raw/*319.23*/("""}"""),format.raw/*319.24*/("""
+		                """),format.raw/*320.19*/("""}"""),format.raw/*320.20*/(""",
+		            """),format.raw/*321.15*/("""}"""),format.raw/*321.16*/(""",
+		            tooltip: """),format.raw/*322.24*/("""{"""),format.raw/*322.25*/("""
+		                formatter: function() """),format.raw/*323.41*/("""{"""),format.raw/*323.42*/("""
 		                        return 'At time: ' + Highcharts.dateFormat('%H:%M:%S', this.x) +'<br/>' + 'Average loudness requested ' + Highcharts.numberFormat(this.y, 2) + '%';
-		                """),format.raw/*300.19*/("""}"""),format.raw/*300.20*/("""
-		            """),format.raw/*301.15*/("""}"""),format.raw/*301.16*/(""",
-		            legend: """),format.raw/*302.23*/("""{"""),format.raw/*302.24*/("""
+		                """),format.raw/*325.19*/("""}"""),format.raw/*325.20*/("""
+		            """),format.raw/*326.15*/("""}"""),format.raw/*326.16*/(""",
+		            legend: """),format.raw/*327.23*/("""{"""),format.raw/*327.24*/("""
 		                enabled: false
-		            """),format.raw/*304.15*/("""}"""),format.raw/*304.16*/(""",
-		            exporting: """),format.raw/*305.26*/("""{"""),format.raw/*305.27*/("""
+		            """),format.raw/*329.15*/("""}"""),format.raw/*329.16*/(""",
+		            exporting: """),format.raw/*330.26*/("""{"""),format.raw/*330.27*/("""
 		                enabled: false
-		            """),format.raw/*307.15*/("""}"""),format.raw/*307.16*/(""",
-		            series: ["""),format.raw/*308.24*/("""{"""),format.raw/*308.25*/("""
+		            """),format.raw/*332.15*/("""}"""),format.raw/*332.16*/(""",
+		            series: ["""),format.raw/*333.24*/("""{"""),format.raw/*333.25*/("""
 		                name: 'Random data',
-		                data: (function() """),format.raw/*310.37*/("""{"""),format.raw/*310.38*/("""
+		                data: (function() """),format.raw/*335.37*/("""{"""),format.raw/*335.38*/("""
 		                    // generate an array of random data
 		                    var data = [],
 		                        time = (new Date()).getTime(),
 		                        i;
 		    
-		                    for (i = -5; i <= 0; i++) """),format.raw/*316.49*/("""{"""),format.raw/*316.50*/("""
-		                        data.push("""),format.raw/*317.37*/("""{"""),format.raw/*317.38*/("""
+		                    for (i = -5; i <= 0; i++) """),format.raw/*341.49*/("""{"""),format.raw/*341.50*/("""
+		                        data.push("""),format.raw/*342.37*/("""{"""),format.raw/*342.38*/("""
 		                            x: time + i * 1000,
-		                            y: 50
-		                        """),format.raw/*320.27*/("""}"""),format.raw/*320.28*/(""");
-		                    """),format.raw/*321.23*/("""}"""),format.raw/*321.24*/("""
+		                            y: 50 //initialization 
+		                        """),format.raw/*345.27*/("""}"""),format.raw/*345.28*/(""");
+		                    """),format.raw/*346.23*/("""}"""),format.raw/*346.24*/("""
 		                    return data;
-		                """),format.raw/*323.19*/("""}"""),format.raw/*323.20*/(""")()
-		            """),format.raw/*324.15*/("""}"""),format.raw/*324.16*/("""]
-		        """),format.raw/*325.11*/("""}"""),format.raw/*325.12*/(""");
-		    """),format.raw/*326.7*/("""}"""),format.raw/*326.8*/(""");
+		                """),format.raw/*348.19*/("""}"""),format.raw/*348.20*/(""")()
+		            """),format.raw/*349.15*/("""}"""),format.raw/*349.16*/("""]
+		        """),format.raw/*350.11*/("""}"""),format.raw/*350.12*/(""");
+		    """),format.raw/*351.7*/("""}"""),format.raw/*351.8*/(""");
 		    
-		"""),format.raw/*328.3*/("""}"""),format.raw/*328.4*/(""");
+		"""),format.raw/*353.3*/("""}"""),format.raw/*353.4*/(""");
     	</script>
     
     	<script>
-    	$(function () """),format.raw/*332.20*/("""{"""),format.raw/*332.21*/("""
+    	$(function () """),format.raw/*357.20*/("""{"""),format.raw/*357.21*/("""
     		
-    	    var gaugeOptions = """),format.raw/*334.29*/("""{"""),format.raw/*334.30*/("""
+    	    var gaugeOptions = """),format.raw/*359.29*/("""{"""),format.raw/*359.30*/("""
     		
-    		    chart: """),format.raw/*336.18*/("""{"""),format.raw/*336.19*/("""
+    		    chart: """),format.raw/*361.18*/("""{"""),format.raw/*361.19*/("""
     		        type: 'solidgauge'
-    		    """),format.raw/*338.11*/("""}"""),format.raw/*338.12*/(""",
+    		    """),format.raw/*363.11*/("""}"""),format.raw/*363.12*/(""",
     		    
     		    title: null,
     		    
-    		    pane: """),format.raw/*342.17*/("""{"""),format.raw/*342.18*/("""
+    		    pane: """),format.raw/*367.17*/("""{"""),format.raw/*367.18*/("""
     		    	center: ['50%', '85%'],
     		    	size: '140%',
     		        startAngle: -90,
     		        endAngle: 90,
-    	            background: """),format.raw/*347.30*/("""{"""),format.raw/*347.31*/("""
+    	            background: """),format.raw/*372.30*/("""{"""),format.raw/*372.31*/("""
     	                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
     	                innerRadius: '60%',
     	                outerRadius: '100%',
     	                shape: 'arc'
-    	            """),format.raw/*352.18*/("""}"""),format.raw/*352.19*/("""
-    		    """),format.raw/*353.11*/("""}"""),format.raw/*353.12*/(""",
+    	            """),format.raw/*377.18*/("""}"""),format.raw/*377.19*/("""
+    		    """),format.raw/*378.11*/("""}"""),format.raw/*378.12*/(""",
 
-    		    tooltip: """),format.raw/*355.20*/("""{"""),format.raw/*355.21*/("""
+    		    tooltip: """),format.raw/*380.20*/("""{"""),format.raw/*380.21*/("""
     		    	enabled: false
-    		    """),format.raw/*357.11*/("""}"""),format.raw/*357.12*/(""",
+    		    """),format.raw/*382.11*/("""}"""),format.raw/*382.12*/(""",
     		       
     		    // the value axis
-    		    yAxis: """),format.raw/*360.18*/("""{"""),format.raw/*360.19*/("""
+    		    yAxis: """),format.raw/*385.18*/("""{"""),format.raw/*385.19*/("""
     				stops: [
     					[0.1, '#55BF3B'], // green
     		        	[0.5, '#DDDF0D'], // yellow
@@ -395,91 +420,90 @@ Seq[Any](format.raw/*1.16*/("""
     	            minorTickInterval: null,
     	            tickPixelInterval: 400,
     	            tickWidth: 0,
-    		        title: """),format.raw/*370.22*/("""{"""),format.raw/*370.23*/("""
+    		        title: """),format.raw/*395.22*/("""{"""),format.raw/*395.23*/("""
     	                y: -70
-    		        """),format.raw/*372.15*/("""}"""),format.raw/*372.16*/(""",
-    	            labels: """),format.raw/*373.26*/("""{"""),format.raw/*373.27*/("""
+    		        """),format.raw/*397.15*/("""}"""),format.raw/*397.16*/(""",
+    	            labels: """),format.raw/*398.26*/("""{"""),format.raw/*398.27*/("""
     	                y: 16
-    	            """),format.raw/*375.18*/("""}"""),format.raw/*375.19*/("""        
-    		    """),format.raw/*376.11*/("""}"""),format.raw/*376.12*/(""",
+    	            """),format.raw/*400.18*/("""}"""),format.raw/*400.19*/("""        
+    		    """),format.raw/*401.11*/("""}"""),format.raw/*401.12*/(""",
     	        
-    	        plotOptions: """),format.raw/*378.27*/("""{"""),format.raw/*378.28*/("""
-    	            solidgauge: """),format.raw/*379.30*/("""{"""),format.raw/*379.31*/("""
-    	                dataLabels: """),format.raw/*380.34*/("""{"""),format.raw/*380.35*/("""
+    	        plotOptions: """),format.raw/*403.27*/("""{"""),format.raw/*403.28*/("""
+    	            solidgauge: """),format.raw/*404.30*/("""{"""),format.raw/*404.31*/("""
+    	                dataLabels: """),format.raw/*405.34*/("""{"""),format.raw/*405.35*/("""
     	                    y: 5,
     	                    borderWidth: 0,
     	                    useHTML: true
-    	                """),format.raw/*384.22*/("""}"""),format.raw/*384.23*/(""",
-    	                states: """),format.raw/*385.30*/("""{"""),format.raw/*385.31*/("""
-                            hover: """),format.raw/*386.36*/("""{"""),format.raw/*386.37*/("""
+    	                """),format.raw/*409.22*/("""}"""),format.raw/*409.23*/(""",
+    	                states: """),format.raw/*410.30*/("""{"""),format.raw/*410.31*/("""
+                            hover: """),format.raw/*411.36*/("""{"""),format.raw/*411.37*/("""
                                 enabled: true
-                            """),format.raw/*388.29*/("""}"""),format.raw/*388.30*/("""
-                        """),format.raw/*389.25*/("""}"""),format.raw/*389.26*/("""
+                            """),format.raw/*413.29*/("""}"""),format.raw/*413.30*/("""
+                        """),format.raw/*414.25*/("""}"""),format.raw/*414.26*/("""
     	                
-    	            """),format.raw/*391.18*/("""}"""),format.raw/*391.19*/("""
+    	            """),format.raw/*416.18*/("""}"""),format.raw/*416.19*/("""
     		    
     		    
-    	        """),format.raw/*394.14*/("""}"""),format.raw/*394.15*/("""
-    	    """),format.raw/*395.10*/("""}"""),format.raw/*395.11*/(""";
+    	        """),format.raw/*419.14*/("""}"""),format.raw/*419.15*/("""
+    	    """),format.raw/*420.10*/("""}"""),format.raw/*420.11*/(""";
     	    
     	    // The speed gauge
-    	    $('#container-speed').highcharts(Highcharts.merge(gaugeOptions, """),format.raw/*398.74*/("""{"""),format.raw/*398.75*/("""
-    	        yAxis: """),format.raw/*399.21*/("""{"""),format.raw/*399.22*/("""
+    	    $('#container-speed').highcharts(Highcharts.merge(gaugeOptions, """),format.raw/*423.74*/("""{"""),format.raw/*423.75*/("""
+    	        yAxis: """),format.raw/*424.21*/("""{"""),format.raw/*424.22*/("""
     		        min: 0,
     		        max: 100,
-    		        title: """),format.raw/*402.22*/("""{"""),format.raw/*402.23*/("""
+    		        title: """),format.raw/*427.22*/("""{"""),format.raw/*427.23*/("""
     		            text: 'Pause'
-    		        """),format.raw/*404.15*/("""}"""),format.raw/*404.16*/("""       
-    		    """),format.raw/*405.11*/("""}"""),format.raw/*405.12*/(""",
+    		        """),format.raw/*429.15*/("""}"""),format.raw/*429.16*/("""       
+    		    """),format.raw/*430.11*/("""}"""),format.raw/*430.12*/(""",
 
-    		    credits: """),format.raw/*407.20*/("""{"""),format.raw/*407.21*/("""
+    		    credits: """),format.raw/*432.20*/("""{"""),format.raw/*432.21*/("""
     		    	enabled: false
-    		    """),format.raw/*409.11*/("""}"""),format.raw/*409.12*/(""",
+    		    """),format.raw/*434.11*/("""}"""),format.raw/*434.12*/(""",
     		
-    		    series: ["""),format.raw/*411.20*/("""{"""),format.raw/*411.21*/("""
+    		    series: ["""),format.raw/*436.20*/("""{"""),format.raw/*436.21*/("""
     		        name: 'Pause',
     		        data: [80],
-    		        dataLabels: """),format.raw/*414.27*/("""{"""),format.raw/*414.28*/("""
+    		        dataLabels: """),format.raw/*439.27*/("""{"""),format.raw/*439.28*/("""
     		        	format: '<div style="text-align:center"><span style="font-size:25px;color:' + 
-    	                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">"""),format.raw/*416.101*/("""{"""),format.raw/*416.102*/("""y"""),format.raw/*416.103*/("""}"""),format.raw/*416.104*/("""</span><br/>' + 
+    	                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">"""),format.raw/*441.101*/("""{"""),format.raw/*441.102*/("""y"""),format.raw/*441.103*/("""}"""),format.raw/*441.104*/("""</span><br/>' + 
     	                   	'<span style="font-size:12px;color:silver">Pause counts</span></div>'
-    		        """),format.raw/*418.15*/("""}"""),format.raw/*418.16*/(""",
-    		        tooltip: """),format.raw/*419.24*/("""{"""),format.raw/*419.25*/("""
+    		        """),format.raw/*443.15*/("""}"""),format.raw/*443.16*/(""",
+    		        tooltip: """),format.raw/*444.24*/("""{"""),format.raw/*444.25*/("""
     		            valueSuffix: 'Number of persons voted for pause'
-    		        """),format.raw/*421.15*/("""}"""),format.raw/*421.16*/("""
-    		    """),format.raw/*422.11*/("""}"""),format.raw/*422.12*/("""]
+    		        """),format.raw/*446.15*/("""}"""),format.raw/*446.16*/("""
+    		    """),format.raw/*447.11*/("""}"""),format.raw/*447.12*/("""]
     		
-    		"""),format.raw/*424.7*/("""}"""),format.raw/*424.8*/("""));
+    		"""),format.raw/*449.7*/("""}"""),format.raw/*449.8*/("""));
     	    
     	    // The RPM gauge
     	    ;
     	                               
     	    // Bring life to the dials
-    	    setInterval(function () """),format.raw/*430.34*/("""{"""),format.raw/*430.35*/("""
+    	    setInterval(function () """),format.raw/*455.34*/("""{"""),format.raw/*455.35*/("""
     	    	// Speed
     	        var chart = $('#container-speed').highcharts();
-    	        if (chart) """),format.raw/*433.25*/("""{"""),format.raw/*433.26*/("""
+    	        if (chart) """),format.raw/*458.25*/("""{"""),format.raw/*458.26*/("""
     	            var point = chart.series[0].points[0],
     	                newVal,
     	                inc = Math.round((Math.random() - 0.5) * 100);
     	            
     	            newVal = point.y + inc;
-    	            if (newVal < 0 || newVal > 100) """),format.raw/*439.50*/("""{"""),format.raw/*439.51*/("""
+    	            if (newVal < 0 || newVal > 100) """),format.raw/*464.50*/("""{"""),format.raw/*464.51*/("""
     	                newVal = point.y - inc;
-    	            """),format.raw/*441.18*/("""}"""),format.raw/*441.19*/("""
+    	            """),format.raw/*466.18*/("""}"""),format.raw/*466.19*/("""
     	            
     	            point.update(newVal);
-    	        """),format.raw/*444.14*/("""}"""),format.raw/*444.15*/("""
+    	        """),format.raw/*469.14*/("""}"""),format.raw/*469.15*/("""
 
-    	    """),format.raw/*446.10*/("""}"""),format.raw/*446.11*/(""", 2000);  
+    	    """),format.raw/*471.10*/("""}"""),format.raw/*471.11*/(""", 2000);  
     	    
     		
-    	"""),format.raw/*449.6*/("""}"""),format.raw/*449.7*/(""");
+    	"""),format.raw/*474.6*/("""}"""),format.raw/*474.7*/(""");
     	</script>
 		
     </head>
     <body>
-	<p>HIGHCHARTS GOES HERE</p>
 
 <table>
 	<thead>
@@ -528,7 +552,7 @@ Seq[Any](format.raw/*1.16*/("""
 
 
     </body>
-</html>"""))}
+	</html>"""))}
     }
     
     def render(stats:Long): play.api.templates.HtmlFormat.Appendable = apply(stats)
@@ -540,11 +564,11 @@ Seq[Any](format.raw/*1.16*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 09 15:52:14 CEST 2014
+                    DATE: Mon Jun 09 18:21:36 CEST 2014
                     SOURCE: /home/aalfath/git/LiveFeedSebaTeam/app/views/profPage.scala.html
-                    HASH: c945ea159b9698fb22494f153111823074bbf298
-                    MATRIX: 775->1|899->15|926->33|1090->161|1105->167|1161->201|1258->262|1273->268|1327->300|1420->357|1435->363|1511->416|1604->473|1619->479|1691->528|1753->554|1768->560|1835->605|2015->757|2044->758|2114->800|2143->801|2210->840|2239->841|2296->870|2325->871|2412->930|2441->931|2486->948|2515->949|2651->1057|2680->1058|2736->1086|2765->1087|2985->1279|3014->1280|3088->1326|3117->1327|3595->1777|3624->1778|3740->1866|3769->1867|3866->1936|3895->1937|4033->2047|4062->2048|4240->2198|4269->2199|4405->2307|4434->2308|4597->2443|4626->2444|4876->2666|4905->2667|5100->2834|5129->2835|5379->3057|5408->3058|5545->3167|5574->3168|5890->3456|5919->3457|5984->3494|6013->3495|6066->3520|6095->3521|6144->3542|6173->3543|6251->3593|6280->3594|6378->3664|6407->3665|6464->3694|6493->3695|6631->3805|6660->3806|6717->3835|6746->3836|6806->3868|6835->3869|6930->3936|6959->3937|7025->3975|7054->3976|7229->4122|7259->4123|7310->4145|7340->4146|7400->4177|7430->4178|7506->4225|7536->4226|7828->4489|7858->4490|7908->4511|7938->4512|7997->4542|8027->4543|8116->4603|8146->4604|8208->4637|8238->4638|8327->4698|8357->4699|8417->4730|8447->4731|8564->4819|8594->4820|8897->5094|8927->5095|8999->5138|9029->5139|9200->5281|9230->5282|9290->5313|9320->5314|9415->5380|9445->5381|9498->5405|9528->5406|9575->5424|9605->5425|9649->5440|9679->5441|9731->5465|9761->5466|9839->5515|9869->5516|9934->5552|9964->5553|10026->5586|10056->5587|10108->5610|10138->5611|10214->5658|10244->5659|10284->5670|10314->5671|10423->5751|10453->5752|10504->5774|10534->5775|10730->5942|10760->5943|10829->5983|10859->5984|11074->6170|11104->6171|11362->6400|11392->6401|11452->6432|11482->6433|11530->6452|11560->6453|11604->6468|11634->6469|11686->6492|11716->6493|11792->6540|11822->6541|11874->6564|11904->6565|11959->6591|11989->6592|12072->6646|12102->6647|12224->6740|12254->6741|12321->6779|12351->6780|12406->6806|12436->6807|12525->6867|12555->6868|12667->6951|12697->6952|12771->6997|12801->6998|12880->7048|12910->7049|13015->7125|13045->7126|13150->7202|13180->7203|13279->7273|13309->7274|13440->7376|13470->7377|13575->7453|13605->7454|13657->7477|13687->7478|13735->7497|13765->7498|13810->7514|13840->7515|13894->7540|13924->7541|13994->7582|14024->7583|14243->7773|14273->7774|14317->7789|14347->7790|14400->7814|14430->7815|14507->7863|14537->7864|14593->7891|14623->7892|14700->7940|14730->7941|14784->7966|14814->7967|14919->8043|14949->8044|15215->8281|15245->8282|15311->8319|15341->8320|15483->8433|15513->8434|15567->8459|15597->8460|15680->8514|15710->8515|15757->8533|15787->8534|15828->8546|15858->8547|15895->8556|15924->8557|15964->8569|15993->8570|16077->8625|16107->8626|16172->8662|16202->8663|16264->8696|16294->8697|16346->8720|16376->8721|16452->8768|16482->8769|16522->8780|16552->8781|16664->8864|16694->8865|16745->8887|16775->8888|16971->9055|17001->9056|17070->9096|17100->9097|17315->9283|17345->9284|17603->9513|17633->9514|17693->9545|17723->9546|17771->9565|17801->9566|17845->9581|17875->9582|17927->9605|17957->9606|18036->9656|18066->9657|18118->9680|18148->9681|18203->9707|18233->9708|18316->9762|18346->9763|18468->9856|18498->9857|18565->9895|18595->9896|18650->9922|18680->9923|18769->9983|18799->9984|18911->10067|18941->10068|19015->10113|19045->10114|19124->10164|19154->10165|19259->10241|19289->10242|19394->10318|19424->10319|19523->10389|19553->10390|19684->10492|19714->10493|19820->10570|19850->10571|19902->10594|19932->10595|19980->10614|20010->10615|20055->10631|20085->10632|20139->10657|20169->10658|20239->10699|20269->10700|20491->10893|20521->10894|20565->10909|20595->10910|20648->10934|20678->10935|20755->10983|20785->10984|20841->11011|20871->11012|20948->11060|20978->11061|21032->11086|21062->11087|21167->11163|21197->11164|21463->11401|21493->11402|21559->11439|21589->11440|21731->11553|21761->11554|21815->11579|21845->11580|21928->11634|21958->11635|22005->11653|22035->11654|22076->11666|22106->11667|22143->11676|22172->11677|22212->11689|22241->11690|22326->11746|22356->11747|22421->11783|22451->11784|22505->11809|22535->11810|22608->11854|22638->11855|22730->11918|22760->11919|22938->12068|22968->12069|23232->12304|23262->12305|23302->12316|23332->12317|23383->12339|23413->12340|23479->12377|23509->12378|23599->12439|23629->12440|23962->12744|23992->12745|24064->12788|24094->12789|24150->12816|24180->12817|24254->12862|24284->12863|24332->12882|24362->12883|24433->12925|24463->12926|24522->12956|24552->12957|24615->12991|24645->12992|24807->13125|24837->13126|24897->13157|24927->13158|24992->13194|25022->13195|25126->13270|25156->13271|25210->13296|25240->13297|25309->13337|25339->13338|25404->13374|25434->13375|25473->13385|25503->13386|25645->13499|25675->13500|25725->13521|25755->13522|25852->13590|25882->13591|25958->13638|25988->13639|26035->13657|26065->13658|26116->13680|26146->13681|26212->13718|26242->13719|26299->13747|26329->13748|26440->13830|26470->13831|26695->14026|26726->14027|26757->14028|26788->14029|26943->14155|26973->14156|27027->14181|27057->14182|27168->14264|27198->14265|27238->14276|27268->14277|27311->14292|27340->14293|27526->14450|27556->14451|27690->14556|27720->14557|28011->14819|28041->14820|28133->14883|28163->14884|28263->14955|28293->14956|28333->14967|28363->14968|28424->15001|28453->15002
-                    LINES: 26->1|30->1|31->3|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|43->15|43->15|43->15|50->22|50->22|51->23|51->23|52->24|52->24|53->25|53->25|55->27|55->27|56->28|56->28|61->33|61->33|62->34|62->34|66->38|66->38|67->39|67->39|75->47|75->47|77->49|77->49|79->51|79->51|81->53|81->53|84->56|84->56|86->58|86->58|89->61|89->61|93->65|93->65|96->68|96->68|100->72|100->72|103->75|103->75|108->80|108->80|109->81|109->81|110->82|110->82|111->83|111->83|113->85|113->85|115->87|115->87|116->88|116->88|119->91|119->91|120->92|120->92|121->93|121->93|123->95|123->95|124->96|124->96|128->100|128->100|129->101|129->101|130->102|130->102|131->103|131->103|135->107|135->107|136->108|136->108|137->109|137->109|139->111|139->111|140->112|140->112|142->114|142->114|143->115|143->115|145->117|145->117|151->123|151->123|152->124|152->124|155->127|155->127|156->128|156->128|158->130|158->130|159->131|159->131|160->132|160->132|161->133|161->133|163->135|163->135|167->139|167->139|168->140|168->140|169->141|169->141|170->142|170->142|172->144|172->144|173->145|173->145|176->148|176->148|177->149|177->149|181->153|181->153|182->154|182->154|186->158|186->158|190->162|190->162|191->163|191->163|192->164|192->164|193->165|193->165|194->166|194->166|196->168|196->168|197->169|197->169|198->170|198->170|200->172|200->172|203->175|203->175|205->177|205->177|206->178|206->178|208->180|208->180|211->183|211->183|212->184|212->184|213->185|213->185|215->187|215->187|217->189|217->189|219->191|219->191|222->194|222->194|224->196|224->196|225->197|225->197|226->198|226->198|227->199|227->199|228->200|228->200|229->201|229->201|231->203|231->203|232->204|232->204|233->205|233->205|235->207|235->207|236->208|236->208|238->210|238->210|239->211|239->211|241->213|241->213|247->219|247->219|248->220|248->220|251->223|251->223|252->224|252->224|254->226|254->226|255->227|255->227|256->228|256->228|257->229|257->229|259->231|259->231|264->236|264->236|265->237|265->237|266->238|266->238|267->239|267->239|269->241|269->241|270->242|270->242|273->245|273->245|274->246|274->246|278->250|278->250|279->251|279->251|283->255|283->255|287->259|287->259|288->260|288->260|289->261|289->261|290->262|290->262|291->263|291->263|293->265|293->265|294->266|294->266|295->267|295->267|297->269|297->269|300->272|300->272|302->274|302->274|303->275|303->275|305->277|305->277|308->280|308->280|309->281|309->281|310->282|310->282|312->284|312->284|314->286|314->286|316->288|316->288|319->291|319->291|321->293|321->293|322->294|322->294|323->295|323->295|324->296|324->296|325->297|325->297|326->298|326->298|328->300|328->300|329->301|329->301|330->302|330->302|332->304|332->304|333->305|333->305|335->307|335->307|336->308|336->308|338->310|338->310|344->316|344->316|345->317|345->317|348->320|348->320|349->321|349->321|351->323|351->323|352->324|352->324|353->325|353->325|354->326|354->326|356->328|356->328|360->332|360->332|362->334|362->334|364->336|364->336|366->338|366->338|370->342|370->342|375->347|375->347|380->352|380->352|381->353|381->353|383->355|383->355|385->357|385->357|388->360|388->360|398->370|398->370|400->372|400->372|401->373|401->373|403->375|403->375|404->376|404->376|406->378|406->378|407->379|407->379|408->380|408->380|412->384|412->384|413->385|413->385|414->386|414->386|416->388|416->388|417->389|417->389|419->391|419->391|422->394|422->394|423->395|423->395|426->398|426->398|427->399|427->399|430->402|430->402|432->404|432->404|433->405|433->405|435->407|435->407|437->409|437->409|439->411|439->411|442->414|442->414|444->416|444->416|444->416|444->416|446->418|446->418|447->419|447->419|449->421|449->421|450->422|450->422|452->424|452->424|458->430|458->430|461->433|461->433|467->439|467->439|469->441|469->441|472->444|472->444|474->446|474->446|477->449|477->449
+                    HASH: 65db57b9948c743258bc8f78d01b090dc77405c8
+                    MATRIX: 775->1|899->15|926->33|1090->161|1105->167|1161->201|1258->262|1273->268|1327->300|1420->357|1435->363|1511->416|1604->473|1619->479|1691->528|1753->554|1768->560|1835->605|2015->757|2044->758|2114->800|2143->801|2210->840|2239->841|2296->870|2325->871|2412->930|2441->931|2486->948|2515->949|2651->1057|2680->1058|2736->1086|2765->1087|2985->1279|3014->1280|3088->1326|3117->1327|3595->1777|3624->1778|3740->1866|3769->1867|3866->1936|3895->1937|4033->2047|4062->2048|4240->2198|4269->2199|4405->2307|4434->2308|4597->2443|4626->2444|4876->2666|4905->2667|5100->2834|5129->2835|5379->3057|5408->3058|5545->3167|5574->3168|5890->3456|5919->3457|5984->3494|6013->3495|6066->3520|6095->3521|6144->3542|6173->3543|6251->3593|6280->3594|6378->3664|6407->3665|6464->3694|6493->3695|6631->3805|6660->3806|6717->3835|6746->3836|6806->3868|6835->3869|6930->3936|6959->3937|7025->3975|7054->3976|7229->4122|7259->4123|7310->4145|7340->4146|7400->4177|7430->4178|7506->4225|7536->4226|7828->4489|7858->4490|7908->4511|7938->4512|7997->4542|8027->4543|8116->4603|8146->4604|8208->4637|8238->4638|8327->4698|8357->4699|8417->4730|8447->4731|8564->4819|8594->4820|8897->5094|8927->5095|8999->5138|9029->5139|9200->5281|9230->5282|9290->5313|9320->5314|9415->5380|9445->5381|9498->5405|9528->5406|9575->5424|9605->5425|9649->5440|9679->5441|9731->5465|9761->5466|9839->5515|9869->5516|9938->5556|9968->5557|10030->5590|10060->5591|10112->5614|10142->5615|10218->5662|10248->5663|10288->5674|10318->5675|10427->5755|10457->5756|10508->5778|10538->5779|10734->5946|10764->5947|10833->5987|10863->5988|11254->6350|11284->6351|11477->6515|11507->6516|11661->6641|11691->6642|11849->6771|11879->6772|11977->6841|12007->6842|12104->6910|12134->6911|12231->6979|12261->6980|12600->7290|12630->7291|12690->7322|12720->7323|12768->7342|12798->7343|12842->7358|12872->7359|12924->7382|12954->7383|13030->7430|13060->7431|13112->7454|13142->7455|13197->7481|13227->7482|13310->7536|13340->7537|13462->7630|13492->7631|13559->7669|13589->7670|13644->7696|13674->7697|13763->7757|13793->7758|13905->7841|13935->7842|14009->7887|14039->7888|14118->7938|14148->7939|14253->8015|14283->8016|14388->8092|14418->8093|14517->8163|14547->8164|14678->8266|14708->8267|14813->8343|14843->8344|14895->8367|14925->8368|14973->8387|15003->8388|15048->8404|15078->8405|15132->8430|15162->8431|15232->8472|15262->8473|15481->8663|15511->8664|15555->8679|15585->8680|15638->8704|15668->8705|15745->8753|15775->8754|15831->8781|15861->8782|15938->8830|15968->8831|16022->8856|16052->8857|16157->8933|16187->8934|16453->9171|16483->9172|16549->9209|16579->9210|16721->9323|16751->9324|16805->9349|16835->9350|16918->9404|16948->9405|16995->9423|17025->9424|17066->9436|17096->9437|17133->9446|17162->9447|17202->9459|17231->9460|17315->9515|17345->9516|17410->9552|17440->9553|17502->9586|17532->9587|17584->9610|17614->9611|17690->9658|17720->9659|17760->9670|17790->9671|17902->9754|17932->9755|17983->9777|18013->9778|18209->9945|18239->9946|18308->9986|18338->9987|18553->10173|18583->10174|18841->10403|18871->10404|18931->10435|18961->10436|19009->10455|19039->10456|19083->10471|19113->10472|19165->10495|19195->10496|19274->10546|19304->10547|19356->10570|19386->10571|19441->10597|19471->10598|19554->10652|19584->10653|19706->10746|19736->10747|19803->10785|19833->10786|19888->10812|19918->10813|20007->10873|20037->10874|20149->10957|20179->10958|20253->11003|20283->11004|20362->11054|20392->11055|20497->11131|20527->11132|20632->11208|20662->11209|20761->11279|20791->11280|20922->11382|20952->11383|21058->11460|21088->11461|21140->11484|21170->11485|21218->11504|21248->11505|21293->11521|21323->11522|21377->11547|21407->11548|21477->11589|21507->11590|21729->11783|21759->11784|21803->11799|21833->11800|21886->11824|21916->11825|21993->11873|22023->11874|22079->11901|22109->11902|22186->11950|22216->11951|22270->11976|22300->11977|22405->12053|22435->12054|22701->12291|22731->12292|22797->12329|22827->12330|22987->12461|23017->12462|23071->12487|23101->12488|23184->12542|23214->12543|23261->12561|23291->12562|23332->12574|23362->12575|23399->12584|23428->12585|23468->12597|23497->12598|23582->12654|23612->12655|23677->12691|23707->12692|23761->12717|23791->12718|23864->12762|23894->12763|23986->12826|24016->12827|24194->12976|24224->12977|24488->13212|24518->13213|24558->13224|24588->13225|24639->13247|24669->13248|24735->13285|24765->13286|24855->13347|24885->13348|25218->13652|25248->13653|25320->13696|25350->13697|25406->13724|25436->13725|25510->13770|25540->13771|25588->13790|25618->13791|25689->13833|25719->13834|25778->13864|25808->13865|25871->13899|25901->13900|26063->14033|26093->14034|26153->14065|26183->14066|26248->14102|26278->14103|26382->14178|26412->14179|26466->14204|26496->14205|26565->14245|26595->14246|26660->14282|26690->14283|26729->14293|26759->14294|26901->14407|26931->14408|26981->14429|27011->14430|27108->14498|27138->14499|27214->14546|27244->14547|27291->14565|27321->14566|27372->14588|27402->14589|27468->14626|27498->14627|27555->14655|27585->14656|27696->14738|27726->14739|27951->14934|27982->14935|28013->14936|28044->14937|28199->15063|28229->15064|28283->15089|28313->15090|28424->15172|28454->15173|28494->15184|28524->15185|28567->15200|28596->15201|28782->15358|28812->15359|28946->15464|28976->15465|29267->15727|29297->15728|29389->15791|29419->15792|29519->15863|29549->15864|29589->15875|29619->15876|29680->15909|29709->15910
+                    LINES: 26->1|30->1|31->3|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|43->15|43->15|43->15|50->22|50->22|51->23|51->23|52->24|52->24|53->25|53->25|55->27|55->27|56->28|56->28|61->33|61->33|62->34|62->34|66->38|66->38|67->39|67->39|75->47|75->47|77->49|77->49|79->51|79->51|81->53|81->53|84->56|84->56|86->58|86->58|89->61|89->61|93->65|93->65|96->68|96->68|100->72|100->72|103->75|103->75|108->80|108->80|109->81|109->81|110->82|110->82|111->83|111->83|113->85|113->85|115->87|115->87|116->88|116->88|119->91|119->91|120->92|120->92|121->93|121->93|123->95|123->95|124->96|124->96|128->100|128->100|129->101|129->101|130->102|130->102|131->103|131->103|135->107|135->107|136->108|136->108|137->109|137->109|139->111|139->111|140->112|140->112|142->114|142->114|143->115|143->115|145->117|145->117|151->123|151->123|152->124|152->124|155->127|155->127|156->128|156->128|158->130|158->130|159->131|159->131|160->132|160->132|161->133|161->133|163->135|163->135|167->139|167->139|169->141|169->141|170->142|170->142|171->143|171->143|173->145|173->145|174->146|174->146|177->149|177->149|178->150|178->150|182->154|182->154|183->155|183->155|193->165|193->165|196->168|196->168|200->172|200->172|203->175|203->175|205->177|205->177|207->179|207->179|209->181|209->181|215->187|215->187|216->188|216->188|217->189|217->189|218->190|218->190|219->191|219->191|221->193|221->193|222->194|222->194|223->195|223->195|225->197|225->197|228->200|228->200|230->202|230->202|231->203|231->203|233->205|233->205|236->208|236->208|237->209|237->209|238->210|238->210|240->212|240->212|242->214|242->214|244->216|244->216|247->219|247->219|249->221|249->221|250->222|250->222|251->223|251->223|252->224|252->224|253->225|253->225|254->226|254->226|256->228|256->228|257->229|257->229|258->230|258->230|260->232|260->232|261->233|261->233|263->235|263->235|264->236|264->236|266->238|266->238|272->244|272->244|273->245|273->245|276->248|276->248|277->249|277->249|279->251|279->251|280->252|280->252|281->253|281->253|282->254|282->254|284->256|284->256|289->261|289->261|290->262|290->262|291->263|291->263|292->264|292->264|294->266|294->266|295->267|295->267|298->270|298->270|299->271|299->271|303->275|303->275|304->276|304->276|308->280|308->280|312->284|312->284|313->285|313->285|314->286|314->286|315->287|315->287|316->288|316->288|318->290|318->290|319->291|319->291|320->292|320->292|322->294|322->294|325->297|325->297|327->299|327->299|328->300|328->300|330->302|330->302|333->305|333->305|334->306|334->306|335->307|335->307|337->309|337->309|339->311|339->311|341->313|341->313|344->316|344->316|346->318|346->318|347->319|347->319|348->320|348->320|349->321|349->321|350->322|350->322|351->323|351->323|353->325|353->325|354->326|354->326|355->327|355->327|357->329|357->329|358->330|358->330|360->332|360->332|361->333|361->333|363->335|363->335|369->341|369->341|370->342|370->342|373->345|373->345|374->346|374->346|376->348|376->348|377->349|377->349|378->350|378->350|379->351|379->351|381->353|381->353|385->357|385->357|387->359|387->359|389->361|389->361|391->363|391->363|395->367|395->367|400->372|400->372|405->377|405->377|406->378|406->378|408->380|408->380|410->382|410->382|413->385|413->385|423->395|423->395|425->397|425->397|426->398|426->398|428->400|428->400|429->401|429->401|431->403|431->403|432->404|432->404|433->405|433->405|437->409|437->409|438->410|438->410|439->411|439->411|441->413|441->413|442->414|442->414|444->416|444->416|447->419|447->419|448->420|448->420|451->423|451->423|452->424|452->424|455->427|455->427|457->429|457->429|458->430|458->430|460->432|460->432|462->434|462->434|464->436|464->436|467->439|467->439|469->441|469->441|469->441|469->441|471->443|471->443|472->444|472->444|474->446|474->446|475->447|475->447|477->449|477->449|483->455|483->455|486->458|486->458|492->464|492->464|494->466|494->466|497->469|497->469|499->471|499->471|502->474|502->474
                     -- GENERATED --
                 */
             

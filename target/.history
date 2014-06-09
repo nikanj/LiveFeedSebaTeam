@@ -12,3 +12,8 @@ reload
 project
 compile
 run
+compile
+run
+compile
+clean
+run
