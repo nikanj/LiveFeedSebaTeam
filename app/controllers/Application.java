@@ -74,17 +74,16 @@ public class Application extends Controller {
 			    public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
 
 			    	channels.add(out);
-
-			           System.out.println("Connected");
+			    	System.out.println("Connected");
+			    	
 			      // For each event received on the socket,
 			      in.onMessage(new Callback<String>() {
 			         public void invoke(String message) {
-		        		 vote = Long.parseLong(message); 		 
-		        		 System.out.println("THE INPUT --> " + message);
-		        		 System.out.println("DEBUG --> " + vote);
-		        		 out.write(message);
-		        		 event = message.substring(0, message.length());
-		        		 System.out.println("DEBUG EVENT --> " + event);
+		        		 //vote = Long.parseLong(message); 		 
+		        		 System.out.println("DEBUG THE INPUT --> " + message);
+		        		 out.write(message); //doesn't seem to work, had to use the out.write(event) on onReady() method
+		        		 event = message.substring(0, message.length());	//copy event from the incoming message received by WebSockets, event will be processed later
+		        		 System.out.println("DEBUG EVENT --> " + event);	//copy value to event which will then be sent to out.write(event);
 			        }
 			      });
 			      
@@ -96,8 +95,29 @@ public class Application extends Controller {
 			         }
 			      });
 			      
-			    	out.write(event); //dummy value
+			      if(event.isEmpty()) {
+			    	  out.write("50"); //Initialization for the charts
+			      }
+			      else {
+			    	  out.write(event);
+			      }
+			/**      else if(event.contains("speed_")) {		//for handling speed votes
+			    	  out.write(event.substring(event.indexOf("_")+1, event.length())); 
+			      }
 
+			      else if(event.contains("pause_")) {		//for handling pause votes
+			    	  out.write(event.substring(event.indexOf("_")+1, event.length()));
+			      }
+
+			      else if(event.contains("loudness_")) {		//for handling loudness votes
+			    	  out.write(event.substring(event.indexOf("_")+1, event.length()));
+			      }
+			      
+			      else if(event.contains("qa_")) {		//for handling Q&A votes
+			    	  System.out.print("DEBUG SPEED VOTE OUT REQUEST --> " + event.substring(event.lastIndexOf("speed_"), event.length()));
+			    	  out.write(event.substring(event.indexOf("_")+1, event.length())); //Initialization for the charts
+			      }		**/
+			      
 			    }
 			    
 			  };

@@ -440,3 +440,524 @@ database [default] connected at jdbc:h2:mem:play
 2014-06-09 21:59:53,631 - [INFO] - from play in play-internal-execution-context-152 
 Application started (Dev)
 
+2014-06-09 22:41:26,104 - [INFO] - from play in play-internal-execution-context-160 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:41:26,156 - [INFO] - from play in play-internal-execution-context-160 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:41:26,650 - [INFO] - from play in play-internal-execution-context-160 
+Application started (Dev)
+
+2014-06-09 22:43:32,627 - [INFO] - from play in play-internal-execution-context-163 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:43:32,632 - [INFO] - from play in play-internal-execution-context-163 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:43:32,970 - [INFO] - from play in play-internal-execution-context-163 
+Application started (Dev)
+
+2014-06-09 22:44:18,007 - [INFO] - from play in play-internal-execution-context-163 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:44:18,018 - [INFO] - from play in play-internal-execution-context-163 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:44:18,529 - [INFO] - from play in play-internal-execution-context-163 
+Application started (Dev)
+
+2014-06-09 22:44:40,516 - [INFO] - from play in play-internal-execution-context-163 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:44:40,524 - [INFO] - from play in play-internal-execution-context-163 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:44:41,085 - [INFO] - from play in play-internal-execution-context-163 
+Application started (Dev)
+
+2014-06-09 22:46:48,741 - [INFO] - from play in play-internal-execution-context-170 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:46:48,746 - [INFO] - from play in play-internal-execution-context-170 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:46:49,258 - [INFO] - from play in play-internal-execution-context-170 
+Application started (Dev)
+
+2014-06-09 22:48:05,448 - [INFO] - from play in play-internal-execution-context-177 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:48:05,453 - [INFO] - from play in play-internal-execution-context-177 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:48:05,849 - [INFO] - from play in play-internal-execution-context-177 
+Application started (Dev)
+
+2014-06-09 22:49:50,963 - [INFO] - from play in play-internal-execution-context-179 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:49:50,967 - [INFO] - from play in play-internal-execution-context-179 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:49:51,399 - [INFO] - from play in play-internal-execution-context-179 
+Application started (Dev)
+
+2014-06-09 22:50:12,342 - [INFO] - from play in play-internal-execution-context-179 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:50:12,350 - [INFO] - from play in play-internal-execution-context-179 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:50:12,735 - [INFO] - from play in play-internal-execution-context-179 
+Application started (Dev)
+
+2014-06-09 22:50:23,961 - [INFO] - from play in play-internal-execution-context-179 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:50:23,965 - [INFO] - from play in play-internal-execution-context-179 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:50:24,342 - [INFO] - from play in play-internal-execution-context-179 
+Application started (Dev)
+
+2014-06-09 22:51:47,619 - [INFO] - from play in play-internal-execution-context-179 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:51:47,636 - [INFO] - from play in play-internal-execution-context-179 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:51:48,019 - [INFO] - from play in play-internal-execution-context-179 
+Application started (Dev)
+
+2014-06-09 22:53:26,973 - [INFO] - from play in play-internal-execution-context-189 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:53:26,982 - [INFO] - from play in play-internal-execution-context-189 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:53:27,585 - [INFO] - from play in play-internal-execution-context-189 
+Application started (Dev)
+
+2014-06-09 22:54:06,741 - [INFO] - from play in play-internal-execution-context-189 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:54:06,746 - [INFO] - from play in play-internal-execution-context-189 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:54:07,192 - [INFO] - from play in play-internal-execution-context-189 
+Application started (Dev)
+
+2014-06-09 22:54:45,960 - [INFO] - from play in play-internal-execution-context-192 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:54:45,983 - [INFO] - from play in play-internal-execution-context-192 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:54:46,343 - [INFO] - from play in play-internal-execution-context-192 
+Application started (Dev)
+
+2014-06-09 22:56:02,222 - [INFO] - from play in play-internal-execution-context-194 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:56:02,226 - [INFO] - from play in play-internal-execution-context-194 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:56:02,763 - [INFO] - from play in play-internal-execution-context-194 
+Application started (Dev)
+
+2014-06-09 22:56:18,881 - [INFO] - from play in play-internal-execution-context-194 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 22:56:18,888 - [INFO] - from play in play-internal-execution-context-194 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 22:56:19,386 - [INFO] - from play in play-internal-execution-context-194 
+Application started (Dev)
+
+2014-06-09 22:56:28,558 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6iff104ob - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:56:31,035 - [ERROR] - from application in New I/O worker #4 
+
+
+! @6iff1091e - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:56:34,585 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6iff10e82 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:56:38,231 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6iff10jhd - Internal server error, for (GET) [/?encoding=text] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:56:38,863 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6iff10kfi - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:56:39,755 - [ERROR] - from application in New I/O worker #4 
+
+
+! @6iff10lo8 - Internal server error, for (GET) [/?encoding=text] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:59:04,029 - [ERROR] - from application in New I/O worker #4 
+
+
+! @6iff191a2 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 22:59:35,007 - [ERROR] - from application in New I/O worker #4 
+
+
+! @6iff1al5f - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Not parsed?]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471) ~[na:1.7.0_55]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) ~[na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_55]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_55]
+	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_55]
+
+2014-06-09 23:00:18,261 - [INFO] - from play in play-internal-execution-context-196 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:00:18,270 - [INFO] - from play in play-internal-execution-context-196 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:00:18,979 - [INFO] - from play in play-internal-execution-context-196 
+Application started (Dev)
+
+2014-06-09 23:00:52,483 - [INFO] - from play in play-internal-execution-context-196 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:00:52,487 - [INFO] - from play in play-internal-execution-context-196 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:00:52,875 - [INFO] - from play in play-internal-execution-context-196 
+Application started (Dev)
+
+2014-06-09 23:01:31,801 - [INFO] - from play in play-internal-execution-context-200 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:01:31,809 - [INFO] - from play in play-internal-execution-context-200 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:01:32,522 - [INFO] - from play in play-internal-execution-context-200 
+Application started (Dev)
+
+2014-06-09 23:02:30,174 - [INFO] - from play in play-internal-execution-context-203 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:02:30,179 - [INFO] - from play in play-internal-execution-context-203 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:02:30,851 - [INFO] - from play in play-internal-execution-context-203 
+Application started (Dev)
+
+2014-06-09 23:03:38,093 - [INFO] - from play in play-internal-execution-context-210 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:03:38,106 - [INFO] - from play in play-internal-execution-context-210 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:03:38,673 - [INFO] - from play in play-internal-execution-context-210 
+Application started (Dev)
+
+2014-06-09 23:04:14,697 - [INFO] - from play in play-internal-execution-context-210 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:04:14,702 - [INFO] - from play in play-internal-execution-context-210 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:04:15,096 - [INFO] - from play in play-internal-execution-context-210 
+Application started (Dev)
+
+2014-06-09 23:04:29,557 - [INFO] - from play in play-internal-execution-context-210 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:04:29,565 - [INFO] - from play in play-internal-execution-context-210 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:04:30,025 - [INFO] - from play in play-internal-execution-context-210 
+Application started (Dev)
+
+2014-06-09 23:06:27,581 - [INFO] - from play in play-internal-execution-context-222 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:06:27,585 - [INFO] - from play in play-internal-execution-context-222 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:06:27,960 - [INFO] - from play in play-internal-execution-context-222 
+Application started (Dev)
+
+2014-06-09 23:07:47,642 - [INFO] - from play in play-internal-execution-context-226 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:07:47,646 - [INFO] - from play in play-internal-execution-context-226 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:07:48,275 - [INFO] - from play in play-internal-execution-context-226 
+Application started (Dev)
+
+2014-06-09 23:10:14,121 - [INFO] - from play in play-internal-execution-context-227 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:10:14,150 - [INFO] - from play in play-internal-execution-context-227 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:10:15,051 - [INFO] - from play in play-internal-execution-context-227 
+Application started (Dev)
+
+2014-06-09 23:11:24,290 - [INFO] - from play in play-internal-execution-context-229 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:11:24,295 - [INFO] - from play in play-internal-execution-context-229 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:11:24,664 - [INFO] - from play in play-internal-execution-context-229 
+Application started (Dev)
+
+2014-06-09 23:12:35,186 - [INFO] - from play in play-internal-execution-context-229 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:12:35,191 - [INFO] - from play in play-internal-execution-context-229 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:12:35,606 - [INFO] - from play in play-internal-execution-context-229 
+Application started (Dev)
+
+2014-06-09 23:14:00,152 - [INFO] - from play in play-internal-execution-context-229 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:14:00,157 - [INFO] - from play in play-internal-execution-context-229 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:14:00,535 - [INFO] - from play in play-internal-execution-context-229 
+Application started (Dev)
+
+2014-06-09 23:15:44,321 - [INFO] - from play in play-internal-execution-context-233 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:15:44,327 - [INFO] - from play in play-internal-execution-context-233 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:15:45,293 - [INFO] - from play in play-internal-execution-context-233 
+Application started (Dev)
+
+2014-06-09 23:16:55,229 - [INFO] - from play in play-internal-execution-context-234 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:16:55,237 - [INFO] - from play in play-internal-execution-context-234 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:16:55,971 - [INFO] - from play in play-internal-execution-context-234 
+Application started (Dev)
+
+2014-06-09 23:17:49,549 - [INFO] - from play in play-internal-execution-context-237 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:17:49,567 - [INFO] - from play in play-internal-execution-context-237 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:17:49,944 - [INFO] - from play in play-internal-execution-context-237 
+Application started (Dev)
+
+2014-06-09 23:19:22,737 - [INFO] - from play in play-internal-execution-context-238 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:19:22,741 - [INFO] - from play in play-internal-execution-context-238 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:19:23,121 - [INFO] - from play in play-internal-execution-context-238 
+Application started (Dev)
+
+2014-06-09 23:21:14,436 - [INFO] - from play in play-internal-execution-context-242 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-09 23:21:14,441 - [INFO] - from play in play-internal-execution-context-242 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-09 23:21:14,785 - [INFO] - from play in play-internal-execution-context-242 
+Application started (Dev)
+

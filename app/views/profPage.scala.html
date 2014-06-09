@@ -171,7 +171,8 @@
 			            			
 			            			var receiveEvent = function(e) {
 			            				   server_message = e.data;
-			            				   //alert(server_message);
+			            				   server_message = server_message.replace("speed_","");
+			            				  // alert(server_message);
 			            				   y = parseInt(server_message);
 			            			}
 
@@ -182,6 +183,9 @@
 			            			}
 
 		                        	var x = (new Date()).getTime(); // current time
+		                        	if(!y) {
+		                        		y = 50;		//used for initialization
+		                        	}
 		                            series.addPoint([x, y], true, true);
 //									alert('DEBUG GET MESSAGE --> ' + y);
 		                        }, 2000);
@@ -274,13 +278,41 @@
 		                marginRight: 5,
 		                events: {
 		                    load: function() {
-		    
+		            		    
 		                        // set up the updating of the chart each second
 		                        var series = this.series[0];
+		            			var y = 0;
+		            			var server_message;
+		                        		            			
 		                        setInterval(function() {
-		                            var x = (new Date()).getTime(), // current time
-		                                y = Math.random()*100;
+
+			            			var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
+			            					                        
+			            			connection.onopen = function(){
+			            				   /*Send a small message to the console once the connection is established */
+			            				   //alert('Connection open!');
+			            				}
+
+			            			
+			            			var receiveEvent = function(e) {
+			            				   server_message = e.data;
+			            				   server_message = server_message.replace("loudness_","");
+			            				//   alert(server_message);
+			            				   y = parseInt(server_message);
+			            			}
+
+			            			connection.onmessage = receiveEvent;		            			
+			            			
+			            			connection.onclose = function(e) {
+			            				alert("CONNECTION IS CLOSED~");
+			            			}
+
+		                        	var x = (new Date()).getTime(); // current time
+		                        	if(!y) {
+		                        		y = 50;		//used for initialization
+		                        	}
 		                            series.addPoint([x, y], true, true);
+//									alert('DEBUG GET MESSAGE --> ' + y);
 		                        }, 2000);
 		                    }
 		                }
