@@ -103,10 +103,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 09 11:36:35 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/app/views/indexStudent.scala.html
-                    HASH: 16a4baba02171ae897043356e973573b147b3b41
-                    MATRIX: 862->0|998->101|1012->107|1067->141|1152->191|1166->197|1241->250|1294->268|1308->274|1374->319
+                    DATE: Mon Jun 09 13:09:50 CEST 2014
+                    SOURCE: D:/Learning/EclipseProjects/TUM Projects/Seba/LiveFeedSebaTeam/app/views/indexStudent.scala.html
+                    HASH: cbb066b9a16dc06874a2d9f999afd241bae3c17e
+                    MATRIX: 862->0|993->96|1007->102|1062->136|1146->185|1160->191|1235->244|1287->261|1301->267|1367->312
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8
                     -- GENERATED --
                 */
