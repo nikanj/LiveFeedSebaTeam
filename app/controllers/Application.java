@@ -18,34 +18,32 @@ import play.db.DB;
 import play.libs.F.Callback;
 import play.libs.F.Callback0;
 import play.mvc.*;
-
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 
 public class Application extends Controller {
 	public static Random randomGenerator = new Random();
-	public static int vote;
+	public static Long vote = 0L;
 	public static String event;
 	
 	public static class Hello {
         @Required public String question;
 	}
 
-	
-	public static Result index() throws SQLException {
+	public static Result homePage() throws SQLException {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
 		sql = "SELECT ID_prof, ProfName, Password FROM prof";
 		ResultSet rs = stmt.executeQuery(sql);
-
+	
 		// STEP 5: Extract data from result set
 		while (rs.next()) {
 			// Retrieve by column name
 			int id = rs.getInt("ID_prof");
 			String name = rs.getString("ProfName");
 			String password = rs.getString("Password");
-
+	
 			// Display values
 			System.out.print("ID: " + id);
 			System.out.print(", ProfName: " + name);
@@ -55,7 +53,48 @@ public class Application extends Controller {
 		rs.close();
 		stmt.close();
 		conn.close();
-		return ok(views.html.index.render("test"));
+		return ok(views.html.mainPage.render());
+	}
+
+	
+	public static WebSocket<String> index() throws SQLException {
+		  return new WebSocket<String>() {
+		      
+			    // Called when the Websocket Handshake is done.
+			    public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
+			      
+			      // For each event received on the socket,
+			      in.onMessage(new Callback<String>() {
+			         public void invoke(String event) {
+			        	 if(event.isEmpty() == false) {
+			        		 
+			        		 vote = Long.parseLong(event);
+			        		 
+			        		 
+			        		 
+			        		 
+			        		 System.out.println("THE INPUT --> " + event);
+			        		 System.out.println("DEBUG --> " + vote);
+			        		 out.write(event.toString());
+			        	 }
+			         } 
+			      });
+			      
+			      // When the socket is closed.
+			      in.onClose(new Callback0() {
+			         public void invoke() {
+			             
+			           System.out.println("Disconnected");
+			             out.write("0");
+			         }
+			      });
+			      
+			      // Send a single 'Hello!' message
+//			      out.write("50");
+			      
+			    }
+			    
+			  };
 	}
 	
 @SuppressWarnings("rawtypes")
@@ -91,16 +130,10 @@ public static Result indexStudent() {
 }
 
 public static Result profPageDisplay() {
-	long id = 3376780300523329086L;
-
-	List<Stats> stat = Stats.find.all();
-	Stats stats1 = new Stats();
-
-	stats1.Pause=(long) vote;			
-	stat.add(stats1);
-
-	return ok(views.html.profPage.render(stat));
-
+	
+//	Stats stats1 = new Stats();
+//	List<Stats> stat = stats1.options();
+	return ok(views.html.profPage.render(vote));
 }
 
 }

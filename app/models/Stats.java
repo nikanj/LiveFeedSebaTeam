@@ -1,10 +1,16 @@
 package models;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
+import play.db.ebean.Transactional;
+import play.db.jpa.JPA;
 
 @Entity
 public class Stats extends Model  {
@@ -37,5 +43,14 @@ public class Stats extends Model  {
 	@Constraints.Required
 	public Long  Volume_low;
 	
-	public static Finder<Long,Stats> find = new Finder<Long, Stats>(Long.class, Stats.class);
+	public static Map<String,String> options() {
+        @SuppressWarnings("unchecked")
+				List<Stats> Stat = JPA.em().createQuery("from Stats order by ID_stats").getResultList();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Stats c: Stat) {
+            options.put(c.ID_stats.toString(), c.Pause.toString());
+        }
+        return options;
+    }
+	
 }

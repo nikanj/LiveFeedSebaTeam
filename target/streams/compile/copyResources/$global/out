@@ -1,10 +1,10 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\application.conf,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\application.conf)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\evolutions,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\evolutions)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\messages,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\messages)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\META-INF,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\META-INF)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\routes,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\routes)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\evolutions\default,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\evolutions\default)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\evolutions\default\1.sql,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\evolutions\default\1.sql)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\evolutions\default\2.sql,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\evolutions\default\2.sql)[0m
-[0m[[0mdebug[0m] [0m	(D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\conf\META-INF\persistence.xml,D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeed\target\scala-2.10\classes\META-INF\persistence.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/META-INF,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/META-INF)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/routes,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/evolutions,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/messages,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/messages)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/application.conf,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/META-INF/persistence.xml,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/META-INF/persistence.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/evolutions/default,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/evolutions/default/2.sql,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/evolutions/default/2.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/aalfath/git/LiveFeedSebaTeam/conf/evolutions/default/1.sql,/home/aalfath/git/LiveFeedSebaTeam/target/scala-2.10/classes/evolutions/default/1.sql)[0m
