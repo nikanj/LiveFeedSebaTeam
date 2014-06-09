@@ -61,6 +61,7 @@ public class Application extends Controller {
 @SuppressWarnings("rawtypes")
 @Transactional
 	public static Result profSignIn() {
+	/*
 	Set set = Prof.options().entrySet();
    
     Iterator i = set.iterator();
@@ -69,7 +70,7 @@ public class Application extends Controller {
        Map.Entry me = (Map.Entry)i.next();
        System.out.print(me.getKey() + ": ");
        System.out.println(me.getValue());
-    }
+    }*/
     
 		return ok(views.html.profSignIn.render());
 	}

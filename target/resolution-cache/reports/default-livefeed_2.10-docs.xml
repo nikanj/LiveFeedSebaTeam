@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="docs"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140608154028"/>
+		date="20140609113634"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-docs_2.10">
 			<revision name="2.2.3" status="release" pubdate="20140501103234" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">

@@ -7,7 +7,7 @@ import java.util.Map;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import play.data.validation.Constraints;
-import play.db.jpa.*;
+import play.db.jpa.JPA;;
 
 @Entity
 public class Prof {

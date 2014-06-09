@@ -4,26 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import play.data.validation.Constraints;
-import java.util.List;
-
-import javax.persistence.GeneratedValue;
-import akka.actor.ActorRef;
-import akka.actor.Props;
-import akka.actor.UntypedActor;
-
-import com.fasterxml.jackson.databind.JsonNode;
-
-import play.data.validation.Constraints.Email;
-import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
-import play.libs.Akka;
-import play.libs.F.Callback;
-import play.libs.F.Callback0;
-import play.mvc.WebSocket;
-import play.db.ebean.*;
 
 @Entity
-public class Stats extends Model {
+public class Stats extends Model  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	public Long ID_stats;
 	

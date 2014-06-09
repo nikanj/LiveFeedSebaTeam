@@ -103,7 +103,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 08 15:40:30 CEST 2014
+                    DATE: Mon Jun 09 11:36:35 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/app/views/indexStudent.scala.html
                     HASH: 16a4baba02171ae897043356e973573b147b3b41
                     MATRIX: 862->0|998->101|1012->107|1067->141|1152->191|1166->197|1241->250|1294->268|1308->274|1374->319
