@@ -1,6 +1,6 @@
-// @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/conf/routes
-// @HASH:3c67bc23f3ba6b82796a558b827ddda5054aa0a2
-// @DATE:Mon Jun 09 11:36:34 CEST 2014
+// @SOURCE:F:/Play_Framework/LiveFeedSebaTeam/conf/routes
+// @HASH:4582ff43a3ad27d5e7aaf9b519b0d095b82f01ed
+// @DATE:Mon Jun 09 17:57:40 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,8 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:16
+// @LINE:17
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -21,11 +22,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:16
+// @LINE:17
 class ReverseAssets {
     
 
-// @LINE:16
+// @LINE:17
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -34,6 +35,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -42,9 +44,15 @@ def at(file:String): Call = {
 class ReverseApplication {
     
 
-// @LINE:10
-def profMainPage(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "profMainPage")
+// @LINE:12
+def indexStudent(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "indexStudent")
+}
+                                                
+
+// @LINE:11
+def vote(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "indexStudent")
 }
                                                 
 
@@ -54,9 +62,9 @@ def profSignIn(): Call = {
 }
                                                 
 
-// @LINE:11
-def indexStudent(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "indexStudent")
+// @LINE:10
+def profMainPage(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "profMainPage")
 }
                                                 
 
@@ -80,7 +88,8 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "home")
                   
 
 
-// @LINE:16
+// @LINE:17
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -88,11 +97,11 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "home")
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:16
+// @LINE:17
 class ReverseAssets {
     
 
-// @LINE:16
+// @LINE:17
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -106,6 +115,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -114,12 +124,23 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseApplication {
     
 
-// @LINE:10
-def profMainPage : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.profMainPage",
+// @LINE:12
+def indexStudent : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.indexStudent",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profMainPage"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "indexStudent"})
+      }
+   """
+)
+                        
+
+// @LINE:11
+def vote : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.vote",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "indexStudent"})
       }
    """
 )
@@ -136,12 +157,12 @@ def profSignIn : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:11
-def indexStudent : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.indexStudent",
+// @LINE:10
+def profMainPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.profMainPage",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "indexStudent"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profMainPage"})
       }
    """
 )
@@ -170,7 +191,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:16
+// @LINE:17
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -179,11 +201,11 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:16
+// @LINE:17
 class ReverseAssets {
     
 
-// @LINE:16
+// @LINE:17
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -192,6 +214,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:12
 // @LINE:11
 // @LINE:10
 // @LINE:9
@@ -200,9 +223,15 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 class ReverseApplication {
     
 
-// @LINE:10
-def profMainPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.profMainPage(), HandlerDef(this, "controllers.Application", "profMainPage", Seq(), "GET", """""", _prefix + """profMainPage""")
+// @LINE:12
+def indexStudent(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Seq(), "GET", """""", _prefix + """indexStudent""")
+)
+                      
+
+// @LINE:11
+def vote(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.vote(), HandlerDef(this, "controllers.Application", "vote", Seq(), "GET", """""", _prefix + """indexStudent""")
 )
                       
 
@@ -212,9 +241,9 @@ def profSignIn(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:11
-def indexStudent(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Seq(), "GET", """""", _prefix + """indexStudent""")
+// @LINE:10
+def profMainPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.profMainPage(), HandlerDef(this, "controllers.Application", "profMainPage", Seq(), "GET", """""", _prefix + """profMainPage""")
 )
                       
 

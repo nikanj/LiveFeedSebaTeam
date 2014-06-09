@@ -12,13 +12,13 @@ import java.util.Set;
 
 import models.*;
 import play.Routes;
+import play.data.DynamicForm;
 import play.data.Form;
 import play.data.validation.Constraints.Required;
 import play.db.DB;
 import play.libs.F.Callback;
 import play.libs.F.Callback0;
 import play.mvc.*;
-
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 
@@ -26,12 +26,12 @@ public class Application extends Controller {
 	public static Random randomGenerator = new Random();
 	public static int vote;
 	public static String event;
-	
+
 	public static class Hello {
-        @Required public String question;
+		@Required
+		public String question;
 	}
 
-	
 	public static Result index() throws SQLException {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
@@ -57,50 +57,57 @@ public class Application extends Controller {
 		conn.close();
 		return ok(views.html.index.render("test"));
 	}
-	
-@SuppressWarnings("rawtypes")
-@Transactional
+
+	@SuppressWarnings("rawtypes")
+	@Transactional
 	public static Result profSignIn() {
-	/*
-	Set set = Prof.options().entrySet();
-   
-    Iterator i = set.iterator();
-    
-    while(i.hasNext()) {
-       Map.Entry me = (Map.Entry)i.next();
-       System.out.print(me.getKey() + ": ");
-       System.out.println(me.getValue());
-    }*/
-    
+		/*
+		 * Set set = Prof.options().entrySet();
+		 * 
+		 * Iterator i = set.iterator();
+		 * 
+		 * while(i.hasNext()) { Map.Entry me = (Map.Entry)i.next();
+		 * System.out.print(me.getKey() + ": ");
+		 * System.out.println(me.getValue()); }
+		 */
+
 		return ok(views.html.profSignIn.render());
 	}
 
-public static Result profMainPage() {
-	//return ok(views.html.profMainPage.render(form(Hello.class)));
-	return ok(views.html.profMainPage.render());
-}
+	public static Result profMainPage() {
+		// return ok(views.html.profMainPage.render(form(Hello.class)));
+		return ok(views.html.profMainPage.render());
+	}
 
-public static void Question() {
-    Form<Hello> form = form(Hello.class).bindFromRequest();
-    Hello data = form.get();
-    System.out.println("Question: " + data.question);
- }
+	public static void Question() {
+		Form<Hello> form = form(Hello.class).bindFromRequest();
+		Hello data = form.get();
+		System.out.println("Question: " + data.question);
+	}
 
-public static Result indexStudent() {
-	return ok(views.html.indexStudent.render());
-}
+	public static Result indexStudent() {
+		return ok(views.html.indexStudent.render());
+	}
 
-public static Result profPageDisplay() {
-	long id = 3376780300523329086L;
+	public static Result profPageDisplay() {
+		long id = 3376780300523329086L;
 
-	List<Stats> stat = Stats.find.all();
-	Stats stats1 = new Stats();
+		List<Stats> stat = Stats.find.all();
+		Stats stats1 = new Stats();
 
-	stats1.Pause=(long) vote;			
-	stat.add(stats1);
+		stats1.Pause = (long) vote;
+		stat.add(stats1);
 
-	return ok(views.html.profPage.render(stat));
+		return ok(views.html.profPage.render(stat));
 
-}
+	}
+
+	// render studentVote.js
+	public static Result vote() {
+		DynamicForm requestData = play.data.Form.form().bindFromRequest();
+		String chosenOption = requestData.get("radioGroup");
+		System.out.println(chosenOption);
+		return ok(views.html.indexStudent.render());
+	}
 
 }

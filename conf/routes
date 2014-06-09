@@ -8,7 +8,7 @@ GET     /                           	controllers.Application.index()
 GET     /home                           controllers.Application.index()
 GET 	/profSignIn						controllers.Application.profSignIn()
 GET		/profMainPage					controllers.Application.profMainPage()
-GET 	/indexStudent					controllers.Application.indexStudent()
+GET		/indexStudent					controllers.Application.vote()
 #GET 	/profPage						controllers.Application.profPageDisplay()
 
 

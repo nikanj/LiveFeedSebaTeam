@@ -40,36 +40,35 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 <body>
 
 	<div class="container">
-		<form id="speed_vote" name="input">
+		<form id="speed_vote" method="get">
 			<div class="col-md-6 col-md-offset-2" style="border: 1px solid black">
 				<h3>Speed</h3>
-
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio1" value="option1" type="radio">
-							LOW
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio2" value="option2" checked="checked" type="radio"> OK
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio3" value="option3" type="radio"> FAST
-						</label>
-					</div>
-					<button type="submit" class="btn btn-default">Vote</button>
+				<div class="row">
+					<label class="radio-inline"> <input name="radioGroup"
+						id="radio1" value="option1" type="radio">
+						LOW
+					</label>
+				</div>
+				<div class="row">
+					<label class="radio-inline"> <input name="radioGroup"
+						id="radio2" value="option2" checked="checked" type="radio"> OK
+					</label>
+				</div>
+				<div class="row">
+					<label class="radio-inline"> <input name="radioGroup"
+						id="radio3" value="option3" type="radio"> FAST
+					</label>
+				</div>
+				<button type="submit" class="btn btn-default">Vote</button>
 			</div>
 		</form>
 
-		<form id="voice_vote">
+		<form id="voice_vote" method="post">
 			<div class="col-md-6 col-md-offset-2" style="border: 1px solid black">
 				<h3>Voice</h3>
 				<div class="row">
 					<label class="radio-inline"> <input name="radioGroup"
-						id="radio4" value="option4"  type="radio">
+						id="radio4" value="option4" type="radio">
 						LOW
 					</label>
 				</div>
@@ -83,7 +82,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 						id="radio6" value="option6" type="radio"> LOAD
 					</label>
 				</div>
-				<button type="submit" class="btn btn-default">Vote</button>
+				<a class="btn btn-default" id="add" href="">Vote</a>
 			</div>
 		</form>
 
@@ -103,10 +102,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 09 11:36:35 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/app/views/indexStudent.scala.html
-                    HASH: 16a4baba02171ae897043356e973573b147b3b41
-                    MATRIX: 862->0|998->101|1012->107|1067->141|1152->191|1166->197|1241->250|1294->268|1308->274|1374->319
+                    DATE: Mon Jun 09 17:49:17 CEST 2014
+                    SOURCE: F:/Play_Framework/LiveFeedSebaTeam/app/views/indexStudent.scala.html
+                    HASH: 4f13e7711d81c504a7fe984443da179541d24470
+                    MATRIX: 862->0|993->96|1007->102|1062->136|1146->185|1160->191|1235->244|1287->261|1301->267|1367->312
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8
                     -- GENERATED --
                 */
