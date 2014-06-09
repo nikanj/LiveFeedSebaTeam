@@ -62,7 +62,7 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 09 13:44:04 CEST 2014
+                    DATE: Mon Jun 09 17:31:32 CEST 2014
                     SOURCE: /home/aalfath/git/LiveFeedSebaTeam/app/views/main.scala.html
                     HASH: 884945ea669ba338ed7bc1f0a62509c3d0eb15a3
                     MATRIX: 778->1|902->31|1027->121|1041->127|1096->161|1192->222|1206->228|1259->260|1351->317|1365->323|1440->376|1501->401|1516->407|1583->452|1772->605|1787->611|1838->640

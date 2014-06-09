@@ -156,34 +156,34 @@
 		    
 		                        // set up the updating of the chart each second
 		                        var series = this.series[0];
-		                        
-
-		            			var connection = new WebSocket('ws://localhost:9000');
-		            			
-		                        var y;
-		                        
-		            			connection.onopen = function(){
-		            				   /*Send a small message to the console once the connection is established */
-		            				   alert('Connection open!');
-		            				}
-		            			
+		            			var y = 0;
 		            			var server_message;
-		            			
-		            			connection.onmessage = function(e){
-		            				   server_message = e.data;
-		            				   alert("INITIALIZATION " + server_message);
-		            				}
-		            			
-		            			connection.onclose = function(e) {
-		            				alert("CONNECTION IS CLOSED~");
-		            			}
-		            			
+		                        		            			
 		                        setInterval(function() {
-		                            var x = (new Date()).getTime(); // current time
-		                                //y = Math.random()*100;
-		                            y = parseInt(server_message);
+
+			            			var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
+			            					                        
+			            			connection.onopen = function(){
+			            				   /*Send a small message to the console once the connection is established */
+			            				   //alert('Connection open!');
+			            				}
+
+			            			
+			            			var receiveEvent = function(e) {
+			            				   server_message = e.data;
+			            				   //alert(server_message);
+			            				   y = parseInt(server_message);
+			            			}
+
+			            			connection.onmessage = receiveEvent;		            			
+			            			
+			            			connection.onclose = function(e) {
+			            				alert("CONNECTION IS CLOSED~");
+			            			}
+
+		                        	var x = (new Date()).getTime(); // current time
 		                            series.addPoint([x, y], true, true);
-									alert(y);
+//									alert('DEBUG GET MESSAGE --> ' + y);
 		                        }, 2000);
 		                    }
 		                }

@@ -1,6 +1,6 @@
 // @SOURCE:/home/aalfath/git/LiveFeedSebaTeam/conf/routes
 // @HASH:0db1da763d593d00d66e681e841fb02abf51cccc
-// @DATE:Mon Jun 09 13:43:53 CEST 2014
+// @DATE:Mon Jun 09 17:31:18 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._

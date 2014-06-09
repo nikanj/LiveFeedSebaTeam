@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import akka.actor.ActorRef;
+import akka.actor.Props;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import models.*;
@@ -18,6 +21,7 @@ import play.Routes;
 import play.data.Form;
 import play.data.validation.Constraints.Required;
 import play.db.DB;
+import play.libs.Akka;
 import play.libs.F.Callback;
 import play.libs.F.Callback0;
 import play.mvc.*;
@@ -27,8 +31,8 @@ import play.db.jpa.Transactional;
 public class Application extends Controller {
 	public static Random randomGenerator = new Random();
 	public static Long vote = 0L;
-	public static String event;
-	
+    static String event = "";
+
 	public static class Hello {
         @Required public String question;
 	}
@@ -65,25 +69,23 @@ public class Application extends Controller {
     
 	public static WebSocket<String> index() throws SQLException {
 		  return new WebSocket<String>() {
-		      
+		      	
 			    // Called when the Websocket Handshake is done.
 			    public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
 
 			    	channels.add(out);
 
-
-			      // Send a single 'Hello!' message
-			    	out.write("40"); //dummy value
-				          
-                  
+			           System.out.println("Connected");
 			      // For each event received on the socket,
 			      in.onMessage(new Callback<String>() {
-			         public void invoke(String event) {
-		        		 vote = Long.parseLong(event); 		 
-		        		 System.out.println("THE INPUT --> " + event);
+			         public void invoke(String message) {
+		        		 vote = Long.parseLong(message); 		 
+		        		 System.out.println("THE INPUT --> " + message);
 		        		 System.out.println("DEBUG --> " + vote);
-		        		 out.write(event);
-		        	} 
+		        		 out.write(message);
+		        		 event = message.substring(0, message.length());
+		        		 System.out.println("DEBUG EVENT --> " + event);
+			        }
 			      });
 			      
 			      // When the socket is closed.
@@ -91,14 +93,17 @@ public class Application extends Controller {
 			         public void invoke() {
 			             
 			           System.out.println("Disconnected");
-			             out.write("0");
 			         }
 			      });
 			      
+			    	out.write(event); //dummy value
+
 			    }
 			    
 			  };
 	}
+	
+
 	
 @SuppressWarnings("rawtypes")
 @Transactional
