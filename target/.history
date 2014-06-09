@@ -1,0 +1,14 @@
+eclipse
+run
+play clean reload project compile run
+clean reload project compile run
+clean
+reload
+project
+compile
+run
+clean
+reload
+project
+compile
+run
