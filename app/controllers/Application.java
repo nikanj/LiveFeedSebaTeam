@@ -61,7 +61,7 @@ public class Application extends Controller {
 @SuppressWarnings("rawtypes")
 @Transactional
 	public static Result profSignIn() {
-	/*
+	
 	Set set = Prof.options().entrySet();
    
     Iterator i = set.iterator();
@@ -70,21 +70,21 @@ public class Application extends Controller {
        Map.Entry me = (Map.Entry)i.next();
        System.out.print(me.getKey() + ": ");
        System.out.println(me.getValue());
-    }*/
+    }
     
 		return ok(views.html.profSignIn.render());
 	}
 
 public static Result profMainPage() {
 	//return ok(views.html.profMainPage.render(form(Hello.class)));
-	return ok(views.html.profMainPage.render());
+	return ok(views.html.profMainPage.render(form(Hello.class)));
 }
 
-public static void Question() {
+public static void sayHello() {
     Form<Hello> form = form(Hello.class).bindFromRequest();
     Hello data = form.get();
-    System.out.println("Question: " + data.question);
- }
+    System.out.println("Question is: " + data.question);
+}
 
 public static Result indexStudent() {
 	return ok(views.html.indexStudent.render());
