@@ -69,6 +69,8 @@ public class Application extends Controller {
     
 	public static WebSocket<String> index() throws SQLException {
 		  return new WebSocket<String>() {
+		      	int speed_vote_vount;
+		      	int loudness_vote_count;
 		      	
 			    // Called when the Websocket Handshake is done.
 			    public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
