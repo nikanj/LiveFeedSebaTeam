@@ -60,10 +60,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 11 10:36:39 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeedSebaTeam/app/views/mainPage.scala.html
-                    HASH: 0a58a1dbdd53cea76f4f6df829c4d44d189a322a
-                    MATRIX: 858->0|981->88|995->94|1050->128|1146->189|1160->195|1213->227|1305->284|1319->290|1394->343|1454->368|1468->374|1534->419|1723->572|1738->578|1789->607
+                    DATE: Sat Jun 14 09:35:14 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/mainPage.scala.html
+                    HASH: 027b7f1359cf856795477f6e261ad7afa390dfd6
+                    MATRIX: 858->0|985->92|999->98|1054->132|1151->194|1165->200|1218->232|1311->290|1325->296|1400->349|1461->375|1475->381|1541->426|1734->583|1749->589|1800->618
                     LINES: 29->1|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|40->12|40->12|40->12
                     -- GENERATED --
                 */

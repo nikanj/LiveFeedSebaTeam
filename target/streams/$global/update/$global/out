@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/D:/Master's%20Germany/Sem%204%20subs/SEBA/Play%20app's/LiveFeedSebaTeam/}livefeedsebateam...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/D:/Master's%20Germany/Sem%204%20subs/SEBA/Exercise%203/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/}livefeedsebateam...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: livefeed#livefeed_2.10;1.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for livefeed#livefeed_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies livefeed#livefeed_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6670e9cf[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7e1fa11d[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -5602,7 +5602,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies livefeed#livefeed_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies livefeed#livefeed_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies livefeed#livefeed_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\livefeed\livefeed_2.10\1.0\resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\livefeed\livefeed_2.10\1.0\resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.3!play-java-jdbc_2.10.jar[0m
@@ -5737,19 +5737,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 10445ms :: artifacts dl 1509ms[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 compile produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 runtime produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 test produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 provided produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 optional produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 compile-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 runtime-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 test-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 plugin produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 sources produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 docs produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 pom produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 scala-tool produced in D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (10445ms resolve - 1509ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4196ms :: artifacts dl 137ms[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 compile produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 runtime produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 test produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 provided produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 optional produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 compile-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 runtime-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 test-internal produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 plugin produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 sources produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 docs produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 pom produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for livefeed#livefeed_2.10;1.0 scala-tool produced in D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\resolution-cache\reports\livefeed-livefeed_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (4196ms resolve - 137ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

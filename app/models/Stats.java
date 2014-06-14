@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +13,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.actor.UntypedActor;
 import play.data.validation.Constraints;
+import play.db.DB;
 import play.db.ebean.Model;
 import play.db.ebean.Transactional;
 import play.db.jpa.JPA;
@@ -23,38 +26,45 @@ public class Stats extends Model  {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static int speedVotes = 0;
+	private static int pauseVotes = 0;
+	private static int volVotes = 0;
+	
 
 	@Id
 	public Long ID_stats;
 	
 	@Constraints.Required
-	public Long  Speed_slow;
+	public Long  speedCount;
 	
 	@Constraints.Required
-	public Long Speed_ok;
+	public Long  pauseCount;
 	
 	@Constraints.Required
-	public Long  Speed_fast;
+	public Long  volumeCount;
 	
-	@Constraints.Required
-	public Long  Pause;
-	
-	@Constraints.Required
-	public Long  Volume_high;
-	
-	@Constraints.Required
-	public Long  Volume_ok;
-	
-	@Constraints.Required
-	public Long  Volume_low;
-	
-	public static Map<String,String> options() {
-        @SuppressWarnings("unchecked")
-				List<Stats> Stat = JPA.em().createQuery("from Stats order by ID_stats").getResultList();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Stats c: Stat) {
-            options.put(c.ID_stats.toString(), c.Pause.toString());
-        }
-        return options;
-    }
+	public static void updateDb(String vote) throws SQLException
+	{
+		java.sql.Connection conn = DB.getConnection();
+		java.sql.Statement stmt = conn.createStatement();
+		String sql;
+		if(vote.contains("speed"))
+		{ 
+			speedVotes ++;
+			sql = "update stats set Speed_count =" + speedVotes + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if (vote.contains("pause"))
+		{
+			pauseVotes ++;
+			sql = "update stats set Pause_count =" + pauseVotes + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else
+		{
+			volVotes ++;
+			sql = "update stats set Volume_count =" + volVotes + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+	}
 }

@@ -20,13 +20,9 @@ CREATE TABLE prof (
 
 CREATE TABLE stats (
   ID_stats 		bigint DEFAULT NULL,
-  Speed_slow 		bigint DEFAULT NULL,
-  Speed_ok 		bigint DEFAULT NULL,
-  Speed_fast 		bigint DEFAULT NULL,
-  Pause 		bigint DEFAULT NULL,
-  Volume_high 		bigint DEFAULT NULL,
-  Volume_ok 		bigint DEFAULT NULL,
-  Volume_low 		bigint DEFAULT NULL,
+  Speed_count		bigint DEFAULT NULL,
+  Pause_count 		bigint DEFAULT NULL,
+  Volume_count		bigint DEFAULT NULL,
   constraint pk_stats primary key (ID_stats)
 );
 

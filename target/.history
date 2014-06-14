@@ -17,3 +17,7 @@ run
 compile
 clean
 run
+play debug run
+play debug
+run
+play debug run

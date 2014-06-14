@@ -1,5 +1,6 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,7 +10,7 @@ import play.data.validation.Constraints;
 public class Question {
 
 	@Id
-	public Long ID_question;
+	public Long ID;
 	
 	@Constraints.Required
 	public Long ID_prof;

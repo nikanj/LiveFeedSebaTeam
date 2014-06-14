@@ -1,7 +1,7 @@
 <classpath>
   <classpathentry kind="src" path="app" output=".target"/>
   <classpathentry kind="src" path="test" output=".target"/>
-  <classpathentry path="D:\Master's Germany\Sem 4 subs\SEBA\Play app's\LiveFeedSebaTeam\target\scala-2.10\classes_managed" kind="lib"></classpathentry>
+  <classpathentry path="D:\Master's Germany\Sem 4 subs\SEBA\Exercise 3\LiveFeedSebaTeam_Voting\LiveFeedSebaTeam\target\scala-2.10\classes_managed" kind="lib"></classpathentry>
   <classpathentry kind="lib" path="C:\play-2.2.3\repository\local\com.typesafe.play\play-java-jdbc_2.10\2.2.3\jars\play-java-jdbc_2.10.jar"/>
   <classpathentry kind="lib" path="C:\play-2.2.3\repository\local\com.typesafe.play\play-jdbc_2.10\2.2.3\jars\play-jdbc_2.10.jar"/>
   <classpathentry kind="lib" path="C:\play-2.2.3\repository\local\com.typesafe.play\play_2.10\2.2.3\jars\play_2.10.jar"/>

@@ -62,8 +62,8 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 11 10:36:39 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeedSebaTeam/app/views/main.scala.html
+                    DATE: Sat Jun 14 09:35:14 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/main.scala.html
                     HASH: 884945ea669ba338ed7bc1f0a62509c3d0eb15a3
                     MATRIX: 778->1|902->31|1027->121|1041->127|1096->161|1192->222|1206->228|1259->260|1351->317|1365->323|1440->376|1501->401|1516->407|1583->452|1772->605|1787->611|1838->640
                     LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14

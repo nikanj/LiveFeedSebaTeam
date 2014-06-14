@@ -1,559 +1,490 @@
-@(stats : Long)
-@import helper._
+@(stats : Long) @import helper._
 
 
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Professor Page</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/table.css")">
+<head>
+<title>Professor Page</title>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/table.css")">
 
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-        
-        
-        
-       <!-- OLD CHART <script>
-                
-        var j = 10;
-        $(function () {
-            $(document).ready(function() {
-                Highcharts.setOptions({
-                    global: {
-                        useUTC: false
-                    }
-                });
-            
-                
-                var chart;
-    
-                $('#container').highcharts({
-                    chart: {
-                        type: 'spline',
-                        animation: Highcharts.svg, // don't animate in old IE
-                        marginRight: 10,
-                        events: {
-                            load: function() {
-       
-                            	var vote;
-                                // set up the updating of the chart each second
-                                var series = this.series[0];
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+<script>
+	var speed_y;
+	var voice_y;
+	var newVal;
+	var server_message;
 
-                                var connection = new WebSocket('ws://localhost:9000', ['soap', 'xmpp']);
-                             // When the connection is open, send some data to the server
-                                connection.onopen = function (e) {
-  									console.log('DEBUG: CONNECTION IS OPENED');
-                                };
+	$(document).ready(function() {
 
-                                connection.onclose = function (e) {
-                                	console.log('DEBUG: CONNECTION IS CLOSED');
-                                }
-                                
-                                // Log errors
-                                connection.onerror = function (error) {
-                                  console.log('WebSocket Error ' + error);
-                                };
+		var connection = new WebSocket('ws://localhost:9000');
 
-                                // Log messages from the server
-                                connection.onreceive = function (e) {
-                                  console.log('Server: ' + e.data);
-                                  connection.send(e.data); 
-                                  vote = parseFloat(e.data);
-                                };
-                                
-                                // Log messages from the server
-                                connection.onmessage = function (e) {
-                                  console.log('Server: ' + e.data);
-                                  connection.send(e.data); 
-                                  vote = parseFloat(e.data);
-                                };
-                                
-								var y = 0;
-                                setInterval(function() {
-                                    var x = (new Date()).getTime(); // current time
-                                    //var y =	vote;
-                                    y = vote;
-                                    series.addPoint([x, y], true, true);
-                                }, 1000);
-                            }
-                        }
-                    },
-                    
-                    title: {
-                        text: 'Live random data'
-                    },
-                    xAxis: {
-                        type: 'datetime',
-                        tickPixelInterval: 150
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Value'
-                        },
-                        plotLines: [{
-                            value: 0,
-                            width: 1,
-                            color: '#808080'
-                        }]
-                    },
-                    tooltip: {
-                        formatter: function() {
-                                return '<b>'+ this.series.name +'</b><br/>'+
-                                Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
-                                Highcharts.numberFormat(this.y, 2);
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    exporting: {
-                        enabled: false
-                    },
-                    series: [{
-                        name: 'Random data',
-                        data: (function() {
-                            // generate an array of random data
-                            var data = [],
-                                time = (new Date()).getTime(),
-                                i;
-            
-                            for (i = -19; i <= 0; i++) {
-                                data.push({
-                                    x: time + i * 1000,
-                                    y: Math.random()
-                                });
-                            }
-                            return data;
-                        })()
-                    }]
-                });
-            });
-            
-        });
-		</script> -->
-		
-		<script>
-		$(function () {
-			
-		    $(document).ready(function() {
-		        Highcharts.setOptions({
-		            global: {
-		                useUTC: false
-		            }
-		        });
-		    
-		        var chart;
-		        $('#container-speed-chart').highcharts({
-		            chart: {
-		                type: 'spline',
-		                animation: Highcharts.svg, // don't animate in old IE
-		                marginRight: 5,
-		                events: {
-		                    load: function() {
-		    
-		                        // set up the updating of the chart each second
-		                        var series = this.series[0];
-		            			var y = 0;
-		            			var server_message;
-		                        		            			
-		                        setInterval(function() {
+		connection.onopen = function() {
+			//
+		}
 
-			            			var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
-			            					                        
-			            			connection.onopen = function(){
-			            				   /*Send a small message to the console once the connection is established */
-			            				   //alert('Connection open!');
-			            				}
+		connection.onmessage = function(e) {
+			server_message = e.data;
 
-			            			
-			            			var receiveEvent = function(e) {
-			            				   server_message = e.data;
-			            				   server_message = server_message.replace("speed_","");
-			            				  // alert(server_message);
-			            				   y = parseInt(server_message);
-			            			}
+			if (server_message.indexOf("speed_") > -1) {
+				server_message = server_message.replace("speed_", "");
+				speed_y = parseInt(server_message);
+				console.log('speed y: ' + y);
+			} else if (server_message.indexOf("loudness_") > -1) {
+				server_message = server_message.replace("loudness_", "");
+				voice_y = parseInt(server_message);
+				console.log('Loud y: ' + voice_y);
+			} else if (server_message.indexOf("pause_") > -1) {
+				server_message = server_message.replace("pause_", "");
+				newVal = parseInt(server_message);
+			}
 
-			            			connection.onmessage = receiveEvent;		            			
-			            			
-			            			connection.onclose = function(e) {
-			            				alert("CONNECTION IS CLOSED~");
-			            			}
+		};
 
-		                        	var x = (new Date()).getTime(); // current time
-		                        	if(!y) {
-		                        		y = 50;		//used for initialization
-		                        	}
-		                            series.addPoint([x, y], true, true);
-//									alert('DEBUG GET MESSAGE --> ' + y);
-		                        }, 2000);
-		                    }
-		                }
-		            },
-		            title: {
-		                text: 'Speed'
-		            },
-		            xAxis: {
-		                title: {
-		                    text: 'Time'
-		                },
-		                type: 'datetime',
-		                tickPixelInterval: 150
-		            },
-		            
-		            yAxis: {
-		                title: {
-		                    text: 'Percentage'
-		                },
-		                min: 0,
-		                max: 100,
-		                 labels: {
-		                    formatter: function() {
-		                        if (this.value == 100) {
-		                            return 'Too Fast';
-		                        }
-		                        
-		                        if (this.value == 50) {
-		                            return 'OK';
-		                        }
-		                        
-		                        
-		                        if (this.value == 0) {
-		                            return 'Too Slow';
-		                        }
-		                    }
-		                },
-		            },
-		            tooltip: {
-		                formatter: function() {
-		                        return 'At time: ' + Highcharts.dateFormat('%H:%M:%S', this.x) +'<br/>' + 'Average speed requested ' + Highcharts.numberFormat(this.y, 2) + '%';
-		                }
-		            },
-		            legend: {
-		                enabled: false
-		            },
-		            exporting: {
-		                enabled: false
-		            },
-		            series: [{
-		                name: 'Random data',
-		                data: (function() {
-		                    // generate an array of random data
-		                    var data = [],
-		                        time = (new Date()).getTime(),
-		                        i;
-		    
-		                    for (i = -5; i <= 0; i++) {
-		                        data.push({
-		                            x: time + i * 1000,
-		                            y: 50
-		                        });
-		                    }
-		                    return data;
-		                })()
-		            }]
-		        });
-		    });
-		    
+		connection.onclose = function(e) {
+			alert("CONNECTION IS CLOSED~");
+		}
+
+		$("#submit").click(function() {
+			$.post("/postQuestion", {
+				question : $("#question").val()
+			}).done(function() {
+				alert("Success");
+			})
 		});
-    	</script>
-    
-    
-		<script>
-		$(function () {
-		    $(document).ready(function() {
-		        Highcharts.setOptions({
-		            global: {
-		                useUTC: false
-		            }
-		        });
-		    
-		        var chart;
-		        $('#container-loudness-chart').highcharts({
-		            chart: {
-		                type: 'spline',
-		                animation: Highcharts.svg, // don't animate in old IE
-		                marginRight: 5,
-		                events: {
-		                    load: function() {
-		            		    
-		                        // set up the updating of the chart each second
-		                        var series = this.series[0];
-		            			var y = 0;
-		            			var server_message;
-		                        		            			
-		                        setInterval(function() {
 
-			            			var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
-			            					                        
-			            			connection.onopen = function(){
-			            				   /*Send a small message to the console once the connection is established */
-			            				   //alert('Connection open!');
-			            				}
-
-			            			
-			            			var receiveEvent = function(e) {
-			            				   server_message = e.data;
-			            				   server_message = server_message.replace("loudness_","");
-			            				//   alert(server_message);
-			            				   y = parseInt(server_message);
-			            			}
-
-			            			connection.onmessage = receiveEvent;		            			
-			            			
-			            			connection.onclose = function(e) {
-			            				alert("CONNECTION IS CLOSED~");
-			            			}
-
-		                        	var x = (new Date()).getTime(); // current time
-		                        	if(!y) {
-		                        		y = 50;		//used for initialization
-		                        	}
-		                            series.addPoint([x, y], true, true);
-//									alert('DEBUG GET MESSAGE --> ' + y);
-		                        }, 2000);
-		                    }
-		                }
-		            },
-		            title: {
-		                text: 'Loudness'
-		            },
-		            xAxis: {
-		                title: {
-		                    text: 'Time'
-		                },
-		                type: 'datetime',
-		                tickPixelInterval: 150
-		            },
-		            
-		            yAxis: {
-		                title: {
-		                    text: 'Percentage'
-		                },
-		                min: 0,
-		                max: 100,
-		                 labels: {
-		                    formatter: function() {
-		                        if (this.value == 100) {
-		                            return 'Too Loud';
-		                        }
-		                        
-		                        if (this.value == 50) {
-		                            return 'OK';
-		                        }
-		                        
-		                        
-		                        if (this.value == 0) {
-		                            return 'Too Quiet';
-		                        }
-		                    }
-		                },
-		            },
-		            tooltip: {
-		                formatter: function() {
-		                        return 'At time: ' + Highcharts.dateFormat('%H:%M:%S', this.x) +'<br/>' + 'Average loudness requested ' + Highcharts.numberFormat(this.y, 2) + '%';
-		                }
-		            },
-		            legend: {
-		                enabled: false
-		            },
-		            exporting: {
-		                enabled: false
-		            },
-		            series: [{
-		                name: 'Random data',
-		                data: (function() {
-		                    // generate an array of random data
-		                    var data = [],
-		                        time = (new Date()).getTime(),
-		                        i;
-		    
-		                    for (i = -5; i <= 0; i++) {
-		                        data.push({
-		                            x: time + i * 1000,
-		                            y: 50 //initialization 
-		                        });
-		                    }
-		                    return data;
-		                })()
-		            }]
-		        });
-		    });
-		    
+		$("#cancel").click(function() {
+			$("#q_area").hide();
 		});
-    	</script>
-    
-    	<script>
-    	$(function () {
-    		
-    	    var gaugeOptions = {
-    		
-    		    chart: {
-    		        type: 'solidgauge'
-    		    },
-    		    
-    		    title: null,
-    		    
-    		    pane: {
-    		    	center: ['50%', '85%'],
-    		    	size: '140%',
-    		        startAngle: -90,
-    		        endAngle: 90,
-    	            background: {
-    	                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
-    	                innerRadius: '60%',
-    	                outerRadius: '100%',
-    	                shape: 'arc'
-    	            }
-    		    },
 
-    		    tooltip: {
-    		    	enabled: false
-    		    },
-    		       
-    		    // the value axis
-    		    yAxis: {
-    				stops: [
-    					[0.1, '#55BF3B'], // green
-    		        	[0.5, '#DDDF0D'], // yellow
-    		        	[0.9, '#DF5353'] // red
-    				],
-    				lineWidth: 0,
-    	            minorTickInterval: null,
-    	            tickPixelInterval: 400,
-    	            tickWidth: 0,
-    		        title: {
-    	                y: -70
-    		        },
-    	            labels: {
-    	                y: 16
-    	            }        
-    		    },
-    	        
-    	        plotOptions: {
-    	            solidgauge: {
-    	                dataLabels: {
-    	                    y: 5,
-    	                    borderWidth: 0,
-    	                    useHTML: true
-    	                },
-    	                states: {
-                            hover: {
-                                enabled: true
-                            }
-                        }
-    	                
-    	            }
-    		    
-    		    
-    	        }
-    	    };
-    	    
-    	    // The speed gauge
-    	    $('#container-speed').highcharts(Highcharts.merge(gaugeOptions, {
-    	        yAxis: {
-    		        min: 0,
-    		        max: 100,
-    		        title: {
-    		            text: 'Pause'
-    		        }       
-    		    },
+		$("#add").click(function() {
+			$("#q_area").show();
+		});
+	});
 
-    		    credits: {
-    		    	enabled: false
-    		    },
-    		
-    		    series: [{
-    		        name: 'Pause',
-    		        data: [80],
-    		        dataLabels: {
-    		        	format: '<div style="text-align:center"><span style="font-size:25px;color:' + 
-    	                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' + 
-    	                   	'<span style="font-size:12px;color:silver">Pause counts</span></div>'
-    		        },
-    		        tooltip: {
-    		            valueSuffix: 'Number of persons voted for pause'
-    		        }
-    		    }]
-    		
-    		}));
-    	    
-    	    // The RPM gauge
-    	    ;
-    	                               
-    	    // Bring life to the dials
-    	    setInterval(function () {
-    	    	// Speed
-    	        var chart = $('#container-speed').highcharts();
-    	        if (chart) {
-    	            var point = chart.series[0].points[0],
-    	                newVal,
-    	                inc = Math.round((Math.random() - 0.5) * 100);
-    	            
-    	            newVal = point.y + inc;
-    	            if (newVal < 0 || newVal > 100) {
-    	                newVal = point.y - inc;
-    	            }
-    	            
-    	            point.update(newVal);
-    	        }
+	$(function() {
 
-    	    }, 2000);  
-    	    
-    		
-    	});
-    	</script>
-		
-    </head>
-    <body>
+		$(document).ready(
+				function() {
+					Highcharts.setOptions({
+						global : {
+							useUTC : false
+						}
+					});
 
-<table>
-	<thead>
-	<tr>
-		<th width=50% height=50%>
-			<script src="http://code.highcharts.com/highcharts.js"></script>
-			<script src="http://code.highcharts.com/modules/exporting.js"></script>
-			<div id="container-speed-chart"></div>
-		</th>
-		<th width=50%>
-			<script src="http://code.highcharts.com/highcharts.js"></script>
-			<script src="http://code.highcharts.com/modules/exporting.js"></script>
-			<div id="container-loudness-chart"></div>			
-		</th>
-	</tr>
-	</thead>
-	<tbody height=20%>
-	<tr>
-		<td width=50% height="50%">
-<!--  			<div id="votes" align="center">
-				<p>VOTE SPEED</p>
-					<form action="">
-						<input type="radio" name="vote" value="toofast">Too fast<br>
-						<input type="radio" name="vote" value="normal">Normal<br>
-						<input type="radio" name="vote" value="tooslow">Too slow<br>
-						<input type="submit" value="Submit">
-					</form>
-			</div> -->
-		</td>
-		<td width="50%">
-			<div id="pause_gauge" align="center">
-				<script src="http://code.highcharts.com/highcharts.js"></script>
-				<script src="http://code.highcharts.com/highcharts-more.js"></script>
-				
-				<script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
-				
-				<div style="width: 600px; height: 400px; margin: 0 auto">
-					<div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
-					<div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
-				</div>
-			</div>
-		</td>
-	</tr>
-	</tbody>
-</table>
+					var chart;
+					$('#container-speed-chart').highcharts(
+							{
+								chart : {
+									type : 'spline',
+									animation : Highcharts.svg, // don't animate in old IE
+									marginRight : 5,
+									events : {
+										load : function() {
+
+											// set up the updating of the chart each second
+											var series = this.series[0];
+											//var y = 0;
+
+											setInterval(function() {
+
+												var x = (new Date()).getTime(); // current time
+												if (!speed_y) {
+													speed_y = 50; //used for initialization
+												}
+												series.addPoint([ x, speed_y ],
+														true, true);
+
+											}, 2000);
+										}
+									}
+								},
+								title : {
+									text : 'Speed'
+								},
+								xAxis : {
+									title : {
+										text : 'Time'
+									},
+									type : 'datetime',
+									tickPixelInterval : 150
+								},
+
+								yAxis : {
+									title : {
+										text : 'Percentage'
+									},
+									min : 0,
+									max : 100,
+									labels : {
+										formatter : function() {
+											if (this.value == 100) {
+												return 'Too Fast';
+											}
+
+											if (this.value == 50) {
+												return 'OK';
+											}
+
+											if (this.value == 0) {
+												return 'Too Slow';
+											}
+										}
+									},
+								},
+								tooltip : {
+									formatter : function() {
+										return 'At time: '
+												+ Highcharts.dateFormat(
+														'%H:%M:%S', this.x)
+												+ '<br/>'
+												+ 'Average speed requested '
+												+ Highcharts.numberFormat(
+														this.speed_y, 2) + '%';
+									}
+								},
+								legend : {
+									enabled : false
+								},
+								exporting : {
+									enabled : false
+								},
+								series : [ {
+									name : 'Random data',
+									data : (function() {
+										// generate an array of random data
+										var data = [], time = (new Date())
+												.getTime(), i;
+
+										for (i = -5; i <= 0; i++) {
+											data.push({
+												x : time + i * 1000,
+												speed_y : 50
+											});
+										}
+										return data;
+									})()
+								} ]
+							});
+				});
+
+	});
+
+	$(function() {
+		$(document).ready(
+				function() {
+					Highcharts.setOptions({
+						global : {
+							useUTC : false
+						}
+					});
+
+					var chart;
+					$('#container-loudness-chart').highcharts(
+							{
+								chart : {
+									type : 'spline',
+									animation : Highcharts.svg, // don't animate in old IE
+									marginRight : 5,
+									events : {
+										load : function() {
+
+											// set up the updating of the chart each second
+											var series = this.series[0];
+											//var y = 0;
+											//var server_message;
+
+											setInterval(function() {
+
+												//var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
+
+												var x = (new Date()).getTime(); // current time
+												if (!voice_y) {
+													voice_y = 50; //used for initialization
+												}
+												series.addPoint([ x, voice_y ],
+														true, true);
+
+											}, 2000);
+										}
+									}
+								},
+								title : {
+									text : 'Loudness'
+								},
+								xAxis : {
+									title : {
+										text : 'Time'
+									},
+									type : 'datetime',
+									tickPixelInterval : 150
+								},
+
+								yAxis : {
+									title : {
+										text : 'Percentage'
+									},
+									min : 0,
+									max : 100,
+									labels : {
+										formatter : function() {
+											if (this.value == 100) {
+												return 'Too Loud';
+											}
+
+											if (this.value == 50) {
+												return 'OK';
+											}
+
+											if (this.value == 0) {
+												return 'Too Low';
+											}
+										}
+									},
+								},
+								tooltip : {
+									formatter : function() {
+										return 'At time: '
+												+ Highcharts.dateFormat(
+														'%H:%M:%S', this.x)
+												+ '<br/>'
+												+ 'Average loudness requested '
+												+ Highcharts.numberFormat(
+														this.voice_y, 2) + '%';
+									}
+								},
+								legend : {
+									enabled : false
+								},
+								exporting : {
+									enabled : false
+								},
+								series : [ {
+									name : 'Random data',
+									data : (function() {
+										// generate an array of random data
+										var data = [], time = (new Date())
+												.getTime(), i;
+
+										for (i = -5; i <= 0; i++) {
+											data.push({
+												x : time + i * 1000,
+												voice_y : 50
+											//initialization 
+											});
+										}
+										return data;
+									})()
+								} ]
+							});
+				});
+
+	});
+
+	$(function() {
+
+		var gaugeOptions = {
+
+			chart : {
+				type : 'solidgauge'
+			},
+
+			title : null,
+
+			pane : {
+				center : [ '50%', '85%' ],
+				size : '140%',
+				startAngle : -90,
+				endAngle : 90,
+				background : {
+					backgroundColor : (Highcharts.theme && Highcharts.theme.background2)
+							|| '#EEE',
+					innerRadius : '60%',
+					outerRadius : '100%',
+					shape : 'arc'
+				}
+			},
+
+			tooltip : {
+				enabled : true
+			},
+
+			// the value axis
+			yAxis : {
+				stops : [ [ 0.1, '#55BF3B' ], // green
+				[ 0.5, '#DDDF0D' ], // yellow
+				[ 0.9, '#DF5353' ] // red
+				],
+				lineWidth : 0,
+				minorTickInterval : null,
+				tickPixelInterval : 400,
+				tickWidth : 0,
+				title : {
+					y : -70
+				},
+				labels : {
+					y : 16
+				}
+			},
+
+			plotOptions : {
+				solidgauge : {
+					dataLabels : {
+						y : 5,
+						borderWidth : 0,
+						useHTML : true
+					},
+					states : {
+						hover : {
+							enabled : true
+						}
+					}
+
+				}
+
+			}
+		};
+
+		// The speed gauge
+		$('#container-speed')
+				.highcharts(
+						Highcharts
+								.merge(
+										gaugeOptions,
+										{
+											yAxis : {
+												min : 0,
+												max : 100,
+												title : {
+													text : 'Pause'
+												}
+											},
+
+											credits : {
+												enabled : false
+											},
+
+											series : [ {
+												name : 'Pause',
+												data : [ 0 ],
+												dataLabels : {
+													format : '<div style="text-align:center"><span style="font-size:25px;color:'
+															+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
+															+ '">{y}</span><br/>'
+															+ '<span style="font-size:12px;color:silver">Pause counts</span></div>'
+												},
+												tooltip : {
+													valueSuffix : 'Number of persons voted for pause'
+												}
+											} ]
+
+										}));
+
+		// The RPM gauge
+		;
+		//var newVal;
+		// Bring life to the dials
+		setInterval(function() {
+
+			// Speed
+			var chart = $('#container-speed').highcharts();
+			if (chart) {
+				var point = chart.series[0].points[0];
+				//   inc = Math.round((Math.random() - 0.5) * 100);
+
+				// newVal = point.y + inc;
+				/*  if (newVal < 0 || newVal > 100) {
+				      newVal = point.y - inc;
+				  }*/
+				console.log('pause 2: ' + newVal);
+				point.update(newVal);
+			}
+
+		}, 2000);
+
+	});
+</script>
+
+<script>
+	//	$(function () {
+	//	$('#container-questions').
+	//});
+</script>
+
+</head>
+<body>
+	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+		<img src="@routes.Assets.at(" images/logo.png")" height="50px"
+			width="150px" alt="Live Feed">
+	</div>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top"
+		role="banner">
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> <a
+				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
+				type="button" class="btn btn-default" href="/contact">Contact</a> <a
+				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+		</div>
+	</header>
+
+	<table>
+		<thead>
+			<tr>
+				<th width=50% height=50%><script
+						src="http://code.highcharts.com/highcharts.js"></script> <script
+						src="http://code.highcharts.com/modules/exporting.js"></script>
+					<div id="container-speed-chart"></div></th>
+				<th width=50%><script
+						src="http://code.highcharts.com/highcharts.js"></script> <script
+						src="http://code.highcharts.com/modules/exporting.js"></script>
+					<div id="container-loudness-chart"></div></th>
+			</tr>
+		</thead>
+		<tbody height=20%>
+			<tr>
+				<td width=50% height="50%">
+					<h2 style="margin-left: 100px;">Question Section</h2>
+					<div class="well col-lg-4"
+						style="margin-left: 100px; width: 200px;">
+						<a type="button" class="btn btn-primary btn-group-justified"
+							id="add">Add Question</a>
+					</div>
+					<div id="q_area" class="well col-sm-10"
+						style="margin-left: 100px; display: none;">
+						<textarea class="form-control" rows="3" columns="50" id="question"
+							placeholder="Enter Question Here"></textarea>
+						<div class="btn-group-justified" style="margin-top: 20px;">
+							<a type="button" class="btn btn-success" id="submit">Submit</a> <a
+								type="button" class="btn btn-danger" id="cancel">Cancel</a>
+						</div>
+					</div> <!-- Add the questions at this part -->
 
 
-    </body>
-	</html>
+				</td>
+				<td width="50%">
+					<div id="pause_gauge" align="center">
+						<script src="http://code.highcharts.com/highcharts.js"></script>
+						<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+						<script
+							src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
+
+						<div style="width: 600px; height: 400px; margin: 0 auto">
+							<div id="container-speed"
+								style="width: 300px; height: 200px; float: left"></div>
+							<div id="container-rpm"
+								style="width: 300px; height: 200px; float: left"></div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>
