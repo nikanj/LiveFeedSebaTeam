@@ -120,15 +120,15 @@ public class Application extends Controller {
 
 	public static Result postQuestion() {
 
-		DynamicForm form = Form.form().bindFromRequest();
-		String question = form.get("question");
-		System.out.println("Reached Here");
-		System.out.println(question);
-		
-		for (WebSocket.Out<String> ws : channels) {
-			ws.write("question is " + question);
-		}
-		return ok();
+		 DynamicForm form = Form.form().bindFromRequest();
+		  String question = form.get("p_question");
+		  System.out.println("Reached Here");
+		  System.out.println(question);
+		  
+		  for (WebSocket.Out<String> ws : channels) {
+		   ws.write("question_" + question);
+		  }
+		  return indexStudent();
 
 	}
 	

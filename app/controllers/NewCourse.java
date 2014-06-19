@@ -2,6 +2,8 @@ package controllers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import models.Course;
 
@@ -14,7 +16,7 @@ import play.mvc.Result;
 public class NewCourse extends Controller {
 	
 	
-	
+	private static List<String> courseNames = new ArrayList<String>();
 	private static int profId;
 	private static int courseId = 0;
 	
@@ -36,8 +38,8 @@ public class NewCourse extends Controller {
 		courseId ++;
 		System.out.println("Before Update:" + profId + " " + courseId + " " + courseName);
 		Course.updateDb(profId,courseId,courseName);
-		
-		
+		courseNames = Course.readDb(profId);
+	//	Course courses = Course.find.byId((long) profId);
 		sql = "SELECT ID_prof, Course_Id, CourseName FROM course";
 		  ResultSet rs = stmt.executeQuery(sql);
 
@@ -47,8 +49,7 @@ public class NewCourse extends Controller {
 				int id = rs.getInt("ID_prof");
 				int courseId = rs.getInt("Course_Id");
 				String course = rs.getString("CourseName");
-			
-
+				
 				// Display values
 				System.out.print("ID: " + id);
 				System.out.print(", courseId: " + courseId);

@@ -89,8 +89,8 @@ Seq[Any](format.raw/*3.1*/("""<!DOCTYPE html>
 	</div>
 	<div style="margin-top:20px;"><input type="checkbox"> Remember Me  </div>
 	<div class="btn-group-justified" style="margin-top:20px;">
-		<a class="btn btn-success" type="button" id="signin">  Sign In  </a>
-		<a class="btn btn-default" role="button" href="/home">  Cancel  </a>
+		<a class="btn btn-success" type="submit" id="signin">  Sign In  </a>
+		<a class="btn btn-default" type="button" href="/home">  Cancel  </a>
 	</div>
 </div>
 </form>
@@ -108,9 +108,9 @@ Seq[Any](format.raw/*3.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 13:13:54 CEST 2014
+                    DATE: Thu Jun 19 18:39:10 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/profSignIn.scala.html
-                    HASH: 95f3dab82ff8700d44ed79fd54b5e4aba350672c
+                    HASH: 7cf29d10391545e336ebcef9717074c68712f8a8
                     MATRIX: 860->2|988->95|1002->101|1057->135|1153->196|1167->202|1220->234|1313->291|1328->297|1404->350|1465->375|1480->381|1547->426|1691->542|1720->543|1851->646|1880->647|1924->664|1952->665|2045->730|2074->731|2127->756|2156->757|2260->834|2288->835|2319->839|2347->840|2394->860|2423->861|2620->1022|2635->1028|2686->1057
                     LINES: 29->3|34->8|34->8|34->8|35->9|35->9|35->9|36->10|36->10|36->10|37->11|37->11|37->11|42->16|42->16|45->19|45->19|47->21|47->21|50->24|50->24|51->25|51->25|54->28|54->28|55->29|55->29|57->31|57->31|67->41|67->41|67->41
                     -- GENERATED --

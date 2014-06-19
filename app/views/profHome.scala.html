@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -23,6 +24,18 @@
      				courseName : $("#course").val()
      		})
      	});	
+        
+    /*    $("#create").click(function(){
+        	var courseName = $('#course').val();
+        
+        	 $('#courses')
+             .append(
+               '<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
+                 + courseName
+                 + '</div>');
+        });*/
+        
+       
         	
         $("#cancel").click(function() {
 			$("#q_area").hide();
@@ -50,19 +63,19 @@
   			</div>
 		</header>
 		
-		
 		<div class="well col-lg-4" style="margin-left: 100px; width: 200px;">
-			<button name="newCourse" id="addCourse" type="submit" class="btn btn-primary">Create New Course</button>
-			</div>
-			<div id="q_area" class="well col-sm-10" style="margin-left: 100px; display: none;">
-		    	<form class="navbar-form pull-left" id="courses">
-  						<input type="text" id="course" placeholder="Course Name" class="span2">
-  						<button type="submit" class="btn btn-success" id="create">Create</button>
-  						<button type="submit" class="btn btn-danger" id="cancel">Cancel</button>
-  				</form>
-			</div> 
+			<a type="button" class="btn btn-primary btn-group-justified" id="addCourse">Create New Course</a>
+		</div>
+		<br><br><br><br>
+		<div id="q_area" class="well col-sm-10" style="margin-left: 100px; width: 500px; display: none;">
+			<textarea class="form-control" rows="3" columns="50" id="course" placeholder="Course Name"></textarea>
+				<div class="btn-group-justified" style="margin-top: 20px;">
+						<a type="button" class="btn btn-success" id="create">Submit</a> 
+						<a type="button" class="btn btn-danger" id="cancel">Cancel</a>
+				</div>
+		</div>
 		
-		
+					
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </body>
 </html>
