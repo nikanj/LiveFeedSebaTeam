@@ -16,7 +16,10 @@ GET  	/vote    						controllers.Application.vote()
 GET		/validate						controllers.Profsignin.postLogin()
 GET 	/indexStudent					controllers.Application.indexStudent()
 GET 	/profPage						controllers.Application.profPageDisplay()
-
+GET		/report							controllers.Report.report()
+GET 	/aboutus						controllers.AboutAndContact.aboutUsPage()
+GET 	/contact						controllers.AboutAndContact.contactUsPage()
+GET		/feedback						controllers.AboutAndContact.feedbackPage()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               	controllers.Assets.at(path="/public", file)

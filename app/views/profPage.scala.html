@@ -61,21 +61,24 @@
 			alert("CONNECTION IS CLOSED~");
 		}
 
-		$("#submit").click(function() {
-			$.post("/postQuestion", {
-				question : $("#question").val()
-			}).done(function() {
-				alert("Success");
-			})
-		});
+		$("#submit_button")
+        .click(
+          function() {
+           var question_text = $('#question')
+             .val();
+           displayQuestion(question_text);
+           $('#question').val('');
+           $("#q_area").hide();
 
-		$("#cancel").click(function() {
-			$("#q_area").hide();
-		});
+          });
 
-		$("#add").click(function() {
-			$("#q_area").show();
-		});
+      $("#cancel_button").click(function() {
+       $("#q_area").hide();
+      });
+
+      $("#add").click(function() {
+       $("#q_area").show();
+      });
 	});
 
 	$(function() {

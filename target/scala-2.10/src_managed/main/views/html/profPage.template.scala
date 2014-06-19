@@ -89,95 +89,98 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 			alert("CONNECTION IS CLOSED~");
 		"""),format.raw/*62.3*/("""}"""),format.raw/*62.4*/("""
 
-		$("#submit").click(function() """),format.raw/*64.33*/("""{"""),format.raw/*64.34*/("""
-			$.post("/postQuestion", """),format.raw/*65.28*/("""{"""),format.raw/*65.29*/("""
-				question : $("#question").val()
-			"""),format.raw/*67.4*/("""}"""),format.raw/*67.5*/(""").done(function() """),format.raw/*67.23*/("""{"""),format.raw/*67.24*/("""
-				alert("Success");
-			"""),format.raw/*69.4*/("""}"""),format.raw/*69.5*/(""")
-		"""),format.raw/*70.3*/("""}"""),format.raw/*70.4*/(""");
+		$("#submit_button")
+        .click(
+          function() """),format.raw/*66.22*/("""{"""),format.raw/*66.23*/("""
+           var question_text = $('#question')
+             .val();
+           displayQuestion(question_text);
+           $('#question').val('');
+           $("#q_area").hide();
 
-		$("#cancel").click(function() """),format.raw/*72.33*/("""{"""),format.raw/*72.34*/("""
-			$("#q_area").hide();
-		"""),format.raw/*74.3*/("""}"""),format.raw/*74.4*/(""");
+          """),format.raw/*73.11*/("""}"""),format.raw/*73.12*/(""");
 
-		$("#add").click(function() """),format.raw/*76.30*/("""{"""),format.raw/*76.31*/("""
-			$("#q_area").show();
-		"""),format.raw/*78.3*/("""}"""),format.raw/*78.4*/(""");
-	"""),format.raw/*79.2*/("""}"""),format.raw/*79.3*/(""");
+      $("#cancel_button").click(function() """),format.raw/*75.44*/("""{"""),format.raw/*75.45*/("""
+       $("#q_area").hide();
+      """),format.raw/*77.7*/("""}"""),format.raw/*77.8*/(""");
 
-	$(function() """),format.raw/*81.15*/("""{"""),format.raw/*81.16*/("""
+      $("#add").click(function() """),format.raw/*79.34*/("""{"""),format.raw/*79.35*/("""
+       $("#q_area").show();
+      """),format.raw/*81.7*/("""}"""),format.raw/*81.8*/(""");
+	"""),format.raw/*82.2*/("""}"""),format.raw/*82.3*/(""");
+
+	$(function() """),format.raw/*84.15*/("""{"""),format.raw/*84.16*/("""
 
 		$(document).ready(
-				function() """),format.raw/*84.16*/("""{"""),format.raw/*84.17*/("""
-					Highcharts.setOptions("""),format.raw/*85.28*/("""{"""),format.raw/*85.29*/("""
-						global : """),format.raw/*86.16*/("""{"""),format.raw/*86.17*/("""
+				function() """),format.raw/*87.16*/("""{"""),format.raw/*87.17*/("""
+					Highcharts.setOptions("""),format.raw/*88.28*/("""{"""),format.raw/*88.29*/("""
+						global : """),format.raw/*89.16*/("""{"""),format.raw/*89.17*/("""
 							useUTC : false
-						"""),format.raw/*88.7*/("""}"""),format.raw/*88.8*/("""
-					"""),format.raw/*89.6*/("""}"""),format.raw/*89.7*/(""");
+						"""),format.raw/*91.7*/("""}"""),format.raw/*91.8*/("""
+					"""),format.raw/*92.6*/("""}"""),format.raw/*92.7*/(""");
 
 					var chart;
 					$('#container-speed-chart').highcharts(
-							"""),format.raw/*93.8*/("""{"""),format.raw/*93.9*/("""
-								chart : """),format.raw/*94.17*/("""{"""),format.raw/*94.18*/("""
+							"""),format.raw/*96.8*/("""{"""),format.raw/*96.9*/("""
+								chart : """),format.raw/*97.17*/("""{"""),format.raw/*97.18*/("""
 									type : 'spline',
 									animation : Highcharts.svg, // don't animate in old IE
 									marginRight : 5,
-									events : """),format.raw/*98.19*/("""{"""),format.raw/*98.20*/("""
-										load : function() """),format.raw/*99.29*/("""{"""),format.raw/*99.30*/("""
+									events : """),format.raw/*101.19*/("""{"""),format.raw/*101.20*/("""
+										load : function() """),format.raw/*102.29*/("""{"""),format.raw/*102.30*/("""
 
 											// set up the updating of the chart each second
 											var series = this.series[0];
 											//var y = 0;
 
-											setInterval(function() """),format.raw/*105.35*/("""{"""),format.raw/*105.36*/("""
+											setInterval(function() """),format.raw/*108.35*/("""{"""),format.raw/*108.36*/("""
 
 												var x = (new Date()).getTime(); // current time
-												if (speed_y == null) """),format.raw/*108.34*/("""{"""),format.raw/*108.35*/("""
+												if (speed_y == null) """),format.raw/*111.34*/("""{"""),format.raw/*111.35*/("""
 													speed_y = 50; //used for initialization
-												"""),format.raw/*110.13*/("""}"""),format.raw/*110.14*/("""
+												"""),format.raw/*113.13*/("""}"""),format.raw/*113.14*/("""
 												series.addPoint([ x, speed_y ],
 														true, true);
 
-											"""),format.raw/*114.12*/("""}"""),format.raw/*114.13*/(""", 1000);
-										"""),format.raw/*115.11*/("""}"""),format.raw/*115.12*/("""
-									"""),format.raw/*116.10*/("""}"""),format.raw/*116.11*/("""
-								"""),format.raw/*117.9*/("""}"""),format.raw/*117.10*/(""",
-								title : """),format.raw/*118.17*/("""{"""),format.raw/*118.18*/("""
-									text : 'Speed'
+											"""),format.raw/*117.12*/("""}"""),format.raw/*117.13*/(""", 1000);
+										"""),format.raw/*118.11*/("""}"""),format.raw/*118.12*/("""
+									"""),format.raw/*119.10*/("""}"""),format.raw/*119.11*/("""
 								"""),format.raw/*120.9*/("""}"""),format.raw/*120.10*/(""",
-								xAxis : """),format.raw/*121.17*/("""{"""),format.raw/*121.18*/("""
-									title : """),format.raw/*122.18*/("""{"""),format.raw/*122.19*/("""
+								title : """),format.raw/*121.17*/("""{"""),format.raw/*121.18*/("""
+									text : 'Speed'
+								"""),format.raw/*123.9*/("""}"""),format.raw/*123.10*/(""",
+								xAxis : """),format.raw/*124.17*/("""{"""),format.raw/*124.18*/("""
+									title : """),format.raw/*125.18*/("""{"""),format.raw/*125.19*/("""
 										text : 'Time'
-									"""),format.raw/*124.10*/("""}"""),format.raw/*124.11*/(""",
+									"""),format.raw/*127.10*/("""}"""),format.raw/*127.11*/(""",
 									type : 'datetime',
 									tickPixelInterval : 150
-								"""),format.raw/*127.9*/("""}"""),format.raw/*127.10*/(""",
+								"""),format.raw/*130.9*/("""}"""),format.raw/*130.10*/(""",
 
-								yAxis : """),format.raw/*129.17*/("""{"""),format.raw/*129.18*/("""
-									title : """),format.raw/*130.18*/("""{"""),format.raw/*130.19*/("""
+								yAxis : """),format.raw/*132.17*/("""{"""),format.raw/*132.18*/("""
+									title : """),format.raw/*133.18*/("""{"""),format.raw/*133.19*/("""
 										text : 'Percentage'
-									"""),format.raw/*132.10*/("""}"""),format.raw/*132.11*/(""",
+									"""),format.raw/*135.10*/("""}"""),format.raw/*135.11*/(""",
 									min : 0,
 									max : 100,
-									labels : """),format.raw/*135.19*/("""{"""),format.raw/*135.20*/("""
-										formatter : function() """),format.raw/*136.34*/("""{"""),format.raw/*136.35*/("""
-											if (this.value == 100) """),format.raw/*137.35*/("""{"""),format.raw/*137.36*/("""
+									labels : """),format.raw/*138.19*/("""{"""),format.raw/*138.20*/("""
+										formatter : function() """),format.raw/*139.34*/("""{"""),format.raw/*139.35*/("""
+											if (this.value == 100) """),format.raw/*140.35*/("""{"""),format.raw/*140.36*/("""
 												return 'Too Fast';
-											"""),format.raw/*139.12*/("""}"""),format.raw/*139.13*/("""
+											"""),format.raw/*142.12*/("""}"""),format.raw/*142.13*/("""
 
-											if (this.value == 50) """),format.raw/*141.34*/("""{"""),format.raw/*141.35*/("""
+											if (this.value == 50) """),format.raw/*144.34*/("""{"""),format.raw/*144.35*/("""
 												return 'OK';
-											"""),format.raw/*143.12*/("""}"""),format.raw/*143.13*/("""
+											"""),format.raw/*146.12*/("""}"""),format.raw/*146.13*/("""
 
-											if (this.value == 0) """),format.raw/*145.33*/("""{"""),format.raw/*145.34*/("""
+											if (this.value == 0) """),format.raw/*148.33*/("""{"""),format.raw/*148.34*/("""
 												return 'Too Slow';
-											"""),format.raw/*147.12*/("""}"""),format.raw/*147.13*/("""
-										"""),format.raw/*148.11*/("""}"""),format.raw/*148.12*/("""
-									"""),format.raw/*149.10*/("""}"""),format.raw/*149.11*/(""",
-								"""),format.raw/*150.9*/("""}"""),format.raw/*150.10*/(""",
-								tooltip : """),format.raw/*151.19*/("""{"""),format.raw/*151.20*/("""
-									formatter : function() """),format.raw/*152.33*/("""{"""),format.raw/*152.34*/("""
+											"""),format.raw/*150.12*/("""}"""),format.raw/*150.13*/("""
+										"""),format.raw/*151.11*/("""}"""),format.raw/*151.12*/("""
+									"""),format.raw/*152.10*/("""}"""),format.raw/*152.11*/(""",
+								"""),format.raw/*153.9*/("""}"""),format.raw/*153.10*/(""",
+								tooltip : """),format.raw/*154.19*/("""{"""),format.raw/*154.20*/("""
+									formatter : function() """),format.raw/*155.33*/("""{"""),format.raw/*155.34*/("""
 										return 'At time: '
 												+ Highcharts.dateFormat(
 														'%H:%M:%S', this.x)
@@ -185,109 +188,109 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 												+ 'Average speed requested '
 												+ Highcharts.numberFormat(
 														this.speed_y, 2) + '%';
-									"""),format.raw/*160.10*/("""}"""),format.raw/*160.11*/("""
-								"""),format.raw/*161.9*/("""}"""),format.raw/*161.10*/(""",
-								legend : """),format.raw/*162.18*/("""{"""),format.raw/*162.19*/("""
-									enabled : false
+									"""),format.raw/*163.10*/("""}"""),format.raw/*163.11*/("""
 								"""),format.raw/*164.9*/("""}"""),format.raw/*164.10*/(""",
-								exporting : """),format.raw/*165.21*/("""{"""),format.raw/*165.22*/("""
+								legend : """),format.raw/*165.18*/("""{"""),format.raw/*165.19*/("""
 									enabled : false
 								"""),format.raw/*167.9*/("""}"""),format.raw/*167.10*/(""",
-								series : [ """),format.raw/*168.20*/("""{"""),format.raw/*168.21*/("""
+								exporting : """),format.raw/*168.21*/("""{"""),format.raw/*168.22*/("""
+									enabled : false
+								"""),format.raw/*170.9*/("""}"""),format.raw/*170.10*/(""",
+								series : [ """),format.raw/*171.20*/("""{"""),format.raw/*171.21*/("""
 									name : 'Random data',
-									data : (function() """),format.raw/*170.29*/("""{"""),format.raw/*170.30*/("""
+									data : (function() """),format.raw/*173.29*/("""{"""),format.raw/*173.30*/("""
 										// generate an array of random data
 										var data = [], time = (new Date())
 												.getTime(), i;
 
-										for (i = -19; i <= 0; i++) """),format.raw/*175.38*/("""{"""),format.raw/*175.39*/("""
-											data.push("""),format.raw/*176.22*/("""{"""),format.raw/*176.23*/("""
+										for (i = -19; i <= 0; i++) """),format.raw/*178.38*/("""{"""),format.raw/*178.39*/("""
+											data.push("""),format.raw/*179.22*/("""{"""),format.raw/*179.23*/("""
 												x : time + i * 1000,
 												speed_y : 50
-											"""),format.raw/*179.12*/("""}"""),format.raw/*179.13*/(""");
-										"""),format.raw/*180.11*/("""}"""),format.raw/*180.12*/("""
+											"""),format.raw/*182.12*/("""}"""),format.raw/*182.13*/(""");
+										"""),format.raw/*183.11*/("""}"""),format.raw/*183.12*/("""
 										return data;
-									"""),format.raw/*182.10*/("""}"""),format.raw/*182.11*/(""")()
-								"""),format.raw/*183.9*/("""}"""),format.raw/*183.10*/(""" ]
-							"""),format.raw/*184.8*/("""}"""),format.raw/*184.9*/(""");
-				"""),format.raw/*185.5*/("""}"""),format.raw/*185.6*/(""");
+									"""),format.raw/*185.10*/("""}"""),format.raw/*185.11*/(""")()
+								"""),format.raw/*186.9*/("""}"""),format.raw/*186.10*/(""" ]
+							"""),format.raw/*187.8*/("""}"""),format.raw/*187.9*/(""");
+				"""),format.raw/*188.5*/("""}"""),format.raw/*188.6*/(""");
 
-	"""),format.raw/*187.2*/("""}"""),format.raw/*187.3*/(""");
+	"""),format.raw/*190.2*/("""}"""),format.raw/*190.3*/(""");
 
-	$(function() """),format.raw/*189.15*/("""{"""),format.raw/*189.16*/("""
+	$(function() """),format.raw/*192.15*/("""{"""),format.raw/*192.16*/("""
 		$(document).ready(
-				function() """),format.raw/*191.16*/("""{"""),format.raw/*191.17*/("""
-					Highcharts.setOptions("""),format.raw/*192.28*/("""{"""),format.raw/*192.29*/("""
-						global : """),format.raw/*193.16*/("""{"""),format.raw/*193.17*/("""
+				function() """),format.raw/*194.16*/("""{"""),format.raw/*194.17*/("""
+					Highcharts.setOptions("""),format.raw/*195.28*/("""{"""),format.raw/*195.29*/("""
+						global : """),format.raw/*196.16*/("""{"""),format.raw/*196.17*/("""
 							useUTC : false
-						"""),format.raw/*195.7*/("""}"""),format.raw/*195.8*/("""
-					"""),format.raw/*196.6*/("""}"""),format.raw/*196.7*/(""");
+						"""),format.raw/*198.7*/("""}"""),format.raw/*198.8*/("""
+					"""),format.raw/*199.6*/("""}"""),format.raw/*199.7*/(""");
 
 					var chart;
 					$('#container-loudness-chart').highcharts(
-							"""),format.raw/*200.8*/("""{"""),format.raw/*200.9*/("""
-								chart : """),format.raw/*201.17*/("""{"""),format.raw/*201.18*/("""
+							"""),format.raw/*203.8*/("""{"""),format.raw/*203.9*/("""
+								chart : """),format.raw/*204.17*/("""{"""),format.raw/*204.18*/("""
 									type : 'spline',
 									animation : Highcharts.svg, // don't animate in old IE
 									marginRight : 5,
-									events : """),format.raw/*205.19*/("""{"""),format.raw/*205.20*/("""
-										load : function() """),format.raw/*206.29*/("""{"""),format.raw/*206.30*/("""
+									events : """),format.raw/*208.19*/("""{"""),format.raw/*208.20*/("""
+										load : function() """),format.raw/*209.29*/("""{"""),format.raw/*209.30*/("""
 
 											// set up the updating of the chart each second
 											var series = this.series[0];
 											//var y = 0;
 											//var server_message;
 
-											setInterval(function() """),format.raw/*213.35*/("""{"""),format.raw/*213.36*/("""
+											setInterval(function() """),format.raw/*216.35*/("""{"""),format.raw/*216.36*/("""
 
 												//var connection = new WebSocket('ws://localhost:9000');  //initialize the websocket inside the "interval loop"
 
 												var x = (new Date()).getTime(); // current time
-												if (voice_y == null) """),format.raw/*218.34*/("""{"""),format.raw/*218.35*/("""
+												if (voice_y == null) """),format.raw/*221.34*/("""{"""),format.raw/*221.35*/("""
 													voice_y = 50; //used for initialization
-												"""),format.raw/*220.13*/("""}"""),format.raw/*220.14*/("""
+												"""),format.raw/*223.13*/("""}"""),format.raw/*223.14*/("""
 												series.addPoint([ x, voice_y ],
 														true, true);
 
-											"""),format.raw/*224.12*/("""}"""),format.raw/*224.13*/(""", 1000);
-										"""),format.raw/*225.11*/("""}"""),format.raw/*225.12*/("""
-									"""),format.raw/*226.10*/("""}"""),format.raw/*226.11*/("""
-								"""),format.raw/*227.9*/("""}"""),format.raw/*227.10*/(""",
-								title : """),format.raw/*228.17*/("""{"""),format.raw/*228.18*/("""
-									text : 'Loudness'
+											"""),format.raw/*227.12*/("""}"""),format.raw/*227.13*/(""", 1000);
+										"""),format.raw/*228.11*/("""}"""),format.raw/*228.12*/("""
+									"""),format.raw/*229.10*/("""}"""),format.raw/*229.11*/("""
 								"""),format.raw/*230.9*/("""}"""),format.raw/*230.10*/(""",
-								xAxis : """),format.raw/*231.17*/("""{"""),format.raw/*231.18*/("""
-									title : """),format.raw/*232.18*/("""{"""),format.raw/*232.19*/("""
+								title : """),format.raw/*231.17*/("""{"""),format.raw/*231.18*/("""
+									text : 'Loudness'
+								"""),format.raw/*233.9*/("""}"""),format.raw/*233.10*/(""",
+								xAxis : """),format.raw/*234.17*/("""{"""),format.raw/*234.18*/("""
+									title : """),format.raw/*235.18*/("""{"""),format.raw/*235.19*/("""
 										text : 'Time'
-									"""),format.raw/*234.10*/("""}"""),format.raw/*234.11*/(""",
+									"""),format.raw/*237.10*/("""}"""),format.raw/*237.11*/(""",
 									type : 'datetime',
 									tickPixelInterval : 150
-								"""),format.raw/*237.9*/("""}"""),format.raw/*237.10*/(""",
+								"""),format.raw/*240.9*/("""}"""),format.raw/*240.10*/(""",
 
-								yAxis : """),format.raw/*239.17*/("""{"""),format.raw/*239.18*/("""
-									title : """),format.raw/*240.18*/("""{"""),format.raw/*240.19*/("""
+								yAxis : """),format.raw/*242.17*/("""{"""),format.raw/*242.18*/("""
+									title : """),format.raw/*243.18*/("""{"""),format.raw/*243.19*/("""
 										text : 'Percentage'
-									"""),format.raw/*242.10*/("""}"""),format.raw/*242.11*/(""",
+									"""),format.raw/*245.10*/("""}"""),format.raw/*245.11*/(""",
 									min : 0,
 									max : 100,
-									labels : """),format.raw/*245.19*/("""{"""),format.raw/*245.20*/("""
-										formatter : function() """),format.raw/*246.34*/("""{"""),format.raw/*246.35*/("""
-											if (this.value == 100) """),format.raw/*247.35*/("""{"""),format.raw/*247.36*/("""
+									labels : """),format.raw/*248.19*/("""{"""),format.raw/*248.20*/("""
+										formatter : function() """),format.raw/*249.34*/("""{"""),format.raw/*249.35*/("""
+											if (this.value == 100) """),format.raw/*250.35*/("""{"""),format.raw/*250.36*/("""
 												return 'Too Loud';
-											"""),format.raw/*249.12*/("""}"""),format.raw/*249.13*/("""
+											"""),format.raw/*252.12*/("""}"""),format.raw/*252.13*/("""
 
-											if (this.value == 50) """),format.raw/*251.34*/("""{"""),format.raw/*251.35*/("""
+											if (this.value == 50) """),format.raw/*254.34*/("""{"""),format.raw/*254.35*/("""
 												return 'OK';
-											"""),format.raw/*253.12*/("""}"""),format.raw/*253.13*/("""
+											"""),format.raw/*256.12*/("""}"""),format.raw/*256.13*/("""
 
-											if (this.value == 0) """),format.raw/*255.33*/("""{"""),format.raw/*255.34*/("""
+											if (this.value == 0) """),format.raw/*258.33*/("""{"""),format.raw/*258.34*/("""
 												return 'Too Low';
-											"""),format.raw/*257.12*/("""}"""),format.raw/*257.13*/("""
-										"""),format.raw/*258.11*/("""}"""),format.raw/*258.12*/("""
-									"""),format.raw/*259.10*/("""}"""),format.raw/*259.11*/(""",
-								"""),format.raw/*260.9*/("""}"""),format.raw/*260.10*/(""",
-								tooltip : """),format.raw/*261.19*/("""{"""),format.raw/*261.20*/("""
-									formatter : function() """),format.raw/*262.33*/("""{"""),format.raw/*262.34*/("""
+											"""),format.raw/*260.12*/("""}"""),format.raw/*260.13*/("""
+										"""),format.raw/*261.11*/("""}"""),format.raw/*261.12*/("""
+									"""),format.raw/*262.10*/("""}"""),format.raw/*262.11*/(""",
+								"""),format.raw/*263.9*/("""}"""),format.raw/*263.10*/(""",
+								tooltip : """),format.raw/*264.19*/("""{"""),format.raw/*264.20*/("""
+									formatter : function() """),format.raw/*265.33*/("""{"""),format.raw/*265.34*/("""
 										return 'At time: '
 												+ Highcharts.dateFormat(
 														'%H:%M:%S', this.x)
@@ -295,66 +298,66 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 												+ 'Average loudness requested '
 												+ Highcharts.numberFormat(
 														this.voice_y, 2) + '%';
-									"""),format.raw/*270.10*/("""}"""),format.raw/*270.11*/("""
-								"""),format.raw/*271.9*/("""}"""),format.raw/*271.10*/(""",
-								legend : """),format.raw/*272.18*/("""{"""),format.raw/*272.19*/("""
-									enabled : false
+									"""),format.raw/*273.10*/("""}"""),format.raw/*273.11*/("""
 								"""),format.raw/*274.9*/("""}"""),format.raw/*274.10*/(""",
-								exporting : """),format.raw/*275.21*/("""{"""),format.raw/*275.22*/("""
+								legend : """),format.raw/*275.18*/("""{"""),format.raw/*275.19*/("""
 									enabled : false
 								"""),format.raw/*277.9*/("""}"""),format.raw/*277.10*/(""",
-								series : [ """),format.raw/*278.20*/("""{"""),format.raw/*278.21*/("""
+								exporting : """),format.raw/*278.21*/("""{"""),format.raw/*278.22*/("""
+									enabled : false
+								"""),format.raw/*280.9*/("""}"""),format.raw/*280.10*/(""",
+								series : [ """),format.raw/*281.20*/("""{"""),format.raw/*281.21*/("""
 									name : 'Random data',
-									data : (function() """),format.raw/*280.29*/("""{"""),format.raw/*280.30*/("""
+									data : (function() """),format.raw/*283.29*/("""{"""),format.raw/*283.30*/("""
 										// generate an array of random data
 										var data = [], time = (new Date())
 												.getTime(), i;
 
-										for (i = -19; i <= 0; i++) """),format.raw/*285.38*/("""{"""),format.raw/*285.39*/("""
-											data.push("""),format.raw/*286.22*/("""{"""),format.raw/*286.23*/("""
+										for (i = -19; i <= 0; i++) """),format.raw/*288.38*/("""{"""),format.raw/*288.39*/("""
+											data.push("""),format.raw/*289.22*/("""{"""),format.raw/*289.23*/("""
 												x : time + i * 1000,
 												voice_y : 50
 											//initialization 
-											"""),format.raw/*290.12*/("""}"""),format.raw/*290.13*/(""");
-										"""),format.raw/*291.11*/("""}"""),format.raw/*291.12*/("""
+											"""),format.raw/*293.12*/("""}"""),format.raw/*293.13*/(""");
+										"""),format.raw/*294.11*/("""}"""),format.raw/*294.12*/("""
 										return data;
-									"""),format.raw/*293.10*/("""}"""),format.raw/*293.11*/(""")()
-								"""),format.raw/*294.9*/("""}"""),format.raw/*294.10*/(""" ]
-							"""),format.raw/*295.8*/("""}"""),format.raw/*295.9*/(""");
-				"""),format.raw/*296.5*/("""}"""),format.raw/*296.6*/(""");
+									"""),format.raw/*296.10*/("""}"""),format.raw/*296.11*/(""")()
+								"""),format.raw/*297.9*/("""}"""),format.raw/*297.10*/(""" ]
+							"""),format.raw/*298.8*/("""}"""),format.raw/*298.9*/(""");
+				"""),format.raw/*299.5*/("""}"""),format.raw/*299.6*/(""");
 
-	"""),format.raw/*298.2*/("""}"""),format.raw/*298.3*/(""");
+	"""),format.raw/*301.2*/("""}"""),format.raw/*301.3*/(""");
 
-	$(function() """),format.raw/*300.15*/("""{"""),format.raw/*300.16*/("""
+	$(function() """),format.raw/*303.15*/("""{"""),format.raw/*303.16*/("""
 
-		var gaugeOptions = """),format.raw/*302.22*/("""{"""),format.raw/*302.23*/("""
+		var gaugeOptions = """),format.raw/*305.22*/("""{"""),format.raw/*305.23*/("""
 
-			chart : """),format.raw/*304.12*/("""{"""),format.raw/*304.13*/("""
+			chart : """),format.raw/*307.12*/("""{"""),format.raw/*307.13*/("""
 				type : 'solidgauge'
-			"""),format.raw/*306.4*/("""}"""),format.raw/*306.5*/(""",
+			"""),format.raw/*309.4*/("""}"""),format.raw/*309.5*/(""",
 
 			title : null,
 
-			pane : """),format.raw/*310.11*/("""{"""),format.raw/*310.12*/("""
+			pane : """),format.raw/*313.11*/("""{"""),format.raw/*313.12*/("""
 				center : [ '50%', '85%' ],
 				size : '140%',
 				startAngle : -90,
 				endAngle : 90,
-				background : """),format.raw/*315.18*/("""{"""),format.raw/*315.19*/("""
+				background : """),format.raw/*318.18*/("""{"""),format.raw/*318.19*/("""
 					backgroundColor : (Highcharts.theme && Highcharts.theme.background2)
 							|| '#EEE',
 					innerRadius : '60%',
 					outerRadius : '100%',
 					shape : 'arc'
-				"""),format.raw/*321.5*/("""}"""),format.raw/*321.6*/("""
-			"""),format.raw/*322.4*/("""}"""),format.raw/*322.5*/(""",
+				"""),format.raw/*324.5*/("""}"""),format.raw/*324.6*/("""
+			"""),format.raw/*325.4*/("""}"""),format.raw/*325.5*/(""",
 
-			tooltip : """),format.raw/*324.14*/("""{"""),format.raw/*324.15*/("""
+			tooltip : """),format.raw/*327.14*/("""{"""),format.raw/*327.15*/("""
 				enabled : true
-			"""),format.raw/*326.4*/("""}"""),format.raw/*326.5*/(""",
+			"""),format.raw/*329.4*/("""}"""),format.raw/*329.5*/(""",
 
 			// the value axis
-			yAxis : """),format.raw/*329.12*/("""{"""),format.raw/*329.13*/("""
+			yAxis : """),format.raw/*332.12*/("""{"""),format.raw/*332.13*/("""
 				stops : [ [ 0.1, '#55BF3B' ], // green
 				[ 0.5, '#DDDF0D' ], // yellow
 				[ 0.9, '#DF5353' ] // red
@@ -363,31 +366,31 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 				minorTickInterval : null,
 				tickPixelInterval : 400,
 				tickWidth : 0,
-				title : """),format.raw/*338.13*/("""{"""),format.raw/*338.14*/("""
+				title : """),format.raw/*341.13*/("""{"""),format.raw/*341.14*/("""
 					y : -70
-				"""),format.raw/*340.5*/("""}"""),format.raw/*340.6*/(""",
-				labels : """),format.raw/*341.14*/("""{"""),format.raw/*341.15*/("""
+				"""),format.raw/*343.5*/("""}"""),format.raw/*343.6*/(""",
+				labels : """),format.raw/*344.14*/("""{"""),format.raw/*344.15*/("""
 					y : 16
-				"""),format.raw/*343.5*/("""}"""),format.raw/*343.6*/("""
-			"""),format.raw/*344.4*/("""}"""),format.raw/*344.5*/(""",
+				"""),format.raw/*346.5*/("""}"""),format.raw/*346.6*/("""
+			"""),format.raw/*347.4*/("""}"""),format.raw/*347.5*/(""",
 
-			plotOptions : """),format.raw/*346.18*/("""{"""),format.raw/*346.19*/("""
-				solidgauge : """),format.raw/*347.18*/("""{"""),format.raw/*347.19*/("""
-					dataLabels : """),format.raw/*348.19*/("""{"""),format.raw/*348.20*/("""
+			plotOptions : """),format.raw/*349.18*/("""{"""),format.raw/*349.19*/("""
+				solidgauge : """),format.raw/*350.18*/("""{"""),format.raw/*350.19*/("""
+					dataLabels : """),format.raw/*351.19*/("""{"""),format.raw/*351.20*/("""
 						y : 5,
 						borderWidth : 0,
 						useHTML : true
-					"""),format.raw/*352.6*/("""}"""),format.raw/*352.7*/(""",
-					states : """),format.raw/*353.15*/("""{"""),format.raw/*353.16*/("""
-						hover : """),format.raw/*354.15*/("""{"""),format.raw/*354.16*/("""
+					"""),format.raw/*355.6*/("""}"""),format.raw/*355.7*/(""",
+					states : """),format.raw/*356.15*/("""{"""),format.raw/*356.16*/("""
+						hover : """),format.raw/*357.15*/("""{"""),format.raw/*357.16*/("""
 							enabled : true
-						"""),format.raw/*356.7*/("""}"""),format.raw/*356.8*/("""
-					"""),format.raw/*357.6*/("""}"""),format.raw/*357.7*/("""
+						"""),format.raw/*359.7*/("""}"""),format.raw/*359.8*/("""
+					"""),format.raw/*360.6*/("""}"""),format.raw/*360.7*/("""
 
-				"""),format.raw/*359.5*/("""}"""),format.raw/*359.6*/("""
+				"""),format.raw/*362.5*/("""}"""),format.raw/*362.6*/("""
 
-			"""),format.raw/*361.4*/("""}"""),format.raw/*361.5*/("""
-		"""),format.raw/*362.3*/("""}"""),format.raw/*362.4*/(""";
+			"""),format.raw/*364.4*/("""}"""),format.raw/*364.5*/("""
+		"""),format.raw/*365.3*/("""}"""),format.raw/*365.4*/(""";
 
 		// The speed gauge
 		$('#container-speed')
@@ -395,70 +398,70 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 						Highcharts
 								.merge(
 										gaugeOptions,
-										"""),format.raw/*370.11*/("""{"""),format.raw/*370.12*/("""
-											yAxis : """),format.raw/*371.20*/("""{"""),format.raw/*371.21*/("""
+										"""),format.raw/*373.11*/("""{"""),format.raw/*373.12*/("""
+											yAxis : """),format.raw/*374.20*/("""{"""),format.raw/*374.21*/("""
 												min : 0,
 												max : 100,
-												title : """),format.raw/*374.21*/("""{"""),format.raw/*374.22*/("""
+												title : """),format.raw/*377.21*/("""{"""),format.raw/*377.22*/("""
 													text : 'Pause'
-												"""),format.raw/*376.13*/("""}"""),format.raw/*376.14*/("""
-											"""),format.raw/*377.12*/("""}"""),format.raw/*377.13*/(""",
+												"""),format.raw/*379.13*/("""}"""),format.raw/*379.14*/("""
+											"""),format.raw/*380.12*/("""}"""),format.raw/*380.13*/(""",
 
-											credits : """),format.raw/*379.22*/("""{"""),format.raw/*379.23*/("""
+											credits : """),format.raw/*382.22*/("""{"""),format.raw/*382.23*/("""
 												enabled : false
-											"""),format.raw/*381.12*/("""}"""),format.raw/*381.13*/(""",
+											"""),format.raw/*384.12*/("""}"""),format.raw/*384.13*/(""",
 
-											series : [ """),format.raw/*383.23*/("""{"""),format.raw/*383.24*/("""
+											series : [ """),format.raw/*386.23*/("""{"""),format.raw/*386.24*/("""
 												name : 'Pause',
 												data : [ 0 ],
-												dataLabels : """),format.raw/*386.26*/("""{"""),format.raw/*386.27*/("""
+												dataLabels : """),format.raw/*389.26*/("""{"""),format.raw/*389.27*/("""
 													format : '<div style="text-align:center"><span style="font-size:25px;color:'
 															+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
-															+ '">"""),format.raw/*389.21*/("""{"""),format.raw/*389.22*/("""y"""),format.raw/*389.23*/("""}"""),format.raw/*389.24*/("""</span><br/>'
+															+ '">"""),format.raw/*392.21*/("""{"""),format.raw/*392.22*/("""y"""),format.raw/*392.23*/("""}"""),format.raw/*392.24*/("""</span><br/>'
 															+ '<span style="font-size:12px;color:silver">Pause counts</span></div>'
-												"""),format.raw/*391.13*/("""}"""),format.raw/*391.14*/(""",
-												tooltip : """),format.raw/*392.23*/("""{"""),format.raw/*392.24*/("""
+												"""),format.raw/*394.13*/("""}"""),format.raw/*394.14*/(""",
+												tooltip : """),format.raw/*395.23*/("""{"""),format.raw/*395.24*/("""
 													valueSuffix : 'Number of persons voted for pause'
-												"""),format.raw/*394.13*/("""}"""),format.raw/*394.14*/("""
-											"""),format.raw/*395.12*/("""}"""),format.raw/*395.13*/(""" ]
+												"""),format.raw/*397.13*/("""}"""),format.raw/*397.14*/("""
+											"""),format.raw/*398.12*/("""}"""),format.raw/*398.13*/(""" ]
 
-										"""),format.raw/*397.11*/("""}"""),format.raw/*397.12*/("""));
+										"""),format.raw/*400.11*/("""}"""),format.raw/*400.12*/("""));
 
 		// The RPM gauge
 		;
 		//var newVal;
 		// Bring life to the dials
-		setInterval(function() """),format.raw/*403.26*/("""{"""),format.raw/*403.27*/("""
+		setInterval(function() """),format.raw/*406.26*/("""{"""),format.raw/*406.27*/("""
 
 			// Speed
 			var chart = $('#container-speed').highcharts();
-			if (chart) """),format.raw/*407.15*/("""{"""),format.raw/*407.16*/("""
+			if (chart) """),format.raw/*410.15*/("""{"""),format.raw/*410.16*/("""
 				var point = chart.series[0].points[0];
 				//   inc = Math.round((Math.random() - 0.5) * 100);
 
 				// newVal = point.y + inc;
-				/*  if (newVal < 0 || newVal > 100) """),format.raw/*412.41*/("""{"""),format.raw/*412.42*/("""
+				/*  if (newVal < 0 || newVal > 100) """),format.raw/*415.41*/("""{"""),format.raw/*415.42*/("""
 				      newVal = point.y - inc;
-				  """),format.raw/*414.7*/("""}"""),format.raw/*414.8*/("""*/
+				  """),format.raw/*417.7*/("""}"""),format.raw/*417.8*/("""*/
 				console.log('pause 2: ' + newVal);
 				point.update(newVal);
-			"""),format.raw/*417.4*/("""}"""),format.raw/*417.5*/("""
+			"""),format.raw/*420.4*/("""}"""),format.raw/*420.5*/("""
 
-		"""),format.raw/*419.3*/("""}"""),format.raw/*419.4*/(""", 2000);
+		"""),format.raw/*422.3*/("""}"""),format.raw/*422.4*/(""", 2000);
 
-	"""),format.raw/*421.2*/("""}"""),format.raw/*421.3*/(""");
+	"""),format.raw/*424.2*/("""}"""),format.raw/*424.3*/(""");
 </script>
 
 <script>
-	//	$(function () """),format.raw/*425.19*/("""{"""),format.raw/*425.20*/("""
+	//	$(function () """),format.raw/*428.19*/("""{"""),format.raw/*428.20*/("""
 	//	$('#container-questions').
-	//"""),format.raw/*427.4*/("""}"""),format.raw/*427.5*/(""");
+	//"""),format.raw/*430.4*/("""}"""),format.raw/*430.5*/(""");
 </script>
 
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*433.14*/routes/*433.20*/.Assets.at(" images/logo.png"))),format.raw/*433.50*/("""" height="50px"
+		<img src=""""),_display_(Seq[Any](/*436.14*/routes/*436.20*/.Assets.at(" images/logo.png"))),format.raw/*436.50*/("""" height="50px"
 			width="150px" alt="Live Feed">
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
@@ -583,11 +586,11 @@ Seq[Any](format.raw/*1.16*/(""" """),format.raw/*2.1*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 18:39:10 CEST 2014
+                    DATE: Thu Jun 19 19:01:57 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/profPage.scala.html
-                    HASH: d360733b5192a3543d54d9cb510160433e8da642
-                    MATRIX: 775->1|900->15|927->34|1077->149|1091->155|1146->189|1236->243|1251->249|1305->281|1391->331|1406->337|1482->390|1568->440|1583->446|1655->495|1711->515|1726->521|1793->566|1971->716|2000->717|2228->918|2256->919|2319->954|2348->955|2473->1052|2502->1053|2540->1064|2568->1065|2637->1106|2666->1107|2773->1186|2802->1187|2968->1326|2996->1327|3076->1379|3105->1380|3279->1527|3307->1528|3384->1577|3413->1578|3545->1683|3573->1684|3657->1740|3686->1741|3827->1855|3855->1856|3888->1862|3916->1863|3984->1903|4013->1904|4080->1944|4108->1945|4172->1981|4201->1982|4258->2011|4287->2012|4356->2054|4384->2055|4430->2073|4459->2074|4514->2102|4542->2103|4574->2108|4602->2109|4668->2147|4697->2148|4753->2177|4781->2178|4844->2213|4873->2214|4929->2243|4957->2244|4989->2249|5017->2250|5065->2270|5094->2271|5163->2312|5192->2313|5249->2342|5278->2343|5323->2360|5352->2361|5410->2392|5438->2393|5472->2400|5500->2401|5603->2477|5631->2478|5677->2496|5706->2497|5873->2636|5902->2637|5960->2667|5989->2668|6184->2834|6214->2835|6341->2933|6371->2934|6468->3002|6498->3003|6615->3091|6645->3092|6694->3112|6724->3113|6764->3124|6794->3125|6832->3135|6862->3136|6910->3155|6940->3156|7003->3191|7033->3192|7081->3211|7111->3212|7159->3231|7189->3232|7254->3268|7284->3269|7386->3343|7416->3344|7466->3365|7496->3366|7544->3385|7574->3386|7645->3428|7675->3429|7765->3490|7795->3491|7859->3526|7889->3527|7954->3563|7984->3564|8058->3609|8088->3610|8154->3647|8184->3648|8252->3687|8282->3688|8347->3724|8377->3725|8451->3770|8481->3771|8522->3783|8552->3784|8592->3795|8622->3796|8661->3807|8691->3808|8741->3829|8771->3830|8834->3864|8864->3865|9151->4123|9181->4124|9219->4134|9249->4135|9298->4155|9328->4156|9392->4192|9422->4193|9474->4216|9504->4217|9568->4253|9598->4254|9649->4276|9679->4277|9770->4339|9800->4340|9991->4502|10021->4503|10073->4526|10103->4527|10205->4600|10235->4601|10278->4615|10308->4616|10372->4651|10402->4652|10443->4665|10473->4666|10512->4677|10541->4678|10577->4686|10606->4687|10641->4694|10670->4695|10719->4715|10749->4716|10817->4755|10847->4756|10905->4785|10935->4786|10981->4803|11011->4804|11070->4835|11099->4836|11134->4843|11163->4844|11270->4923|11299->4924|11346->4942|11376->4943|11544->5082|11574->5083|11633->5113|11663->5114|11892->5314|11922->5315|12176->5540|12206->5541|12303->5609|12333->5610|12450->5698|12480->5699|12529->5719|12559->5720|12599->5731|12629->5732|12667->5742|12697->5743|12745->5762|12775->5763|12841->5801|12871->5802|12919->5821|12949->5822|12997->5841|13027->5842|13092->5878|13122->5879|13224->5953|13254->5954|13304->5975|13334->5976|13382->5995|13412->5996|13483->6038|13513->6039|13603->6100|13633->6101|13697->6136|13727->6137|13792->6173|13822->6174|13896->6219|13926->6220|13992->6257|14022->6258|14090->6297|14120->6298|14185->6334|14215->6335|14288->6379|14318->6380|14359->6392|14389->6393|14429->6404|14459->6405|14498->6416|14528->6417|14578->6438|14608->6439|14671->6473|14701->6474|14991->6735|15021->6736|15059->6746|15089->6747|15138->6767|15168->6768|15232->6804|15262->6805|15314->6828|15344->6829|15408->6865|15438->6866|15489->6888|15519->6889|15610->6951|15640->6952|15831->7114|15861->7115|15913->7138|15943->7139|16075->7242|16105->7243|16148->7257|16178->7258|16242->7293|16272->7294|16313->7307|16343->7308|16382->7319|16411->7320|16447->7328|16476->7329|16511->7336|16540->7337|16589->7357|16619->7358|16673->7383|16703->7384|16747->7399|16777->7400|16835->7430|16864->7431|16928->7466|16958->7467|17101->7581|17131->7582|17334->7757|17363->7758|17396->7763|17425->7764|17472->7782|17502->7783|17555->7808|17584->7809|17651->7847|17681->7848|17943->8081|17973->8082|18021->8102|18050->8103|18095->8119|18125->8120|18172->8139|18201->8140|18234->8145|18263->8146|18314->8168|18344->8169|18392->8188|18422->8189|18471->8209|18501->8210|18596->8277|18625->8278|18671->8295|18701->8296|18746->8312|18776->8313|18835->8344|18864->8345|18899->8352|18928->8353|18964->8361|18993->8362|19028->8369|19057->8370|19089->8374|19118->8375|19287->8515|19317->8516|19367->8537|19397->8538|19494->8606|19524->8607|19596->8650|19626->8651|19668->8664|19698->8665|19753->8691|19783->8692|19854->8734|19884->8735|19940->8762|19970->8763|20082->8846|20112->8847|20342->9048|20372->9049|20402->9050|20432->9051|20576->9166|20606->9167|20660->9192|20690->9193|20797->9271|20827->9272|20869->9285|20899->9286|20944->9302|20974->9303|21107->9407|21137->9408|21249->9491|21279->9492|21485->9669|21515->9670|21586->9713|21615->9714|21717->9788|21746->9789|21780->9795|21809->9796|21850->9809|21879->9810|21953->9855|21983->9856|22048->9893|22077->9894|22235->10015|22251->10021|22304->10051
-                    LINES: 26->1|30->1|30->2|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|42->14|42->14|42->14|49->21|49->21|55->27|55->27|57->29|57->29|61->33|61->33|63->35|63->35|65->37|65->37|68->40|68->40|72->44|72->44|72->44|72->44|76->48|76->48|76->48|76->48|79->51|79->51|80->52|80->52|84->56|84->56|86->58|86->58|88->60|88->60|90->62|90->62|92->64|92->64|93->65|93->65|95->67|95->67|95->67|95->67|97->69|97->69|98->70|98->70|100->72|100->72|102->74|102->74|104->76|104->76|106->78|106->78|107->79|107->79|109->81|109->81|112->84|112->84|113->85|113->85|114->86|114->86|116->88|116->88|117->89|117->89|121->93|121->93|122->94|122->94|126->98|126->98|127->99|127->99|133->105|133->105|136->108|136->108|138->110|138->110|142->114|142->114|143->115|143->115|144->116|144->116|145->117|145->117|146->118|146->118|148->120|148->120|149->121|149->121|150->122|150->122|152->124|152->124|155->127|155->127|157->129|157->129|158->130|158->130|160->132|160->132|163->135|163->135|164->136|164->136|165->137|165->137|167->139|167->139|169->141|169->141|171->143|171->143|173->145|173->145|175->147|175->147|176->148|176->148|177->149|177->149|178->150|178->150|179->151|179->151|180->152|180->152|188->160|188->160|189->161|189->161|190->162|190->162|192->164|192->164|193->165|193->165|195->167|195->167|196->168|196->168|198->170|198->170|203->175|203->175|204->176|204->176|207->179|207->179|208->180|208->180|210->182|210->182|211->183|211->183|212->184|212->184|213->185|213->185|215->187|215->187|217->189|217->189|219->191|219->191|220->192|220->192|221->193|221->193|223->195|223->195|224->196|224->196|228->200|228->200|229->201|229->201|233->205|233->205|234->206|234->206|241->213|241->213|246->218|246->218|248->220|248->220|252->224|252->224|253->225|253->225|254->226|254->226|255->227|255->227|256->228|256->228|258->230|258->230|259->231|259->231|260->232|260->232|262->234|262->234|265->237|265->237|267->239|267->239|268->240|268->240|270->242|270->242|273->245|273->245|274->246|274->246|275->247|275->247|277->249|277->249|279->251|279->251|281->253|281->253|283->255|283->255|285->257|285->257|286->258|286->258|287->259|287->259|288->260|288->260|289->261|289->261|290->262|290->262|298->270|298->270|299->271|299->271|300->272|300->272|302->274|302->274|303->275|303->275|305->277|305->277|306->278|306->278|308->280|308->280|313->285|313->285|314->286|314->286|318->290|318->290|319->291|319->291|321->293|321->293|322->294|322->294|323->295|323->295|324->296|324->296|326->298|326->298|328->300|328->300|330->302|330->302|332->304|332->304|334->306|334->306|338->310|338->310|343->315|343->315|349->321|349->321|350->322|350->322|352->324|352->324|354->326|354->326|357->329|357->329|366->338|366->338|368->340|368->340|369->341|369->341|371->343|371->343|372->344|372->344|374->346|374->346|375->347|375->347|376->348|376->348|380->352|380->352|381->353|381->353|382->354|382->354|384->356|384->356|385->357|385->357|387->359|387->359|389->361|389->361|390->362|390->362|398->370|398->370|399->371|399->371|402->374|402->374|404->376|404->376|405->377|405->377|407->379|407->379|409->381|409->381|411->383|411->383|414->386|414->386|417->389|417->389|417->389|417->389|419->391|419->391|420->392|420->392|422->394|422->394|423->395|423->395|425->397|425->397|431->403|431->403|435->407|435->407|440->412|440->412|442->414|442->414|445->417|445->417|447->419|447->419|449->421|449->421|453->425|453->425|455->427|455->427|461->433|461->433|461->433
+                    HASH: fa3d71a9666805c2044f882b6f22c9c9cc7c3b6d
+                    MATRIX: 775->1|900->15|927->34|1077->149|1091->155|1146->189|1236->243|1251->249|1305->281|1391->331|1406->337|1482->390|1568->440|1583->446|1655->495|1711->515|1726->521|1793->566|1971->716|2000->717|2228->918|2256->919|2319->954|2348->955|2473->1052|2502->1053|2540->1064|2568->1065|2637->1106|2666->1107|2773->1186|2802->1187|2968->1326|2996->1327|3076->1379|3105->1380|3279->1527|3307->1528|3384->1577|3413->1578|3545->1683|3573->1684|3657->1740|3686->1741|3827->1855|3855->1856|3888->1862|3916->1863|3984->1903|4013->1904|4080->1944|4108->1945|4201->2010|4230->2011|4454->2207|4483->2208|4560->2257|4589->2258|4653->2295|4681->2296|4748->2335|4777->2336|4841->2373|4869->2374|4901->2379|4929->2380|4977->2400|5006->2401|5075->2442|5104->2443|5161->2472|5190->2473|5235->2490|5264->2491|5322->2522|5350->2523|5384->2530|5412->2531|5515->2607|5543->2608|5589->2626|5618->2627|5786->2766|5816->2767|5875->2797|5905->2798|6100->2964|6130->2965|6257->3063|6287->3064|6384->3132|6414->3133|6531->3221|6561->3222|6610->3242|6640->3243|6680->3254|6710->3255|6748->3265|6778->3266|6826->3285|6856->3286|6919->3321|6949->3322|6997->3341|7027->3342|7075->3361|7105->3362|7170->3398|7200->3399|7302->3473|7332->3474|7382->3495|7412->3496|7460->3515|7490->3516|7561->3558|7591->3559|7681->3620|7711->3621|7775->3656|7805->3657|7870->3693|7900->3694|7974->3739|8004->3740|8070->3777|8100->3778|8168->3817|8198->3818|8263->3854|8293->3855|8367->3900|8397->3901|8438->3913|8468->3914|8508->3925|8538->3926|8577->3937|8607->3938|8657->3959|8687->3960|8750->3994|8780->3995|9067->4253|9097->4254|9135->4264|9165->4265|9214->4285|9244->4286|9308->4322|9338->4323|9390->4346|9420->4347|9484->4383|9514->4384|9565->4406|9595->4407|9686->4469|9716->4470|9907->4632|9937->4633|9989->4656|10019->4657|10121->4730|10151->4731|10194->4745|10224->4746|10288->4781|10318->4782|10359->4795|10389->4796|10428->4807|10457->4808|10493->4816|10522->4817|10557->4824|10586->4825|10635->4845|10665->4846|10733->4885|10763->4886|10821->4915|10851->4916|10897->4933|10927->4934|10986->4965|11015->4966|11050->4973|11079->4974|11186->5053|11215->5054|11262->5072|11292->5073|11460->5212|11490->5213|11549->5243|11579->5244|11808->5444|11838->5445|12092->5670|12122->5671|12219->5739|12249->5740|12366->5828|12396->5829|12445->5849|12475->5850|12515->5861|12545->5862|12583->5872|12613->5873|12661->5892|12691->5893|12757->5931|12787->5932|12835->5951|12865->5952|12913->5971|12943->5972|13008->6008|13038->6009|13140->6083|13170->6084|13220->6105|13250->6106|13298->6125|13328->6126|13399->6168|13429->6169|13519->6230|13549->6231|13613->6266|13643->6267|13708->6303|13738->6304|13812->6349|13842->6350|13908->6387|13938->6388|14006->6427|14036->6428|14101->6464|14131->6465|14204->6509|14234->6510|14275->6522|14305->6523|14345->6534|14375->6535|14414->6546|14444->6547|14494->6568|14524->6569|14587->6603|14617->6604|14907->6865|14937->6866|14975->6876|15005->6877|15054->6897|15084->6898|15148->6934|15178->6935|15230->6958|15260->6959|15324->6995|15354->6996|15405->7018|15435->7019|15526->7081|15556->7082|15747->7244|15777->7245|15829->7268|15859->7269|15991->7372|16021->7373|16064->7387|16094->7388|16158->7423|16188->7424|16229->7437|16259->7438|16298->7449|16327->7450|16363->7458|16392->7459|16427->7466|16456->7467|16505->7487|16535->7488|16589->7513|16619->7514|16663->7529|16693->7530|16751->7560|16780->7561|16844->7596|16874->7597|17017->7711|17047->7712|17250->7887|17279->7888|17312->7893|17341->7894|17388->7912|17418->7913|17471->7938|17500->7939|17567->7977|17597->7978|17859->8211|17889->8212|17937->8232|17966->8233|18011->8249|18041->8250|18088->8269|18117->8270|18150->8275|18179->8276|18230->8298|18260->8299|18308->8318|18338->8319|18387->8339|18417->8340|18512->8407|18541->8408|18587->8425|18617->8426|18662->8442|18692->8443|18751->8474|18780->8475|18815->8482|18844->8483|18880->8491|18909->8492|18944->8499|18973->8500|19005->8504|19034->8505|19203->8645|19233->8646|19283->8667|19313->8668|19410->8736|19440->8737|19512->8780|19542->8781|19584->8794|19614->8795|19669->8821|19699->8822|19770->8864|19800->8865|19856->8892|19886->8893|19998->8976|20028->8977|20258->9178|20288->9179|20318->9180|20348->9181|20492->9296|20522->9297|20576->9322|20606->9323|20713->9401|20743->9402|20785->9415|20815->9416|20860->9432|20890->9433|21023->9537|21053->9538|21165->9621|21195->9622|21401->9799|21431->9800|21502->9843|21531->9844|21633->9918|21662->9919|21696->9925|21725->9926|21766->9939|21795->9940|21869->9985|21899->9986|21964->10023|21993->10024|22151->10145|22167->10151|22220->10181
+                    LINES: 26->1|30->1|30->2|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|42->14|42->14|42->14|49->21|49->21|55->27|55->27|57->29|57->29|61->33|61->33|63->35|63->35|65->37|65->37|68->40|68->40|72->44|72->44|72->44|72->44|76->48|76->48|76->48|76->48|79->51|79->51|80->52|80->52|84->56|84->56|86->58|86->58|88->60|88->60|90->62|90->62|94->66|94->66|101->73|101->73|103->75|103->75|105->77|105->77|107->79|107->79|109->81|109->81|110->82|110->82|112->84|112->84|115->87|115->87|116->88|116->88|117->89|117->89|119->91|119->91|120->92|120->92|124->96|124->96|125->97|125->97|129->101|129->101|130->102|130->102|136->108|136->108|139->111|139->111|141->113|141->113|145->117|145->117|146->118|146->118|147->119|147->119|148->120|148->120|149->121|149->121|151->123|151->123|152->124|152->124|153->125|153->125|155->127|155->127|158->130|158->130|160->132|160->132|161->133|161->133|163->135|163->135|166->138|166->138|167->139|167->139|168->140|168->140|170->142|170->142|172->144|172->144|174->146|174->146|176->148|176->148|178->150|178->150|179->151|179->151|180->152|180->152|181->153|181->153|182->154|182->154|183->155|183->155|191->163|191->163|192->164|192->164|193->165|193->165|195->167|195->167|196->168|196->168|198->170|198->170|199->171|199->171|201->173|201->173|206->178|206->178|207->179|207->179|210->182|210->182|211->183|211->183|213->185|213->185|214->186|214->186|215->187|215->187|216->188|216->188|218->190|218->190|220->192|220->192|222->194|222->194|223->195|223->195|224->196|224->196|226->198|226->198|227->199|227->199|231->203|231->203|232->204|232->204|236->208|236->208|237->209|237->209|244->216|244->216|249->221|249->221|251->223|251->223|255->227|255->227|256->228|256->228|257->229|257->229|258->230|258->230|259->231|259->231|261->233|261->233|262->234|262->234|263->235|263->235|265->237|265->237|268->240|268->240|270->242|270->242|271->243|271->243|273->245|273->245|276->248|276->248|277->249|277->249|278->250|278->250|280->252|280->252|282->254|282->254|284->256|284->256|286->258|286->258|288->260|288->260|289->261|289->261|290->262|290->262|291->263|291->263|292->264|292->264|293->265|293->265|301->273|301->273|302->274|302->274|303->275|303->275|305->277|305->277|306->278|306->278|308->280|308->280|309->281|309->281|311->283|311->283|316->288|316->288|317->289|317->289|321->293|321->293|322->294|322->294|324->296|324->296|325->297|325->297|326->298|326->298|327->299|327->299|329->301|329->301|331->303|331->303|333->305|333->305|335->307|335->307|337->309|337->309|341->313|341->313|346->318|346->318|352->324|352->324|353->325|353->325|355->327|355->327|357->329|357->329|360->332|360->332|369->341|369->341|371->343|371->343|372->344|372->344|374->346|374->346|375->347|375->347|377->349|377->349|378->350|378->350|379->351|379->351|383->355|383->355|384->356|384->356|385->357|385->357|387->359|387->359|388->360|388->360|390->362|390->362|392->364|392->364|393->365|393->365|401->373|401->373|402->374|402->374|405->377|405->377|407->379|407->379|408->380|408->380|410->382|410->382|412->384|412->384|414->386|414->386|417->389|417->389|420->392|420->392|420->392|420->392|422->394|422->394|423->395|423->395|425->397|425->397|426->398|426->398|428->400|428->400|434->406|434->406|438->410|438->410|443->415|443->415|445->417|445->417|448->420|448->420|450->422|450->422|452->424|452->424|456->428|456->428|458->430|458->430|464->436|464->436|464->436
                     -- GENERATED --
                 */
             

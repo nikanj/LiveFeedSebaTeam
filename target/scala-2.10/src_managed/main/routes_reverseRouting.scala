@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
-// @HASH:5c45b9461312109160aceee46a382d06cca474ce
-// @DATE:Thu Jun 19 18:39:08 CEST 2014
+// @HASH:30dc0f596f5f3f57712aef6861df9aedc9757237
+// @DATE:Thu Jun 19 19:01:55 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,11 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:25
 // @LINE:22
+// @LINE:21
+// @LINE:20
+// @LINE:19
 // @LINE:18
 // @LINE:17
 // @LINE:16
@@ -28,24 +32,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:12
-class ReverseNewCourse {
-    
-
-// @LINE:12
-def addCourse(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "addCourse")
-}
-                                                
-    
-}
-                          
-
-// @LINE:22
+// @LINE:25
 class ReverseAssets {
     
 
-// @LINE:22
+// @LINE:25
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -84,6 +75,33 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "validate")
 // @LINE:10
 def profHome(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "profHome")
+}
+                                                
+    
+}
+                          
+
+// @LINE:22
+// @LINE:21
+// @LINE:20
+class ReverseAboutAndContact {
+    
+
+// @LINE:22
+def feedbackPage(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "feedback")
+}
+                                                
+
+// @LINE:20
+def aboutUsPage(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "aboutus")
+}
+                                                
+
+// @LINE:21
+def contactUsPage(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "contact")
 }
                                                 
     
@@ -146,11 +164,41 @@ def index(): Call = {
     
 }
                           
+
+// @LINE:19
+class ReverseReport {
+    
+
+// @LINE:19
+def report(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "report")
+}
+                                                
+    
+}
+                          
+
+// @LINE:12
+class ReverseNewCourse {
+    
+
+// @LINE:12
+def addCourse(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "addCourse")
+}
+                                                
+    
+}
+                          
 }
                   
 
 
+// @LINE:25
 // @LINE:22
+// @LINE:21
+// @LINE:20
+// @LINE:19
 // @LINE:18
 // @LINE:17
 // @LINE:16
@@ -165,29 +213,11 @@ def index(): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:12
-class ReverseNewCourse {
-    
-
-// @LINE:12
-def addCourse : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.NewCourse.addCourse",
-   """
-      function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addCourse"})
-      }
-   """
-)
-                        
-    
-}
-              
-
-// @LINE:22
+// @LINE:25
 class ReverseAssets {
     
 
-// @LINE:22
+// @LINE:25
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -242,6 +272,48 @@ def profHome : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profHome"})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:22
+// @LINE:21
+// @LINE:20
+class ReverseAboutAndContact {
+    
+
+// @LINE:22
+def feedbackPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.AboutAndContact.feedbackPage",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "feedback"})
+      }
+   """
+)
+                        
+
+// @LINE:20
+def aboutUsPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.AboutAndContact.aboutUsPage",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "aboutus"})
+      }
+   """
+)
+                        
+
+// @LINE:21
+def contactUsPage : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.AboutAndContact.contactUsPage",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contact"})
       }
    """
 )
@@ -334,11 +406,51 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
     
 }
               
+
+// @LINE:19
+class ReverseReport {
+    
+
+// @LINE:19
+def report : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Report.report",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "report"})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:12
+class ReverseNewCourse {
+    
+
+// @LINE:12
+def addCourse : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.NewCourse.addCourse",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addCourse"})
+      }
+   """
+)
+                        
+    
+}
+              
 }
         
 
 
+// @LINE:25
 // @LINE:22
+// @LINE:21
+// @LINE:20
+// @LINE:19
 // @LINE:18
 // @LINE:17
 // @LINE:16
@@ -354,24 +466,11 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:12
-class ReverseNewCourse {
-    
-
-// @LINE:12
-def addCourse(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.NewCourse.addCourse(), HandlerDef(this, "controllers.NewCourse", "addCourse", Seq(), "POST", """""", _prefix + """addCourse""")
-)
-                      
-    
-}
-                          
-
-// @LINE:22
+// @LINE:25
 class ReverseAssets {
     
 
-// @LINE:22
+// @LINE:25
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -402,6 +501,33 @@ def postLogin(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:10
 def profHome(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Profsignin.profHome(), HandlerDef(this, "controllers.Profsignin", "profHome", Seq(), "GET", """""", _prefix + """profHome""")
+)
+                      
+    
+}
+                          
+
+// @LINE:22
+// @LINE:21
+// @LINE:20
+class ReverseAboutAndContact {
+    
+
+// @LINE:22
+def feedbackPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.AboutAndContact.feedbackPage(), HandlerDef(this, "controllers.AboutAndContact", "feedbackPage", Seq(), "GET", """""", _prefix + """feedback""")
+)
+                      
+
+// @LINE:20
+def aboutUsPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.AboutAndContact.aboutUsPage(), HandlerDef(this, "controllers.AboutAndContact", "aboutUsPage", Seq(), "GET", """""", _prefix + """aboutus""")
+)
+                      
+
+// @LINE:21
+def contactUsPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.AboutAndContact.contactUsPage(), HandlerDef(this, "controllers.AboutAndContact", "contactUsPage", Seq(), "GET", """""", _prefix + """contact""")
 )
                       
     
@@ -451,6 +577,32 @@ def postQuestion(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:6
 def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+)
+                      
+    
+}
+                          
+
+// @LINE:19
+class ReverseReport {
+    
+
+// @LINE:19
+def report(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Report.report(), HandlerDef(this, "controllers.Report", "report", Seq(), "GET", """""", _prefix + """report""")
+)
+                      
+    
+}
+                          
+
+// @LINE:12
+class ReverseNewCourse {
+    
+
+// @LINE:12
+def addCourse(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.NewCourse.addCourse(), HandlerDef(this, "controllers.NewCourse", "addCourse", Seq(), "POST", """""", _prefix + """addCourse""")
 )
                       
     
