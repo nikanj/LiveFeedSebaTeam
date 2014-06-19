@@ -16,7 +16,7 @@ public class NewCourse extends Controller {
 	
 	
 	private static int profId;
-	private static int courseId = 1;
+	private static int courseId = 0;
 	
 	public static int getProfId() {
 		return profId;
@@ -33,6 +33,7 @@ public class NewCourse extends Controller {
 		String sql;
 		DynamicForm form = Form.form().bindFromRequest();
 		String courseName = form.get("courseName");
+		courseId ++;
 		System.out.println("Before Update:" + profId + " " + courseId + " " + courseName);
 		Course.updateDb(profId,courseId,courseName);
 		

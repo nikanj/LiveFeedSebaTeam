@@ -49,8 +49,7 @@ public class Profsignin extends Controller {
 		{
 			/*System.out.println("Reached Here!!!!");
 			profHome();*/
-			profHome();
-			return ok();
+			return redirect(routes.Profsignin.profHome());
 		}
 		else
 		{
