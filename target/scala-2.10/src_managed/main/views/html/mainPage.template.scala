@@ -50,7 +50,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
        <header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
   		<div class="well btn-group" style="margin-left:400px;margin-top:100px">
   		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/profSignIn" style="width:200px;">Tutors</a></p>
-  		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/indexStudent" style="width:200px;">Students</a></p>
+  		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/studentLogin" style="width:200px;">Students</a></p>
   		</div>
 	</header>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -68,9 +68,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 19:01:57 CEST 2014
+                    DATE: Sat Jun 21 18:09:07 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/mainPage.scala.html
-                    HASH: e3d84512a7c63bbf112f5bcf98b237140fdf8616
+                    HASH: e63d063c7b744eaee76f9440cec8fc5957c95968
                     MATRIX: 858->0|985->92|999->98|1054->132|1151->194|1165->200|1218->232|1311->290|1325->296|1400->349|1461->375|1475->381|1541->426|1735->584|1750->590|1801->619
                     LINES: 29->1|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|40->12|40->12|40->12
                     -- GENERATED --

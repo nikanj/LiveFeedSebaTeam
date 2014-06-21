@@ -9,51 +9,54 @@ import play.data.Form;
 import play.mvc.*;
 
 public class Profsignin extends Controller {
-	
+
 	public static boolean result = Boolean.FALSE;
 	public static int profId;
+	public static int flag = 1;
 	private static List<String> courseName = new ArrayList<String>();
 	public static Result profSignIn() {
 
-		return ok(views.html.profSignIn.render());
-		
+		return ok(views.html.profSignIn.render(flag));
+
 	}
-	
+
 	public static Result profHome() throws SQLException
 	{
 		System.out.println("Reached Here also!!!!");
 		courseName = Course.readDb(profId);
 		return ok(views.html.profHome.render());
 	}
-	
-	public static Result postLogin() throws SQLException {
 
+	public static Result validate() throws SQLException
+	{
 		DynamicForm form = Form.form().bindFromRequest();
-		String username = form.get("username");
-		String password = form.get("password");
-		
-		
+		String username = form.get("p_username");
+		String password = form.get("p_password");
+
+		System.out.println("Test");
 		System.out.println("uname: " + username);
 		System.out.println("pwd: " + password);
-		
+
 		result = Prof.profDetails(username, password);
 		profId = NewCourse.getProfId();
+
 		
-		//Course course = Course.find.byId(profId);
 		System.out.println("Result: " + result);
 		if(result)
 		{
-			//rs = Course.readDb(profId);
-			//return ok(views.html.profHome.render());
-			return redirect(routes.Profsignin.profHome());
+			
+			System.out.println("In validate function");
+			return ok(views.html.profHome.render());
+			
 		}
 		else
 		{
-			return redirect(routes.Application.homePage());
+			flag = 0;
+			return ok(views.html.profSignIn.render(flag));
 		}
-		
-
 	}
 	
-	
+
+
+
 }

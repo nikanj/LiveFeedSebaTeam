@@ -1,0 +1,111 @@
+@(speed_count : Int, pause_count : Int, volume_count : Int, questionCount : Int)
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Report Page</title>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/table.css")">
+
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+
+
+<script>
+$(function () {
+	var speed_count;
+	var loudness_count;
+	var pause_count;
+    
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Average Vote Counts'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec'
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Votes'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y} votes</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Speed',
+            data: [@speed_count]
+
+        }, {
+            name: 'Loudness',
+            data: [@volume_count]
+
+        }, {
+            name: 'Pause',
+            data: [@pause_count]
+
+        }]
+    });
+});
+
+</script>
+
+</head>
+<body>
+	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+		<img src="@routes.Assets.at(" images/logo.png")" height="50px"
+			width="150px" alt="Live Feed">
+	</div>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top"
+		role="banner">
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> <a
+				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
+				type="button" class="btn btn-default" href="/contact">Contact</a> <a
+				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+		</div>
+	</header>
+	
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="questions_vote"><h3>Number of Questions Voted:  <span class="label label-default"></span>@questionCount</h3>
+</div>
+	
+</body>
+</html>

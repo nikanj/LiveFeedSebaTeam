@@ -20,13 +20,15 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object profSignIn extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+object profSignIn extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[Integer,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply():play.api.templates.HtmlFormat.Appendable = {
-        _display_ {
+    def apply/*1.2*/(flag : Integer):play.api.templates.HtmlFormat.Appendable = {
+        _display_ {import helper._
 
-Seq[Any](format.raw/*3.1*/("""<!DOCTYPE html>
+
+Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""
+<!DOCTYPE html>
 
 <html>
     <head>
@@ -35,36 +37,21 @@ Seq[Any](format.raw/*3.1*/("""<!DOCTYPE html>
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.59*/routes/*9.65*/.Assets.at("images/favicon.png"))),format.raw/*9.97*/("""">
         <link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*10.55*/routes/*10.61*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*10.114*/("""">
         <script src=""""),_display_(Seq[Any](/*11.23*/routes/*11.29*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*11.74*/("""" type="text/javascript"></script>
-        
-        
-        
-        <script>
-        $(document).ready(function() """),format.raw/*16.38*/("""{"""),format.raw/*16.39*/("""
-        	var connection = new WebSocket('ws://localhost:9000');
+		<script>
+        	$(document).ready(function() """),format.raw/*13.39*/("""{"""),format.raw/*13.40*/("""
+        		var connection = new WebSocket('ws://localhost:9000');
 
-    		connection.onopen = function() """),format.raw/*19.38*/("""{"""),format.raw/*19.39*/("""
+    		connection.onopen = function() """),format.raw/*16.38*/("""{"""),format.raw/*16.39*/("""
     			//
-    		"""),format.raw/*21.7*/("""}"""),format.raw/*21.8*/("""
-        	
-               
-        $("#signin").click(function() """),format.raw/*24.39*/("""{"""),format.raw/*24.40*/("""
-			$.post("/postLogin", """),format.raw/*25.25*/("""{"""),format.raw/*25.26*/("""
-				username : $("#username").val(),
-				password : $("#password").val()
-			"""),format.raw/*28.4*/("""}"""),format.raw/*28.5*/(""")
-		"""),format.raw/*29.3*/("""}"""),format.raw/*29.4*/(""");
-        
-        """),format.raw/*31.9*/("""}"""),format.raw/*31.10*/(""");
+    		"""),format.raw/*18.7*/("""}"""),format.raw/*18.8*/("""
+        	"""),format.raw/*19.10*/("""}"""),format.raw/*19.11*/(""");
         </script>
-    
-    
-    
-    </head>
+ </head>
     
     
     <body>
     <div class="page-header" style="padding-bottom: 0px; margin-top:5px;">
-    		<img src=""""),_display_(Seq[Any](/*41.18*/routes/*41.24*/.Assets.at("images/logo.png"))),format.raw/*41.53*/("""" height="50px" width="150px" alt="Live Feed"> 
+    		<img src=""""),_display_(Seq[Any](/*26.18*/routes/*26.24*/.Assets.at("images/logo.png"))),format.raw/*26.53*/("""" height="50px" width="150px" alt="Live Feed"> 
     	</div> 
     	<header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
   			<div class="btn-group" style="float:right;">
@@ -74,45 +61,48 @@ Seq[Any](format.raw/*3.1*/("""<!DOCTYPE html>
   				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
   			</div>
 		</header>
-		
-	<form class="form-horizontal" action="/validate" >
-	<div class="col-lg-4" style="margin-left:400px;">
-	<h1> Please Sign In</h1>
-	<div class="input-group" style="margin-top:20px;">
-  		<span class="input-group-addon">Username</span>
-  		
-  		<input type="text" class="form-control" id="username" placeholder="Username">
-	</div>
-	<div class="input-group" style="margin-top:20px;">
-  		<span class="input-group-addon">Password</span>
-  		<input type="password" class="form-control" id="password" placeholder="Password">
-	</div>
-	<div style="margin-top:20px;"><input type="checkbox"> Remember Me  </div>
-	<div class="btn-group-justified" style="margin-top:20px;">
-		<a class="btn btn-success" type="submit" id="signin">  Sign In  </a>
-		<a class="btn btn-default" type="button" href="/home">  Cancel  </a>
-	</div>
-</div>
-</form>
+	
+		<div>
+			<form method="get" action="/validate">
+				<div id="q_area" class="col-sm-4" style="margin-left: 350px; " >
+				<h1>Please Sign In</h1>
+					<div class="input-group" style="margin-top:20px;">
+			  			<span class="input-group-addon">Username</span>
+  			  			<input type="text" class="form-control" id="username" placeholder="Username" name="p_username">
+					</div>
+					<div class="input-group" style="margin-top:20px;">
+  						<span class="input-group-addon">Password</span>
+  						<input type="password" class="form-control" id="password" placeholder="Password" name="p_password">
+					</div>
+					<div style="margin-top:20px;"><input type="checkbox"> Remember Me  </div>
+						<div class="btn-group-justified" style="margin-top: 20px;">
+							<button type="submit" class="btn btn-success" style="width:212px">Sign In</button>
+							<button type="submit" class="btn btn-default" style="width:212px" href="/home">Cancel</button>
+						</div>
+					</div>
+			</form>
+			
+		</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </body>
 </html>"""))}
     }
     
-    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    def render(flag:Integer): play.api.templates.HtmlFormat.Appendable = apply(flag)
     
-    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    def f:((Integer) => play.api.templates.HtmlFormat.Appendable) = (flag) => apply(flag)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 19:01:57 CEST 2014
+                    DATE: Sat Jun 21 18:09:07 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/profSignIn.scala.html
-                    HASH: 7cf29d10391545e336ebcef9717074c68712f8a8
-                    MATRIX: 860->2|988->95|1002->101|1057->135|1153->196|1167->202|1220->234|1313->291|1328->297|1404->350|1465->375|1480->381|1547->426|1691->542|1720->543|1851->646|1880->647|1924->664|1952->665|2045->730|2074->731|2127->756|2156->757|2260->834|2288->835|2319->839|2347->840|2394->860|2423->861|2620->1022|2635->1028|2686->1057
-                    LINES: 29->3|34->8|34->8|34->8|35->9|35->9|35->9|36->10|36->10|36->10|37->11|37->11|37->11|42->16|42->16|45->19|45->19|47->21|47->21|50->24|50->24|51->25|51->25|54->28|54->28|55->29|55->29|57->31|57->31|67->41|67->41|67->41
+                    HASH: c1512a3800423bc58959d85fbf9de5ca5eebd90a
+                    MATRIX: 780->1|906->17|933->35|1062->129|1076->135|1131->169|1227->230|1241->236|1294->268|1387->325|1402->331|1478->384|1539->409|1554->415|1621->460|1733->544|1762->545|1894->649|1923->650|1967->667|1995->668|2033->678|2062->679|2241->822|2256->828|2307->857
+                    LINES: 26->1|30->1|30->2|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|41->13|41->13|44->16|44->16|46->18|46->18|47->19|47->19|54->26|54->26|54->26
                     -- GENERATED --
                 */
             

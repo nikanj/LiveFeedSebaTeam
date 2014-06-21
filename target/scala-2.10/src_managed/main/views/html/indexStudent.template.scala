@@ -124,8 +124,6 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 						<textarea class="form-control" rows="3" columns="50" id="question"
 							placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">
-							<!-- <a id="submit_button" class="btn btn-success" type="submit">Submit</a>
-						<a id="cancel_button" class="btn btn-danger" type="button">Cancel</a> -->
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</div>
 					</div>
@@ -149,9 +147,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 19:01:57 CEST 2014
+                    DATE: Sat Jun 21 18:09:07 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/indexStudent.scala.html
-                    HASH: e28de7609ee101fb419f0c9a8f854b6eecf19066
+                    HASH: a981f75c417157624e9a17e0470b852e63595310
                     MATRIX: 862->0|993->96|1007->102|1062->136|1150->189|1164->195|1217->227|1301->276|1315->282|1390->335|1442->352|1456->358|1522->403|1696->541|1711->547|1762->576|2299->1078|2314->1084|2355->1103
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|43->15|43->15|43->15|56->28|56->28|56->28
                     -- GENERATED --

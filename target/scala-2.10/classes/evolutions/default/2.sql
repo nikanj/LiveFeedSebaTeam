@@ -12,4 +12,3 @@ Insert into question (ID_question, ID_prof, Question, CourseName) values (3, 1, 
 Insert into question (ID_question, ID_prof, Question, CourseName) values (4, 1, 'teast', 'pattern');
 # --- !Downs
 
-delete from prof;

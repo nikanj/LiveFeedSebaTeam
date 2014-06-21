@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
-// @HASH:30dc0f596f5f3f57712aef6861df9aedc9757237
-// @DATE:Thu Jun 19 19:01:55 CEST 2014
+// @HASH:8887106b1bf5a29b17528dd10126399d20430188
+// @DATE:Sat Jun 21 18:09:05 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -45,8 +45,20 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:16
-// @LINE:13
+// @LINE:11
+class ReverseStudentLogin {
+    
+
+// @LINE:11
+def login(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "studentLogin")
+}
+                                                
+    
+}
+                          
+
+// @LINE:12
 // @LINE:10
 // @LINE:9
 class ReverseProfsignin {
@@ -58,17 +70,9 @@ def profSignIn(): Call = {
 }
                                                 
 
-// @LINE:16
-// @LINE:13
-def postLogin(): Call = {
-   () match {
-// @LINE:13
-case () if true => Call("POST", _prefix + { _defaultPrefix } + "postLogin")
-                                                        
-// @LINE:16
-case () if true => Call("GET", _prefix + { _defaultPrefix } + "validate")
-                                                        
-   }
+// @LINE:12
+def validate(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "validate")
 }
                                                 
 
@@ -110,9 +114,9 @@ def contactUsPage(): Call = {
 
 // @LINE:18
 // @LINE:17
+// @LINE:16
 // @LINE:15
-// @LINE:14
-// @LINE:11
+// @LINE:13
 // @LINE:8
 // @LINE:6
 class ReverseApplication {
@@ -131,10 +135,10 @@ def profPageDisplay(): Call = {
                                                 
 
 // @LINE:17
-// @LINE:14
+// @LINE:15
 def indexStudent(): Call = {
    () match {
-// @LINE:14
+// @LINE:15
 case () if true => Call("GET", _prefix + { _defaultPrefix } + "indexStudent")
                                                         
 // @LINE:17
@@ -144,15 +148,15 @@ case () if true => Call("GET", _prefix + { _defaultPrefix } + "indexStudent")
 }
                                                 
 
-// @LINE:15
+// @LINE:16
 def vote(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "vote")
 }
                                                 
 
-// @LINE:11
+// @LINE:13
 def postQuestion(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "postQuestion")
+   Call("GET", _prefix + { _defaultPrefix } + "postQuestion")
 }
                                                 
 
@@ -178,11 +182,11 @@ def report(): Call = {
 }
                           
 
-// @LINE:12
+// @LINE:14
 class ReverseNewCourse {
     
 
-// @LINE:12
+// @LINE:14
 def addCourse(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "addCourse")
 }
@@ -231,8 +235,25 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:16
-// @LINE:13
+// @LINE:11
+class ReverseStudentLogin {
+    
+
+// @LINE:11
+def login : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.StudentLogin.login",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "studentLogin"})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:12
 // @LINE:10
 // @LINE:9
 class ReverseProfsignin {
@@ -249,18 +270,12 @@ def profSignIn : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:16
-// @LINE:13
-def postLogin : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Profsignin.postLogin",
+// @LINE:12
+def validate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Profsignin.validate",
    """
       function() {
-      if (true) {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "postLogin"})
-      }
-      if (true) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "validate"})
-      }
       }
    """
 )
@@ -324,9 +339,9 @@ def contactUsPage : JavascriptReverseRoute = JavascriptReverseRoute(
 
 // @LINE:18
 // @LINE:17
+// @LINE:16
 // @LINE:15
-// @LINE:14
-// @LINE:11
+// @LINE:13
 // @LINE:8
 // @LINE:6
 class ReverseApplication {
@@ -355,7 +370,7 @@ def profPageDisplay : JavascriptReverseRoute = JavascriptReverseRoute(
                         
 
 // @LINE:17
-// @LINE:14
+// @LINE:15
 def indexStudent : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.indexStudent",
    """
@@ -371,7 +386,7 @@ def indexStudent : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:15
+// @LINE:16
 def vote : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.vote",
    """
@@ -382,12 +397,12 @@ def vote : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:11
+// @LINE:13
 def postQuestion : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.postQuestion",
    """
       function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "postQuestion"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "postQuestion"})
       }
    """
 )
@@ -425,11 +440,11 @@ def report : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:12
+// @LINE:14
 class ReverseNewCourse {
     
 
-// @LINE:12
+// @LINE:14
 def addCourse : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.NewCourse.addCourse",
    """
@@ -479,8 +494,20 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:16
-// @LINE:13
+// @LINE:11
+class ReverseStudentLogin {
+    
+
+// @LINE:11
+def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.StudentLogin.login(), HandlerDef(this, "controllers.StudentLogin", "login", Seq(), "GET", """""", _prefix + """studentLogin""")
+)
+                      
+    
+}
+                          
+
+// @LINE:12
 // @LINE:10
 // @LINE:9
 class ReverseProfsignin {
@@ -492,9 +519,9 @@ def profSignIn(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:13
-def postLogin(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Profsignin.postLogin(), HandlerDef(this, "controllers.Profsignin", "postLogin", Seq(), "POST", """""", _prefix + """postLogin""")
+// @LINE:12
+def validate(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Profsignin.validate(), HandlerDef(this, "controllers.Profsignin", "validate", Seq(), "GET", """""", _prefix + """validate""")
 )
                       
 
@@ -536,9 +563,9 @@ def contactUsPage(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 
 // @LINE:18
 // @LINE:17
+// @LINE:16
 // @LINE:15
-// @LINE:14
-// @LINE:11
+// @LINE:13
 // @LINE:8
 // @LINE:6
 class ReverseApplication {
@@ -556,21 +583,21 @@ def profPageDisplay(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:14
+// @LINE:15
 def indexStudent(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Seq(), "GET", """""", _prefix + """indexStudent""")
 )
                       
 
-// @LINE:15
+// @LINE:16
 def vote(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.vote(), HandlerDef(this, "controllers.Application", "vote", Seq(), "GET", """""", _prefix + """vote""")
 )
                       
 
-// @LINE:11
+// @LINE:13
 def postQuestion(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.postQuestion(), HandlerDef(this, "controllers.Application", "postQuestion", Seq(), "POST", """""", _prefix + """postQuestion""")
+   controllers.Application.postQuestion(), HandlerDef(this, "controllers.Application", "postQuestion", Seq(), "GET", """""", _prefix + """postQuestion""")
 )
                       
 
@@ -596,11 +623,11 @@ def report(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:12
+// @LINE:14
 class ReverseNewCourse {
     
 
-// @LINE:12
+// @LINE:14
 def addCourse(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.NewCourse.addCourse(), HandlerDef(this, "controllers.NewCourse", "addCourse", Seq(), "POST", """""", _prefix + """addCourse""")
 )
