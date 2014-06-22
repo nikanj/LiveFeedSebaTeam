@@ -15,7 +15,7 @@ import play.mvc.Result;
 
 public class NewCourse extends Controller {
 	
-	private static ArrayList <String> courses = new ArrayList<String> ();
+	
 	private static int profId;
 	private static int courseId = 0;
 	
@@ -30,6 +30,7 @@ public class NewCourse extends Controller {
 	public static ArrayList<String> existingCourses(int prof_Id) throws SQLException
 	{
 		ResultSet courseNames = Course.readDb(prof_Id);
+		ArrayList <String> courses = new ArrayList<String> ();
 		while (courseNames.next()) {
 			String course = courseNames.getString("CourseName");
 			courses.add(course);

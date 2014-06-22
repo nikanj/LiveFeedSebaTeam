@@ -267,6 +267,12 @@ public class Application extends Controller {
 	}
 
 	public static Result profPageDisplay() {
+		DynamicForm form = Form.form().bindFromRequest();
+		String selectedCourse = form.get("course");
+		System.out.println("Course name: " + selectedCourse);
+		
+		int courseId = Course.getCourseIdByCourseName(selectedCourse);
+		
 		
 		String sessionId = new BigInteger(130, random).toString(32);
 

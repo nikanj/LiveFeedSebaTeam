@@ -26,9 +26,13 @@ public class Stats extends Model  {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static int speedVotes = 0;
 	private static int pauseVotes = 0;
-	private static int volVotes = 0;
+	private static int speedOK = 0;
+	private static int speedLow = 0;
+	private static int speedHigh = 0;
+	private static int volumeOK = 0;
+	private static int volumeLow = 0;
+	private static int volumeHigh = 0;
 	
 
 	@Id
@@ -48,10 +52,40 @@ public class Stats extends Model  {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-		if(vote.contains("speed"))
+		if(vote.contains("speed_low"))
 		{ 
-			speedVotes ++;
-			sql = "update stats set Speed_count =" + speedVotes + " where ID_stats=1";
+			speedLow ++;
+			sql = "update stats set Speed_Low =" + speedLow + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if(vote.contains("speed_ok"))
+		{ 
+			speedOK ++;
+			sql = "update stats set Speed_OK =" + speedOK + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if(vote.contains("speed_high"))
+		{ 
+			speedHigh ++;
+			sql = "update stats set Speed_High =" + speedHigh + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if(vote.contains("voice_low"))
+		{ 
+			volumeLow ++;
+			sql = "update stats set Volume_Low =" + volumeLow + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if(vote.contains("voice_ok"))
+		{ 
+			volumeOK ++;
+			sql = "update stats set Volume_OK =" + volumeOK + " where ID_stats=1";
+			boolean rs = stmt.execute(sql);
+		}
+		else if(vote.contains("voice_high"))
+		{ 
+			volumeHigh ++;
+			sql = "update stats set Volume_High =" + volumeHigh + " where ID_stats=1";
 			boolean rs = stmt.execute(sql);
 		}
 		else if (vote.contains("pause"))
@@ -60,11 +94,15 @@ public class Stats extends Model  {
 			sql = "update stats set Pause_count =" + pauseVotes + " where ID_stats=1";
 			boolean rs = stmt.execute(sql);
 		}
-		else
-		{
-			volVotes ++;
-			sql = "update stats set Volume_count =" + volVotes + " where ID_stats=1";
-			boolean rs = stmt.execute(sql);
-		}
+	}
+	
+	public static ResultSet readDB(int statsID) throws SQLException {
+
+		java.sql.Connection conn = DB.getConnection();
+		java.sql.Statement stmt = conn.createStatement();
+		String sql;
+		sql = "SELECT ID_stats, Speed_Low, Speed_OK, Speed_High, Volume_Low, Volume_OK, Volume_High, Pause_count FROM stats WHERE ID_stats =" + statsID;
+		ResultSet rs = stmt.executeQuery(sql);
+		return rs;
 	}
 }

@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
 // @HASH:269c8da57525c61b7e2a0c78db6c5e0d8b7476a6
-// @DATE:Sun Jun 22 12:33:38 CEST 2014
+// @DATE:Sun Jun 22 13:28:06 CEST 2014
 
 
 import play.core._

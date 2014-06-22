@@ -1,5 +1,6 @@
 package controllers;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +14,11 @@ public class Profsignin extends Controller {
 	public static boolean result = Boolean.FALSE;
 	public static int profId;
 	public static int flag = 1;
-	private static List<String> courseName = new ArrayList<String>();
+	private static ArrayList<String> courses = new ArrayList<String>();
 	public static Result profSignIn() {
-		flag = 1;
+		flag  = 1;
 		return ok(views.html.profSignIn.render(flag));
-	}
 
-	public static Result profHome() throws SQLException
-	{
-		System.out.println("Reached Here also!!!!");
-		courseName = Course.readDb(profId);
-		return ok(views.html.profHome.render());
 	}
 
 	public static Result validate() throws SQLException
@@ -39,14 +34,16 @@ public class Profsignin extends Controller {
 		result = Prof.profDetails(username, password);
 		profId = NewCourse.getProfId();
 
-
+		
 		System.out.println("Result: " + result);
 		if(result)
 		{
-
+			
 			System.out.println("In validate function");
-			return ok(views.html.profHome.render());
-
+			courses = NewCourse.existingCourses(profId);
+			
+			return ok(views.html.profHome.render(courses));
+			
 		}
 		else
 		{
@@ -54,7 +51,7 @@ public class Profsignin extends Controller {
 			return ok(views.html.profSignIn.render(flag));
 		}
 	}
-
+	
 
 
 

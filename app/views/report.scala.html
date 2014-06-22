@@ -1,4 +1,4 @@
-@(speed_count : Int, pause_count : Int, volume_count : Int, questionCount : Int)
+@(speed_low: Int, speed_ok: Int, speed_high: Int, volume_low: Int, volume_ok: Int, volume_high: Int, pause_count: Int, questionCount: Int)
 
 <!DOCTYPE html>
 <html>
@@ -25,15 +25,15 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Average Vote Counts'
+            text: 'Total Vote Counts'
         },
         subtitle: {
             text: ''
         },
         xAxis: {
             categories: [
-                'Jan'
-                ]
+                'Statistics'
+            ]
         },
         yAxis: {
             min: 0,
@@ -52,18 +52,34 @@ $(function () {
         plotOptions: {
             column: {
                 pointPadding: 0.2,
-                borderWidth: 0
+                borderWidth: 0 
             }
         },
         series: [{
-            name: 'Speed',
-            data: [@speed_count]
+            name: 'Speed Low',
+            data: [@speed_low]
 
         }, {
-            name: 'Loudness',
-            data: [@volume_count]
+            name: 'Speed OK',
+            data: [@speed_ok]
 
-        }, {
+        },{
+            name: 'Speed High',
+            data: [@speed_high]
+
+        },{
+            name: 'Volume Low',
+            data: [@speed_low] 
+
+        },{
+            name: 'Volume OK',
+            data: [@speed_ok]
+
+        },{
+            name: 'Volume High',
+            data: [@speed_high]
+
+        },{
             name: 'Pause',
             data: [@pause_count]
 
@@ -93,7 +109,7 @@ $(function () {
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="questions_vote"><h3>Number of Questions Voted:  <span class="label label-default"></span>@questionCount</h3>
+<div id="questions_vote"><h3>Number of Questions Posted:  <span class="label label-default"></span>@questionCount</h3>
 </div>
 	
 </body>
