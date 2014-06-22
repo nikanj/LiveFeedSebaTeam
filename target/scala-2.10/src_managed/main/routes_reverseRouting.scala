@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
 // @HASH:8887106b1bf5a29b17528dd10126399d20430188
-// @DATE:Sat Jun 21 18:09:05 CEST 2014
+// @DATE:Sat Jun 21 23:33:09 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._

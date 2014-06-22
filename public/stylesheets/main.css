@@ -1,5 +1,5 @@
 html {
-    background: #eee;
+    background: #fff;
 }
 
 header h1 {
@@ -61,5 +61,21 @@ table.computers .header a {
 #pagination ul .current a {
     color: #666;
 }
+
+.background{	
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.homepage {
+    margin:auto;
+    position: relative;
+}
+
 
 

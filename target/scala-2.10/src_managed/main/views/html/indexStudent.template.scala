@@ -147,7 +147,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 21 18:09:07 CEST 2014
+                    DATE: Sat Jun 21 23:33:11 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/indexStudent.scala.html
                     HASH: a981f75c417157624e9a17e0470b852e63595310
                     MATRIX: 862->0|993->96|1007->102|1062->136|1150->189|1164->195|1217->227|1301->276|1315->282|1390->335|1442->352|1456->358|1522->403|1696->541|1711->547|1762->576|2299->1078|2314->1084|2355->1103
