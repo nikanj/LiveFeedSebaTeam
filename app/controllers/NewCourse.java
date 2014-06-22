@@ -15,8 +15,7 @@ import play.mvc.Result;
 
 public class NewCourse extends Controller {
 	
-	
-	private static List<String> courseNames = new ArrayList<String>();
+	private static ArrayList <String> courses = new ArrayList<String> ();
 	private static int profId;
 	private static int courseId = 0;
 	
@@ -28,6 +27,18 @@ public class NewCourse extends Controller {
 		NewCourse.profId = profId;
 	}
 
+	public static ArrayList<String> existingCourses(int prof_Id) throws SQLException
+	{
+		ResultSet courseNames = Course.readDb(prof_Id);
+		while (courseNames.next()) {
+			String course = courseNames.getString("CourseName");
+			courses.add(course);
+		}
+		
+		return courses;
+	}
+	
+	/*
 	public static Result addCourse() throws SQLException
 	{
 		java.sql.Connection conn = DB.getConnection();
@@ -58,5 +69,5 @@ public class NewCourse extends Controller {
 		
 			}
 			return ok(views.html.profHome.render());	
-	}
+	}*/
 }

@@ -15,9 +15,8 @@ public class Profsignin extends Controller {
 	public static int flag = 1;
 	private static List<String> courseName = new ArrayList<String>();
 	public static Result profSignIn() {
-
+		flag = 1;
 		return ok(views.html.profSignIn.render(flag));
-
 	}
 
 	public static Result profHome() throws SQLException
@@ -40,14 +39,14 @@ public class Profsignin extends Controller {
 		result = Prof.profDetails(username, password);
 		profId = NewCourse.getProfId();
 
-		
+
 		System.out.println("Result: " + result);
 		if(result)
 		{
-			
+
 			System.out.println("In validate function");
 			return ok(views.html.profHome.render());
-			
+
 		}
 		else
 		{
@@ -55,7 +54,7 @@ public class Profsignin extends Controller {
 			return ok(views.html.profSignIn.render(flag));
 		}
 	}
-	
+
 
 
 

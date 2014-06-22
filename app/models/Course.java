@@ -24,8 +24,7 @@ public class Course {
 	@Constraints.Required
 	public String CourseName;
 
-	private static List<String> courseName = new ArrayList<String>();
-	
+		
 	public static void updateDb(int profId, int courseId, String courseName2) throws SQLException {
 		
 		java.sql.Connection conn = DB.getConnection();
@@ -39,22 +38,14 @@ public class Course {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<String> readDb(int profId) throws SQLException
+	public static ResultSet readDb(int profId) throws SQLException
 	{
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
 		sql = "SELECT CourseName FROM course where ID_prof=" + profId;
 		ResultSet rs = stmt.executeQuery(sql);
-		while (rs.next()) {
-			// Retrieve by column name
-			
-			String nameOfCourses = rs.getString("CourseName");
-			courseName.add(nameOfCourses);
-
-			
-		}
-		return courseName;
+		return rs;
 	}
 	
 	public static Finder<Long, Course> find = new Finder<Long, Course>(Long.class, Course.class);

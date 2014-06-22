@@ -1,82 +1,93 @@
-
+@(courseList: List[String])
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-        
-        <script>
-        
-       
-        
-        $(document).ready(function() {
-        	var connection = new WebSocket('ws://localhost:9000');
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
 
-    		connection.onopen = function() {
-    			//
-    		}
-        	
-        $("#create").click(function() {
-     		$.post("/addCourse", {
-     				courseName : $("#course").val()
-     		})
-     	});	
-        
-    /*    $("#create").click(function(){
-        	var courseName = $('#course').val();
-        
-        	 $('#courses')
-             .append(
-               '<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
-                 + courseName
-                 + '</div>');
-        });*/
-        
-       
-        	
-        $("#cancel").click(function() {
+<script>
+	$(document).ready(function() {
+		var connection = new WebSocket('ws://localhost:9000');
+
+		connection.onopen = function() {
+		}
+
+		$("#create").click(function() {
+			$.post("/addCourse", {
+				courseName : $("#course").val()
+			})
+		});
+
+		
+		$("#cancel").click(function() {
 			$("#q_area").hide();
 		});
 
 		$("#addCourse").click(function() {
 			$("#q_area").show();
 		});
-		
-        });
-        
-		</script>
-        
-    </head>
-    <body>
-        <div class="page-header" style="padding-bottom: 0px; margin-top:5px;">
-    		<img src="@routes.Assets.at("images/logo.png")" height="50px" width="150px" alt="Live Feed"> 
-    	</div> 
-    	<header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
-  			<div class="btn-group" style="float:right;">
-  				<a type="button" class="btn btn-default" href="/home">Home</a>
-  				<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
-  				<a type="button" class="btn btn-default" href="/contact">Contact</a>
-  				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
-  			</div>
+
+	});
+</script>
+
+</head>
+<body>
+	<div id="container">
+		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+			<img src="@routes.Assets.at(" images/logo.png")" height="50px"
+				width="150px" alt="Live Feed">
+		</div>
+		<header class="navbar navbar-static-top bs-docs-nav" id="top"
+			role="banner">
+			<div class="btn-group" style="float: right;">
+				<a type="button" class="btn btn-default" href="/home">Home</a> <a
+					type="button" class="btn btn-default" href="/aboutus">About Us</a>
+				<a type="button" class="btn btn-default" href="/contact">Contact</a>
+				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
+			</div>
 		</header>
-		
-		<div class="well col-lg-4" style="margin-left: 100px; width: 200px;">
-			<a type="button" class="btn btn-primary btn-group-justified" id="addCourse">Create New Course</a>
-		</div>
-		<br><br><br><br>
-		<div id="q_area" class="well col-sm-10" style="margin-left: 100px; width: 500px; display: none;">
-			<textarea class="form-control" rows="3" columns="50" id="course" placeholder="Course Name"></textarea>
-				<div class="btn-group-justified" style="margin-top: 20px;">
-						<a type="button" class="btn btn-success" id="create">Submit</a> 
-						<a type="button" class="btn btn-danger" id="cancel">Cancel</a>
+
+		<div id="courses" >
+			@for(course <- courseList){
+			<div style="clear: both;">
+				
+				<div class="well" style="margin-left: 100px; width: 200px; float: left;">@course</div>
+				<div class="well" style="margin-left: 100px; width: 200px; float: left;">
+					<a type="button" class="btn btn-primary btn-group-justified"
+					id="addCourse">Add New Lecture</a>
 				</div>
+				
+			</div>
+			}
 		</div>
+
 		
-					
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    </body>
+		
+
+		<div class="well col-lg-4" style="margin-left: 100px; width: 200px;">
+			<a type="button" class="btn btn-primary btn-group-justified"
+				id="addCourse">Create New Course</a>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="q_area" class="well col-sm-10"
+			style="margin-left: 100px; width: 500px; display: none;">
+			<textarea class="form-control" rows="3" columns="50" id="course"
+				placeholder="Course Name"></textarea>
+			<div class="btn-group-justified" style="margin-top: 20px;">
+				<a type="button" class="btn btn-success" id="create">Submit</a> <a
+					type="button" class="btn btn-danger" id="cancel">Cancel</a>
+			</div>
+		</div>
+
+
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	</div>
+</body>
 </html>
-		

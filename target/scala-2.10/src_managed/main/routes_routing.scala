@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
-// @HASH:8887106b1bf5a29b17528dd10126399d20430188
-// @DATE:Sat Jun 21 23:33:09 CEST 2014
+// @HASH:269c8da57525c61b7e2a0c78db6c5e0d8b7476a6
+// @DATE:Sun Jun 22 12:33:38 CEST 2014
 
 
 import play.core._
@@ -41,61 +41,53 @@ private[this] lazy val controllers_Profsignin_profSignIn2 = Route("GET", PathPat
         
 
 // @LINE:10
-private[this] lazy val controllers_Profsignin_profHome3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profHome"))))
+private[this] lazy val controllers_StudentLogin_login3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("studentLogin"))))
         
 
 // @LINE:11
-private[this] lazy val controllers_StudentLogin_login4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("studentLogin"))))
+private[this] lazy val controllers_Profsignin_validate4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("validate"))))
         
 
 // @LINE:12
-private[this] lazy val controllers_Profsignin_validate5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("validate"))))
-        
-
-// @LINE:13
-private[this] lazy val controllers_Application_postQuestion6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("postQuestion"))))
+private[this] lazy val controllers_Application_postQuestion5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("postQuestion"))))
         
 
 // @LINE:14
-private[this] lazy val controllers_NewCourse_addCourse7 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addCourse"))))
+private[this] lazy val controllers_Application_indexStudent6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("indexStudent"))))
         
 
 // @LINE:15
-private[this] lazy val controllers_Application_indexStudent8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("indexStudent"))))
+private[this] lazy val controllers_Application_vote7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("vote"))))
         
 
 // @LINE:16
-private[this] lazy val controllers_Application_vote9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("vote"))))
+private[this] lazy val controllers_Application_indexStudent8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("indexStudent"))))
         
 
 // @LINE:17
-private[this] lazy val controllers_Application_indexStudent10 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("indexStudent"))))
+private[this] lazy val controllers_Application_profPageDisplay9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profPage"))))
         
 
 // @LINE:18
-private[this] lazy val controllers_Application_profPageDisplay11 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profPage"))))
+private[this] lazy val controllers_Report_report10 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("report"))))
         
 
 // @LINE:19
-private[this] lazy val controllers_Report_report12 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("report"))))
+private[this] lazy val controllers_AboutAndContact_aboutUsPage11 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("aboutus"))))
         
 
 // @LINE:20
-private[this] lazy val controllers_AboutAndContact_aboutUsPage13 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("aboutus"))))
+private[this] lazy val controllers_AboutAndContact_contactUsPage12 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("contact"))))
         
 
 // @LINE:21
-private[this] lazy val controllers_AboutAndContact_contactUsPage14 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("contact"))))
+private[this] lazy val controllers_AboutAndContact_feedbackPage13 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("feedback"))))
         
 
-// @LINE:22
-private[this] lazy val controllers_AboutAndContact_feedbackPage15 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("feedback"))))
+// @LINE:24
+private[this] lazy val controllers_Assets_at14 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
         
-
-// @LINE:25
-private[this] lazy val controllers_Assets_at16 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-        
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """home""","""controllers.Application.homePage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profSignIn""","""controllers.Profsignin.profSignIn()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profHome""","""controllers.Profsignin.profHome()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """studentLogin""","""controllers.StudentLogin.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """validate""","""controllers.Profsignin.validate()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postQuestion""","""controllers.Application.postQuestion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addCourse""","""controllers.NewCourse.addCourse()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """indexStudent""","""controllers.Application.indexStudent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vote""","""controllers.Application.vote()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """indexStudent""","""controllers.Application.indexStudent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profPage""","""controllers.Application.profPageDisplay()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """report""","""controllers.Report.report()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.AboutAndContact.aboutUsPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.AboutAndContact.contactUsPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """feedback""","""controllers.AboutAndContact.feedbackPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """home""","""controllers.Application.homePage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profSignIn""","""controllers.Profsignin.profSignIn()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """studentLogin""","""controllers.StudentLogin.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """validate""","""controllers.Profsignin.validate()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postQuestion""","""controllers.Application.postQuestion()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """indexStudent""","""controllers.Application.indexStudent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """vote""","""controllers.Application.vote()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """indexStudent""","""controllers.Application.indexStudent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profPage""","""controllers.Application.profPageDisplay()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """report""","""controllers.Report.report()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.AboutAndContact.aboutUsPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.AboutAndContact.contactUsPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """feedback""","""controllers.AboutAndContact.feedbackPage()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -128,31 +120,23 @@ case controllers_Profsignin_profSignIn2(params) => {
         
 
 // @LINE:10
-case controllers_Profsignin_profHome3(params) => {
-   call { 
-        invokeHandler(controllers.Profsignin.profHome(), HandlerDef(this, "controllers.Profsignin", "profHome", Nil,"GET", """""", Routes.prefix + """profHome"""))
-   }
-}
-        
-
-// @LINE:11
-case controllers_StudentLogin_login4(params) => {
+case controllers_StudentLogin_login3(params) => {
    call { 
         invokeHandler(controllers.StudentLogin.login(), HandlerDef(this, "controllers.StudentLogin", "login", Nil,"GET", """""", Routes.prefix + """studentLogin"""))
    }
 }
         
 
-// @LINE:12
-case controllers_Profsignin_validate5(params) => {
+// @LINE:11
+case controllers_Profsignin_validate4(params) => {
    call { 
         invokeHandler(controllers.Profsignin.validate(), HandlerDef(this, "controllers.Profsignin", "validate", Nil,"GET", """""", Routes.prefix + """validate"""))
    }
 }
         
 
-// @LINE:13
-case controllers_Application_postQuestion6(params) => {
+// @LINE:12
+case controllers_Application_postQuestion5(params) => {
    call { 
         invokeHandler(controllers.Application.postQuestion(), HandlerDef(this, "controllers.Application", "postQuestion", Nil,"GET", """""", Routes.prefix + """postQuestion"""))
    }
@@ -160,14 +144,22 @@ case controllers_Application_postQuestion6(params) => {
         
 
 // @LINE:14
-case controllers_NewCourse_addCourse7(params) => {
+case controllers_Application_indexStudent6(params) => {
    call { 
-        invokeHandler(controllers.NewCourse.addCourse(), HandlerDef(this, "controllers.NewCourse", "addCourse", Nil,"POST", """""", Routes.prefix + """addCourse"""))
+        invokeHandler(controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Nil,"GET", """POST	/addCourse						controllers.NewCourse.addCourse()""", Routes.prefix + """indexStudent"""))
    }
 }
         
 
 // @LINE:15
+case controllers_Application_vote7(params) => {
+   call { 
+        invokeHandler(controllers.Application.vote(), HandlerDef(this, "controllers.Application", "vote", Nil,"GET", """""", Routes.prefix + """vote"""))
+   }
+}
+        
+
+// @LINE:16
 case controllers_Application_indexStudent8(params) => {
    call { 
         invokeHandler(controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Nil,"GET", """""", Routes.prefix + """indexStudent"""))
@@ -175,64 +167,48 @@ case controllers_Application_indexStudent8(params) => {
 }
         
 
-// @LINE:16
-case controllers_Application_vote9(params) => {
-   call { 
-        invokeHandler(controllers.Application.vote(), HandlerDef(this, "controllers.Application", "vote", Nil,"GET", """""", Routes.prefix + """vote"""))
-   }
-}
-        
-
 // @LINE:17
-case controllers_Application_indexStudent10(params) => {
-   call { 
-        invokeHandler(controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Nil,"GET", """""", Routes.prefix + """indexStudent"""))
-   }
-}
-        
-
-// @LINE:18
-case controllers_Application_profPageDisplay11(params) => {
+case controllers_Application_profPageDisplay9(params) => {
    call { 
         invokeHandler(controllers.Application.profPageDisplay(), HandlerDef(this, "controllers.Application", "profPageDisplay", Nil,"GET", """""", Routes.prefix + """profPage"""))
    }
 }
         
 
-// @LINE:19
-case controllers_Report_report12(params) => {
+// @LINE:18
+case controllers_Report_report10(params) => {
    call { 
         invokeHandler(controllers.Report.report(), HandlerDef(this, "controllers.Report", "report", Nil,"GET", """""", Routes.prefix + """report"""))
    }
 }
         
 
-// @LINE:20
-case controllers_AboutAndContact_aboutUsPage13(params) => {
+// @LINE:19
+case controllers_AboutAndContact_aboutUsPage11(params) => {
    call { 
         invokeHandler(controllers.AboutAndContact.aboutUsPage(), HandlerDef(this, "controllers.AboutAndContact", "aboutUsPage", Nil,"GET", """""", Routes.prefix + """aboutus"""))
    }
 }
         
 
-// @LINE:21
-case controllers_AboutAndContact_contactUsPage14(params) => {
+// @LINE:20
+case controllers_AboutAndContact_contactUsPage12(params) => {
    call { 
         invokeHandler(controllers.AboutAndContact.contactUsPage(), HandlerDef(this, "controllers.AboutAndContact", "contactUsPage", Nil,"GET", """""", Routes.prefix + """contact"""))
    }
 }
         
 
-// @LINE:22
-case controllers_AboutAndContact_feedbackPage15(params) => {
+// @LINE:21
+case controllers_AboutAndContact_feedbackPage13(params) => {
    call { 
         invokeHandler(controllers.AboutAndContact.feedbackPage(), HandlerDef(this, "controllers.AboutAndContact", "feedbackPage", Nil,"GET", """""", Routes.prefix + """feedback"""))
    }
 }
         
 
-// @LINE:25
-case controllers_Assets_at16(params) => {
+// @LINE:24
+case controllers_Assets_at14(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }
