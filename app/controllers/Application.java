@@ -266,16 +266,31 @@ public class Application extends Controller {
 		return ok(views.html.indexStudent.render());
 	}
 
-	public static Result profPageDisplay() {
+	public static Result profPageDisplay() throws SQLException {
 		DynamicForm form = Form.form().bindFromRequest();
 		String selectedCourse = form.get("course");
 		System.out.println("Course name: " + selectedCourse);
 		
 		int courseId = Course.getCourseIdByCourseName(selectedCourse);
+		Lecture.createLecture(courseId);
+		System.out.println("Course_Id: " + courseId);
 		
-		
-		String sessionId = new BigInteger(130, random).toString(32);
+		java.sql.Connection conn = DB.getConnection();
+		java.sql.Statement stmt = conn.createStatement();
+		String sql;
+		sql = "SELECT * FROM lecture";
+		ResultSet rs = stmt.executeQuery(sql);
+		while (rs.next()) {
+			// Retrieve by column name
+			int Course_Id = rs.getInt("Course_Id");
+			int ID_stats = rs.getInt("ID_stats");
+			int Lecture_number = rs.getInt("Lecture_number");
 
+			// Display values
+			System.out.print("Course Id: " + Course_Id);
+			System.out.print(", Id stats: " + ID_stats);
+			System.out.println(", Lec Number: " + Lecture_number);
+		}
 		return ok(views.html.profPage.render(vote));
 	}
 

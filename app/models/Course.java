@@ -55,8 +55,7 @@ public class Course {
 		try (Connection conn = DB.getConnection();
 				Statement stmt = conn.createStatement();) {
 
-			String sql = "SELECT Course_Id FROM course where CourseName="
-					+ courseName;
+			String sql = "SELECT Course_Id FROM course where CourseName='"+ courseName+"'";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {

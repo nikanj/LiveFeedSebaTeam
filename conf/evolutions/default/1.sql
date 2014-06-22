@@ -19,7 +19,7 @@ CREATE TABLE prof (
 --
 
 CREATE TABLE stats (
-  ID_stats 		bigint DEFAULT NULL,
+  ID_stats 		bigint auto_increment,
   Speed_Low		bigint DEFAULT NULL,
   Speed_OK		bigint DEFAULT NULL,
   Speed_High		bigint DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE stats (
 
 CREATE TABLE course (
   ID_prof 			bigint NOT NULL,
-  Course_Id         bigint DEFAULT NULL,
+  Course_Id         bigint auto_increment ,
   CourseName 		varchar(200) DEFAULT NULL,
   CourseDesc		varchar(200) DEFAULT NULL,
   constraint pk_course primary key (Course_Id)
@@ -52,7 +52,7 @@ CREATE TABLE lecture(
 Course_Id			bigint NOT NULL,
 ID_stats			bigint NOT NULL,
 Lecture_number		bigint NOT NULL,
-constraint pk_lecture primary key (Lecture_number)
+constraint pk_lecture primary key (Course_Id, Lecture_number)
 );
 alter table lecture add constraint fk_lecture_course foreign key (Course_Id) references course (Course_Id) on delete restrict on update restrict;
 alter table lecture add constraint fk_lecture_stats foreign key (ID_stats) references stats (ID_stats) on delete restrict on update restrict;

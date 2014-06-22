@@ -2,9 +2,11 @@ package models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -105,4 +107,20 @@ public class Stats extends Model  {
 		ResultSet rs = stmt.executeQuery(sql);
 		return rs;
 	}
+	
+	public static Long insertDB() throws SQLException{
+		Long statId = 0L;
+		java.sql.Connection conn = DB.getConnection();
+		java.sql.Statement stmt = conn.createStatement();
+		String sql;
+		sql = "Insert into stats (Speed_Ok, Speed_Low, Speed_High, Volume_Ok, Volume_Low, Volume_High, Pause_count) values (0, 0, 0, 0, 0, 0, 0);";
+		stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+		ResultSet rs = stmt.getGeneratedKeys();
+		if(rs.next()){
+			System.out.println("Keys: " + rs.getString(1));
+			statId = Long.parseLong(rs.getString(1)); 
+		}
+		return statId;
+	}
+	
 }
