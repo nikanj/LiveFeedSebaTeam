@@ -42,12 +42,12 @@ $(document).ready(function() """),format.raw/*12.30*/("""{"""),format.raw/*12.31
 
 	connection.onopen = function() """),format.raw/*15.33*/("""{"""),format.raw/*15.34*/("""
 	"""),format.raw/*16.2*/("""}"""),format.raw/*16.3*/("""
-
-	$("#create").click(function() """),format.raw/*18.32*/("""{"""),format.raw/*18.33*/("""
+/*
+	$("#createCourse").click(function() """),format.raw/*18.38*/("""{"""),format.raw/*18.39*/("""
 		$.post("/addCourse", """),format.raw/*19.24*/("""{"""),format.raw/*19.25*/("""
 			courseName : $("#course").val()
 		"""),format.raw/*21.3*/("""}"""),format.raw/*21.4*/(""")
-	"""),format.raw/*22.2*/("""}"""),format.raw/*22.3*/(""");
+	"""),format.raw/*22.2*/("""}"""),format.raw/*22.3*/(""");*/
 
 
 	$("#cancel").click(function() """),format.raw/*25.32*/("""{"""),format.raw/*25.33*/("""
@@ -100,14 +100,15 @@ $(document).ready(function() """),format.raw/*12.30*/("""{"""),format.raw/*12.31
 		<br>
 		<br>
 		<br>
-		<div id="q_area" class="well col-sm-10"
-			style="margin-left: 100px; width: 500px; display: none;">
-			<textarea class="form-control" rows="3" columns="50" id="course" placeholder="Course Name"></textarea>
+		<form method="get" action="/addCourse">
+		<div id="q_area" class="well col-sm-10"	style="margin-left: 100px; width: 500px; display: none;">
+		<input type="text" class="form-control"id="course" placeholder="Course Name" name="courseName">
 			<div class="btn-group-justified" style="margin-top: 20px;">
-				<a type="button" class="btn btn-success" id="create">Submit</a> <a
-					type="button" class="btn btn-danger" id="cancel">Cancel</a>
+				<button type="submit" class="btn btn-success" style="width:214px">Add Course</button>
+				<button type="button" class="btn btn-danger" style="width:214px" id="cancel">Cancel</button>
 			</div>
 		</div>
+		</form>
 
 
 		<script
@@ -127,10 +128,10 @@ $(document).ready(function() """),format.raw/*12.30*/("""{"""),format.raw/*12.31
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 22 17:34:14 CEST 2014
+                    DATE: Mon Jun 23 17:27:53 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/profHome.scala.html
-                    HASH: c1a81016ed8ed2800a4f5ce0d34c8474fe105d25
-                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1472->368|1486->374|1552->419|1657->496|1686->497|1807->590|1836->591|1866->594|1894->595|1957->630|1986->631|2039->656|2068->657|2135->697|2163->698|2194->702|2222->703|2289->742|2318->743|2372->770|2400->771|2468->811|2497->812|2551->839|2579->840|2612->846|2640->847|2822->993|2837->999|2889->1029|3478->1583|3519->1608|3558->1609|3705->1720|3733->1726|3962->1918|3991->1924|4072->1974
+                    HASH: dbbe6d3f1cf825be1b8fdbc2f21d781f68d822a5
+                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1472->368|1486->374|1552->419|1657->496|1686->497|1807->590|1836->591|1866->594|1894->595|1965->638|1994->639|2047->664|2076->665|2143->705|2171->706|2202->710|2230->711|2299->752|2328->753|2382->780|2410->781|2478->821|2507->822|2561->849|2589->850|2622->856|2650->857|2832->1003|2847->1009|2899->1039|3488->1593|3529->1618|3568->1619|3715->1730|3743->1736|3972->1928|4001->1934|4082->1984
                     LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|40->12|40->12|43->15|43->15|44->16|44->16|46->18|46->18|47->19|47->19|49->21|49->21|50->22|50->22|53->25|53->25|55->27|55->27|57->29|57->29|59->31|59->31|61->33|61->33|68->40|68->40|68->40|83->55|83->55|83->55|85->57|85->57|87->59|87->59|90->62
                     -- GENERATED --
                 */

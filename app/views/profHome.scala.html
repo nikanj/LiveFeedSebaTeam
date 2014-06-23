@@ -14,12 +14,12 @@ $(document).ready(function() {
 
 	connection.onopen = function() {
 	}
-
-	$("#create").click(function() {
+/*
+	$("#createCourse").click(function() {
 		$.post("/addCourse", {
 			courseName : $("#course").val()
 		})
-	});
+	});*/
 
 
 	$("#cancel").click(function() {
@@ -72,14 +72,15 @@ $(document).ready(function() {
 		<br>
 		<br>
 		<br>
-		<div id="q_area" class="well col-sm-10"
-			style="margin-left: 100px; width: 500px; display: none;">
-			<textarea class="form-control" rows="3" columns="50" id="course" placeholder="Course Name"></textarea>
+		<form method="get" action="/addCourse">
+		<div id="q_area" class="well col-sm-10"	style="margin-left: 100px; width: 500px; display: none;">
+		<input type="text" class="form-control"id="course" placeholder="Course Name" name="courseName">
 			<div class="btn-group-justified" style="margin-top: 20px;">
-				<a type="button" class="btn btn-success" id="create">Submit</a> <a
-					type="button" class="btn btn-danger" id="cancel">Cancel</a>
+				<button type="submit" class="btn btn-success" style="width:214px">Add Course</button>
+				<button type="button" class="btn btn-danger" style="width:214px" id="cancel">Cancel</button>
 			</div>
 		</div>
+		</form>
 
 
 		<script

@@ -19,12 +19,12 @@ CREATE TABLE prof (
 --
 
 CREATE TABLE stats (
-  ID_stats 		bigint auto_increment,
-  Speed_Low		bigint DEFAULT NULL,
-  Speed_OK		bigint DEFAULT NULL,
+  ID_stats 			bigint auto_increment,
+  Speed_Low			bigint DEFAULT NULL,
+  Speed_OK			bigint DEFAULT NULL,
   Speed_High		bigint DEFAULT NULL,
   Volume_Low		bigint DEFAULT NULL,
-  Volume_OK		bigint DEFAULT NULL,
+  Volume_OK			bigint DEFAULT NULL,
   Volume_High		bigint DEFAULT NULL,    
   Pause_count 		bigint DEFAULT NULL,
   constraint pk_stats primary key (ID_stats)

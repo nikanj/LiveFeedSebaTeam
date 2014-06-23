@@ -27,15 +27,26 @@ public class Course {
 
 	public static void updateDb(int profId, int courseId, String courseName2)
 			throws SQLException {
-
+		int flag = 0;
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-		System.out.println("In Course.java:" + profId + " " + courseId + " "
-				+ courseName2);
-		sql = "Insert into course (ID_prof, Course_Id, CourseName) values ("
-				+ profId + "," + courseId + ",'" + courseName2 + "')";
-		boolean rs = stmt.execute(sql);
+		ResultSet rs = readDb(profId);
+		System.out.println("Reached here second");
+		while (rs.next()) {
+			String course = rs.getString("CourseName");
+			if(course.equalsIgnoreCase(courseName2))
+			{
+			flag = 1;
+			break;
+			}
+		}
+		if (flag == 0)
+		{
+			System.out.println("Added to database");
+		sql = "Insert into course (ID_prof, CourseName) values (" + profId + ",'" + courseName2 + "')";
+		boolean result = stmt.execute(sql);
+		}
 
 	}
 

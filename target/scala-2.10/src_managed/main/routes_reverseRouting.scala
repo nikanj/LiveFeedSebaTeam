@@ -1,6 +1,6 @@
 // @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
-// @HASH:269c8da57525c61b7e2a0c78db6c5e0d8b7476a6
-// @DATE:Sun Jun 22 17:34:12 CEST 2014
+// @HASH:c1ea60c08154366bda3df128eff9e09623cedd46
+// @DATE:Mon Jun 23 17:27:52 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -22,6 +22,7 @@ import Router.queryString
 // @LINE:16
 // @LINE:15
 // @LINE:14
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -172,6 +173,19 @@ def report(): Call = {
     
 }
                           
+
+// @LINE:13
+class ReverseNewCourse {
+    
+
+// @LINE:13
+def addCourse(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "addCourse")
+}
+                                                
+    
+}
+                          
 }
                   
 
@@ -185,6 +199,7 @@ def report(): Call = {
 // @LINE:16
 // @LINE:15
 // @LINE:14
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -403,6 +418,24 @@ def report : JavascriptReverseRoute = JavascriptReverseRoute(
     
 }
               
+
+// @LINE:13
+class ReverseNewCourse {
+    
+
+// @LINE:13
+def addCourse : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.NewCourse.addCourse",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addCourse"})
+      }
+   """
+)
+                        
+    
+}
+              
 }
         
 
@@ -416,6 +449,7 @@ def report : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:16
 // @LINE:15
 // @LINE:14
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -522,7 +556,7 @@ def profPageDisplay(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 
 // @LINE:14
 def indexStudent(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Seq(), "GET", """POST	/addCourse						controllers.NewCourse.addCourse()""", _prefix + """indexStudent""")
+   controllers.Application.indexStudent(), HandlerDef(this, "controllers.Application", "indexStudent", Seq(), "GET", """""", _prefix + """indexStudent""")
 )
                       
 
@@ -554,6 +588,19 @@ class ReverseReport {
 // @LINE:18
 def report(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Report.report(), HandlerDef(this, "controllers.Report", "report", Seq(), "GET", """""", _prefix + """report""")
+)
+                      
+    
+}
+                          
+
+// @LINE:13
+class ReverseNewCourse {
+    
+
+// @LINE:13
+def addCourse(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.NewCourse.addCourse(), HandlerDef(this, "controllers.NewCourse", "addCourse", Seq(), "GET", """""", _prefix + """addCourse""")
 )
                       
     
