@@ -41,6 +41,7 @@ public class Application extends Controller {
 	private static double pause = 0;
 	private static double sumOfSpeedVotes = 0;
 	private static double sumOfVolVotes = 0;
+	private static int IdStats = 0;
 
 	public static class Hello {
 		@Required
@@ -137,17 +138,19 @@ public class Application extends Controller {
 			java.sql.Statement stmt = conn.createStatement();
 			String sql;
 			
-			sql = "SELECT ID_stats, Speed_count, Pause_count, Volume_count FROM stats";
+			IdStats = Stats.getIdStats();
+			
+			sql = "SELECT ID_stats, Speed_Low, Speed_OK, Speed_High, Volume_Low, Volume_OK, Volume_High, Pause_count FROM stats";
 			  ResultSet rs = stmt.executeQuery(sql);
 
 				// STEP 5: Extract data from result set
 				while (rs.next()) {
 					// Retrieve by column name
 					int id = rs.getInt("ID_stats");
-					int speedCount = rs.getInt("Speed_count");
+					int speedCount = rs.getInt("Speed_Low") + rs.getInt("Speed_OK") + rs.getInt("Speed_High") ;
 					int pauseCount = rs.getInt("Pause_count");
-					int volCount = rs.getInt("Volume_count");
-
+					int volCount = rs.getInt("Volume_Low") + rs.getInt("Volume_OK") + rs.getInt("Volume_High");
+					
 					// Display values
 					System.out.print("ID: " + id);
 					System.out.print(", speedCount: " + speedCount);
@@ -167,61 +170,44 @@ public class Application extends Controller {
 		  if(chosenOption.equals("speed_low"))
 		  {
 			  speedSlow ++;
-			  
-			  sumOfSpeedVotes ++;
-			//  sql = "update table stats set Speed_slow =" + speedSlow + " where ID_stats=1";
-			 // stmt.executeQuery(sql);
+			   sumOfSpeedVotes ++;
 		  }
 		  else if(chosenOption.equals("speed_ok"))
 		  {
 			  speedOk ++;
 			  sumOfSpeedVotes ++;
 			  speed_Ok = speedOk * 2 ;
-			//  sql = "update table stats set speed_ok =" + speedOk + " where ID_stats=1";
-			//  stmt.executeQuery(sql);
 		  }
 		  else if(chosenOption.equals("speed_fast"))
 		  {
-			 
 			  speedFast ++;
 			  sumOfSpeedVotes ++;
 			  speed_Fast = speedFast * 3;
-		//	  sql = "update table stats set Speed_fast =" + speedFast + " where ID_stats=1";
-		//	  stmt.executeQuery(sql);
 		  }
 		  else if(chosenOption.equals("voice_low"))
 		  {
 			  volLow ++;
 			  sumOfVolVotes ++;
-		//	  sql = "update table stats set Volume_low =" + volLow + " where ID_stats=1";
-		//	  stmt.executeQuery(sql);
 		  }
 		  else if(chosenOption.equals("voice_ok"))
 		  {
 			  volOk ++;
 			  sumOfVolVotes ++;
 			  vol_Ok = volOk * 2 ;
-		//	  sql = "update table stats set Volume_ok =" + volOk + " where ID_stats=1";
-		//	  stmt.executeQuery(sql);
 		  }
 		  else if(chosenOption.equals("voice_loud"))
 		  {
 			  volHigh ++;
 			  sumOfVolVotes ++;
 			  vol_High = volHigh * 3;
-		//	  sql = "update table stats set Volume_high =" + volHigh + " where ID_stats=1";
-		//	  stmt.executeQuery(sql);
-		  }
+	      }
 		  else
 		  {
 			  pause ++;
-		//	  sql = "update table stats set Pause =" + pause + " where ID_stats=1";
-		//	  stmt.executeQuery(sql);
 		  }
 		  if(chosenOption.contains("speed"))
 		  {
 			  
-			  		  
 			  avgSpeed = (double)(speedSlow+speed_Ok+speed_Fast) / sumOfSpeedVotes;
 			 
 			  avgSpeed = ((avgSpeed-1) / 2) * 100;
@@ -230,7 +216,7 @@ public class Application extends Controller {
 					ws.write("speed_" + String.valueOf(avgSpeed));
 					
 				}
-			//  System.out.println("Wrote speed average");
+			
 		  }
 		  if(chosenOption.contains("voice"))
 		  {
@@ -242,7 +228,7 @@ public class Application extends Controller {
 		  for (WebSocket.Out<String> ws : channels) {
 				ws.write("loudness_" + String.valueOf(avgVol));
 			}
-		//  System.out.println("Wrote loudness average");
+		
 		 
 		  }
 		  if(chosenOption.contains("pause"))
@@ -252,7 +238,7 @@ public class Application extends Controller {
 				}
 		  }
 		  
-		  Stats.updateDb(chosenOption);
+		  Stats.updateDb(IdStats,chosenOption);
 		  
 			// STEP 6: Clean-up environment
 			rs.close();

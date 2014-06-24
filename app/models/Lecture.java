@@ -35,10 +35,10 @@ public class Lecture {
 	
 	public static void createLecture(int courseId) throws SQLException {
 		Long CourseId = (long) courseId; 
-		Long IDstats = Stats.insertDB();
+		int IDstats = Stats.insertDB();
 		Long Lecturenumber = generateLectureId();
 		boolean rs;
-		
+		Stats.setIdStats(IDstats);
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;

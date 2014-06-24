@@ -47,7 +47,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
-		<div class="btn-group" style="float: right;">
+		<div class="btn-group" style="margin-left: 75%;">
 			<a type="button" class="btn btn-default" href="/home">Home</a> <a
 				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
 				type="button" class="btn btn-default" href="/contact">Contact</a> <a
@@ -107,9 +107,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 23 17:27:53 CEST 2014
+                    DATE: Tue Jun 24 10:47:21 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/feedbackPage.scala.html
-                    HASH: b2c135272f22575fa688e0b6a580f76c682d5213
+                    HASH: 1b1a7a12c357f5e7757c39364109965e52705bdc
                     MATRIX: 862->0|998->101|1012->107|1067->141|1156->195|1170->201|1223->233|1312->287|1326->293|1379->325|1464->375|1478->381|1553->434|1639->484|1654->490|1735->548|1789->566|1804->572|1871->617|2051->761|2066->767|2120->799
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|45->17|45->17|45->17
                     -- GENERATED --

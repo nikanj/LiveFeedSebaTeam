@@ -40,7 +40,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     		<img src=""""),_display_(Seq[Any](/*12.18*/routes/*12.24*/.Assets.at("images/logo.png"))),format.raw/*12.53*/("""" height="50px" width="150px" alt="Live Feed"> 
     	</div> 
     	<header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
-  			<div class="btn-group" style="float:right;">
+  			<div class="btn-group" style="margin-left: 75%;">
   				<a type="button" class="btn btn-default" href="/home">Home</a>
   				<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
   				<a type="button" class="btn btn-default" href="/contact">Contact</a>
@@ -62,9 +62,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jun 23 17:27:54 CEST 2014
+                    DATE: Tue Jun 24 10:47:22 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/studentLogin.scala.html
-                    HASH: 210a64c25ce3a0dcf49d9e07b478491c0228523b
+                    HASH: eedd99af76f9573e4f9aca527560497ef5cdef5d
                     MATRIX: 862->0|989->92|1003->98|1058->132|1155->194|1169->200|1222->232|1315->290|1329->296|1404->349|1465->375|1479->381|1545->426|1739->584|1754->590|1805->619
                     LINES: 29->1|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|40->12|40->12|40->12
                     -- GENERATED --

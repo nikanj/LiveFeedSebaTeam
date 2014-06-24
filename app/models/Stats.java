@@ -35,7 +35,7 @@ public class Stats extends Model  {
 	private static int volumeOK = 0;
 	private static int volumeLow = 0;
 	private static int volumeHigh = 0;
-	
+	private static int IdStats = 0;
 
 	@Id
 	public Long ID_stats;
@@ -49,7 +49,16 @@ public class Stats extends Model  {
 	@Constraints.Required
 	public Long  volumeCount;
 	
-	public static void updateDb(String vote) throws SQLException
+		
+	public static int getIdStats() {
+		return IdStats;
+	}
+
+	public static void setIdStats(int idStats) {
+		IdStats = idStats;
+	}
+
+	public static void updateDb(int IdStats, String vote) throws SQLException
 	{
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
@@ -57,43 +66,43 @@ public class Stats extends Model  {
 		if(vote.contains("speed_low"))
 		{ 
 			speedLow ++;
-			sql = "update stats set Speed_Low =" + speedLow + " where ID_stats=1";
+			sql = "update stats set Speed_Low =" + speedLow + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if(vote.contains("speed_ok"))
 		{ 
 			speedOK ++;
-			sql = "update stats set Speed_OK =" + speedOK + " where ID_stats=1";
+			sql = "update stats set Speed_OK =" + speedOK + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if(vote.contains("speed_high"))
 		{ 
 			speedHigh ++;
-			sql = "update stats set Speed_High =" + speedHigh + " where ID_stats=1";
+			sql = "update stats set Speed_High =" + speedHigh + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if(vote.contains("voice_low"))
 		{ 
 			volumeLow ++;
-			sql = "update stats set Volume_Low =" + volumeLow + " where ID_stats=1";
+			sql = "update stats set Volume_Low =" + volumeLow + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if(vote.contains("voice_ok"))
 		{ 
 			volumeOK ++;
-			sql = "update stats set Volume_OK =" + volumeOK + " where ID_stats=1";
+			sql = "update stats set Volume_OK =" + volumeOK + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if(vote.contains("voice_high"))
 		{ 
 			volumeHigh ++;
-			sql = "update stats set Volume_High =" + volumeHigh + " where ID_stats=1";
+			sql = "update stats set Volume_High =" + volumeHigh + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 		else if (vote.contains("pause"))
 		{
 			pauseVotes ++;
-			sql = "update stats set Pause_count =" + pauseVotes + " where ID_stats=1";
+			sql = "update stats set Pause_count =" + pauseVotes + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
 	}
@@ -108,8 +117,8 @@ public class Stats extends Model  {
 		return rs;
 	}
 	
-	public static Long insertDB() throws SQLException{
-		Long statId = 0L;
+	public static int insertDB() throws SQLException{
+		int statId = 0;
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
@@ -118,7 +127,7 @@ public class Stats extends Model  {
 		ResultSet rs = stmt.getGeneratedKeys();
 		if(rs.next()){
 			System.out.println("Keys: " + rs.getString(1));
-			statId = Long.parseLong(rs.getString(1)); 
+			statId = Integer.parseInt(rs.getString(1)); 
 		}
 		return statId;
 	}
