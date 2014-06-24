@@ -8,6 +8,19 @@
 <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
 <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
 
+<script>
+	$(document).ready(function() {
+			$("#add").click(function() {
+				$("#q_area").show();
+			});		
+		
+			$("#cancel_button").click(function() {
+    				$("#q_area").hide();
+  		 	});
+
+  		 	
+		});
+</script>
 
 </head>
 <body>
@@ -90,14 +103,19 @@
 			<form method="get" action="/postQuestion">
 
 				<div id="questions_row1" style="margin-left: 100px; height: 400px;">
-					<div id="posted_question"></div>
+					<div id="posted_question"></div> 
 
-					<div id="q_area" class="well col-sm-10">
-						<textarea class="form-control" rows="3" columns="50" id="question"
+					<div class="well col-lg-2">
+						<a type="button" class="btn btn-primary btn-group-justified" id="add">Add Question</a>
+					</div>
+
+					<div id="q_area" class="well col-sm-5" style="display: none;">
+						<textarea class="form-control" rows="4" id="question"
 							placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
+							<button id="submit_button" type="submit" class="btn btn-success" style="width:195px">Submit</button>
+							<button id="cancel_button" type="button" class="btn btn-danger"  style="width:195px">Cancel</button>
+						</div>	
 					</div>
 				</div>
 			</form>

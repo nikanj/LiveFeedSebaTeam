@@ -82,6 +82,12 @@
 		connection.onclose = function(e) {
 			alert("CONNECTION IS CLOSED~");
 		}
+		
+		$("#submit_button").click(function() {
+			$.post("/postTheQuestion", {
+				p_question: $("#question").val()
+			})
+		});
 
 		$("#submit_button")
         .click(
@@ -486,7 +492,7 @@
 				<td width="50%" height="50%">
 					<div id="questions_row1" style="margin-left: 100px; height: 400px;">
 						<h2>Question Section</h2>
-
+						
 						<div id="posted_question"></div>
 
 						<div class="well col-lg-4">
@@ -495,12 +501,13 @@
 						</div>
 						<div id="q_area" class="well col-sm-10" style="display: none;">
 							<textarea class="form-control" rows="3" columns="50"
-								id="question" placeholder="Enter Question Here"></textarea>
+								id="question" placeholder="Enter Question Here" name="p_question"></textarea>
 							<div class="btn-group-justified" style="margin-top: 20px;">
 								<a id="submit_button" class="btn btn-success" type="button">Submit</a>
 								<a id="cancel_button" class="btn btn-danger" type="button">Cancel</a>
 							</div>
 						</div>
+						
 					</div>
 				</td>
 				<td width="50%">

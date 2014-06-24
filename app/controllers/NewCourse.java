@@ -19,6 +19,14 @@ public class NewCourse extends Controller {
 	private static int profId;
 	private static int courseId = 0;
 		
+	public static int getCourseId() {
+		return courseId;
+	}
+
+	public static void setCourseId(int courseId) {
+		NewCourse.courseId = courseId;
+	}
+
 	public static int getProfId() {
 		return profId;
 	}

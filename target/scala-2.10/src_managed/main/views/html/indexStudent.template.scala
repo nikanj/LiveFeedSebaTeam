@@ -36,11 +36,24 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*8.47*/routes/*8.53*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*8.106*/("""">
 <script src=""""),_display_(Seq[Any](/*9.15*/routes/*9.21*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*9.66*/("""" type="text/javascript"></script>
 
+<script>
+	$(document).ready(function() """),format.raw/*12.31*/("""{"""),format.raw/*12.32*/("""
+			$("#add").click(function() """),format.raw/*13.31*/("""{"""),format.raw/*13.32*/("""
+				$("#q_area").show();
+			"""),format.raw/*15.4*/("""}"""),format.raw/*15.5*/(""");		
+		
+			$("#cancel_button").click(function() """),format.raw/*17.41*/("""{"""),format.raw/*17.42*/("""
+    				$("#q_area").hide();
+  		 	"""),format.raw/*19.7*/("""}"""),format.raw/*19.8*/(""");
+
+  		 	
+		"""),format.raw/*22.3*/("""}"""),format.raw/*22.4*/(""");
+</script>
 
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*15.14*/routes/*15.20*/.Assets.at("images/logo.png"))),format.raw/*15.49*/("""" height="50px"
+		<img src=""""),_display_(Seq[Any](/*28.14*/routes/*28.20*/.Assets.at("images/logo.png"))),format.raw/*28.49*/("""" height="50px"
 			width="150px" alt="Live Feed">
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
@@ -53,7 +66,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 		</div>
 	</header>
 
-	<!-- """),_display_(Seq[Any](/*28.8*/routes/*28.14*/.Application.vote())),format.raw/*28.33*/(""" -->
+	<!-- """),_display_(Seq[Any](/*41.8*/routes/*41.14*/.Application.vote())),format.raw/*41.33*/(""" -->
 	<div class="container">
 		<div class="speed_container">
 			<form id="speed_vote" method="get" action="/vote">
@@ -118,14 +131,19 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 			<form method="get" action="/postQuestion">
 
 				<div id="questions_row1" style="margin-left: 100px; height: 400px;">
-					<div id="posted_question"></div>
+					<div id="posted_question"></div> 
 
-					<div id="q_area" class="well col-sm-10">
-						<textarea class="form-control" rows="3" columns="50" id="question"
+					<div class="well col-lg-2">
+						<a type="button" class="btn btn-primary btn-group-justified" id="add">Add Question</a>
+					</div>
+
+					<div id="q_area" class="well col-sm-5" style="display: none;">
+						<textarea class="form-control" rows="4" id="question"
 							placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
+							<button id="submit_button" type="submit" class="btn btn-success" style="width:195px">Submit</button>
+							<button id="cancel_button" type="button" class="btn btn-danger"  style="width:195px">Cancel</button>
+						</div>	
 					</div>
 				</div>
 			</form>
@@ -147,11 +165,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 15:51:15 CEST 2014
+                    DATE: Tue Jun 24 18:54:18 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/indexStudent.scala.html
-                    HASH: 02e97935d06770892a73424b4cba373b05b49010
-                    MATRIX: 862->0|993->96|1007->102|1062->136|1150->189|1164->195|1217->227|1301->276|1315->282|1390->335|1442->352|1456->358|1522->403|1696->541|1711->547|1762->576|2303->1082|2318->1088|2359->1107
-                    LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|43->15|43->15|43->15|56->28|56->28|56->28
+                    HASH: 9ba0aebd61012493fc4bd6c22e8956b976e37d5a
+                    MATRIX: 862->0|993->96|1007->102|1062->136|1150->189|1164->195|1217->227|1301->276|1315->282|1390->335|1442->352|1456->358|1522->403|1625->478|1654->479|1713->510|1742->511|1798->540|1826->541|1902->589|1931->590|1994->626|2022->627|2062->640|2090->641|2241->756|2256->762|2307->791|2848->1297|2863->1303|2904->1322
+                    LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|40->12|40->12|41->13|41->13|43->15|43->15|45->17|45->17|47->19|47->19|50->22|50->22|56->28|56->28|56->28|69->41|69->41|69->41
                     -- GENERATED --
                 */
             

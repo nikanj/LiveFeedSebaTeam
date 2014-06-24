@@ -117,18 +117,36 @@ public class Application extends Controller {
 		};
 	}
 
-	public static Result postQuestion() {
+	public static Result postQuestion() throws SQLException {
 
 		DynamicForm form = Form.form().bindFromRequest();
 		String question = form.get("p_question");
-		System.out.println("Reached Here");
-		System.out.println(question);
-
-		for (WebSocket.Out<String> ws : channels) {
-			ws.write("question_" + question);
+		System.out.println("Reached in App controller (postQuestion function)");
+		System.out.println("question: " + question);
+		int idProf = NewCourse.getProfId();
+		int courseId = NewCourse.getCourseId();
+		int questionID = Question.updateDB(idProf, courseId, question);
+		
+		ResultSet rs = Question.readDB(idProf);
+		while (rs.next()) {
+			int id = rs.getInt("ID_prof");
+			int courseID = rs.getInt("Course_Id");
+			int ID_question = rs.getInt("ID_question");
+			String Question = rs.getString("Question");
+			
+			if(questionID == ID_question)
+			{
+				for (WebSocket.Out<String> ws : channels) {
+					ws.write("question_" + Question);
+				}
+			}
+			// Display values
+			System.out.print("ID_prof: " + id);
+			System.out.print(", Course_Id: " + courseID);
+			System.out.print(", ID_question: " + ID_question);
+			System.out.println(", Question: " + Question);
 		}
 		return indexStudent();
-
 	}
 
 	public static Result vote() throws SQLException {
@@ -245,6 +263,7 @@ public class Application extends Controller {
 		System.out.println("Course name: " + selectedCourse);
 
 		int courseId = Course.getCourseIdByCourseName(selectedCourse);
+		NewCourse.setCourseId(courseId);
 		Long lectureNumber = Lecture.createLecture(courseId);
 		System.out.println("Course_Id: " + courseId);
 

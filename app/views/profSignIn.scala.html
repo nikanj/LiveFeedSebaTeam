@@ -17,7 +17,7 @@
     			//
     		}
 
-    		/*
+    		
     		$.fn.notify = function(settings_overwrite){
     		    settings = {
     		        placement:"top",
@@ -60,7 +60,7 @@
     		        return false;
     		    });
     		
-    		    
+    		   
     		$("#notify_autopop").notify({
     		        delay:500
     		    });
@@ -71,7 +71,7 @@
 		        return false;
     		}
     	     
-        	}); */
+        	});
         </script>
  </head>
     
@@ -88,7 +88,7 @@
   				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
   			</div>
 		</header>
-	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 		<div>
 			<form method="get" action="/validate">
 				<div id="q_area" class="col-sm-4" style="margin-left: 350px; " >
@@ -108,13 +108,9 @@
 						</div>
 					</div>
 					@if(flag == 0 ){
-						<div class="row">
-							<div class="col-md-4 col-md-offset-2">
-								<div class="error message" id="notify_error">
-						         	<p class="bg-danger"> <i><b>Please enter correct User Name OR Password!</b></i></p>
-								</div>
-							</div>
-						</div>		
+						<div class="error message" id="notify_error">
+						         <h4>Wrong username or password</h4>
+						</div>
 					}
 </form>
 		</div>

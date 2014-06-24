@@ -36,7 +36,7 @@ CREATE TABLE stats (
 
 CREATE TABLE course (
   ID_prof 			bigint NOT NULL,
-  Course_Id         bigint auto_increment ,
+  Course_Id         bigint auto_increment,
   CourseName 		varchar(200) DEFAULT NULL,
   CourseDesc		varchar(200) DEFAULT NULL,
   constraint pk_course primary key (Course_Id)
@@ -65,7 +65,7 @@ create index ix_lecture_course on lecture (Course_Id);
 
 CREATE TABLE question (
   ID_prof 			bigint NOT NULL,
-  ID_question 		bigint NOT NULL,
+  ID_question 		bigint auto_increment,
   Question 			varchar(45) DEFAULT NULL,
   Course_Id 		bigint NOT NULL,
   constraint pk_question primary key (ID_question)
