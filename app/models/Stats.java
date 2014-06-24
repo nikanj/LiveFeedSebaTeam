@@ -75,7 +75,7 @@ public class Stats extends Model  {
 			sql = "update stats set Speed_OK =" + speedOK + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
-		else if(vote.contains("speed_high"))
+		else if(vote.contains("speed_fast"))
 		{ 
 			speedHigh ++;
 			sql = "update stats set Speed_High =" + speedHigh + " where ID_stats=" + IdStats;
@@ -93,7 +93,7 @@ public class Stats extends Model  {
 			sql = "update stats set Volume_OK =" + volumeOK + " where ID_stats=" + IdStats;
 			boolean rs = stmt.execute(sql);
 		}
-		else if(vote.contains("voice_high"))
+		else if(vote.contains("voice_loud"))
 		{ 
 			volumeHigh ++;
 			sql = "update stats set Volume_High =" + volumeHigh + " where ID_stats=" + IdStats;

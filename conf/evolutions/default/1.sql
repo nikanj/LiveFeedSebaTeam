@@ -52,6 +52,7 @@ CREATE TABLE lecture(
 Course_Id			bigint NOT NULL,
 ID_stats			bigint NOT NULL,
 Lecture_number		bigint NOT NULL,
+Lecture_date        date NOT NULL,
 constraint pk_lecture primary key (Course_Id, Lecture_number)
 );
 alter table lecture add constraint fk_lecture_course foreign key (Course_Id) references course (Course_Id) on delete restrict on update restrict;

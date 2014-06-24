@@ -37,8 +37,8 @@ public class Course {
 			String course = rs.getString("CourseName");
 			if(course.equalsIgnoreCase(courseName2))
 			{
-			flag = 1;
-			break;
+				flag = 1;
+				break;
 			}
 		}
 		if (flag == 0)

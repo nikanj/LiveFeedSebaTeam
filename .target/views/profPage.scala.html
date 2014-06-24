@@ -1,4 +1,4 @@
-@(stats : Long) @import helper._
+@(stats : Long, lectureNumber : Long) @import helper._
 
 
 <!DOCTYPE html>
@@ -459,6 +459,7 @@
 			<a type="button" class="btn btn-default" href="/aboutus">About Us</a> 
 			<a type="button" class="btn btn-default" href="/contact">Contact</a> 
 			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
+			<div class="well" style="margin-left: 100px; width: 200px; float: left;">@lectureNumber</div>
 		</div>
 	</header>
 	

@@ -62,7 +62,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 10:47:22 CEST 2014
+                    DATE: Tue Jun 24 15:11:43 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/studentLogin.scala.html
                     HASH: eedd99af76f9573e4f9aca527560497ef5cdef5d
                     MATRIX: 862->0|989->92|1003->98|1058->132|1155->194|1169->200|1222->232|1315->290|1329->296|1404->349|1465->375|1479->381|1545->426|1739->584|1754->590|1805->619

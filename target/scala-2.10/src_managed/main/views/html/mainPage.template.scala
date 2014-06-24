@@ -73,7 +73,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
        <header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
   		<div class="well btn-group" style="margin-left:70%;margin-top:100px">
   		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/profSignIn" style="width:200px;">Tutors</a></p>
-  		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/indexStudent" style="width:200px;">Students</a></p>
+  		<p><a type="button" class="btn btn-primary btn-lg btn-block" href="/studentLectureVisit" style="width:200px;">Students</a></p>
   		</div>
 	</header>
 	</div>
@@ -92,9 +92,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 10:47:21 CEST 2014
+                    DATE: Tue Jun 24 15:11:42 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/mainPage.scala.html
-                    HASH: 094cfe147474fe455e1affce11746a0e96b76f89
+                    HASH: 7e43a26ebecb14dfaf4211f59c191284d56030fa
                     MATRIX: 858->0|985->92|999->98|1054->132|1151->194|1165->200|1218->232|1311->290|1325->296|1400->349|1461->375|1475->381|1541->426|1683->540|1712->541|1809->602|1824->608|1877->639|1944->670|1959->676|2013->708|2080->739|2095->745|2149->777|2216->808|2231->814|2285->846|2458->983|2473->989|2527->1021|2656->1122|2685->1123|2761->1171|2790->1172|2911->1265|2940->1266|3040->1338|3069->1339|3128->1370|3157->1371|3275->1453|3290->1459|3343->1490|3511->1622|3526->1628|3580->1660
                     LINES: 29->1|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|38->10|38->10|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|46->18|46->18|46->18|48->20|48->20|49->21|49->21|52->24|52->24|55->27|55->27|56->28|56->28|60->32|60->32|60->32|63->35|63->35|63->35
                     -- GENERATED --
