@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+#courses {
+	background-color: #333;
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px 0 0 20px;
+	border-radius: 10px;
+}
+
+#course {
+	clear: both;
+}
+
+.well {
+	width: 200px;
+	float: left;
+	padding: 12px;
+	font-weight: bold;
+}
+
+#add-lecture-button-container {
+	margin-left: 50px;
+	width: 200px;
+	float: left;
+}
+
+#create-course-container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 30px 0 0 20px;
+}
+
+#add-course-button-container {
+	width: 200px;
+	float: left;
+}
+
+#q_area {
+	margin-left: 50px;
+	width: 500px;
+	display: none;
+	float: left;"
+}
+
+.page-header {
+	padding-bottom: 0px;
+	margin-top: 5px;
+}
+

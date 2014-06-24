@@ -99,7 +99,7 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 15:11:43 CEST 2014
+                    DATE: Tue Jun 24 15:51:15 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/studentLectureEnter.scala.html
                     HASH: 2ef52d45225b42e3902b5d3fe52d9d6075310755
                     MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3363->2030|3386->2044|3425->2045|3717->2306
