@@ -31,120 +31,132 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""
 <!DOCTYPE html>
 
 <html>
-    <head>
-    
-        <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*8.54*/routes/*8.60*/.Assets.at("stylesheets/main.css"))),format.raw/*8.94*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.59*/routes/*9.65*/.Assets.at("images/favicon.png"))),format.raw/*9.97*/("""">
-        <link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*10.55*/routes/*10.61*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*10.114*/("""">
-        <link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*11.55*/routes/*11.61*/.Assets.at("stylesheets/warningmsg.css"))),format.raw/*11.101*/("""">        
-        <script src=""""),_display_(Seq[Any](/*12.23*/routes/*12.29*/.Assets.at("javascripts/warningmsg.js"))),format.raw/*12.68*/("""" type="text/javascript"></script>
-		<script>
-        	$(document).ready(function() """),format.raw/*14.39*/("""{"""),format.raw/*14.40*/("""
+<head>
+
+<link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*8.46*/routes/*8.52*/.Assets.at("stylesheets/main.css"))),format.raw/*8.86*/("""">
+<link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.51*/routes/*9.57*/.Assets.at("images/favicon.png"))),format.raw/*9.89*/("""">
+<link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*10.51*/routes/*10.57*/.Assets.at("images/logonew.png"))),format.raw/*10.89*/("""">
+<link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*11.47*/routes/*11.53*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*11.106*/("""">
+<link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*12.47*/routes/*12.53*/.Assets.at("stylesheets/warningmsg.css"))),format.raw/*12.93*/("""">
+<script src=""""),_display_(Seq[Any](/*13.15*/routes/*13.21*/.Assets.at("javascripts/warningmsg.js"))),format.raw/*13.60*/("""" type="text/javascript"></script>
+<script>
+        	$(document).ready(function() """),format.raw/*15.39*/("""{"""),format.raw/*15.40*/("""
         		var connection = new WebSocket('ws://localhost:9000');
-    			connection.onopen = function() """),format.raw/*16.39*/("""{"""),format.raw/*16.40*/("""
+    			connection.onopen = function() """),format.raw/*17.39*/("""{"""),format.raw/*17.40*/("""
     			//
-    		"""),format.raw/*18.7*/("""}"""),format.raw/*18.8*/("""
+    		"""),format.raw/*19.7*/("""}"""),format.raw/*19.8*/("""
 
     		
-    		$.fn.notify = function(settings_overwrite)"""),format.raw/*21.49*/("""{"""),format.raw/*21.50*/("""
-    		    settings = """),format.raw/*22.22*/("""{"""),format.raw/*22.23*/("""
+    		$.fn.notify = function(settings_overwrite)"""),format.raw/*22.49*/("""{"""),format.raw/*22.50*/("""
+    		    settings = """),format.raw/*23.22*/("""{"""),format.raw/*23.23*/("""
     		        placement:"top",
     		        default_class: ".message",
     		        delay:0
-    		    """),format.raw/*26.11*/("""}"""),format.raw/*26.12*/(""";
+    		    """),format.raw/*27.11*/("""}"""),format.raw/*27.12*/(""";
     		    $.extend(settings, settings_overwrite);
     		    
-    		    $(settings.default_class).each(function()"""),format.raw/*29.52*/("""{"""),format.raw/*29.53*/("""$(this).hide();"""),format.raw/*29.68*/("""}"""),format.raw/*29.69*/(""");
+    		    $(settings.default_class).each(function()"""),format.raw/*30.52*/("""{"""),format.raw/*30.53*/("""$(this).hide();"""),format.raw/*30.68*/("""}"""),format.raw/*30.69*/(""");
     		    
     		    $(this).show().css(settings.placement, -$(this).outerHeight());
     		    obj = $(this);
     		    
-    		    if(settings.placement == "bottom")"""),format.raw/*34.45*/("""{"""),format.raw/*34.46*/("""
-    		        setTimeout(function()"""),format.raw/*35.36*/("""{"""),format.raw/*35.37*/("""obj.animate("""),format.raw/*35.49*/("""{"""),format.raw/*35.50*/("""bottom:"0""""),format.raw/*35.60*/("""}"""),format.raw/*35.61*/(""", 500)"""),format.raw/*35.67*/("""}"""),format.raw/*35.68*/(""",settings.delay);
-    		    """),format.raw/*36.11*/("""}"""),format.raw/*36.12*/("""
-    		    else"""),format.raw/*37.15*/("""{"""),format.raw/*37.16*/("""
-    		        setTimeout(function()"""),format.raw/*38.36*/("""{"""),format.raw/*38.37*/("""obj.animate("""),format.raw/*38.49*/("""{"""),format.raw/*38.50*/("""top:"0""""),format.raw/*38.57*/("""}"""),format.raw/*38.58*/(""", 500)"""),format.raw/*38.64*/("""}"""),format.raw/*38.65*/(""",settings.delay);
-    		    """),format.raw/*39.11*/("""}"""),format.raw/*39.12*/("""
-    		"""),format.raw/*40.7*/("""}"""),format.raw/*40.8*/("""
+    		    if(settings.placement == "bottom")"""),format.raw/*35.45*/("""{"""),format.raw/*35.46*/("""
+    		        setTimeout(function()"""),format.raw/*36.36*/("""{"""),format.raw/*36.37*/("""obj.animate("""),format.raw/*36.49*/("""{"""),format.raw/*36.50*/("""bottom:"0""""),format.raw/*36.60*/("""}"""),format.raw/*36.61*/(""", 500)"""),format.raw/*36.67*/("""}"""),format.raw/*36.68*/(""",settings.delay);
+    		    """),format.raw/*37.11*/("""}"""),format.raw/*37.12*/("""
+    		    else"""),format.raw/*38.15*/("""{"""),format.raw/*38.16*/("""
+    		        setTimeout(function()"""),format.raw/*39.36*/("""{"""),format.raw/*39.37*/("""obj.animate("""),format.raw/*39.49*/("""{"""),format.raw/*39.50*/("""top:"0""""),format.raw/*39.57*/("""}"""),format.raw/*39.58*/(""", 500)"""),format.raw/*39.64*/("""}"""),format.raw/*39.65*/(""",settings.delay);
+    		    """),format.raw/*40.11*/("""}"""),format.raw/*40.12*/("""
+    		"""),format.raw/*41.7*/("""}"""),format.raw/*41.8*/("""
 
 
-    		    $("a.info_trigger").click(function()"""),format.raw/*43.47*/("""{"""),format.raw/*43.48*/("""
-    		        $("#notify_info").notify("""),format.raw/*44.40*/("""{"""),format.raw/*44.41*/("""
+    		    $("a.info_trigger").click(function()"""),format.raw/*44.47*/("""{"""),format.raw/*44.48*/("""
+    		        $("#notify_info").notify("""),format.raw/*45.40*/("""{"""),format.raw/*45.41*/("""
     		            placement:"bottom"
-    		        """),format.raw/*46.15*/("""}"""),format.raw/*46.16*/(""");
+    		        """),format.raw/*47.15*/("""}"""),format.raw/*47.16*/(""");
     		        return false;
-    		    """),format.raw/*48.11*/("""}"""),format.raw/*48.12*/(""");
+    		    """),format.raw/*49.11*/("""}"""),format.raw/*49.12*/(""");
     		    
-    		    $("a.warning_trigger").click(function()"""),format.raw/*50.50*/("""{"""),format.raw/*50.51*/("""
+    		    $("a.warning_trigger").click(function()"""),format.raw/*51.50*/("""{"""),format.raw/*51.51*/("""
     		        $("#notify_warning").notify();
     		        return false;
-    		    """),format.raw/*53.11*/("""}"""),format.raw/*53.12*/(""");
-    		    $("a.error_trigger").click(function()"""),format.raw/*54.48*/("""{"""),format.raw/*54.49*/("""
+    		    """),format.raw/*54.11*/("""}"""),format.raw/*54.12*/(""");
+    		    $("a.error_trigger").click(function()"""),format.raw/*55.48*/("""{"""),format.raw/*55.49*/("""
     		        $("#notify_error").notify();
     		        return false;
-    		    """),format.raw/*57.11*/("""}"""),format.raw/*57.12*/(""");
-    		    $("a.success_trigger").click(function()"""),format.raw/*58.50*/("""{"""),format.raw/*58.51*/("""
+    		    """),format.raw/*58.11*/("""}"""),format.raw/*58.12*/(""");
+    		    $("a.success_trigger").click(function()"""),format.raw/*59.50*/("""{"""),format.raw/*59.51*/("""
     		        $("#notify_success").notify();
     		        return false;
-    		    """),format.raw/*61.11*/("""}"""),format.raw/*61.12*/(""");
+    		    """),format.raw/*62.11*/("""}"""),format.raw/*62.12*/(""");
     		
     		   
-    		$("#notify_autopop").notify("""),format.raw/*64.35*/("""{"""),format.raw/*64.36*/("""
+    		$("#notify_autopop").notify("""),format.raw/*65.35*/("""{"""),format.raw/*65.36*/("""
     		        delay:500
-    		    """),format.raw/*66.11*/("""}"""),format.raw/*66.12*/(""");
+    		    """),format.raw/*67.11*/("""}"""),format.raw/*67.12*/(""");
 
     		
-    		"""),_display_(Seq[Any](/*69.8*/if(flag == 0)/*69.21*/ {_display_(Seq[Any](format.raw/*69.23*/("""
+    		"""),_display_(Seq[Any](/*70.8*/if(flag == 0)/*70.21*/ {_display_(Seq[Any](format.raw/*70.23*/("""
 		        $("#notify_error").notify();
 		        return false;
-    		""")))})),format.raw/*72.8*/("""
+    		""")))})),format.raw/*73.8*/("""
     	     
-        	"""),format.raw/*74.10*/("""}"""),format.raw/*74.11*/(""");
+        	"""),format.raw/*75.10*/("""}"""),format.raw/*75.11*/(""");
         </script>
- </head>
-    
-    
-    <body>
-    <div class="page-header" style="padding-bottom: 0px; margin-top:5px;">
-    		<img src=""""),_display_(Seq[Any](/*81.18*/routes/*81.24*/.Assets.at("images/logo.png"))),format.raw/*81.53*/("""" height="50px" width="150px" alt="Live Feed"> 
-    	</div> 
-    	<header class="navbar navbar-static-top bs-docs-nav"  id="top" role="banner">
-  			<div class="btn-group" style="margin-left: 75%;">
-  				<a type="button" class="btn btn-default" href="/home">Home</a>
-  				<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
-  				<a type="button" class="btn btn-default" href="/contact">Contact</a>
-  				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
-  			</div>
-		</header>
+</head>
 
-		<div>
-			<form method="get" action="/validate">
-				<div id="q_area" class="col-sm-4" style="margin-left: 350px; " >
-				<h1>Please Sign In</h1>
-					<div class="input-group" style="margin-top:20px;">
-			  			<span class="input-group-addon">Username</span>
-  			  			<input type="text" class="form-control" id="username" placeholder="Username" name="p_username">
-					</div>
-					<div class="input-group" style="margin-top:20px;">
-  						<span class="input-group-addon">Password</span>
-  						<input type="password" class="form-control" id="password" placeholder="Password" name="p_password">
-					</div>
-					<div style="margin-top:20px;"><input type="checkbox"> Remember Me  </div>
-						<div class="btn-group-justified" style="margin-top: 20px;">
-							<button type="submit" class="btn btn-success" style="width:212px">Sign In</button>
-							<button type="submit" class="btn btn-default" style="width:212px" href="/home">Cancel</button>
-						</div>
-					</div>
-					"""),_display_(Seq[Any](/*110.7*/if(flag == 0 )/*110.21*/{_display_(Seq[Any](format.raw/*110.22*/("""
-						<div class="error message" id="notify_error">
-						         <h4>Wrong username or password</h4>
-						</div>
-					""")))})),format.raw/*114.7*/("""
-</form>
+
+<body>
+	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+		<img src=""""),_display_(Seq[Any](/*82.14*/routes/*82.20*/.Assets.at("images/logonew.png"))),format.raw/*82.52*/("""" height="60px"
+			width="130px" alt="Live Feed">
+	</div>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top"
+		role="banner">
+		<div class="btn-group" style="margin-left: 75%;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> <a
+				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
+				type="button" class="btn btn-default" href="/contact">Contact</a> <a
+				type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
+	</header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    </body>
+	<div>
+		<form method="get" action="/validate" role="form">
+			<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
+				<h1>Please Sign In</h1>
+				<div class="input-group" style="margin-top: 20px;">
+					<span class="input-group-addon">Username</span> <input type="text"
+						class="form-control" id="username" placeholder="Username"
+						name="p_username">
+				</div>
+				<div class="input-group" style="margin-top: 20px;">
+					<span class="input-group-addon">Password</span> <input
+						type="password" class="form-control" id="password"
+						placeholder="Password" name="p_password">
+				</div>
+				<div style="margin-top: 20px;">
+					<input type="checkbox"> Remember Me
+				</div>
+				<div class="btn-group-justified" style="margin-top: 20px;">
+					<button type="submit" class="btn btn-success" style="width: 212px">Sign
+						In</button>
+				</div>
+			</div>
+			"""),_display_(Seq[Any](/*117.5*/if(flag == 0 )/*117.19*/{_display_(Seq[Any](format.raw/*117.20*/("""
+			<div class="row col-md-4 col-md-offset-3 error message" id="notify_error" style="padding: 10px 0 0 20px; color: #ff0000;">
+				
+						<p>
+							<i><b> Please enter correct combination of username and
+									password!</b></i>
+						</p>
+			</div>
+			""")))})),format.raw/*125.5*/("""
+		</form>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</body>
 </html>"""))}
     }
     
@@ -157,11 +169,11 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 18:54:19 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/profSignIn.scala.html
-                    HASH: 947ad624b5e1f81e9a98494d3b2fd7417493e531
-                    MATRIX: 780->1|906->17|933->35|1062->129|1076->135|1131->169|1227->230|1241->236|1294->268|1387->325|1402->331|1478->384|1571->441|1586->447|1649->487|1718->520|1733->526|1794->565|1906->649|1935->650|2067->754|2096->755|2140->772|2168->773|2253->830|2282->831|2332->853|2361->854|2494->959|2523->960|2665->1074|2694->1075|2737->1090|2766->1091|2962->1259|2991->1260|3055->1296|3084->1297|3124->1309|3153->1310|3191->1320|3220->1321|3254->1327|3283->1328|3339->1356|3368->1357|3411->1372|3440->1373|3504->1409|3533->1410|3573->1422|3602->1423|3637->1430|3666->1431|3700->1437|3729->1438|3785->1466|3814->1467|3848->1474|3876->1475|3953->1524|3982->1525|4050->1565|4079->1566|4159->1618|4188->1619|4257->1660|4286->1661|4377->1724|4406->1725|4518->1809|4547->1810|4625->1860|4654->1861|4764->1943|4793->1944|4873->1996|4902->1997|5014->2081|5043->2082|5125->2136|5154->2137|5217->2172|5246->2173|5299->2191|5321->2204|5361->2206|5463->2277|5512->2298|5541->2299|5720->2442|5735->2448|5786->2477|7320->3975|7344->3989|7384->3990|7539->4113
-                    LINES: 26->1|30->1|30->2|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|42->14|42->14|44->16|44->16|46->18|46->18|49->21|49->21|50->22|50->22|54->26|54->26|57->29|57->29|57->29|57->29|62->34|62->34|63->35|63->35|63->35|63->35|63->35|63->35|63->35|63->35|64->36|64->36|65->37|65->37|66->38|66->38|66->38|66->38|66->38|66->38|66->38|66->38|67->39|67->39|68->40|68->40|71->43|71->43|72->44|72->44|74->46|74->46|76->48|76->48|78->50|78->50|81->53|81->53|82->54|82->54|85->57|85->57|86->58|86->58|89->61|89->61|92->64|92->64|94->66|94->66|97->69|97->69|97->69|100->72|102->74|102->74|109->81|109->81|109->81|138->110|138->110|138->110|142->114
+                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/profSignIn.scala.html
+                    HASH: ad8173bcb21a3a7b2831063feee235f6b2283ef8
+                    MATRIX: 780->1|906->17|933->35|1046->113|1060->119|1115->153|1203->206|1217->212|1270->244|1359->297|1374->303|1428->335|1513->384|1528->390|1604->443|1689->492|1704->498|1766->538|1819->555|1834->561|1895->600|2005->682|2034->683|2166->787|2195->788|2239->805|2267->806|2352->863|2381->864|2431->886|2460->887|2593->992|2622->993|2764->1107|2793->1108|2836->1123|2865->1124|3061->1292|3090->1293|3154->1329|3183->1330|3223->1342|3252->1343|3290->1353|3319->1354|3353->1360|3382->1361|3438->1389|3467->1390|3510->1405|3539->1406|3603->1442|3632->1443|3672->1455|3701->1456|3736->1463|3765->1464|3799->1470|3828->1471|3884->1499|3913->1500|3947->1507|3975->1508|4052->1557|4081->1558|4149->1598|4178->1599|4258->1651|4287->1652|4356->1693|4385->1694|4476->1757|4505->1758|4617->1842|4646->1843|4724->1893|4753->1894|4863->1976|4892->1977|4972->2029|5001->2030|5113->2114|5142->2115|5224->2169|5253->2170|5316->2205|5345->2206|5398->2224|5420->2237|5460->2239|5562->2310|5611->2331|5640->2332|5800->2456|5815->2462|5869->2494|7290->3879|7314->3893|7354->3894|7643->4151
+                    LINES: 26->1|30->1|30->2|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|43->15|43->15|45->17|45->17|47->19|47->19|50->22|50->22|51->23|51->23|55->27|55->27|58->30|58->30|58->30|58->30|63->35|63->35|64->36|64->36|64->36|64->36|64->36|64->36|64->36|64->36|65->37|65->37|66->38|66->38|67->39|67->39|67->39|67->39|67->39|67->39|67->39|67->39|68->40|68->40|69->41|69->41|72->44|72->44|73->45|73->45|75->47|75->47|77->49|77->49|79->51|79->51|82->54|82->54|83->55|83->55|86->58|86->58|87->59|87->59|90->62|90->62|93->65|93->65|95->67|95->67|98->70|98->70|98->70|101->73|103->75|103->75|110->82|110->82|110->82|145->117|145->117|145->117|153->125
                     -- GENERATED --
                 */
             

@@ -1,6 +1,6 @@
-// @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/conf/routes
-// @HASH:841814af7b3367e716fe264c416fe503af90d1d7
-// @DATE:Tue Jun 24 18:54:17 CEST 2014
+// @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/conf/routes
+// @HASH:86ce48cf7fd60a82bf42a12b2712e3eb1bb6c272
+// @DATE:Thu Jun 26 15:15:35 CEST 2014
 
 package controllers;
 

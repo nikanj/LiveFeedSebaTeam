@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,6 +23,22 @@ public class Course {
 	@Constraints.Required
 	public String CourseName;
 
+	public long getCourse_Id() {
+		return Course_Id;
+	}
+
+	public void setCourse_Id(long course_Id) {
+		Course_Id = course_Id;
+	}
+
+	public String getCourseName() {
+		return CourseName;
+	}
+
+	public void setCourseName(String courseName) {
+		CourseName = courseName;
+	}
+
 	public static void updateDb(int profId, int courseId, String courseName2)
 			throws SQLException {
 		int flag = 0;
@@ -35,17 +49,18 @@ public class Course {
 		System.out.println("Reached here second");
 		while (rs.next()) {
 			String course = rs.getString("CourseName");
-			if(course.equalsIgnoreCase(courseName2))
-			{
+			if (course.equalsIgnoreCase(courseName2)) {
 				flag = 1;
 				break;
 			}
 		}
-		if (flag == 0)
-		{
+		if (flag == 0) {
 			System.out.println("Added to database");
-		sql = "Insert into course (ID_prof, CourseName) values (" + profId + ",'" + courseName2 + "')";
-		boolean result = stmt.execute(sql);
+			sql = "Insert into course (ID_prof, CourseName) values (" + profId
+					+ ",'" + courseName2 + "')";
+			// boolean result = stmt.execute(sql);
+			// @Antoniya Test
+			stmt.executeUpdate(sql);
 		}
 
 	}
@@ -66,7 +81,8 @@ public class Course {
 		try (Connection conn = DB.getConnection();
 				Statement stmt = conn.createStatement();) {
 
-			String sql = "SELECT Course_Id FROM course where CourseName='"+ courseName+"'";
+			String sql = "SELECT Course_Id FROM course where CourseName='"
+					+ courseName + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {

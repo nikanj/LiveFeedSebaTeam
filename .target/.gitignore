@@ -1,5 +1,3 @@
-/controllers
-/models
 /FunctionalTest$1.class
 /FunctionalTest$2.class
 /FunctionalTest$3.class
@@ -12,4 +10,6 @@
 /ModelTest$2$1.class
 /ModelTest$2.class
 /ModelTest.class
+/controllers
+/models
 /views

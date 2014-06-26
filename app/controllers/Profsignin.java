@@ -1,6 +1,5 @@
 package controllers;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +50,6 @@ public class Profsignin extends Controller {
 			return ok(views.html.profSignIn.render(flag));
 		}
 	}
-	
-
 
 
 }

@@ -20,6 +20,7 @@ import play.libs.F.Callback0;
 import play.mvc.*;
 import play.db.jpa.Transactional;
 
+
 public class Application extends Controller {
 	private static SecureRandom random = new SecureRandom();
 	public static Long vote = 0L;
@@ -116,8 +117,9 @@ public class Application extends Controller {
 
 		};
 	}
-
-	public static Result postQuestion() throws SQLException {
+	
+			
+		public static Result postQuestion() throws SQLException {
 
 		DynamicForm form = Form.form().bindFromRequest();
 		String question = form.get("p_question");
@@ -127,7 +129,7 @@ public class Application extends Controller {
 		int courseId = NewCourse.getCourseId();
 		int questionID = Question.updateDB(idProf, courseId, question);
 		
-		ResultSet rs = Question.readDB(idProf);
+		ResultSet rs = Question.readDB(courseId);
 		while (rs.next()) {
 			int id = rs.getInt("ID_prof");
 			int courseID = rs.getInt("Course_Id");
@@ -136,8 +138,16 @@ public class Application extends Controller {
 			
 			if(questionID == ID_question)
 			{
+				System.out.println("question_" + Question);
 				for (WebSocket.Out<String> ws : channels) {
 					ws.write("question_" + Question);
+				}
+			}
+			else
+			{
+				System.out.println("questionStudent_" + Question);
+				for (WebSocket.Out<String> ws : channels) {
+					ws.write("questionStudent_" + Question);
 				}
 			}
 			// Display values
@@ -156,13 +166,21 @@ public class Application extends Controller {
 
 		IdStats = Stats.getIdStats();
 
-		DynamicForm requestData = play.data.Form.form().bindFromRequest();
-		chosenOption = requestData.get("radioGroup");
-		System.out.println(chosenOption);
+		DynamicForm form = Form.form().bindFromRequest();
+		chosenOption = form.get("p_vote"); 
+		System.out.println("chosenOption: " + chosenOption);
+		
+	/*	DynamicForm requestData = play.data.Form.form().bindFromRequest();
+		chosenOption = requestData.get("radioGroup"); 
+		*/
 
 		if (chosenOption == null) {
-			chosenOption = requestData.get("pause_vote");
+			chosenOption = "pause_vote";
+	//		chosenOption = requestData.get("pause_vote");
 		}
+		
+		System.out.println("chosenOption after checking pause: " + chosenOption);
+		
 		if (chosenOption.equals("speed_low")) {
 			speedSlow++;
 			sumOfSpeedVotes++;
@@ -254,6 +272,7 @@ public class Application extends Controller {
 	}
 
 	public static Result indexStudent() {
+		
 		return ok(views.html.indexStudent.render());
 	}
 

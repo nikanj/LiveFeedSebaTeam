@@ -79,7 +79,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 				</div>
 			</div>
 		</div>
-		<div class="row>"
+		<div class="row">
 			<div class="col-xs-6">
 				<h4>Leave a comment...</h4>
 				<form role="form">
@@ -107,9 +107,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 18:54:18 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/feedbackPage.scala.html
-                    HASH: 1b1a7a12c357f5e7757c39364109965e52705bdc
+                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/feedbackPage.scala.html
+                    HASH: 47766f454a78524c5c2dab4834fcb0ed9cd556fe
                     MATRIX: 862->0|998->101|1012->107|1067->141|1156->195|1170->201|1223->233|1312->287|1326->293|1379->325|1464->375|1478->381|1553->434|1639->484|1654->490|1735->548|1789->566|1804->572|1871->617|2051->761|2066->767|2120->799
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|45->17|45->17|45->17
                     -- GENERATED --

@@ -39,8 +39,8 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*14.14*/routes/*14.20*/.Assets.at("images/logonew.png"))),format.raw/*14.52*/("""" height="50px"
-			width="150px" alt="Live Feed">
+		<img src=""""),_display_(Seq[Any](/*14.14*/routes/*14.20*/.Assets.at("images/logonew.png"))),format.raw/*14.52*/("""" height="60px"
+			width="130px" alt="Live Feed">
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
@@ -75,15 +75,14 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 			</div>
 			
 		</div>
-		"""),_display_(Seq[Any](/*50.4*/if(flag == 0 )/*50.18*/{_display_(Seq[Any](format.raw/*50.19*/("""
-		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
-						<div class="error message" id="notify_error">
-						         <p class="bg-danger"> <i><b>Please enter correct lecture id and course name!</b></i></p>
-						</div>
-			</div>
-			</div>			
-					""")))})),format.raw/*58.7*/("""
+		"""),_display_(Seq[Any](/*50.4*/if(flag == 0)/*50.17*/{_display_(Seq[Any](format.raw/*50.18*/("""	
+			<div class="row col-md-4 col-md-offset-2 error message" id="notify_error" style="padding: 5px 0 0 10px; color: #ff0000;">
+				
+						<p>
+							<i><b> Please enter correct lecture id and course name!</b></i>
+						</p>
+			</div>		
+					""")))})),format.raw/*57.7*/("""
 	</form>
 	</div>
 </body>
@@ -99,11 +98,11 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 18:54:19 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/studentLectureEnter.scala.html
-                    HASH: 2ef52d45225b42e3902b5d3fe52d9d6075310755
-                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3363->2030|3386->2044|3425->2045|3717->2306
-                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|78->50|78->50|78->50|86->58
+                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/studentLectureEnter.scala.html
+                    HASH: 77221f244045ef0575106d3be84cf350b94af177
+                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3363->2030|3385->2043|3424->2044|3697->2286
+                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|78->50|78->50|78->50|85->57
                     -- GENERATED --
                 */
             

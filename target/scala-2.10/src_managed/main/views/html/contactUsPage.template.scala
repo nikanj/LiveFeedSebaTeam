@@ -95,8 +95,8 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jun 24 18:54:18 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Exercise 3/LiveFeedSebaTeam_Voting/LiveFeedSebaTeam/app/views/contactUsPage.scala.html
+                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/contactUsPage.scala.html
                     HASH: a67334a1c33dfc2577ecd259e3b8f242ced58bde
                     MATRIX: 863->0|999->101|1013->107|1068->141|1157->195|1171->201|1224->233|1313->287|1327->293|1380->325|1465->375|1479->381|1554->434|1640->484|1655->490|1736->548|1790->566|1805->572|1872->617|2052->761|2067->767|2121->799
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|45->17|45->17|45->17

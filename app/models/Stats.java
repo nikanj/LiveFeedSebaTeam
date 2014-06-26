@@ -23,10 +23,6 @@ import play.libs.Akka;
 
 @Entity
 public class Stats extends Model  {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static int pauseVotes = 0;
 	private static int speedOK = 0;
@@ -39,17 +35,17 @@ public class Stats extends Model  {
 
 	@Id
 	public Long ID_stats;
-	
+
 	@Constraints.Required
 	public Long  speedCount;
-	
+
 	@Constraints.Required
 	public Long  pauseCount;
-	
+
 	@Constraints.Required
 	public Long  volumeCount;
-	
-		
+
+
 	public static int getIdStats() {
 		return IdStats;
 	}
@@ -106,7 +102,7 @@ public class Stats extends Model  {
 			boolean rs = stmt.execute(sql);
 		}
 	}
-	
+
 	public static ResultSet readDB(int statsID) throws SQLException {
 
 		java.sql.Connection conn = DB.getConnection();
@@ -116,7 +112,7 @@ public class Stats extends Model  {
 		ResultSet rs = stmt.executeQuery(sql);
 		return rs;
 	}
-	
+
 	public static int insertDB() throws SQLException{
 		int statId = 0;
 		java.sql.Connection conn = DB.getConnection();
@@ -131,5 +127,5 @@ public class Stats extends Model  {
 		}
 		return statId;
 	}
-	
+
 }

@@ -14,16 +14,15 @@ import play.mvc.Result;
 public class Report extends Controller {
 
 	private static ResultSet rs;
-	private static int questionCount; 
+	private static int questionCount;
 	private static int statsId;
-	
-		
-	public static Result logout() throws SQLException{
-		
+
+	public static Result logout() throws SQLException {
+
 		DynamicForm form = Form.form().bindFromRequest();
 		statsId = Stats.getIdStats();
 		rs = Stats.readDB(statsId);
-		
+
 		int speed_ok = 0;
 		int speed_low = 0;
 		int speed_high = 0;
@@ -43,15 +42,18 @@ public class Report extends Controller {
 			volume_high = rs.getInt("Volume_High");
 			pause_count = rs.getInt("pause_count");
 		}
-		System.out.println("SpeedOk: " + speed_ok + " speedlow: " + speed_low + " speedhigh: " + speed_high + " volok: " + volume_ok + " volLow: " + volume_low + " volHigh: " +  volume_high + " Pause: " + pause_count);
-		ResultSet rs = Question.readDB(1); 
-	
-	    while(rs.next()){
-	        questionCount = rs.getInt("count(*)");
-	    }
-		
-		return ok(views.html.report.render(speed_low, speed_ok, speed_high, volume_low, volume_ok, volume_high, pause_count, questionCount));
+		System.out.println("SpeedOk: " + speed_ok + " speedlow: " + speed_low
+				+ " speedhigh: " + speed_high + " volok: " + volume_ok
+				+ " volLow: " + volume_low + " volHigh: " + volume_high
+				+ " Pause: " + pause_count);
+		/*ResultSet rs = Question.readDB(1);
+
+		while (rs.next()) {
+			questionCount = rs.getInt("count(*)");
+		}
+*/
+		return ok(views.html.report.render(speed_low, speed_ok, speed_high,
+				volume_low, volume_ok, volume_high, pause_count, 3));
 	}
 
-	
 }

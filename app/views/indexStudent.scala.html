@@ -5,11 +5,72 @@
 <title>Test</title>
 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/logonew.png")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/voteImg.png")">
 <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
 <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
 
 <script>
-	$(document).ready(function() {
+
+function displayQuestion(question) {
+	$('#posted_question')
+			.replaceWith(
+					'<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
+							+ question + '</div>');
+	$(".test").show();
+}
+
+	 $(document).ready(function() {
+		 var connection = new WebSocket('ws://localhost:9000');
+
+			connection.onopen = function() {
+				//
+			}
+			
+			connection.onmessage = function(e) {
+				server_message = e.data;
+				if (server_message.indexOf("question_") > -1) {
+					server_message = server_message.replace(
+							"question_", "");
+					displayQuestion(server_message);
+				}
+			  /*if (server_message.indexOf("question_") > -1) {
+					server_message = server_message.replace(
+							"question_", "");
+					displayQuestion(server_message);
+				}*/
+			};
+			
+			connection.onclose = function(e) {
+				//
+			}
+			
+			$("#submit_speed").click(function() {
+				$.post("/postVotes", {
+					p_vote: $('input[name=radioGroup]:checked').val()
+				})
+			});
+			
+			$("#submit_volume").click(function() {
+				$.post("/postVotes", {
+					p_vote: $('input[name=radioGroup1]:checked').val()
+				})
+			});
+			
+			$("#submit_pause").click(function() {
+				$.post("/postVotes", {
+					p_vote: $(this).attr("value")
+				})
+			});
+			
+			$("#submit_button").click(function() {
+				$.post("/postStudentQuestion", {
+					p_question: $("#question").val()
+				}).done(function(){
+					$("#q_area").hide();
+				})
+			});
+		
 			$("#add").click(function() {
 				$("#q_area").show();
 			});		
@@ -24,105 +85,105 @@
 
 </head>
 <body>
-	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src="@routes.Assets.at("images/logo.png")" height="50px"
-			width="150px" alt="Live Feed">
-	</div>
-	<header class="navbar navbar-static-top bs-docs-nav" id="top"
-		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+	<div id="container">
+		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+			<a href="/home"><img src="@routes.Assets.at("images/logonew.png")" height="70px"
+			width="150px" alt="Live Feed"></a>
 		</div>
-	</header>
-
-	<!-- @routes.Application.vote() -->
-	<div class="container">
-		<div class="speed_container">
-			<form id="speed_vote" method="get" action="/vote">
-				<div class="col-md-6 col-md-offset-2">
-					<h3>Speed</h3>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio1" value="speed_low" type="radio"> LOW
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio2" value="speed_ok" checked="checked" type="radio">
-							OK
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio3" value="speed_fast" type="radio"> FAST
-						</label>
-					</div>
-					<button type="submit" class="btn btn-primary">Vote</button>
-				</div>
-			</form>
-		</div>
-		<div class="loudness_container">
-			<form id="voice_vote" method="get" action="/vote">
-				<div class="col-md-6 col-md-offset-2"">
-					<h3>Voice</h3>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio4" value="voice_low" type="radio"> LOW
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio5" value="voice_ok" checked="checked" type="radio">
-							OK
-						</label>
-					</div>
-					<div class="row">
-						<label class="radio-inline"> <input name="radioGroup"
-							id="radio6" value="voice_loud" type="radio"> LOUD
-						</label>
-					</div>
-					<button type="submit" class="btn btn-primary">Vote</button>
-				</div>
-			</form>
-		</div>
-		<div class="pause_container">
-			<form id="pause_vote" method="get" action="/vote">
-				<div class="col-md-6 col-md-offset-2" style="margin-top: 20px">
-					<button name="pause_vote" value="pause" type="submit"
-						class="btn btn-primary">Want a Pause? :D</button>
-				</div>
-			</form>
-		</div>
+		<header class="navbar navbar-static-top bs-docs-nav" id="top">
+			<div class="btn-group" style="float: right;">
+				<a type="button" class="btn btn-default" href="/home">Home</a> <a
+					type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
+					type="button" class="btn btn-default" href="/contact">Contact</a> <a
+					type="button" class="btn btn-default" href="/feedback">Feedback</a>
+			</div>
+		</header>
 		
-		<div style="clear:both"></div>
-		<div>
-			<h2>Question Section</h2>
-			<form method="get" action="/postQuestion">
-
-				<div id="questions_row1" style="margin-left: 100px; height: 400px;">
+		<div class="voting-questions-container" style="width: 80%; margin: 0 auto;">
+			<div id="test" style="width: 55%; margin: 0 auto; padding: 0 20px 20px 20px;">
+				<div class="speed_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+				<!-- <form id="speed_vote" method="get" action="/vote"> -->
+						<div>
+							<h3><b><i>Speed</i></b></h3>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup"
+									id="radio1" value="speed_low" type="radio"> LOW
+								</label>
+							</div>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup"
+									id="radio2" value="speed_ok" checked="checked" type="radio">
+									OK
+								</label>
+							</div>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup"
+									id="radio3" value="speed_fast" type="radio"> FAST
+								</label>
+							</div>
+						<a id="submit_speed" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
+						<!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+						</div>
+			 	<!-- </form> -->
+				</div>
+				<div class="loudness_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+			<!-- 	<form id="voice_vote" method="get" action="/vote"> -->
+						<div>
+							<h3><b><i>Voice</i></b></h3>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup1"
+									id="radio4" value="voice_low" type="radio"> LOW
+								</label>
+							</div>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup1"
+									id="radio5" value="voice_ok" checked="checked" type="radio">
+									OK
+								</label>
+							</div>
+							<div>
+								<label class="radio-inline"> <input name="radioGroup1"
+									id="radio6" value="voice_loud" type="radio"> LOUD
+								</label>
+							</div>
+							<a id="submit_volume" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
+						 <!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+						</div>
+		 	<!--		</form> -->
+				</div>
+				<div class="pause_container">
+				<!--	<form id="pause_vote" method="get" action="/vote"--> 
+						<div class="col-md-4 col-md-offset-2" style="margin-top: 20px">
+						
+					<button name="pause_vote" value="pause" type="button" id="submit_pause"
+			            class="btn btn-warning" style="width: 300px; height: 56px; font-size: 18px;"><b>Pause</b></button> 
+						</div>
+					<!--/form-->  
+				</div>
+				<div class="clear" style="clear: both;"></div>
+			</div>
+			
+			<div id="question-container" style="border: 1px solid #3333FF; width: 80%; margin: 10px auto; padding: 0 20px 20px 20px; background-color: #D6DBFD; border-radius: 7px;">
+				<h3><b><i>Q&A Section</i></b></h3>
+				
+				<div id="questions_row1">
 					<div id="posted_question"></div> 
-
-					<div class="well col-lg-2">
-						<a type="button" class="btn btn-primary btn-group-justified" id="add">Add Question</a>
+					<div style="margin-top: 20px;">
+						<a type="button" class="btn btn-primary" id="add" style="margin-top: 10px; border: 3px solid white;">Add Question</a>
 					</div>
 
-					<div id="q_area" class="well col-sm-5" style="display: none;">
-						<textarea class="form-control" rows="4" id="question"
-							placeholder="Enter Question Here" name="p_question"></textarea>
+					<div id="q_area" style="display: none; margin-top: 10px;">
+						<textarea class="form-control" rows="4" columns="50"
+							id="question" placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">
-							<button id="submit_button" type="submit" class="btn btn-success" style="width:195px">Submit</button>
-							<button id="cancel_button" type="button" class="btn btn-danger"  style="width:195px">Cancel</button>
-						</div>	
+							<a id="submit_button" class="btn btn-success" type="button">Submit</a>
+							<a id="cancel_button" class="btn btn-danger" type="button">Cancel</a>
+						</div>
 					</div>
 				</div>
-			</form>
+				
+			</div>
 		</div>
-
-
 	</div>
-
 </body>
 </html>
