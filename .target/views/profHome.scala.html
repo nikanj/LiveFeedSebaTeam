@@ -16,11 +16,11 @@
 		connection.onopen = function() {
 		}
 
-		$("#create").click(function() {
+	/*	$("#create").click(function() {
 			$.post("/addCourse", {
 				courseName : $("#course").val()
 			})
-		});
+		});*/
 
 		$("#cancel").click(function() {
 			$("#q_area").hide();
@@ -72,10 +72,12 @@
 			</div>
 			<form method="get" action="/addCourse">
 				<div id="q_area" class="well col-sm-10">
-					<input type="text" class="form-control"id="course" placeholder="Course Name" name="courseName">
+					<input type="text" class="form-control" id="course" placeholder="Course Name" name="courseName">
 					<div class="btn-group-justified">
-						<a type="button" class="btn btn-success" id="create">Add Course</a>
-						<a type="button" class="btn btn-danger" id="cancel">Cancel</a>
+					<button type="submit" class="btn btn-success" id="create" style="width:231px;">Add Course</button>
+					<button type="button" class="btn btn-danger" id="cancel" style="width:231px;">Cancel</button>
+						<!--a type="submit" class="btn btn-success" id="create">Add Course</a>
+						<a type="button" class="btn btn-danger" id="cancel">Cancel</a-->
 					</div>
 				</div>
 			</form>

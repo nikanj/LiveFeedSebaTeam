@@ -46,14 +46,15 @@ public class Report extends Controller {
 				+ " speedhigh: " + speed_high + " volok: " + volume_ok
 				+ " volLow: " + volume_low + " volHigh: " + volume_high
 				+ " Pause: " + pause_count);
-		/*ResultSet rs = Question.readDB(1);
+		int courseId = NewCourse.getCourseId();
+		ResultSet rs = Question.readDB(courseId);
 
 		while (rs.next()) {
-			questionCount = rs.getInt("count(*)");
+			questionCount++;
 		}
-*/
+
 		return ok(views.html.report.render(speed_low, speed_ok, speed_high,
-				volume_low, volume_ok, volume_high, pause_count, 3));
+				volume_low, volume_ok, volume_high, pause_count, questionCount));
 	}
 
 }

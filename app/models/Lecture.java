@@ -63,6 +63,9 @@ public class Lecture {
 		// rs = stmt.execute(sql);
 		// @Antoniya - test
 		stmt.executeUpdate(sql);
+		
+		stmt.close();
+		conn.close();
 		return lectureObject.getLecture_number();
 	}
 

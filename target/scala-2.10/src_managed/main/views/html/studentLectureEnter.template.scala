@@ -44,7 +44,7 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
-		<div class="btn-group" style="float: right;">
+		<div class="btn-group" style="margin-left: 75%;">
 			<a type="button" class="btn btn-default" href="/home">Home</a> <a
 				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
 				type="button" class="btn btn-default" href="/contact">Contact</a> <a
@@ -56,33 +56,32 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <div class="container">
 	<form  method="get" action="/studentValidate" class="form-horizontal" role="form">
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Course Name</label>
-			<div class="col-sm-4">
-				<input type=text class="form-control" id="courseNameId" name="courseName" placeholder="CourseName">
-			</div>
+	<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
+		<h1>Please Log In</h1>
+		
+		<div class="input-group" style="margin-top: 20px;">
+			<span class="input-group-addon">Course Name</span> 
+			<input type="text" class="form-control" id="courseNameId" placeholder="CourseName" style="width: 280px" name="courseName">
 		</div>
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Lecture Number</label>
-			<div class="col-sm-2">
-				<input type=text class="form-control" id="lectureId" name="lectureNumber"
-					placeholder="LectureUniqeNumber">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Enter</button>
-			</div>
 			
+		<div class="input-group" style="margin-top: 20px;">
+			<span class="input-group-addon" >Lecture Number</span> 
+			<input type="text" class="form-control" id="lectureId" placeholder="LectureUniqeNumber" style="width: 265px" name="lectureNumber">
 		</div>
-		"""),_display_(Seq[Any](/*50.4*/if(flag == 0)/*50.17*/{_display_(Seq[Any](format.raw/*50.18*/("""	
+		
+		<div class="btn-group-justified" style="margin-top: 20px;">
+			<button type="submit" class="btn btn-success" style="width: 212px">Enter</button>
+		</div>				
+	</div>
+		"""),_display_(Seq[Any](/*48.4*/if(flag == 0)/*48.17*/{_display_(Seq[Any](format.raw/*48.18*/("""	
 			<div class="row col-md-4 col-md-offset-2 error message" id="notify_error" style="padding: 5px 0 0 10px; color: #ff0000;">
 				
 						<p>
 							<i><b> Please enter correct lecture id and course name!</b></i>
 						</p>
 			</div>		
-					""")))})),format.raw/*57.7*/("""
+					""")))})),format.raw/*55.7*/("""
+	
 	</form>
 	</div>
 </body>
@@ -98,11 +97,11 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    DATE: Thu Jun 26 21:18:22 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/studentLectureEnter.scala.html
-                    HASH: 77221f244045ef0575106d3be84cf350b94af177
-                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3363->2030|3385->2043|3424->2044|3697->2286
-                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|78->50|78->50|78->50|85->57
+                    HASH: c39654a49dacb42cf565b43793ec9c6508c43e9c
+                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3486->2153|3508->2166|3547->2167|3820->2409
+                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|76->48|76->48|76->48|83->55
                     -- GENERATED --
                 */
             

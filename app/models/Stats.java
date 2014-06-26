@@ -59,48 +59,22 @@ public class Stats extends Model  {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-		if(vote.contains("speed_low"))
-		{ 
-			speedLow ++;
-			sql = "update stats set Speed_Low =" + speedLow + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
+		int result = 0;
+		sql = "select " + vote + " FROM stats where ID_stats=" + IdStats;
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		while (rs.next()) {
+			result =  rs.getInt(vote);
+			result ++;
 		}
-		else if(vote.contains("speed_ok"))
-		{ 
-			speedOK ++;
-			sql = "update stats set Speed_OK =" + speedOK + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
-		else if(vote.contains("speed_fast"))
-		{ 
-			speedHigh ++;
-			sql = "update stats set Speed_High =" + speedHigh + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
-		else if(vote.contains("voice_low"))
-		{ 
-			volumeLow ++;
-			sql = "update stats set Volume_Low =" + volumeLow + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
-		else if(vote.contains("voice_ok"))
-		{ 
-			volumeOK ++;
-			sql = "update stats set Volume_OK =" + volumeOK + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
-		else if(vote.contains("voice_loud"))
-		{ 
-			volumeHigh ++;
-			sql = "update stats set Volume_High =" + volumeHigh + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
-		else if (vote.contains("pause"))
-		{
-			pauseVotes ++;
-			sql = "update stats set Pause_count =" + pauseVotes + " where ID_stats=" + IdStats;
-			boolean rs = stmt.execute(sql);
-		}
+		
+		sql = "update stats set " + vote + " =" + result + " where ID_stats=" + IdStats;
+		stmt.execute(sql);
+		
+		rs.close();
+		stmt.close();
+		conn.close();
+		
 	}
 
 	public static ResultSet readDB(int statsID) throws SQLException {
@@ -110,6 +84,7 @@ public class Stats extends Model  {
 		String sql;
 		sql = "SELECT ID_stats, Speed_Low, Speed_OK, Speed_High, Volume_Low, Volume_OK, Volume_High, Pause_count FROM stats WHERE ID_stats =" + statsID;
 		ResultSet rs = stmt.executeQuery(sql);
+		
 		return rs;
 	}
 
@@ -125,7 +100,10 @@ public class Stats extends Model  {
 			System.out.println("Keys: " + rs.getString(1));
 			statId = Integer.parseInt(rs.getString(1)); 
 		}
+		
+		
 		return statId;
 	}
+	
 
 }

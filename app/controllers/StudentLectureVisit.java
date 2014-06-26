@@ -17,7 +17,7 @@ public class StudentLectureVisit extends Controller {
 
 	public static boolean result = false;
 	public static int flag = 1;
-	
+	public static ArrayList<String> questions = new ArrayList<String>();
 	
 	public static Result lectureEnter() {
 		return ok(views.html.studentLectureEnter.render(flag));
@@ -33,8 +33,14 @@ public class StudentLectureVisit extends Controller {
 		System.out.println("LectureID " + lectureId);
 
 		result = Lecture.lectureEnter(lectureId, courseName);
+		int courseId = NewCourse.getCourseId();
+		ResultSet rs = Question.readDB(courseId);
+		while (rs.next()) {
+			String Question = rs.getString("Question");
+			questions.add(Question);
+		}
 		if (result) {
-			return ok(views.html.indexStudent.render());
+			return ok(views.html.indexStudent.render(questions));
 		} else {
 			flag = 0;
 			return ok(views.html.studentLectureEnter.render(flag));

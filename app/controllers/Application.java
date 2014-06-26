@@ -36,13 +36,14 @@ public class Application extends Controller {
 	private static int vol_Ok = 0;
 	private static int volHigh = 0;
 	private static int vol_High = 0;
-	private static double avgSpeed = 0;
-	private static double avgVol = 0;
+//	private static double avgSpeed = 0;
+//	private static double avgVol = 0;
 	private static double pause = 0;
 	private static double sumOfSpeedVotes = 0;
 	private static double sumOfVolVotes = 0;
 	private static int IdStats = 0;
-
+	public static ArrayList<String> questions = new ArrayList<String>();
+	
 	public static class Hello {
 		@Required
 		public String question;
@@ -143,13 +144,7 @@ public class Application extends Controller {
 					ws.write("question_" + Question);
 				}
 			}
-			else
-			{
-				System.out.println("questionStudent_" + Question);
-				for (WebSocket.Out<String> ws : channels) {
-					ws.write("questionStudent_" + Question);
-				}
-			}
+			
 			// Display values
 			System.out.print("ID_prof: " + id);
 			System.out.print(", Course_Id: " + courseID);
@@ -160,85 +155,19 @@ public class Application extends Controller {
 	}
 
 	public static Result vote() throws SQLException {
+		
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-
+		
 		IdStats = Stats.getIdStats();
 
 		DynamicForm form = Form.form().bindFromRequest();
 		chosenOption = form.get("p_vote"); 
-		System.out.println("chosenOption: " + chosenOption);
-		
-	/*	DynamicForm requestData = play.data.Form.form().bindFromRequest();
-		chosenOption = requestData.get("radioGroup"); 
-		*/
-
-		if (chosenOption == null) {
-			chosenOption = "pause_vote";
-	//		chosenOption = requestData.get("pause_vote");
-		}
-		
-		System.out.println("chosenOption after checking pause: " + chosenOption);
-		
-		if (chosenOption.equals("speed_low")) {
-			speedSlow++;
-			sumOfSpeedVotes++;
-		} else if (chosenOption.equals("speed_ok")) {
-			speedOk++;
-			sumOfSpeedVotes++;
-			speed_Ok = speedOk * 2;
-		} else if (chosenOption.equals("speed_fast")) {
-			speedFast++;
-			sumOfSpeedVotes++;
-			speed_Fast = speedFast * 3;
-		} else if (chosenOption.equals("voice_low")) {
-			volLow++;
-			sumOfVolVotes++;
-		} else if (chosenOption.equals("voice_ok")) {
-			volOk++;
-			sumOfVolVotes++;
-			vol_Ok = volOk * 2;
-		} else if (chosenOption.equals("voice_loud")) {
-			volHigh++;
-			sumOfVolVotes++;
-			vol_High = volHigh * 3;
-		} else {
-			pause++;
-		}
-		if (chosenOption.contains("speed")) {
-
-			avgSpeed = (double) (speedSlow + speed_Ok + speed_Fast)
-					/ sumOfSpeedVotes;
-
-			avgSpeed = ((avgSpeed - 1) / 2) * 100;
-
-			for (WebSocket.Out<String> ws : channels) {
-				ws.write("speed_" + String.valueOf(avgSpeed));
-
-			}
-
-		}
-		if (chosenOption.contains("voice")) {
-
-			avgVol = (double) (volLow + vol_Ok + vol_High) / sumOfVolVotes;
-
-			avgVol = ((avgVol - 1) / 2) * 100;
-
-			for (WebSocket.Out<String> ws : channels) {
-				ws.write("loudness_" + String.valueOf(avgVol));
-			}
-
-		}
-		if (chosenOption.contains("pause")) {
-			for (WebSocket.Out<String> ws : channels) {
-				ws.write("pause_" + String.valueOf(pause));
-			}
-		}
-
-		System.out.println("In app controller before update IdStats: " + IdStats + " ChosenOption: " + chosenOption);
+				
+		System.out.println("\n In app controller before update IdStats: " + IdStats + " ChosenOption: " + chosenOption);
 		Stats.updateDb(IdStats, chosenOption);
-		sql = "SELECT ID_stats, Speed_Low, Speed_OK, Speed_High, Volume_Low, Volume_OK, Volume_High, Pause_count FROM stats where ID_stats=" + IdStats;
+		sql = "SELECT * FROM stats where ID_stats=" + IdStats;
 		ResultSet rs = stmt.executeQuery(sql);
 
 		// STEP 5: Extract data from result set
@@ -252,16 +181,46 @@ public class Application extends Controller {
 			int volLow =     rs.getInt("Volume_Low");
 			int volOk =      rs.getInt("Volume_OK");
 			int volHigh =    rs.getInt("Volume_High");
-
-			// Display values
+			
 			System.out.print("ID_stats: " + id);
 			System.out.print(", speedLow: " + speedLow);
 			System.out.print(", speedOk: " + speedOk);
 			System.out.print(", speedHigh: " + speedHigh);
 			System.out.print(", volLow: " + volLow);
 			System.out.print(", volOk: " + volOk);
-			System.out.println(", volHigh: " + volHigh);
+			System.out.print(", volHigh: " + volHigh);
 			System.out.println(", pauseCount: " + pauseCount);
+			
+			double avgSpeed = 50,avgVol = 50;
+			double totalSpeedVotes = speedLow + speedOk + speedHigh;
+			double totalVolVotes = volLow + volOk + volHigh;
+			if(totalSpeedVotes != 0)
+			{	
+				
+				double sum = (speedLow) + (speedOk * 2) + (speedHigh * 3);
+				
+				avgSpeed = (double) (sum / totalSpeedVotes);
+				
+				avgSpeed = ((avgSpeed - 1) / 2) * 100;
+				
+			}
+			if(totalVolVotes != 0)
+			{
+				double sum = (volLow) + (volOk * 2) + (volHigh * 3);
+				
+				avgVol = (double) (sum / totalVolVotes);
+				
+				avgVol = ((avgVol - 1) / 2) * 100;
+				
+			}
+			
+			for (WebSocket.Out<String> ws : channels) {
+				ws.write("pause_" + String.valueOf(pauseCount));
+				ws.write("loudness_" + String.valueOf(avgVol));
+				ws.write("speed_" + String.valueOf(avgSpeed));
+				
+			}
+
 		}
 
 		// STEP 6: Clean-up environment
@@ -273,7 +232,7 @@ public class Application extends Controller {
 
 	public static Result indexStudent() {
 		
-		return ok(views.html.indexStudent.render());
+		return ok();
 	}
 
 	public static Result profPageDisplay() throws SQLException {
@@ -302,7 +261,13 @@ public class Application extends Controller {
 			System.out.print(", Id stats: " + ID_stats);
 			System.out.println(", Lec Number: " + Lecture_number);
 		}
-		return ok(views.html.profPage.render(vote, lectureNumber));
+		int idOfCourse = NewCourse.getCourseId();
+		ResultSet result = Question.readDB(idOfCourse);
+		while (result.next()) {
+			String Question = result.getString("Question");
+			questions.add(Question);
+		}
+		return ok(views.html.profPage.render(questions,vote, lectureNumber));
 	}
 
 }

@@ -62,7 +62,9 @@ public class Course {
 			// @Antoniya Test
 			stmt.executeUpdate(sql);
 		}
-
+		rs.close();
+		stmt.close();
+		conn.close();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -93,7 +95,7 @@ public class Course {
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
 		}
-
+		
 		return courseId;
 	}
 

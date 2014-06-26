@@ -1,4 +1,4 @@
-@(stats : Long, lectureNumber : Long) @import helper._
+@(questionList: List[String],stats : Long, lectureNumber : Long) @import helper._
 
 
 <!DOCTYPE html>
@@ -81,7 +81,7 @@
 		};
 
 		connection.onclose = function(e) {
-			alert("CONNECTION IS CLOSED~");
+			//
 		}
 		
 		$("#submit_button").click(function() {
@@ -486,7 +486,12 @@
 						<div id="questions_row1" style="margin-left: 100px; height: 400px;">
 							<h2>Question Section</h2>
 							
-							<div id="posted_question"></div>
+							<div id="posted_question">
+							@for(questions <- questionList){
+								<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
+								 @questions	 </div>
+							}
+							</div>
 	
 							<div class="well col-lg-4">
 								<a type="button" class="btn btn-primary btn-group-justified"

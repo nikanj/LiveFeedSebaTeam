@@ -44,11 +44,11 @@ Seq[Any](format.raw/*1.28*/("""
 		connection.onopen = function() """),format.raw/*16.34*/("""{"""),format.raw/*16.35*/("""
 		"""),format.raw/*17.3*/("""}"""),format.raw/*17.4*/("""
 
-		$("#create").click(function() """),format.raw/*19.33*/("""{"""),format.raw/*19.34*/("""
+	/*	$("#create").click(function() """),format.raw/*19.35*/("""{"""),format.raw/*19.36*/("""
 			$.post("/addCourse", """),format.raw/*20.25*/("""{"""),format.raw/*20.26*/("""
 				courseName : $("#course").val()
 			"""),format.raw/*22.4*/("""}"""),format.raw/*22.5*/(""")
-		"""),format.raw/*23.3*/("""}"""),format.raw/*23.4*/(""");
+		"""),format.raw/*23.3*/("""}"""),format.raw/*23.4*/(""");*/
 
 		$("#cancel").click(function() """),format.raw/*25.33*/("""{"""),format.raw/*25.34*/("""
 			$("#q_area").hide();
@@ -100,10 +100,12 @@ Seq[Any](format.raw/*1.28*/("""
 			</div>
 			<form method="get" action="/addCourse">
 				<div id="q_area" class="well col-sm-10">
-					<input type="text" class="form-control"id="course" placeholder="Course Name" name="courseName">
+					<input type="text" class="form-control" id="course" placeholder="Course Name" name="courseName">
 					<div class="btn-group-justified">
-						<a type="button" class="btn btn-success" id="create">Add Course</a>
-						<a type="button" class="btn btn-danger" id="cancel">Cancel</a>
+					<button type="submit" class="btn btn-success" id="create" style="width:231px;">Add Course</button>
+					<button type="button" class="btn btn-danger" id="cancel" style="width:231px;">Cancel</button>
+						<!--a type="submit" class="btn btn-success" id="create">Add Course</a>
+						<a type="button" class="btn btn-danger" id="cancel">Cancel</a-->
 					</div>
 				</div>
 			</form>
@@ -127,10 +129,10 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 26 15:15:37 CEST 2014
+                    DATE: Thu Jun 26 21:18:21 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/profHome.scala.html
-                    HASH: fa35fb2914794be01ba1883ac8facc199bb971d0
-                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1504->400|1518->406|1577->444|1631->462|1646->468|1713->513|1819->591|1848->592|1971->687|2000->688|2031->692|2059->693|2123->729|2152->730|2206->756|2235->757|2304->799|2332->800|2364->805|2392->806|2458->844|2487->845|2543->874|2571->875|2640->916|2669->917|2725->946|2753->947|2787->954|2815->955|2967->1071|2982->1077|3036->1109|3630->1668|3671->1693|3710->1694|3812->1760|3840->1766|4025->1915|4053->1921|4190->2027
+                    HASH: 3640bedc3f559e63059f859b636f539d12f8ad23
+                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1504->400|1518->406|1577->444|1631->462|1646->468|1713->513|1819->591|1848->592|1971->687|2000->688|2031->692|2059->693|2125->731|2154->732|2208->758|2237->759|2306->801|2334->802|2366->807|2394->808|2462->848|2491->849|2547->878|2575->879|2644->920|2673->921|2729->950|2757->951|2791->958|2819->959|2971->1075|2986->1081|3040->1113|3634->1672|3675->1697|3714->1698|3816->1764|3844->1770|4029->1919|4057->1925|4194->2031
                     LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13|44->16|44->16|45->17|45->17|47->19|47->19|48->20|48->20|50->22|50->22|51->23|51->23|53->25|53->25|55->27|55->27|57->29|57->29|59->31|59->31|61->33|61->33|68->40|68->40|68->40|83->55|83->55|83->55|85->57|85->57|88->60|88->60|92->64
                     -- GENERATED --
                 */

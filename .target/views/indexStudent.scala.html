@@ -1,3 +1,4 @@
+@(questionList: List[String])
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
 
 function displayQuestion(question) {
 	$('#posted_question')
-			.replaceWith(
+			.append(
 					'<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
 							+ question + '</div>');
 	$(".test").show();
@@ -107,18 +108,18 @@ function displayQuestion(question) {
 							<h3><b><i>Speed</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio1" value="speed_low" type="radio"> LOW
+									id="radio1" value="Speed_Low" type="radio"> LOW
 								</label>
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio2" value="speed_ok" checked="checked" type="radio">
+									id="radio2" value="Speed_OK" checked="checked" type="radio">
 									OK
 								</label>
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio3" value="speed_fast" type="radio"> FAST
+									id="radio3" value="Speed_High" type="radio"> FAST
 								</label>
 							</div>
 						<a id="submit_speed" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
@@ -132,18 +133,18 @@ function displayQuestion(question) {
 							<h3><b><i>Voice</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio4" value="voice_low" type="radio"> LOW
+									id="radio4" value="Volume_Low" type="radio"> LOW
 								</label>
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio5" value="voice_ok" checked="checked" type="radio">
+									id="radio5" value="Volume_OK" checked="checked" type="radio">
 									OK
 								</label>
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio6" value="voice_loud" type="radio"> LOUD
+									id="radio6" value="Volume_High" type="radio"> LOUD
 								</label>
 							</div>
 							<a id="submit_volume" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
@@ -155,7 +156,7 @@ function displayQuestion(question) {
 				<!--	<form id="pause_vote" method="get" action="/vote"--> 
 						<div class="col-md-4 col-md-offset-2" style="margin-top: 20px">
 						
-					<button name="pause_vote" value="pause" type="button" id="submit_pause"
+					<button name="pause_vote" value="Pause_count" type="button" id="submit_pause"
 			            class="btn btn-warning" style="width: 300px; height: 56px; font-size: 18px;"><b>Pause</b></button> 
 						</div>
 					<!--/form-->  
@@ -167,7 +168,13 @@ function displayQuestion(question) {
 				<h3><b><i>Q&A Section</i></b></h3>
 				
 				<div id="questions_row1">
-					<div id="posted_question"></div> 
+					<div id="posted_question">
+					@for(questions <- questionList){
+					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
+							 @questions </div>
+					}
+					
+					</div> 
 					<div style="margin-top: 20px;">
 						<a type="button" class="btn btn-primary" id="add" style="margin-top: 10px; border: 3px solid white;">Add Question</a>
 					</div>
