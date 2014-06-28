@@ -41,82 +41,107 @@ Seq[Any](format.raw/*1.30*/("""
 
 <script>
 
-function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/*16.37*/("""
+function disablePause() """),format.raw/*16.25*/("""{"""),format.raw/*16.26*/("""
+
+	document.getElementById("submit_pause").disabled = true;
+	
+    setTimeout(function()"""),format.raw/*20.26*/("""{"""),format.raw/*20.27*/("""
+    	document.getElementById("submit_pause").disabled = false;
+    """),format.raw/*22.5*/("""}"""),format.raw/*22.6*/(""", 5000);  	
+    
+"""),format.raw/*24.1*/("""}"""),format.raw/*24.2*/("""
+
+function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/*26.37*/("""
 	$('#posted_question')
 			.append(
 					'<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
 							+ question + '</div>');
 	$(".test").show();
-"""),format.raw/*22.1*/("""}"""),format.raw/*22.2*/("""
+"""),format.raw/*32.1*/("""}"""),format.raw/*32.2*/("""
 
-	 $(document).ready(function() """),format.raw/*24.32*/("""{"""),format.raw/*24.33*/("""
+	 $(document).ready(function() """),format.raw/*34.32*/("""{"""),format.raw/*34.33*/("""
 		 var connection = new WebSocket('ws://localhost:9000');
 
-			connection.onopen = function() """),format.raw/*27.35*/("""{"""),format.raw/*27.36*/("""
+			connection.onopen = function() """),format.raw/*37.35*/("""{"""),format.raw/*37.36*/("""
 				//
-			"""),format.raw/*29.4*/("""}"""),format.raw/*29.5*/("""
+			"""),format.raw/*39.4*/("""}"""),format.raw/*39.5*/("""
 			
-			connection.onmessage = function(e) """),format.raw/*31.39*/("""{"""),format.raw/*31.40*/("""
+			connection.onmessage = function(e) """),format.raw/*41.39*/("""{"""),format.raw/*41.40*/("""
 				server_message = e.data;
-				if (server_message.indexOf("question_") > -1) """),format.raw/*33.51*/("""{"""),format.raw/*33.52*/("""
+				if (server_message.indexOf("question_") > -1) """),format.raw/*43.51*/("""{"""),format.raw/*43.52*/("""
 					server_message = server_message.replace(
 							"question_", "");
 					displayQuestion(server_message);
-				"""),format.raw/*37.5*/("""}"""),format.raw/*37.6*/("""
-			  /*if (server_message.indexOf("question_") > -1) """),format.raw/*38.54*/("""{"""),format.raw/*38.55*/("""
+				"""),format.raw/*47.5*/("""}"""),format.raw/*47.6*/("""
+			  /*if (server_message.indexOf("question_") > -1) """),format.raw/*48.54*/("""{"""),format.raw/*48.55*/("""
 					server_message = server_message.replace(
 							"question_", "");
 					displayQuestion(server_message);
-				"""),format.raw/*42.5*/("""}"""),format.raw/*42.6*/("""*/
-			"""),format.raw/*43.4*/("""}"""),format.raw/*43.5*/(""";
+				"""),format.raw/*52.5*/("""}"""),format.raw/*52.6*/("""*/
+			"""),format.raw/*53.4*/("""}"""),format.raw/*53.5*/(""";
 			
-			connection.onclose = function(e) """),format.raw/*45.37*/("""{"""),format.raw/*45.38*/("""
+			connection.onclose = function(e) """),format.raw/*55.37*/("""{"""),format.raw/*55.38*/("""
 				//
-			"""),format.raw/*47.4*/("""}"""),format.raw/*47.5*/("""
+			"""),format.raw/*57.4*/("""}"""),format.raw/*57.5*/("""
 			
-			$("#submit_speed").click(function() """),format.raw/*49.40*/("""{"""),format.raw/*49.41*/("""
-				$.post("/postVotes", """),format.raw/*50.26*/("""{"""),format.raw/*50.27*/("""
+			$("#submit_speed").click(function() """),format.raw/*59.40*/("""{"""),format.raw/*59.41*/("""
+				$.post("/postVotes", """),format.raw/*60.26*/("""{"""),format.raw/*60.27*/("""
 					p_vote: $('input[name=radioGroup]:checked').val()
-				"""),format.raw/*52.5*/("""}"""),format.raw/*52.6*/(""")
-			"""),format.raw/*53.4*/("""}"""),format.raw/*53.5*/(""");
+				"""),format.raw/*62.5*/("""}"""),format.raw/*62.6*/(""")
+				document.getElementById("submit_speed").disabled = true;
+				document.getElementById("submit_speed").innerHTML = "Voted".bold();
+			    
+			    setTimeout(function()"""),format.raw/*66.29*/("""{"""),format.raw/*66.30*/("""
+			    	document.getElementById("submit_speed").disabled = false;
+					document.getElementById("submit_speed").innerHTML = "Vote";	
+			    """),format.raw/*69.8*/("""}"""),format.raw/*69.9*/(""", 3000);
+			"""),format.raw/*70.4*/("""}"""),format.raw/*70.5*/(""");
 			
-			$("#submit_volume").click(function() """),format.raw/*55.41*/("""{"""),format.raw/*55.42*/("""
-				$.post("/postVotes", """),format.raw/*56.26*/("""{"""),format.raw/*56.27*/("""
+			$("#submit_volume").click(function() """),format.raw/*72.41*/("""{"""),format.raw/*72.42*/("""
+				$.post("/postVotes", """),format.raw/*73.26*/("""{"""),format.raw/*73.27*/("""
 					p_vote: $('input[name=radioGroup1]:checked').val()
-				"""),format.raw/*58.5*/("""}"""),format.raw/*58.6*/(""")
-			"""),format.raw/*59.4*/("""}"""),format.raw/*59.5*/(""");
+				"""),format.raw/*75.5*/("""}"""),format.raw/*75.6*/(""")
+				document.getElementById("submit_volume").disabled = true;
+				document.getElementById("submit_volume").innerHTML = "Voted".bold();
+
+			    setTimeout(function()"""),format.raw/*79.29*/("""{"""),format.raw/*79.30*/("""
+			    	document.getElementById("submit_volume").disabled = false;
+					document.getElementById("submit_volume").innerHTML = "Vote";	
+			    """),format.raw/*82.8*/("""}"""),format.raw/*82.9*/(""", 3000);
+			"""),format.raw/*83.4*/("""}"""),format.raw/*83.5*/(""");
 			
-			$("#submit_pause").click(function() """),format.raw/*61.40*/("""{"""),format.raw/*61.41*/("""
-				$.post("/postVotes", """),format.raw/*62.26*/("""{"""),format.raw/*62.27*/("""
+			$("#submit_pause").click(function() """),format.raw/*85.40*/("""{"""),format.raw/*85.41*/("""
+				$.post("/postVotes", """),format.raw/*86.26*/("""{"""),format.raw/*86.27*/("""
 					p_vote: $(this).attr("value")
-				"""),format.raw/*64.5*/("""}"""),format.raw/*64.6*/(""")
-			"""),format.raw/*65.4*/("""}"""),format.raw/*65.5*/(""");
+				"""),format.raw/*88.5*/("""}"""),format.raw/*88.6*/(""")
+				document.getElementById("submit_pause").disabled = true;
+			"""),format.raw/*90.4*/("""}"""),format.raw/*90.5*/(""");
 			
-			$("#submit_button").click(function() """),format.raw/*67.41*/("""{"""),format.raw/*67.42*/("""
-				$.post("/postStudentQuestion", """),format.raw/*68.36*/("""{"""),format.raw/*68.37*/("""
+			$("#submit_button").click(function() """),format.raw/*92.41*/("""{"""),format.raw/*92.42*/("""
+				$.post("/postStudentQuestion", """),format.raw/*93.36*/("""{"""),format.raw/*93.37*/("""
 					p_question: $("#question").val()
-				"""),format.raw/*70.5*/("""}"""),format.raw/*70.6*/(""").done(function()"""),format.raw/*70.23*/("""{"""),format.raw/*70.24*/("""
+				"""),format.raw/*95.5*/("""}"""),format.raw/*95.6*/(""").done(function()"""),format.raw/*95.23*/("""{"""),format.raw/*95.24*/("""
 					$("#q_area").hide();
-				"""),format.raw/*72.5*/("""}"""),format.raw/*72.6*/(""")
-			"""),format.raw/*73.4*/("""}"""),format.raw/*73.5*/(""");
+				"""),format.raw/*97.5*/("""}"""),format.raw/*97.6*/(""")
+			"""),format.raw/*98.4*/("""}"""),format.raw/*98.5*/(""");
 		
-			$("#add").click(function() """),format.raw/*75.31*/("""{"""),format.raw/*75.32*/("""
+			$("#add").click(function() """),format.raw/*100.31*/("""{"""),format.raw/*100.32*/("""
 				$("#q_area").show();
-			"""),format.raw/*77.4*/("""}"""),format.raw/*77.5*/(""");		
+			"""),format.raw/*102.4*/("""}"""),format.raw/*102.5*/(""");		
 		
-			$("#cancel_button").click(function() """),format.raw/*79.41*/("""{"""),format.raw/*79.42*/("""
+			$("#cancel_button").click(function() """),format.raw/*104.41*/("""{"""),format.raw/*104.42*/("""
     				$("#q_area").hide();
-  		 	"""),format.raw/*81.7*/("""}"""),format.raw/*81.8*/(""");
+  		 	"""),format.raw/*106.7*/("""}"""),format.raw/*106.8*/(""");
 
   		 	
-		"""),format.raw/*84.3*/("""}"""),format.raw/*84.4*/(""");
+		"""),format.raw/*109.3*/("""}"""),format.raw/*109.4*/(""");
 </script>
 
 </head>
-<body>
+<body onload="disablePause()">
 	<div id="container">
 		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-			<a href="/home"><img src=""""),_display_(Seq[Any](/*91.31*/routes/*91.37*/.Assets.at("images/logonew.png"))),format.raw/*91.69*/("""" height="70px"
+			<a href="/home"><img src=""""),_display_(Seq[Any](/*116.31*/routes/*116.37*/.Assets.at("images/logonew.png"))),format.raw/*116.69*/("""" height="70px"
 			width="150px" alt="Live Feed"></a>
 		</div>
 		<header class="navbar navbar-static-top bs-docs-nav" id="top">
@@ -136,7 +161,7 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 							<h3><b><i>Speed</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio1" value="Speed_Low" type="radio"> LOW
+									id="radio3" value="Speed_High" type="radio"> FAST
 								</label>
 							</div>
 							<div>
@@ -147,11 +172,12 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio3" value="Speed_High" type="radio"> FAST
+									id="radio1" value="Speed_Low" type="radio"> LOW
 								</label>
 							</div>
-						<a id="submit_speed" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
-						<!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+							<div align="center">
+								<button id="submit_speed" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+							</div>  
 						</div>
 			 	<!-- </form> -->
 				</div>
@@ -161,7 +187,7 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 							<h3><b><i>Voice</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio4" value="Volume_Low" type="radio"> LOW
+									id="radio6" value="Volume_High" type="radio"> LOUD
 								</label>
 							</div>
 							<div>
@@ -172,11 +198,12 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio6" value="Volume_High" type="radio"> LOUD
+									id="radio4" value="Volume_Low" type="radio"> LOW
 								</label>
 							</div>
-							<a id="submit_volume" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
-						 <!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+							<div align="center">
+								<button id="submit_volume" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+							</div>
 						</div>
 		 	<!--		</form> -->
 				</div>
@@ -197,10 +224,10 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 				
 				<div id="questions_row1">
 					<div id="posted_question">
-					"""),_display_(Seq[Any](/*172.7*/for(questions <- questionList) yield /*172.37*/{_display_(Seq[Any](format.raw/*172.38*/("""
+					"""),_display_(Seq[Any](/*199.7*/for(questions <- questionList) yield /*199.37*/{_display_(Seq[Any](format.raw/*199.38*/("""
 					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
-							 """),_display_(Seq[Any](/*174.10*/questions)),format.raw/*174.19*/(""" </div>
-					""")))})),format.raw/*175.7*/("""
+							 """),_display_(Seq[Any](/*201.10*/questions)),format.raw/*201.19*/(""" </div>
+					""")))})),format.raw/*202.7*/("""
 					
 					</div> 
 					<div style="margin-top: 20px;">
@@ -233,11 +260,11 @@ function displayQuestion(question) """),format.raw/*16.36*/("""{"""),format.raw/
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 26 21:18:21 CEST 2014
+                    DATE: Sat Jun 28 11:38:26 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/indexStudent.scala.html
-                    HASH: ff3c80cee4d2806e9ebf4d45fc4efb24c0200e68
-                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1754->547|1807->564|1822->570|1889->615|1998->696|2027->697|2243->886|2271->887|2332->920|2361->921|2483->1015|2512->1016|2550->1027|2578->1028|2649->1071|2678->1072|2786->1152|2815->1153|2956->1267|2984->1268|3066->1322|3095->1323|3236->1437|3264->1438|3297->1444|3325->1445|3395->1487|3424->1488|3462->1499|3490->1500|3562->1544|3591->1545|3645->1571|3674->1572|3761->1632|3789->1633|3821->1638|3849->1639|3924->1686|3953->1687|4007->1713|4036->1714|4124->1775|4152->1776|4184->1781|4212->1782|4286->1828|4315->1829|4369->1855|4398->1856|4465->1896|4493->1897|4525->1902|4553->1903|4628->1950|4657->1951|4721->1987|4750->1988|4820->2031|4848->2032|4893->2049|4922->2050|4980->2081|5008->2082|5040->2087|5068->2088|5132->2124|5161->2125|5217->2154|5245->2155|5321->2203|5350->2204|5413->2240|5441->2241|5481->2254|5509->2255|5700->2410|5715->2416|5769->2448|9524->6167|9571->6197|9611->6198|9758->6308|9790->6317|9836->6331
-                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|44->16|44->16|50->22|50->22|52->24|52->24|55->27|55->27|57->29|57->29|59->31|59->31|61->33|61->33|65->37|65->37|66->38|66->38|70->42|70->42|71->43|71->43|73->45|73->45|75->47|75->47|77->49|77->49|78->50|78->50|80->52|80->52|81->53|81->53|83->55|83->55|84->56|84->56|86->58|86->58|87->59|87->59|89->61|89->61|90->62|90->62|92->64|92->64|93->65|93->65|95->67|95->67|96->68|96->68|98->70|98->70|98->70|98->70|100->72|100->72|101->73|101->73|103->75|103->75|105->77|105->77|107->79|107->79|109->81|109->81|112->84|112->84|119->91|119->91|119->91|200->172|200->172|200->172|202->174|202->174|203->175
+                    HASH: bcc039d649c9f9ee536ca5d725efede2f217ffdb
+                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1754->547|1807->564|1822->570|1889->615|1987->685|2016->686|2131->773|2160->774|2255->842|2283->843|2327->860|2355->861|2420->898|2449->899|2665->1088|2693->1089|2754->1122|2783->1123|2905->1217|2934->1218|2972->1229|3000->1230|3071->1273|3100->1274|3208->1354|3237->1355|3378->1469|3406->1470|3488->1524|3517->1525|3658->1639|3686->1640|3719->1646|3747->1647|3817->1689|3846->1690|3884->1701|3912->1702|3984->1746|4013->1747|4067->1773|4096->1774|4183->1834|4211->1835|4410->2006|4439->2007|4606->2147|4634->2148|4673->2160|4701->2161|4776->2208|4805->2209|4859->2235|4888->2236|4976->2297|5004->2298|5198->2464|5227->2465|5396->2607|5424->2608|5463->2620|5491->2621|5565->2667|5594->2668|5648->2694|5677->2695|5744->2735|5772->2736|5865->2802|5893->2803|5968->2850|5997->2851|6061->2887|6090->2888|6160->2931|6188->2932|6233->2949|6262->2950|6320->2981|6348->2982|6380->2987|6408->2988|6473->3024|6503->3025|6560->3054|6589->3055|6666->3103|6696->3104|6760->3140|6789->3141|6830->3154|6859->3155|7075->3334|7091->3340|7146->3372|10759->6949|10806->6979|10846->6980|10993->7090|11025->7099|11071->7113
+                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|44->16|44->16|48->20|48->20|50->22|50->22|52->24|52->24|54->26|54->26|60->32|60->32|62->34|62->34|65->37|65->37|67->39|67->39|69->41|69->41|71->43|71->43|75->47|75->47|76->48|76->48|80->52|80->52|81->53|81->53|83->55|83->55|85->57|85->57|87->59|87->59|88->60|88->60|90->62|90->62|94->66|94->66|97->69|97->69|98->70|98->70|100->72|100->72|101->73|101->73|103->75|103->75|107->79|107->79|110->82|110->82|111->83|111->83|113->85|113->85|114->86|114->86|116->88|116->88|118->90|118->90|120->92|120->92|121->93|121->93|123->95|123->95|123->95|123->95|125->97|125->97|126->98|126->98|128->100|128->100|130->102|130->102|132->104|132->104|134->106|134->106|137->109|137->109|144->116|144->116|144->116|227->199|227->199|227->199|229->201|229->201|230->202
                     -- GENERATED --
                 */
             

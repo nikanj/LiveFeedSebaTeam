@@ -18,6 +18,15 @@ public class StudentLectureVisit extends Controller {
 	public static boolean result = false;
 	public static int flag = 1;
 	public static ArrayList<String> questions = new ArrayList<String>();
+	public static int studentCounter = 0;
+	
+	public static int getStudentCounter() {
+		return studentCounter;
+	}
+
+	public static void setStudentCounter(int studentCounter) {
+		StudentLectureVisit.studentCounter = studentCounter;
+	}
 	
 	public static Result lectureEnter() {
 		return ok(views.html.studentLectureEnter.render(flag));
@@ -40,6 +49,7 @@ public class StudentLectureVisit extends Controller {
 			questions.add(Question);
 		}
 		if (result) {
+			studentCounter++;
 			return ok(views.html.indexStudent.render(questions));
 		} else {
 			flag = 0;

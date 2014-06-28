@@ -14,6 +14,16 @@ CREATE TABLE prof (
 );
 
 
+--CREATE TABLE student(
+--ID_student			bigint NOT NULL,
+--Lecture_number		bigint DEFAULT NULL,
+--constraint pk_prof primary key (ID_student)
+--);
+
+--alter table student add constraint fk_student_lecture foreign key (Lecture_number) references lecture (Lecture_number) on delete restrict on update restrict;
+--create index ix_student_lecture on student (Lecture_number);
+
+
 --
 -- Table structure for table `stats`
 --
@@ -79,16 +89,6 @@ create index ix_question_course on question (Course_Id);
 --
 -- Table structure for table `answer`
 --
-
-CREATE TABLE answer (
-	ID_question  bigint NOT NULL,
-  	Answer	     varchar(45),
-  	Answer_ID    bigint NOT NULL,
-  	constraint pk_answer primary key (Answer_ID)
-);
-
-alter table answer add constraint fk_answer_question foreign key (ID_question) references question (ID_question) on delete restrict on update restrict;
-create index ix_answer_question on answer (ID_question);
 
 
 

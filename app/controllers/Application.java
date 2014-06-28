@@ -214,8 +214,11 @@ public class Application extends Controller {
 				
 			}
 			
+			double pausePercentage = 0;
+			pausePercentage = pauseCount / StudentLectureVisit.getStudentCounter() * 100;
+			
 			for (WebSocket.Out<String> ws : channels) {
-				ws.write("pause_" + String.valueOf(pauseCount));
+				ws.write("pause_" + String.valueOf(pausePercentage));
 				ws.write("loudness_" + String.valueOf(avgVol));
 				ws.write("speed_" + String.valueOf(avgSpeed));
 				

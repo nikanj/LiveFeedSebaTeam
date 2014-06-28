@@ -13,6 +13,16 @@
 
 <script>
 
+function disablePause() {
+
+	document.getElementById("submit_pause").disabled = true;
+	
+    setTimeout(function(){
+    	document.getElementById("submit_pause").disabled = false;
+    }, 5000);  	
+    
+}
+
 function displayQuestion(question) {
 	$('#posted_question')
 			.append(
@@ -50,18 +60,33 @@ function displayQuestion(question) {
 				$.post("/postVotes", {
 					p_vote: $('input[name=radioGroup]:checked').val()
 				})
+				document.getElementById("submit_speed").disabled = true;
+				document.getElementById("submit_speed").innerHTML = "Voted".bold();
+			    
+			    setTimeout(function(){
+			    	document.getElementById("submit_speed").disabled = false;
+					document.getElementById("submit_speed").innerHTML = "Vote";	
+			    }, 3000);
 			});
 			
 			$("#submit_volume").click(function() {
 				$.post("/postVotes", {
 					p_vote: $('input[name=radioGroup1]:checked').val()
 				})
+				document.getElementById("submit_volume").disabled = true;
+				document.getElementById("submit_volume").innerHTML = "Voted".bold();
+
+			    setTimeout(function(){
+			    	document.getElementById("submit_volume").disabled = false;
+					document.getElementById("submit_volume").innerHTML = "Vote";	
+			    }, 3000);
 			});
 			
 			$("#submit_pause").click(function() {
 				$.post("/postVotes", {
 					p_vote: $(this).attr("value")
 				})
+				document.getElementById("submit_pause").disabled = true;
 			});
 			
 			$("#submit_button").click(function() {
@@ -85,7 +110,7 @@ function displayQuestion(question) {
 </script>
 
 </head>
-<body>
+<body onload="disablePause()">
 	<div id="container">
 		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
 			<a href="/home"><img src="@routes.Assets.at("images/logonew.png")" height="70px"
@@ -108,7 +133,7 @@ function displayQuestion(question) {
 							<h3><b><i>Speed</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio1" value="Speed_Low" type="radio"> LOW
+									id="radio3" value="Speed_High" type="radio"> FAST
 								</label>
 							</div>
 							<div>
@@ -119,11 +144,12 @@ function displayQuestion(question) {
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup"
-									id="radio3" value="Speed_High" type="radio"> FAST
+									id="radio1" value="Speed_Low" type="radio"> LOW
 								</label>
 							</div>
-						<a id="submit_speed" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
-						<!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+							<div align="center">
+								<button id="submit_speed" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+							</div>  
 						</div>
 			 	<!-- </form> -->
 				</div>
@@ -133,7 +159,7 @@ function displayQuestion(question) {
 							<h3><b><i>Voice</i></b></h3>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio4" value="Volume_Low" type="radio"> LOW
+									id="radio6" value="Volume_High" type="radio"> LOUD
 								</label>
 							</div>
 							<div>
@@ -144,11 +170,12 @@ function displayQuestion(question) {
 							</div>
 							<div>
 								<label class="radio-inline"> <input name="radioGroup1"
-									id="radio6" value="Volume_High" type="radio"> LOUD
+									id="radio4" value="Volume_Low" type="radio"> LOW
 								</label>
 							</div>
-							<a id="submit_volume" class="btn btn-primary" type="button" style="margin-top: 15px; border: 3px solid white;">Vote</a>	
-						 <!-- button type="submit" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button--> 
+							<div align="center">
+								<button id="submit_volume" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+							</div>
 						</div>
 		 	<!--		</form> -->
 				</div>

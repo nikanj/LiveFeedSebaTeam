@@ -9,6 +9,7 @@
 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/logonew.png")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/profPage.css")">
 <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
 <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/table.css")">
 
@@ -447,6 +448,7 @@
 
 </head>
 <body>
+<!-- 
 	<div id="container">
 		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
 			<img src="@routes.Assets.at("images/logonew.png")" height="70px"
@@ -528,5 +530,80 @@
 			</tbody>
 		</table>
 	</div>
+	-->
+	
+	<div id="container">
+		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
+			<img src="@routes.Assets.at("images/logonew.png")" height="70px"
+				width="150px" alt="Live Feed">
+			<form method="get" action="/signout">
+				<button type="submit" class="btn btn-default" id="logout" name="logoutButton">Logout</button>
+			</form>
+		</div>
+		<header class="navbar navbar-static-top bs-docs-nav" id="top">
+			<div class="btn-group">
+				<a type="button" class="btn btn-default" href="/home">Home</a> 
+				<a type="button" class="btn btn-default" href="/aboutus">About Us</a> 
+				<a type="button" class="btn btn-default" href="/contact">Contact</a> 
+				<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
+			</div>
+		</header>
+		
+		<div id="lecture-number">LectureID: @lectureNumber</div>
+		<table>
+			<thead>
+				<tr>
+					<th width=50% height=50% style="border: none !important;"><script
+							src="http://code.highcharts.com/highcharts.js"></script> <script
+							src="http://code.highcharts.com/modules/exporting.js"></script>
+						<div id="container-speed-chart"></div></th>
+					<th width=50% style="border: none !important;"><script
+							src="http://code.highcharts.com/highcharts.js"></script> <script
+							src="http://code.highcharts.com/modules/exporting.js"></script>
+						<div id="container-loudness-chart"></div></th>
+				</tr>
+			</thead>
+
+			<tr>
+				<td id="questions-sections" width="50%">
+					<div id="questions-sections-container">
+						<h3><b><i>Q&A Section</i></b></h3>
+						
+						<div id="posted_question"></div>
+						
+						<div id="add-question-button-container">
+							<a type="button" class="btn btn-primary" id="add">Add Question</a>
+						</div>
+						<div id="q_area" class="well">
+							<textarea class="form-control" rows="3" columns="50"
+								id="question" placeholder="Enter Question Here" name="p_question"></textarea>
+							<div class="btn-group-justified">
+								<a id="submit_button" class="btn btn-success" type="button">Submit</a>
+								<a id="cancel_button" class="btn btn-danger" type="button">Cancel</a>
+							</div>
+						</div>
+						<div class="clear" style="clear: both;"></div>
+					</div>
+				</td>
+				<td id="pause-graphics" width="50%">
+					<div id="pause_gauge">
+						<script src="http://code.highcharts.com/highcharts.js"></script>
+						<script src="http://code.highcharts.com/highcharts-more.js"></script>
+						
+						<script
+							src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
+
+						<div style="margin: 0 auto;">
+							<div id="container-speed"></div>
+						</div>
+						<div class="clear" style="clear: both;"></div>
+					</div>
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	
 </body>
 </html>
