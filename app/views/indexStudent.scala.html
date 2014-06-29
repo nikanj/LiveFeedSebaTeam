@@ -24,6 +24,12 @@ function disablePause() {
     
 }
 
+function recalculatePause() {
+	$.post("/postVotes", {
+		p_vote: "unpause"
+	})	
+}
+
 function displayQuestion(question) {
 	$('#posted_question')
 			.append(
@@ -46,11 +52,7 @@ function displayQuestion(question) {
 							"question_", "");
 					displayQuestion(server_message);
 				}
-			  /*if (server_message.indexOf("question_") > -1) {
-					server_message = server_message.replace(
-							"question_", "");
-					displayQuestion(server_message);
-				}*/
+			  
 			};
 			
 			connection.onclose = function(e) {
@@ -110,7 +112,7 @@ function displayQuestion(question) {
 </script>
 
 </head>
-<body onload="disablePause()">
+<body onload="disablePause();recalculatePause();">
 	<div id="container">
 		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
 			<a href="/home"><img src="@routes.Assets.at("images/logonew.png")" height="70px"

@@ -18,18 +18,16 @@
            	//Initial Background image setup
            	image.attr('src', '@routes.Assets.at("images/munich1.jpg")');
             //Change image at regular intervals
-            //image.css('background-image', 'url(images/munich1.jpg)');
-    	                
+               	                
             setInterval(function(){  
             	image.fadeOut(500, function () {
             	image.attr('src', images [i++]);
-            	//image.css('background-image', 'url(' + images [i++] +')');
             	image.fadeIn(500);
             });
             	
             if(i == images.length - 1)
             	i = 0;
-            }, 10000);           
+            }, 5000);           
         });
         </script>
     </head>

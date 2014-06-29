@@ -93,52 +93,40 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 				<img src=""""),_display_(Seq[Any](/*65.16*/routes/*65.22*/.Assets.at("images/1.jpg"))),format.raw/*65.48*/("""" height="70px"
 					width="70px" class="img-circle">
 				<p>Student in MSc Informatics, TUM</p>
-				<p>
-					<i>"TBD"</i>
-				</p>
 			</div>
 			<div class="col-xs-6">
 				<h4>Ivan Petrov</h4>
-				<img src=""""),_display_(Seq[Any](/*74.16*/routes/*74.22*/.Assets.at("images/2.jpg"))),format.raw/*74.48*/("""" height="70px"
+				<img src=""""),_display_(Seq[Any](/*71.16*/routes/*71.22*/.Assets.at("images/2.jpg"))),format.raw/*71.48*/("""" height="70px"
 					width="70px" class="img-circle">
 				<p>Student in MSc Informatics, TUM</p>
-				<p>
-					<i>"TBD"</i>
-				</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6">
 				<h4>Agastya Alfath</h4>
-				<img src=""""),_display_(Seq[Any](/*85.16*/routes/*85.22*/.Assets.at("images/3.jpg"))),format.raw/*85.48*/("""" height="70px"
+				<img src=""""),_display_(Seq[Any](/*79.16*/routes/*79.22*/.Assets.at("images/3.jpg"))),format.raw/*79.48*/("""" height="70px"
 					width="70px" class="img-circle">
 				<p>Student in MSc Informatics, TUM</p>
-				<p>
-					<i>"TBD"</i>
-				</p>
 			</div>
 			<div class="col-xs-6">
 				<h4>Antoniya Atanasova</h4>
-				<img src=""""),_display_(Seq[Any](/*94.16*/routes/*94.22*/.Assets.at("images/4.jpg"))),format.raw/*94.48*/("""" height="70px"
+				<img src=""""),_display_(Seq[Any](/*85.16*/routes/*85.22*/.Assets.at("images/4.jpg"))),format.raw/*85.48*/("""" height="70px"
 					width="70px" class="img-circle">
 				<p>Student in MSc Informatics, TUM</p>
-				<p>
-					<i>"TBD"</i>
-				</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<h3>Clients&Partners</h3>
-				<img src=""""),_display_(Seq[Any](/*105.16*/routes/*105.22*/.Assets.at("images/tumlogo.png"))),format.raw/*105.54*/("""" class="img-rounded" height="90px" width="90px">
-				<img src=""""),_display_(Seq[Any](/*106.16*/routes/*106.22*/.Assets.at("images/lmulogo.png"))),format.raw/*106.54*/("""" class="img-rounded" height="60px" width="130px">
+				<img src=""""),_display_(Seq[Any](/*93.16*/routes/*93.22*/.Assets.at("images/tumlogo.png"))),format.raw/*93.54*/("""" class="img-rounded" height="90px" width="90px">
+				<img src=""""),_display_(Seq[Any](/*94.16*/routes/*94.22*/.Assets.at("images/lmulogo.png"))),format.raw/*94.54*/("""" class="img-rounded" height="60px" width="130px">
 			</div>
 			<div class="col-md-6">
 			<h3></h3>
-			<a href="https://www.facebook.com/"><img src=""""),_display_(Seq[Any](/*110.51*/routes/*110.57*/.Assets.at("images/fb.jpg"))),format.raw/*110.84*/("""" height="30px" width="30px" href="abv.bg" class="img-rounded"></a>
-			<a href="https://www.twitter.com/"><img src=""""),_display_(Seq[Any](/*111.50*/routes/*111.56*/.Assets.at("images/twitter.jpg"))),format.raw/*111.88*/("""" height="30px" width="30px" class="img-rounded"></a>
-			<a href="https://www.linkedin.com/"><img src=""""),_display_(Seq[Any](/*112.51*/routes/*112.57*/.Assets.at("images/linkedin.jpg"))),format.raw/*112.90*/("""" height="30px" width="30px" class="img-rounded"></a>
-			<a href="https://www.plus.google.com/"><img src=""""),_display_(Seq[Any](/*113.54*/routes/*113.60*/.Assets.at("images/google.jpg"))),format.raw/*113.91*/("""" height="30px" width="30px" class="img-rounded"></a>
+			<a href="https://www.facebook.com/"><img src=""""),_display_(Seq[Any](/*98.51*/routes/*98.57*/.Assets.at("images/fb.jpg"))),format.raw/*98.84*/("""" height="30px" width="30px" href="abv.bg" class="img-rounded"></a>
+			<a href="https://www.twitter.com/"><img src=""""),_display_(Seq[Any](/*99.50*/routes/*99.56*/.Assets.at("images/twitter.jpg"))),format.raw/*99.88*/("""" height="30px" width="30px" class="img-rounded"></a>
+			<a href="https://www.linkedin.com/"><img src=""""),_display_(Seq[Any](/*100.51*/routes/*100.57*/.Assets.at("images/linkedin.jpg"))),format.raw/*100.90*/("""" height="30px" width="30px" class="img-rounded"></a>
+			<a href="https://www.plus.google.com/"><img src=""""),_display_(Seq[Any](/*101.54*/routes/*101.60*/.Assets.at("images/google.jpg"))),format.raw/*101.91*/("""" height="30px" width="30px" class="img-rounded"></a>
 			</div>
 		</div>
 	</div>
@@ -155,11 +143,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 29 11:00:02 CEST 2014
+                    DATE: Sun Jun 29 14:26:18 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/aboutUsPage.scala.html
-                    HASH: 1c3489289824ca8d5659697943513c52054acff9
-                    MATRIX: 861->0|997->101|1011->107|1066->141|1155->195|1169->201|1222->233|1311->287|1325->293|1372->319|1461->373|1475->379|1522->405|1612->459|1627->465|1675->491|1765->545|1780->551|1828->577|1918->631|1933->637|1987->669|2077->723|2092->729|2146->761|2236->815|2251->821|2300->848|2390->902|2405->908|2459->940|2549->994|2564->1000|2619->1033|2709->1087|2724->1093|2777->1124|2863->1174|2878->1180|2954->1233|3040->1283|3055->1289|3136->1347|3190->1365|3205->1371|3272->1416|3468->1576|3483->1582|3537->1614|4948->2989|4963->2995|5011->3021|5264->3238|5279->3244|5327->3270|5614->3521|5629->3527|5677->3553|5937->3777|5952->3783|6000->3809|6290->4062|6306->4068|6361->4100|6464->4166|6480->4172|6535->4204|6726->4358|6742->4364|6792->4391|6947->4509|6963->4515|7018->4547|7160->4652|7176->4658|7232->4691|7377->4799|7393->4805|7447->4836
-                    LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|45->17|45->17|45->17|46->18|46->18|46->18|47->19|47->19|47->19|48->20|48->20|48->20|54->26|54->26|54->26|93->65|93->65|93->65|102->74|102->74|102->74|113->85|113->85|113->85|122->94|122->94|122->94|133->105|133->105|133->105|134->106|134->106|134->106|138->110|138->110|138->110|139->111|139->111|139->111|140->112|140->112|140->112|141->113|141->113|141->113
+                    HASH: d8183d563280c3133c2fac7b35a13c9268a1b32d
+                    MATRIX: 861->0|997->101|1011->107|1066->141|1155->195|1169->201|1222->233|1311->287|1325->293|1372->319|1461->373|1475->379|1522->405|1612->459|1627->465|1675->491|1765->545|1780->551|1828->577|1918->631|1933->637|1987->669|2077->723|2092->729|2146->761|2236->815|2251->821|2300->848|2390->902|2405->908|2459->940|2549->994|2564->1000|2619->1033|2709->1087|2724->1093|2777->1124|2863->1174|2878->1180|2954->1233|3040->1283|3055->1289|3136->1347|3190->1365|3205->1371|3272->1416|3468->1576|3483->1582|3537->1614|4948->2989|4963->2995|5011->3021|5226->3200|5241->3206|5289->3232|5538->3445|5553->3451|5601->3477|5823->3663|5838->3669|5886->3695|6137->3910|6152->3916|6206->3948|6308->4014|6323->4020|6377->4052|6567->4206|6582->4212|6631->4239|6785->4357|6800->4363|6854->4395|6996->4500|7012->4506|7068->4539|7213->4647|7229->4653|7283->4684
+                    LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|45->17|45->17|45->17|46->18|46->18|46->18|47->19|47->19|47->19|48->20|48->20|48->20|54->26|54->26|54->26|93->65|93->65|93->65|99->71|99->71|99->71|107->79|107->79|107->79|113->85|113->85|113->85|121->93|121->93|121->93|122->94|122->94|122->94|126->98|126->98|126->98|127->99|127->99|127->99|128->100|128->100|128->100|129->101|129->101|129->101
                     -- GENERATED --
                 */
             

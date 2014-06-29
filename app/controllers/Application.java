@@ -20,6 +20,7 @@ public class Application extends Controller {
 	static String event = "";
 	private static String chosenOption;
 	private static int IdStats = 0;
+	public static double percentagePause = 0.0;
 	public static ArrayList<String> questions = new ArrayList<String>();
 	private static ArrayList<WebSocket.Out<String>> channels = new ArrayList<>();
 
@@ -34,9 +35,9 @@ public class Application extends Controller {
 	}
 
 	/*
-	 * Open a websocket connection for the student and professor page 
+	 * Open a websocket connection for the student and professor page
 	 */
-	
+
 	public static WebSocket<String> index() throws SQLException {
 
 		return new WebSocket<String>() {
@@ -73,17 +74,18 @@ public class Application extends Controller {
 	}
 
 	/*
-	 * Questions are read from student and prof page here, stored in database and then written into the websocket.
+	 * Questions are read from student and prof page here, stored in database
+	 * and then written into the websocket.
 	 */
-	
+
 	public static Result postQuestion() throws SQLException {
 
 		DynamicForm form = Form.form().bindFromRequest();
 		String question = form.get("p_question");
-		
+
 		int idProf = NewCourse.getProfId();
 		int courseId = NewCourse.getCourseId();
-		
+
 		// Store Question in DB
 		int questionID = Question.updateDB(idProf, courseId, question);
 
@@ -94,7 +96,7 @@ public class Application extends Controller {
 			int ID_question = rs.getInt("ID_question");
 			String Question = rs.getString("Question");
 
-			//Send only the new question into the websocket
+			// Send only the new question into the websocket
 			if (questionID == ID_question) {
 				System.out.println("question_" + Question);
 				for (WebSocket.Out<String> ws : channels) {
@@ -125,7 +127,10 @@ public class Application extends Controller {
 		DynamicForm form = Form.form().bindFromRequest();
 		chosenOption = form.get("p_vote");
 
-		Stats.updateDb(IdStats, chosenOption);
+		if (!chosenOption.equals("unpause")) {
+			Stats.updateDb(IdStats, chosenOption);
+		}
+
 		sql = "SELECT * FROM stats where ID_stats=" + IdStats;
 		ResultSet rs = stmt.executeQuery(sql);
 
@@ -153,8 +158,8 @@ public class Application extends Controller {
 			double avgSpeed = 50, avgVol = 50;
 			double totalSpeedVotes = speedLow + speedOk + speedHigh;
 			double totalVolVotes = volLow + volOk + volHigh;
-			
-			//Calculate the average speed and loudness. 
+
+			// Calculate the average speed and loudness.
 			if (totalSpeedVotes != 0) {
 
 				double sum = (speedLow) + (speedOk * 2) + (speedHigh * 3);
@@ -172,9 +177,11 @@ public class Application extends Controller {
 				avgVol = ((avgVol - 1) / 2) * 100;
 
 			}
-
+			
+			percentagePause = (double)pauseCount / (double)StudentLectureVisit.getStudentCounter() * 100;
+			
 			for (WebSocket.Out<String> ws : channels) {
-				ws.write("pause_" + String.valueOf(pauseCount));
+				ws.write("pause_" + String.valueOf(percentagePause));
 				ws.write("loudness_" + String.valueOf(avgVol));
 				ws.write("speed_" + String.valueOf(avgSpeed));
 
@@ -199,7 +206,7 @@ public class Application extends Controller {
 
 		int courseId = Course.getCourseIdByCourseName(selectedCourse);
 		NewCourse.setCourseId(courseId);
-		
+
 		// New Lecture created for an existing course
 		Long lectureNumber = Lecture.createLecture(courseId);
 		System.out.println("Course_Id: " + courseId);
@@ -220,10 +227,11 @@ public class Application extends Controller {
 			System.out.print(", Id stats: " + ID_stats);
 			System.out.println(", Lec Number: " + Lecture_number);
 		}
-		
+
 		int idOfCourse = NewCourse.getCourseId();
-		
-		//Retrieve Questions which were present for the course from earlier lecture sessions 
+
+		// Retrieve Questions which were present for the course from earlier
+		// lecture sessions
 		ResultSet result = Question.readDB(idOfCourse);
 		while (result.next()) {
 			String Question = result.getString("Question");

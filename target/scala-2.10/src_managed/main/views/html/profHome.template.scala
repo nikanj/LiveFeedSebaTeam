@@ -44,28 +44,23 @@ Seq[Any](format.raw/*1.28*/("""
 		connection.onopen = function() """),format.raw/*16.34*/("""{"""),format.raw/*16.35*/("""
 		"""),format.raw/*17.3*/("""}"""),format.raw/*17.4*/("""
 
-	/*	$("#create").click(function() """),format.raw/*19.35*/("""{"""),format.raw/*19.36*/("""
-			$.post("/addCourse", """),format.raw/*20.25*/("""{"""),format.raw/*20.26*/("""
-				courseName : $("#course").val()
-			"""),format.raw/*22.4*/("""}"""),format.raw/*22.5*/(""")
-		"""),format.raw/*23.3*/("""}"""),format.raw/*23.4*/(""");*/
-
-		$("#cancel").click(function() """),format.raw/*25.33*/("""{"""),format.raw/*25.34*/("""
+	
+		$("#cancel").click(function() """),format.raw/*20.33*/("""{"""),format.raw/*20.34*/("""
 			$("#q_area").hide();
-		"""),format.raw/*27.3*/("""}"""),format.raw/*27.4*/(""");
+		"""),format.raw/*22.3*/("""}"""),format.raw/*22.4*/(""");
 
-		$("#addCourse").click(function() """),format.raw/*29.36*/("""{"""),format.raw/*29.37*/("""
+		$("#addCourse").click(function() """),format.raw/*24.36*/("""{"""),format.raw/*24.37*/("""
 			$("#q_area").show();
-		"""),format.raw/*31.3*/("""}"""),format.raw/*31.4*/(""");
+		"""),format.raw/*26.3*/("""}"""),format.raw/*26.4*/(""");
 
-	"""),format.raw/*33.2*/("""}"""),format.raw/*33.3*/(""");
+	"""),format.raw/*28.2*/("""}"""),format.raw/*28.3*/(""");
 </script>
 
 </head>
 <body>
 	<div id="container">
 		<div class="page-header">
-			<a href="/home"><img src=""""),_display_(Seq[Any](/*40.31*/routes/*40.37*/.Assets.at("images/logonew.png"))),format.raw/*40.69*/("""" height="70px"
+			<a href="/home"><img src=""""),_display_(Seq[Any](/*35.31*/routes/*35.37*/.Assets.at("images/logonew.png"))),format.raw/*35.69*/("""" height="70px"
 				width="150px" alt="Live Feed"></a>
 		</div>
 		<header class="navbar navbar-static-top bs-docs-nav" id="top"
@@ -80,16 +75,16 @@ Seq[Any](format.raw/*1.28*/("""
 
 		<form>
 			<div id="courses">
-				"""),_display_(Seq[Any](/*55.6*/for(course <- courseList) yield /*55.31*/{_display_(Seq[Any](format.raw/*55.32*/("""
+				"""),_display_(Seq[Any](/*50.6*/for(course <- courseList) yield /*50.31*/{_display_(Seq[Any](format.raw/*50.32*/("""
 				<div id="course">
-					<div class="well" id="course-name">"""),_display_(Seq[Any](/*57.42*/course)),format.raw/*57.48*/("""</div>
+					<div class="well" id="course-name">"""),_display_(Seq[Any](/*52.42*/course)),format.raw/*52.48*/("""</div>
 					<div id="add-lecture-button-container">
 						<a type="button" class="btn btn-primary" id="addLecture"
-							href="/profPage?course="""),_display_(Seq[Any](/*60.32*/course)),format.raw/*60.38*/("""">Add New Lecture</a>
+							href="/profPage?course="""),_display_(Seq[Any](/*55.32*/course)),format.raw/*55.38*/("""">Add New Lecture</a>
 					</div>
 					<div class="clear" style="clear: both;"></div>
 				</div>
-				""")))})),format.raw/*64.6*/("""
+				""")))})),format.raw/*59.6*/("""
 			</div>
 		</form>
 
@@ -129,11 +124,11 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 29 11:00:03 CEST 2014
+                    DATE: Sun Jun 29 14:26:18 CEST 2014
                     SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/profHome.scala.html
-                    HASH: f2a4e88da2c09c34c118198275bd498445db6a33
-                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1504->400|1518->406|1577->444|1631->462|1646->468|1713->513|1819->591|1848->592|1971->687|2000->688|2031->692|2059->693|2125->731|2154->732|2208->758|2237->759|2306->801|2334->802|2366->807|2394->808|2462->848|2491->849|2547->878|2575->879|2644->920|2673->921|2729->950|2757->951|2791->958|2819->959|2971->1075|2986->1081|3040->1113|3634->1672|3675->1697|3714->1698|3816->1764|3844->1770|4029->1919|4057->1925|4194->2031
-                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13|44->16|44->16|45->17|45->17|47->19|47->19|48->20|48->20|50->22|50->22|51->23|51->23|53->25|53->25|55->27|55->27|57->29|57->29|59->31|59->31|61->33|61->33|68->40|68->40|68->40|83->55|83->55|83->55|85->57|85->57|88->60|88->60|92->64
+                    HASH: ff2003cd047d4c41919ac6beba8cf8e6a5559bb0
+                    MATRIX: 783->1|903->27|1020->109|1034->115|1089->149|1178->203|1192->209|1245->241|1330->291|1344->297|1419->350|1504->400|1518->406|1577->444|1631->462|1646->468|1713->513|1819->591|1848->592|1971->687|2000->688|2031->692|2059->693|2126->732|2155->733|2211->762|2239->763|2308->804|2337->805|2393->834|2421->835|2455->842|2483->843|2635->959|2650->965|2704->997|3298->1556|3339->1581|3378->1582|3480->1648|3508->1654|3693->1803|3721->1809|3858->1915
+                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13|44->16|44->16|45->17|45->17|48->20|48->20|50->22|50->22|52->24|52->24|54->26|54->26|56->28|56->28|63->35|63->35|63->35|78->50|78->50|78->50|80->52|80->52|83->55|83->55|87->59
                     -- GENERATED --
                 */
             
