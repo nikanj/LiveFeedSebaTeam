@@ -4,7 +4,7 @@
 		module="livefeed-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140629105859"
+		publication="20140629222642"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>

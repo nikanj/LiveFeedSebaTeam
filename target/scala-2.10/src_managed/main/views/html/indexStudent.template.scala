@@ -52,102 +52,99 @@ function disablePause() """),format.raw/*17.25*/("""{"""),format.raw/*17.26*/(""
     
 """),format.raw/*25.1*/("""}"""),format.raw/*25.2*/("""
 
-function recalculatePause() """),format.raw/*27.29*/("""{"""),format.raw/*27.30*/("""
-	$.post("/postVotes", """),format.raw/*28.23*/("""{"""),format.raw/*28.24*/("""
-		p_vote: "unpause"
-	"""),format.raw/*30.2*/("""}"""),format.raw/*30.3*/(""")	
-"""),format.raw/*31.1*/("""}"""),format.raw/*31.2*/("""
 
-function displayQuestion(question) """),format.raw/*33.36*/("""{"""),format.raw/*33.37*/("""
+function recalculatePause() """),format.raw/*28.29*/("""{"""),format.raw/*28.30*/("""
+	$.post("/postVotes", """),format.raw/*29.23*/("""{"""),format.raw/*29.24*/("""
+		p_vote: "unpause"
+	"""),format.raw/*31.2*/("""}"""),format.raw/*31.3*/(""")
+"""),format.raw/*32.1*/("""}"""),format.raw/*32.2*/("""
+
+function displayQuestion(question) """),format.raw/*34.36*/("""{"""),format.raw/*34.37*/("""
 	$('#posted_question')
 			.append(
 					'<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
 							+ question + '</div>');
 	$(".test").show();
-"""),format.raw/*39.1*/("""}"""),format.raw/*39.2*/("""
+"""),format.raw/*40.1*/("""}"""),format.raw/*40.2*/("""
 
-	 $(document).ready(function() """),format.raw/*41.32*/("""{"""),format.raw/*41.33*/("""
+	 $(document).ready(function() """),format.raw/*42.32*/("""{"""),format.raw/*42.33*/("""
 		 var connection = new WebSocket('ws://localhost:9000');
 
-			connection.onopen = function() """),format.raw/*44.35*/("""{"""),format.raw/*44.36*/("""
+			connection.onopen = function() """),format.raw/*45.35*/("""{"""),format.raw/*45.36*/("""
 				//
-			"""),format.raw/*46.4*/("""}"""),format.raw/*46.5*/("""
+			"""),format.raw/*47.4*/("""}"""),format.raw/*47.5*/("""
 			
-			connection.onmessage = function(e) """),format.raw/*48.39*/("""{"""),format.raw/*48.40*/("""
+			connection.onmessage = function(e) """),format.raw/*49.39*/("""{"""),format.raw/*49.40*/("""
 				server_message = e.data;
-				if (server_message.indexOf("question_") > -1) """),format.raw/*50.51*/("""{"""),format.raw/*50.52*/("""
+				if (server_message.indexOf("question_") > -1) """),format.raw/*51.51*/("""{"""),format.raw/*51.52*/("""
 					server_message = server_message.replace(
 							"question_", "");
 					displayQuestion(server_message);
-				"""),format.raw/*54.5*/("""}"""),format.raw/*54.6*/("""
-			  /*if (server_message.indexOf("question_") > -1) """),format.raw/*55.54*/("""{"""),format.raw/*55.55*/("""
-					server_message = server_message.replace(
-							"question_", "");
-					displayQuestion(server_message);
-				"""),format.raw/*59.5*/("""}"""),format.raw/*59.6*/("""*/
-			"""),format.raw/*60.4*/("""}"""),format.raw/*60.5*/(""";
+				"""),format.raw/*55.5*/("""}"""),format.raw/*55.6*/("""
+			  
+			"""),format.raw/*57.4*/("""}"""),format.raw/*57.5*/(""";
 			
-			connection.onclose = function(e) """),format.raw/*62.37*/("""{"""),format.raw/*62.38*/("""
+			connection.onclose = function(e) """),format.raw/*59.37*/("""{"""),format.raw/*59.38*/("""
 				//
-			"""),format.raw/*64.4*/("""}"""),format.raw/*64.5*/("""
+			"""),format.raw/*61.4*/("""}"""),format.raw/*61.5*/("""
 			
-			$("#submit_speed").click(function() """),format.raw/*66.40*/("""{"""),format.raw/*66.41*/("""
-				$.post("/postVotes", """),format.raw/*67.26*/("""{"""),format.raw/*67.27*/("""
+			$("#submit_speed").click(function() """),format.raw/*63.40*/("""{"""),format.raw/*63.41*/("""
+				$.post("/postVotes", """),format.raw/*64.26*/("""{"""),format.raw/*64.27*/("""
 					p_vote: $('input[name=radioGroup]:checked').val()
-				"""),format.raw/*69.5*/("""}"""),format.raw/*69.6*/(""")
+				"""),format.raw/*66.5*/("""}"""),format.raw/*66.6*/(""")
 				document.getElementById("submit_speed").disabled = true;
 				document.getElementById("submit_speed").innerHTML = "Voted".bold();
 			    
-			    setTimeout(function()"""),format.raw/*73.29*/("""{"""),format.raw/*73.30*/("""
+			    setTimeout(function()"""),format.raw/*70.29*/("""{"""),format.raw/*70.30*/("""
 			    	document.getElementById("submit_speed").disabled = false;
 					document.getElementById("submit_speed").innerHTML = "Vote";	
-			    """),format.raw/*76.8*/("""}"""),format.raw/*76.9*/(""", 3000);
-			"""),format.raw/*77.4*/("""}"""),format.raw/*77.5*/(""");
+			    """),format.raw/*73.8*/("""}"""),format.raw/*73.9*/(""", 3000);
+			"""),format.raw/*74.4*/("""}"""),format.raw/*74.5*/(""");
 			
-			$("#submit_volume").click(function() """),format.raw/*79.41*/("""{"""),format.raw/*79.42*/("""
-				$.post("/postVotes", """),format.raw/*80.26*/("""{"""),format.raw/*80.27*/("""
+			$("#submit_volume").click(function() """),format.raw/*76.41*/("""{"""),format.raw/*76.42*/("""
+				$.post("/postVotes", """),format.raw/*77.26*/("""{"""),format.raw/*77.27*/("""
 					p_vote: $('input[name=radioGroup1]:checked').val()
-				"""),format.raw/*82.5*/("""}"""),format.raw/*82.6*/(""")
+				"""),format.raw/*79.5*/("""}"""),format.raw/*79.6*/(""")
 				document.getElementById("submit_volume").disabled = true;
 				document.getElementById("submit_volume").innerHTML = "Voted".bold();
 
-			    setTimeout(function()"""),format.raw/*86.29*/("""{"""),format.raw/*86.30*/("""
+			    setTimeout(function()"""),format.raw/*83.29*/("""{"""),format.raw/*83.30*/("""
 			    	document.getElementById("submit_volume").disabled = false;
 					document.getElementById("submit_volume").innerHTML = "Vote";	
-			    """),format.raw/*89.8*/("""}"""),format.raw/*89.9*/(""", 3000);
-			"""),format.raw/*90.4*/("""}"""),format.raw/*90.5*/(""");
+			    """),format.raw/*86.8*/("""}"""),format.raw/*86.9*/(""", 3000);
+			"""),format.raw/*87.4*/("""}"""),format.raw/*87.5*/(""");
 			
-			$("#submit_pause").click(function() """),format.raw/*92.40*/("""{"""),format.raw/*92.41*/("""
-				$.post("/postVotes", """),format.raw/*93.26*/("""{"""),format.raw/*93.27*/("""
+			$("#submit_pause").click(function() """),format.raw/*89.40*/("""{"""),format.raw/*89.41*/("""
+				$.post("/postVotes", """),format.raw/*90.26*/("""{"""),format.raw/*90.27*/("""
 					p_vote: $(this).attr("value")
-				"""),format.raw/*95.5*/("""}"""),format.raw/*95.6*/(""")
+				"""),format.raw/*92.5*/("""}"""),format.raw/*92.6*/(""")
 				document.getElementById("submit_pause").disabled = true;
-			"""),format.raw/*97.4*/("""}"""),format.raw/*97.5*/(""");
+			"""),format.raw/*94.4*/("""}"""),format.raw/*94.5*/(""");
 			
-			$("#submit_button").click(function() """),format.raw/*99.41*/("""{"""),format.raw/*99.42*/("""
-				$.post("/postStudentQuestion", """),format.raw/*100.36*/("""{"""),format.raw/*100.37*/("""
+			$("#submit_button").click(function() """),format.raw/*96.41*/("""{"""),format.raw/*96.42*/("""
+				$.post("/postStudentQuestion", """),format.raw/*97.36*/("""{"""),format.raw/*97.37*/("""
 					p_question: $("#question").val()
-				"""),format.raw/*102.5*/("""}"""),format.raw/*102.6*/(""").done(function()"""),format.raw/*102.23*/("""{"""),format.raw/*102.24*/("""
+				"""),format.raw/*99.5*/("""}"""),format.raw/*99.6*/(""").done(function()"""),format.raw/*99.23*/("""{"""),format.raw/*99.24*/("""
 					$("#q_area").hide();
 					$('#question	').val('');
-				"""),format.raw/*105.5*/("""}"""),format.raw/*105.6*/(""")
-			"""),format.raw/*106.4*/("""}"""),format.raw/*106.5*/(""");
+				"""),format.raw/*102.5*/("""}"""),format.raw/*102.6*/(""")
+			"""),format.raw/*103.4*/("""}"""),format.raw/*103.5*/(""");
 		
-			$("#add").click(function() """),format.raw/*108.31*/("""{"""),format.raw/*108.32*/("""
+			$("#add").click(function() """),format.raw/*105.31*/("""{"""),format.raw/*105.32*/("""
 				$("#q_area").show();
-			"""),format.raw/*110.4*/("""}"""),format.raw/*110.5*/(""");		
+			"""),format.raw/*107.4*/("""}"""),format.raw/*107.5*/(""");		
 		
-			$("#cancel_button").click(function() """),format.raw/*112.41*/("""{"""),format.raw/*112.42*/("""
+			$("#cancel_button").click(function() """),format.raw/*109.41*/("""{"""),format.raw/*109.42*/("""
     				$("#q_area").hide();
-  		 	"""),format.raw/*114.7*/("""}"""),format.raw/*114.8*/(""");
-		"""),format.raw/*115.3*/("""}"""),format.raw/*115.4*/(""");
+  		 	"""),format.raw/*111.7*/("""}"""),format.raw/*111.8*/(""");
+		"""),format.raw/*112.3*/("""}"""),format.raw/*112.4*/(""");
 </script>
 
 </head>
 <body onload="disablePause();recalculatePause();">
 	<div id="container">
 		<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-			<a href="/home"><img src=""""),_display_(Seq[Any](/*122.31*/routes/*122.37*/.Assets.at("images/logonew.png"))),format.raw/*122.69*/("""" height="70px"
+			<a href="/home"><img src=""""),_display_(Seq[Any](/*119.31*/routes/*119.37*/.Assets.at("images/logonew.png"))),format.raw/*119.69*/("""" height="70px"
 			width="150px" alt="Live Feed"></a>
 		</div>
 		<header class="navbar navbar-static-top bs-docs-nav" id="top">
@@ -229,11 +226,11 @@ function displayQuestion(question) """),format.raw/*33.36*/("""{"""),format.raw/
 				<h3><b><i>Q&A Section</i></b></h3>
 				
 				<div id="questions_row1">
-					<div id="posted_questions">
-					"""),_display_(Seq[Any](/*205.7*/for(questions <- questionList) yield /*205.37*/{_display_(Seq[Any](format.raw/*205.38*/("""
-					<div id="posted-question">
-							 """),_display_(Seq[Any](/*207.10*/questions)),format.raw/*207.19*/(""" </div>
-					""")))})),format.raw/*208.7*/("""
+					<div id="posted_question">
+					"""),_display_(Seq[Any](/*202.7*/for(questions <- questionList) yield /*202.37*/{_display_(Seq[Any](format.raw/*202.38*/("""
+					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
+							 """),_display_(Seq[Any](/*204.10*/questions)),format.raw/*204.19*/(""" </div>
+					""")))})),format.raw/*205.7*/("""
 					
 					</div> 
 					<div style="margin-top: 20px;">
@@ -266,11 +263,11 @@ function displayQuestion(question) """),format.raw/*33.36*/("""{"""),format.raw/
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 29 14:26:18 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/indexStudent.scala.html
-                    HASH: 484d1b28ec4cac2c4f8772e14b5d02a166ba65f1
-                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1742->536|1827->585|1842->591|1918->644|1971->661|1986->667|2053->712|2151->782|2180->783|2295->870|2324->871|2419->939|2447->940|2491->957|2519->958|2577->988|2606->989|2657->1012|2686->1013|2735->1035|2763->1036|2793->1039|2821->1040|2886->1077|2915->1078|3131->1267|3159->1268|3220->1301|3249->1302|3371->1396|3400->1397|3438->1408|3466->1409|3537->1452|3566->1453|3674->1533|3703->1534|3844->1648|3872->1649|3954->1703|3983->1704|4124->1818|4152->1819|4185->1825|4213->1826|4283->1868|4312->1869|4350->1880|4378->1881|4450->1925|4479->1926|4533->1952|4562->1953|4649->2013|4677->2014|4876->2185|4905->2186|5072->2326|5100->2327|5139->2339|5167->2340|5242->2387|5271->2388|5325->2414|5354->2415|5442->2476|5470->2477|5664->2643|5693->2644|5862->2786|5890->2787|5929->2799|5957->2800|6031->2846|6060->2847|6114->2873|6143->2874|6210->2914|6238->2915|6331->2981|6359->2982|6434->3029|6463->3030|6528->3066|6558->3067|6629->3110|6658->3111|6704->3128|6734->3129|6823->3190|6852->3191|6885->3196|6914->3197|6979->3233|7009->3234|7066->3263|7095->3264|7172->3312|7202->3313|7266->3349|7295->3350|7328->3355|7357->3356|7593->3555|7609->3561|7664->3593|10492->6385|10539->6415|10579->6416|10658->6458|10690->6467|10736->6481
-                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|45->17|45->17|49->21|49->21|51->23|51->23|53->25|53->25|55->27|55->27|56->28|56->28|58->30|58->30|59->31|59->31|61->33|61->33|67->39|67->39|69->41|69->41|72->44|72->44|74->46|74->46|76->48|76->48|78->50|78->50|82->54|82->54|83->55|83->55|87->59|87->59|88->60|88->60|90->62|90->62|92->64|92->64|94->66|94->66|95->67|95->67|97->69|97->69|101->73|101->73|104->76|104->76|105->77|105->77|107->79|107->79|108->80|108->80|110->82|110->82|114->86|114->86|117->89|117->89|118->90|118->90|120->92|120->92|121->93|121->93|123->95|123->95|125->97|125->97|127->99|127->99|128->100|128->100|130->102|130->102|130->102|130->102|133->105|133->105|134->106|134->106|136->108|136->108|138->110|138->110|140->112|140->112|142->114|142->114|143->115|143->115|150->122|150->122|150->122|233->205|233->205|233->205|235->207|235->207|236->208
+                    DATE: Sun Jun 29 23:37:54 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/indexStudent.scala.html
+                    HASH: f93a83e64aaa9f10528a9bc427bdb701260b1bbf
+                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1742->536|1827->585|1842->591|1918->644|1971->661|1986->667|2053->712|2151->782|2180->783|2295->870|2324->871|2419->939|2447->940|2491->957|2519->958|2578->989|2607->990|2658->1013|2687->1014|2736->1036|2764->1037|2793->1039|2821->1040|2886->1077|2915->1078|3131->1267|3159->1268|3220->1301|3249->1302|3371->1396|3400->1397|3438->1408|3466->1409|3537->1452|3566->1453|3674->1533|3703->1534|3844->1648|3872->1649|3909->1659|3937->1660|4007->1702|4036->1703|4074->1714|4102->1715|4174->1759|4203->1760|4257->1786|4286->1787|4373->1847|4401->1848|4600->2019|4629->2020|4796->2160|4824->2161|4863->2173|4891->2174|4966->2221|4995->2222|5049->2248|5078->2249|5166->2310|5194->2311|5388->2477|5417->2478|5586->2620|5614->2621|5653->2633|5681->2634|5755->2680|5784->2681|5838->2707|5867->2708|5934->2748|5962->2749|6055->2815|6083->2816|6158->2863|6187->2864|6251->2900|6280->2901|6350->2944|6378->2945|6423->2962|6452->2963|6541->3024|6570->3025|6603->3030|6632->3031|6697->3067|6727->3068|6784->3097|6813->3098|6890->3146|6920->3147|6984->3183|7013->3184|7046->3189|7075->3190|7311->3389|7327->3395|7382->3427|10209->6218|10256->6248|10296->6249|10443->6359|10475->6368|10521->6382
+                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|45->17|45->17|49->21|49->21|51->23|51->23|53->25|53->25|56->28|56->28|57->29|57->29|59->31|59->31|60->32|60->32|62->34|62->34|68->40|68->40|70->42|70->42|73->45|73->45|75->47|75->47|77->49|77->49|79->51|79->51|83->55|83->55|85->57|85->57|87->59|87->59|89->61|89->61|91->63|91->63|92->64|92->64|94->66|94->66|98->70|98->70|101->73|101->73|102->74|102->74|104->76|104->76|105->77|105->77|107->79|107->79|111->83|111->83|114->86|114->86|115->87|115->87|117->89|117->89|118->90|118->90|120->92|120->92|122->94|122->94|124->96|124->96|125->97|125->97|127->99|127->99|127->99|127->99|130->102|130->102|131->103|131->103|133->105|133->105|135->107|135->107|137->109|137->109|139->111|139->111|140->112|140->112|147->119|147->119|147->119|230->202|230->202|230->202|232->204|232->204|233->205
                     -- GENERATED --
                 */
             

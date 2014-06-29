@@ -17,7 +17,7 @@ public class StudentLectureVisit extends Controller {
 
 	public static boolean result = false;
 	public static int flag = 1;
-	public static ArrayList<String> questions = new ArrayList<String>();
+	
 	public static int studentCounter = 0;
 	
 	public static int getStudentCounter() {
@@ -36,6 +36,7 @@ public class StudentLectureVisit extends Controller {
 	 * Validates if the student is trying to enter the correct Lecture using the lecture Id.
 	 */
 	public static Result enterLectureValidate() throws SQLException {
+		ArrayList<String> questions = new ArrayList<String>();
 		DynamicForm form = Form.form().bindFromRequest();
 		String courseName = form.get("courseName");
 		int lectureId = Integer.parseInt(form.get("lectureNumber"));
@@ -45,6 +46,7 @@ public class StudentLectureVisit extends Controller {
 		ResultSet rs = Question.readDB(courseId);
 		while (rs.next()) {
 			String Question = rs.getString("Question");
+			System.out.println("Questions being added" + Question);
 			questions.add(Question);
 		}
 		if (result) {

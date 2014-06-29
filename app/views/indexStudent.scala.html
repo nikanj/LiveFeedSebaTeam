@@ -24,10 +24,11 @@ function disablePause() {
     
 }
 
+
 function recalculatePause() {
 	$.post("/postVotes", {
 		p_vote: "unpause"
-	})	
+	})
 }
 
 function displayQuestion(question) {
@@ -97,7 +98,7 @@ function displayQuestion(question) {
 					p_question: $("#question").val()
 				}).done(function(){
 					$("#q_area").hide();
-					$('#question	').val('');
+					$('#question').val('');
 				})
 			});
 		
@@ -197,9 +198,9 @@ function displayQuestion(question) {
 				<h3><b><i>Q&A Section</i></b></h3>
 				
 				<div id="questions_row1">
-					<div id="posted_questions">
+					<div id="posted_question">
 					@for(questions <- questionList){
-					<div id="posted-question">
+					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
 							 @questions </div>
 					}
 					

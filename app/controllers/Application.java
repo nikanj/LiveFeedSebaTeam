@@ -110,7 +110,7 @@ public class Application extends Controller {
 			System.out.print(", ID_question: " + ID_question);
 			System.out.println(", Question: " + Question);
 		}
-		return ok();
+		return indexStudent();
 	}
 
 	/*
@@ -193,6 +193,10 @@ public class Application extends Controller {
 		rs.close();
 		stmt.close();
 		conn.close();
+		return indexStudent();
+	}
+	
+	public static Result indexStudent() {
 		return ok();
 	}
 
