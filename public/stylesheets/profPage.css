@@ -64,11 +64,8 @@
 }
 
 #pause_gauge {
-	border: 1px solid #3333FF;
 	border-radius: 7px;
 	width: 74%;
-	background-color: #D6DBFD;
-	padding: 15px;
 }
 
 #container-speed {

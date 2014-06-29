@@ -36,104 +36,104 @@ Seq[Any](format.raw/*1.30*/("""
 <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*8.51*/routes/*8.57*/.Assets.at("images/favicon.png"))),format.raw/*8.89*/("""">
 <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.51*/routes/*9.57*/.Assets.at("images/logonew.png"))),format.raw/*9.89*/("""">
 <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*10.51*/routes/*10.57*/.Assets.at("images/voteImg.png"))),format.raw/*10.89*/("""">
-<link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*11.47*/routes/*11.53*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*11.106*/("""">
-<script src=""""),_display_(Seq[Any](/*12.15*/routes/*12.21*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*12.66*/("""" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*11.47*/routes/*11.53*/.Assets.at("stylesheets/indexStudent.css"))),format.raw/*11.95*/("""">
+<link rel="stylesheet" type="text/css" href=""""),_display_(Seq[Any](/*12.47*/routes/*12.53*/.Assets.at("stylesheets/bootstrap/css/bootstrap.css"))),format.raw/*12.106*/("""">
+<script src=""""),_display_(Seq[Any](/*13.15*/routes/*13.21*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*13.66*/("""" type="text/javascript"></script>
 
 <script>
 
-function disablePause() """),format.raw/*16.25*/("""{"""),format.raw/*16.26*/("""
+function disablePause() """),format.raw/*17.25*/("""{"""),format.raw/*17.26*/("""
 
 	document.getElementById("submit_pause").disabled = true;
 	
-    setTimeout(function()"""),format.raw/*20.26*/("""{"""),format.raw/*20.27*/("""
+    setTimeout(function()"""),format.raw/*21.26*/("""{"""),format.raw/*21.27*/("""
     	document.getElementById("submit_pause").disabled = false;
-    """),format.raw/*22.5*/("""}"""),format.raw/*22.6*/(""", 5000);  	
+    """),format.raw/*23.5*/("""}"""),format.raw/*23.6*/(""", 5000);  	
     
-"""),format.raw/*24.1*/("""}"""),format.raw/*24.2*/("""
+"""),format.raw/*25.1*/("""}"""),format.raw/*25.2*/("""
 
-function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/*26.37*/("""
+function displayQuestion(question) """),format.raw/*27.36*/("""{"""),format.raw/*27.37*/("""
 	$('#posted_question')
 			.append(
 					'<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">'
 							+ question + '</div>');
 	$(".test").show();
-"""),format.raw/*32.1*/("""}"""),format.raw/*32.2*/("""
+"""),format.raw/*33.1*/("""}"""),format.raw/*33.2*/("""
 
-	 $(document).ready(function() """),format.raw/*34.32*/("""{"""),format.raw/*34.33*/("""
+	 $(document).ready(function() """),format.raw/*35.32*/("""{"""),format.raw/*35.33*/("""
 		 var connection = new WebSocket('ws://localhost:9000');
 
-			connection.onopen = function() """),format.raw/*37.35*/("""{"""),format.raw/*37.36*/("""
+			connection.onopen = function() """),format.raw/*38.35*/("""{"""),format.raw/*38.36*/("""
 				//
-			"""),format.raw/*39.4*/("""}"""),format.raw/*39.5*/("""
+			"""),format.raw/*40.4*/("""}"""),format.raw/*40.5*/("""
 			
-			connection.onmessage = function(e) """),format.raw/*41.39*/("""{"""),format.raw/*41.40*/("""
+			connection.onmessage = function(e) """),format.raw/*42.39*/("""{"""),format.raw/*42.40*/("""
 				server_message = e.data;
-				if (server_message.indexOf("question_") > -1) """),format.raw/*43.51*/("""{"""),format.raw/*43.52*/("""
+				if (server_message.indexOf("question_") > -1) """),format.raw/*44.51*/("""{"""),format.raw/*44.52*/("""
 					server_message = server_message.replace(
 							"question_", "");
 					displayQuestion(server_message);
-				"""),format.raw/*47.5*/("""}"""),format.raw/*47.6*/("""
-			  /*if (server_message.indexOf("question_") > -1) """),format.raw/*48.54*/("""{"""),format.raw/*48.55*/("""
+				"""),format.raw/*48.5*/("""}"""),format.raw/*48.6*/("""
+			  /*if (server_message.indexOf("question_") > -1) """),format.raw/*49.54*/("""{"""),format.raw/*49.55*/("""
 					server_message = server_message.replace(
 							"question_", "");
 					displayQuestion(server_message);
-				"""),format.raw/*52.5*/("""}"""),format.raw/*52.6*/("""*/
-			"""),format.raw/*53.4*/("""}"""),format.raw/*53.5*/(""";
+				"""),format.raw/*53.5*/("""}"""),format.raw/*53.6*/("""*/
+			"""),format.raw/*54.4*/("""}"""),format.raw/*54.5*/(""";
 			
-			connection.onclose = function(e) """),format.raw/*55.37*/("""{"""),format.raw/*55.38*/("""
+			connection.onclose = function(e) """),format.raw/*56.37*/("""{"""),format.raw/*56.38*/("""
 				//
-			"""),format.raw/*57.4*/("""}"""),format.raw/*57.5*/("""
+			"""),format.raw/*58.4*/("""}"""),format.raw/*58.5*/("""
 			
-			$("#submit_speed").click(function() """),format.raw/*59.40*/("""{"""),format.raw/*59.41*/("""
-				$.post("/postVotes", """),format.raw/*60.26*/("""{"""),format.raw/*60.27*/("""
+			$("#submit_speed").click(function() """),format.raw/*60.40*/("""{"""),format.raw/*60.41*/("""
+				$.post("/postVotes", """),format.raw/*61.26*/("""{"""),format.raw/*61.27*/("""
 					p_vote: $('input[name=radioGroup]:checked').val()
-				"""),format.raw/*62.5*/("""}"""),format.raw/*62.6*/(""")
+				"""),format.raw/*63.5*/("""}"""),format.raw/*63.6*/(""")
 				document.getElementById("submit_speed").disabled = true;
 				document.getElementById("submit_speed").innerHTML = "Voted".bold();
 			    
-			    setTimeout(function()"""),format.raw/*66.29*/("""{"""),format.raw/*66.30*/("""
+			    setTimeout(function()"""),format.raw/*67.29*/("""{"""),format.raw/*67.30*/("""
 			    	document.getElementById("submit_speed").disabled = false;
 					document.getElementById("submit_speed").innerHTML = "Vote";	
-			    """),format.raw/*69.8*/("""}"""),format.raw/*69.9*/(""", 3000);
-			"""),format.raw/*70.4*/("""}"""),format.raw/*70.5*/(""");
+			    """),format.raw/*70.8*/("""}"""),format.raw/*70.9*/(""", 3000);
+			"""),format.raw/*71.4*/("""}"""),format.raw/*71.5*/(""");
 			
-			$("#submit_volume").click(function() """),format.raw/*72.41*/("""{"""),format.raw/*72.42*/("""
-				$.post("/postVotes", """),format.raw/*73.26*/("""{"""),format.raw/*73.27*/("""
+			$("#submit_volume").click(function() """),format.raw/*73.41*/("""{"""),format.raw/*73.42*/("""
+				$.post("/postVotes", """),format.raw/*74.26*/("""{"""),format.raw/*74.27*/("""
 					p_vote: $('input[name=radioGroup1]:checked').val()
-				"""),format.raw/*75.5*/("""}"""),format.raw/*75.6*/(""")
+				"""),format.raw/*76.5*/("""}"""),format.raw/*76.6*/(""")
 				document.getElementById("submit_volume").disabled = true;
 				document.getElementById("submit_volume").innerHTML = "Voted".bold();
 
-			    setTimeout(function()"""),format.raw/*79.29*/("""{"""),format.raw/*79.30*/("""
+			    setTimeout(function()"""),format.raw/*80.29*/("""{"""),format.raw/*80.30*/("""
 			    	document.getElementById("submit_volume").disabled = false;
 					document.getElementById("submit_volume").innerHTML = "Vote";	
-			    """),format.raw/*82.8*/("""}"""),format.raw/*82.9*/(""", 3000);
-			"""),format.raw/*83.4*/("""}"""),format.raw/*83.5*/(""");
+			    """),format.raw/*83.8*/("""}"""),format.raw/*83.9*/(""", 3000);
+			"""),format.raw/*84.4*/("""}"""),format.raw/*84.5*/(""");
 			
-			$("#submit_pause").click(function() """),format.raw/*85.40*/("""{"""),format.raw/*85.41*/("""
-				$.post("/postVotes", """),format.raw/*86.26*/("""{"""),format.raw/*86.27*/("""
+			$("#submit_pause").click(function() """),format.raw/*86.40*/("""{"""),format.raw/*86.41*/("""
+				$.post("/postVotes", """),format.raw/*87.26*/("""{"""),format.raw/*87.27*/("""
 					p_vote: $(this).attr("value")
-				"""),format.raw/*88.5*/("""}"""),format.raw/*88.6*/(""")
+				"""),format.raw/*89.5*/("""}"""),format.raw/*89.6*/(""")
 				document.getElementById("submit_pause").disabled = true;
-			"""),format.raw/*90.4*/("""}"""),format.raw/*90.5*/(""");
+			"""),format.raw/*91.4*/("""}"""),format.raw/*91.5*/(""");
 			
-			$("#submit_button").click(function() """),format.raw/*92.41*/("""{"""),format.raw/*92.42*/("""
-				$.post("/postStudentQuestion", """),format.raw/*93.36*/("""{"""),format.raw/*93.37*/("""
+			$("#submit_button").click(function() """),format.raw/*93.41*/("""{"""),format.raw/*93.42*/("""
+				$.post("/postStudentQuestion", """),format.raw/*94.36*/("""{"""),format.raw/*94.37*/("""
 					p_question: $("#question").val()
-				"""),format.raw/*95.5*/("""}"""),format.raw/*95.6*/(""").done(function()"""),format.raw/*95.23*/("""{"""),format.raw/*95.24*/("""
+				"""),format.raw/*96.5*/("""}"""),format.raw/*96.6*/(""").done(function()"""),format.raw/*96.23*/("""{"""),format.raw/*96.24*/("""
 					$("#q_area").hide();
-				"""),format.raw/*97.5*/("""}"""),format.raw/*97.6*/(""")
-			"""),format.raw/*98.4*/("""}"""),format.raw/*98.5*/(""");
+					$('#question	').val('');
+				"""),format.raw/*99.5*/("""}"""),format.raw/*99.6*/(""")
+			"""),format.raw/*100.4*/("""}"""),format.raw/*100.5*/(""");
 		
-			$("#add").click(function() """),format.raw/*100.31*/("""{"""),format.raw/*100.32*/("""
+			$("#add").click(function() """),format.raw/*102.31*/("""{"""),format.raw/*102.32*/("""
 				$("#q_area").show();
-			"""),format.raw/*102.4*/("""}"""),format.raw/*102.5*/(""");		
+			"""),format.raw/*104.4*/("""}"""),format.raw/*104.5*/(""");		
 		
-			$("#cancel_button").click(function() """),format.raw/*104.41*/("""{"""),format.raw/*104.42*/("""
+			$("#cancel_button").click(function() """),format.raw/*106.41*/("""{"""),format.raw/*106.42*/("""
     				$("#q_area").hide();
-  		 	"""),format.raw/*106.7*/("""}"""),format.raw/*106.8*/(""");
-
-  		 	
+  		 	"""),format.raw/*108.7*/("""}"""),format.raw/*108.8*/(""");
 		"""),format.raw/*109.3*/("""}"""),format.raw/*109.4*/(""");
 </script>
 
@@ -145,7 +145,7 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 			width="150px" alt="Live Feed"></a>
 		</div>
 		<header class="navbar navbar-static-top bs-docs-nav" id="top">
-			<div class="btn-group" style="float: right;">
+			<div class="btn-group">
 				<a type="button" class="btn btn-default" href="/home">Home</a> <a
 					type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
 					type="button" class="btn btn-default" href="/contact">Contact</a> <a
@@ -153,9 +153,9 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 			</div>
 		</header>
 		
-		<div class="voting-questions-container" style="width: 80%; margin: 0 auto;">
-			<div id="test" style="width: 55%; margin: 0 auto; padding: 0 20px 20px 20px;">
-				<div class="speed_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+		<div class="voting-questions-container">
+			<div id="test">
+				<div class="speed_container">
 				<!-- <form id="speed_vote" method="get" action="/vote"> -->
 						<div>
 							<h3><b><i>Speed</i></b></h3>
@@ -176,12 +176,12 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 								</label>
 							</div>
 							<div align="center">
-								<button id="submit_speed" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+								<button id="submit_speed" type="button" class="btn btn-primary">Vote</button>
 							</div>  
 						</div>
 			 	<!-- </form> -->
 				</div>
-				<div class="loudness_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+				<div class="loudness_container">
 			<!-- 	<form id="voice_vote" method="get" action="/vote"> -->
 						<div>
 							<h3><b><i>Voice</i></b></h3>
@@ -202,7 +202,7 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 								</label>
 							</div>
 							<div align="center">
-								<button id="submit_volume" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+								<button id="submit_volume" type="button" class="btn btn-primary">Vote</button>
 							</div>
 						</div>
 		 	<!--		</form> -->
@@ -212,29 +212,29 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 						<div class="col-md-4 col-md-offset-2" style="margin-top: 20px">
 						
 					<button name="pause_vote" value="Pause_count" type="button" id="submit_pause"
-			            class="btn btn-warning" style="width: 300px; height: 56px; font-size: 18px;"><b>Pause</b></button> 
+			            class="btn btn-warning"><b>Pause</b></button> 
 						</div>
 					<!--/form-->  
 				</div>
 				<div class="clear" style="clear: both;"></div>
 			</div>
 			
-			<div id="question-container" style="border: 1px solid #3333FF; width: 80%; margin: 10px auto; padding: 0 20px 20px 20px; background-color: #D6DBFD; border-radius: 7px;">
+			<div id="question-container">
 				<h3><b><i>Q&A Section</i></b></h3>
 				
 				<div id="questions_row1">
-					<div id="posted_question">
+					<div id="posted_questions">
 					"""),_display_(Seq[Any](/*199.7*/for(questions <- questionList) yield /*199.37*/{_display_(Seq[Any](format.raw/*199.38*/("""
-					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
+					<div id="posted-question">
 							 """),_display_(Seq[Any](/*201.10*/questions)),format.raw/*201.19*/(""" </div>
 					""")))})),format.raw/*202.7*/("""
 					
 					</div> 
 					<div style="margin-top: 20px;">
-						<a type="button" class="btn btn-primary" id="add" style="margin-top: 10px; border: 3px solid white;">Add Question</a>
+						<a type="button" class="btn btn-primary" id="add">Add Question</a>
 					</div>
 
-					<div id="q_area" style="display: none; margin-top: 10px;">
+					<div id="q_area">
 						<textarea class="form-control" rows="4" columns="50"
 							id="question" placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">
@@ -260,11 +260,11 @@ function displayQuestion(question) """),format.raw/*26.36*/("""{"""),format.raw/
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 28 11:38:26 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/indexStudent.scala.html
-                    HASH: bcc039d649c9f9ee536ca5d725efede2f217ffdb
-                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1754->547|1807->564|1822->570|1889->615|1987->685|2016->686|2131->773|2160->774|2255->842|2283->843|2327->860|2355->861|2420->898|2449->899|2665->1088|2693->1089|2754->1122|2783->1123|2905->1217|2934->1218|2972->1229|3000->1230|3071->1273|3100->1274|3208->1354|3237->1355|3378->1469|3406->1470|3488->1524|3517->1525|3658->1639|3686->1640|3719->1646|3747->1647|3817->1689|3846->1690|3884->1701|3912->1702|3984->1746|4013->1747|4067->1773|4096->1774|4183->1834|4211->1835|4410->2006|4439->2007|4606->2147|4634->2148|4673->2160|4701->2161|4776->2208|4805->2209|4859->2235|4888->2236|4976->2297|5004->2298|5198->2464|5227->2465|5396->2607|5424->2608|5463->2620|5491->2621|5565->2667|5594->2668|5648->2694|5677->2695|5744->2735|5772->2736|5865->2802|5893->2803|5968->2850|5997->2851|6061->2887|6090->2888|6160->2931|6188->2932|6233->2949|6262->2950|6320->2981|6348->2982|6380->2987|6408->2988|6473->3024|6503->3025|6560->3054|6589->3055|6666->3103|6696->3104|6760->3140|6789->3141|6830->3154|6859->3155|7075->3334|7091->3340|7146->3372|10759->6949|10806->6979|10846->6980|10993->7090|11025->7099|11071->7113
-                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|44->16|44->16|48->20|48->20|50->22|50->22|52->24|52->24|54->26|54->26|60->32|60->32|62->34|62->34|65->37|65->37|67->39|67->39|69->41|69->41|71->43|71->43|75->47|75->47|76->48|76->48|80->52|80->52|81->53|81->53|83->55|83->55|85->57|85->57|87->59|87->59|88->60|88->60|90->62|90->62|94->66|94->66|97->69|97->69|98->70|98->70|100->72|100->72|101->73|101->73|103->75|103->75|107->79|107->79|110->82|110->82|111->83|111->83|113->85|113->85|114->86|114->86|116->88|116->88|118->90|118->90|120->92|120->92|121->93|121->93|123->95|123->95|123->95|123->95|125->97|125->97|126->98|126->98|128->100|128->100|130->102|130->102|132->104|132->104|134->106|134->106|137->109|137->109|144->116|144->116|144->116|227->199|227->199|227->199|229->201|229->201|230->202
+                    DATE: Sun Jun 29 11:00:02 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/indexStudent.scala.html
+                    HASH: e02dafd18271f39635286d64c268232dfb26561d
+                    MATRIX: 787->1|909->29|1041->126|1055->132|1110->166|1198->219|1212->225|1265->257|1353->310|1367->316|1420->348|1509->401|1524->407|1578->439|1663->488|1678->494|1742->536|1827->585|1842->591|1918->644|1971->661|1986->667|2053->712|2151->782|2180->783|2295->870|2324->871|2419->939|2447->940|2491->957|2519->958|2584->995|2613->996|2829->1185|2857->1186|2918->1219|2947->1220|3069->1314|3098->1315|3136->1326|3164->1327|3235->1370|3264->1371|3372->1451|3401->1452|3542->1566|3570->1567|3652->1621|3681->1622|3822->1736|3850->1737|3883->1743|3911->1744|3981->1786|4010->1787|4048->1798|4076->1799|4148->1843|4177->1844|4231->1870|4260->1871|4347->1931|4375->1932|4574->2103|4603->2104|4770->2244|4798->2245|4837->2257|4865->2258|4940->2305|4969->2306|5023->2332|5052->2333|5140->2394|5168->2395|5362->2561|5391->2562|5560->2704|5588->2705|5627->2717|5655->2718|5729->2764|5758->2765|5812->2791|5841->2792|5908->2832|5936->2833|6029->2899|6057->2900|6132->2947|6161->2948|6225->2984|6254->2985|6324->3028|6352->3029|6397->3046|6426->3047|6514->3108|6542->3109|6575->3114|6604->3115|6669->3151|6699->3152|6756->3181|6785->3182|6862->3230|6892->3231|6956->3267|6985->3268|7018->3273|7047->3274|7263->3453|7279->3459|7334->3491|10162->6283|10209->6313|10249->6314|10328->6356|10360->6365|10406->6379
+                    LINES: 26->1|29->1|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|45->17|45->17|49->21|49->21|51->23|51->23|53->25|53->25|55->27|55->27|61->33|61->33|63->35|63->35|66->38|66->38|68->40|68->40|70->42|70->42|72->44|72->44|76->48|76->48|77->49|77->49|81->53|81->53|82->54|82->54|84->56|84->56|86->58|86->58|88->60|88->60|89->61|89->61|91->63|91->63|95->67|95->67|98->70|98->70|99->71|99->71|101->73|101->73|102->74|102->74|104->76|104->76|108->80|108->80|111->83|111->83|112->84|112->84|114->86|114->86|115->87|115->87|117->89|117->89|119->91|119->91|121->93|121->93|122->94|122->94|124->96|124->96|124->96|124->96|127->99|127->99|128->100|128->100|130->102|130->102|132->104|132->104|134->106|134->106|136->108|136->108|137->109|137->109|144->116|144->116|144->116|227->199|227->199|227->199|229->201|229->201|230->202
                     -- GENERATED --
                 */
             

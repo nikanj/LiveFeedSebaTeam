@@ -30,6 +30,9 @@ public class Lecture {
 		Lecture_number = lecture_number;
 	}
 
+	/*
+	 * Long Random Unique Lecture ID for each lecture.
+	 */
 	public static long generateLectureId() {
 		long LOWER_RANGE = 0;
 		long UPPER_RANGE = 1000000;
@@ -48,22 +51,26 @@ public class Lecture {
 
 		Date date = new Date();
 		String modifiedDate = new SimpleDateFormat("yyyy-MM-dd").format(date);
-		//Long CourseId = (long) courseId;
+
 		courseObejct.setCourse_Id(courseId);
 		int IDstats = Stats.insertDB();
-		// Long lectureNumber = generateLectureId();
+
 		lectureObject.setLecture_number(generateLectureId());
-		// boolean rs;
+
 		Stats.setIdStats(IDstats);
 
 		sql = "Insert into lecture (Course_Id, ID_stats, Lecture_number, Lecture_date) values ("
-				+ // CourseId
-				courseObejct.getCourse_Id() + "," + IDstats + "," + // lectureNumber
-				lectureObject.getLecture_number() + ",'" + modifiedDate + "');";
-		// rs = stmt.execute(sql);
-		// @Antoniya - test
+				+ courseObejct.getCourse_Id()
+				+ ","
+				+ IDstats
+				+ ","
+				+ lectureObject.getLecture_number()
+				+ ",'"
+				+ modifiedDate
+				+ "');";
+
 		stmt.executeUpdate(sql);
-		
+
 		stmt.close();
 		conn.close();
 		return lectureObject.getLecture_number();

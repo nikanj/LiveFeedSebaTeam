@@ -39,49 +39,44 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*14.14*/routes/*14.20*/.Assets.at("images/logonew.png"))),format.raw/*14.52*/("""" height="60px"
-			width="130px" alt="Live Feed">
+		<a href="/home"><img src=""""),_display_(Seq[Any](/*14.30*/routes/*14.36*/.Assets.at("images/logonew.png"))),format.raw/*14.68*/("""" height="70px"
+			width="150px" alt="Live Feed"></a>
 	</div>
-	<header class="navbar navbar-static-top bs-docs-nav" id="top"
-		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top">
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> 
+			<a type="button" class="btn btn-default" href="/aboutus">About Us</a> 
+			<a type="button" class="btn btn-default" href="/contact">Contact</a> 
+			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
 	</header>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <div class="container">
-	<form  method="get" action="/studentValidate" class="form-horizontal" role="form">
-	<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
-		<h1>Please Log In</h1>
-		
-		<div class="input-group" style="margin-top: 20px;">
-			<span class="input-group-addon">Course Name</span> 
-			<input type="text" class="form-control" id="courseNameId" placeholder="CourseName" style="width: 280px" name="courseName">
-		</div>
+	<form  method="get" action="/studentValidate" class="form-horizontal">
+		<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
+			<h1>Enter Lecture</h1>
 			
-		<div class="input-group" style="margin-top: 20px;">
-			<span class="input-group-addon" >Lecture Number</span> 
-			<input type="text" class="form-control" id="lectureId" placeholder="LectureUniqeNumber" style="width: 265px" name="lectureNumber">
-		</div>
-		
-		<div class="btn-group-justified" style="margin-top: 20px;">
-			<button type="submit" class="btn btn-success" style="width: 212px">Enter</button>
-		</div>				
-	</div>
-		"""),_display_(Seq[Any](/*48.4*/if(flag == 0)/*48.17*/{_display_(Seq[Any](format.raw/*48.18*/("""	
-			<div class="row col-md-4 col-md-offset-2 error message" id="notify_error" style="padding: 5px 0 0 10px; color: #ff0000;">
+			<div class="input-group" style="margin-top: 20px;">
+				<span class="input-group-addon">Course Name</span> 
+				<input type="text" class="form-control" id="courseNameId" placeholder="Course Name" style="width: 280px" name="courseName">
+			</div>
 				
-						<p>
-							<i><b> Please enter correct lecture id and course name!</b></i>
-						</p>
-			</div>		
-					""")))})),format.raw/*55.7*/("""
-	
+			<div class="input-group" style="margin-top: 20px;">
+				<span class="input-group-addon" >Lecture Number</span> 
+				<input type="text" class="form-control" id="lectureId" placeholder="Lecture Number" style="width: 265px" name="lectureNumber">
+			</div>
+			
+			<div class="btn-group-justified" style="margin-top: 20px;">
+				<button type="submit" class="btn btn-success" style="width: 212px">Enter</button>
+			</div>
+			"""),_display_(Seq[Any](/*46.5*/if(flag == 0)/*46.18*/{_display_(Seq[Any](format.raw/*46.19*/("""	
+				<div class="error message" id="notify_error" style="color: #ff0000; font-weight: bold; font-style: italic; margin-top: 10px;">
+					<p>Please enter correct lecture id and course name!</p>
+				</div>		
+						""")))})),format.raw/*50.8*/("""				
+		</div>
 	</form>
 	</div>
 </body>
@@ -97,11 +92,11 @@ Seq[Any](format.raw/*1.18*/(""" """),format.raw/*2.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 28 11:38:26 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/studentLectureEnter.scala.html
-                    HASH: c39654a49dacb42cf565b43793ec9c6508c43e9c
-                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1912->645|1927->651|1981->683|3486->2153|3508->2166|3547->2167|3820->2409
-                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|76->48|76->48|76->48|83->55
+                    DATE: Sun Jun 29 11:00:03 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/studentLectureEnter.scala.html
+                    HASH: af825e3a9eaa61457df2a3b655712607c8d19bfd
+                    MATRIX: 789->1|915->17|942->35|1053->111|1067->117|1122->151|1210->204|1224->210|1277->242|1365->295|1379->301|1432->333|1516->382|1530->388|1605->441|1658->458|1673->464|1740->509|1928->661|1943->667|1997->699|3476->2143|3498->2156|3537->2157|3782->2371
+                    LINES: 26->1|30->1|30->2|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|42->14|42->14|42->14|74->46|74->46|74->46|78->50
                     -- GENERATED --
                 */
             

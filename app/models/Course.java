@@ -46,7 +46,7 @@ public class Course {
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
 		ResultSet rs = readDb(profId);
-		System.out.println("Reached here second");
+
 		while (rs.next()) {
 			String course = rs.getString("CourseName");
 			if (course.equalsIgnoreCase(courseName2)) {
@@ -58,8 +58,7 @@ public class Course {
 			System.out.println("Added to database");
 			sql = "Insert into course (ID_prof, CourseName) values (" + profId
 					+ ",'" + courseName2 + "')";
-			// boolean result = stmt.execute(sql);
-			// @Antoniya Test
+
 			stmt.executeUpdate(sql);
 		}
 		rs.close();
@@ -95,11 +94,8 @@ public class Course {
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
 		}
-		
+
 		return courseId;
 	}
-
-	public static Finder<Long, Course> find = new Finder<Long, Course>(
-			Long.class, Course.class);
 
 }

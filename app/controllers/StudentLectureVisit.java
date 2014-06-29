@@ -32,14 +32,13 @@ public class StudentLectureVisit extends Controller {
 		return ok(views.html.studentLectureEnter.render(flag));
 	}
 
+	/*
+	 * Validates if the student is trying to enter the correct Lecture using the lecture Id.
+	 */
 	public static Result enterLectureValidate() throws SQLException {
 		DynamicForm form = Form.form().bindFromRequest();
 		String courseName = form.get("courseName");
 		int lectureId = Integer.parseInt(form.get("lectureNumber"));
-
-		System.out.println("Test Student enter lecture.... let's see the magic");
-		System.out.println("CourseName " + courseName);
-		System.out.println("LectureID " + lectureId);
 
 		result = Lecture.lectureEnter(lectureId, courseName);
 		int courseId = NewCourse.getCourseId();

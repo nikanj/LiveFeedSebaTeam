@@ -13,17 +13,6 @@ CREATE TABLE prof (
   constraint pk_prof primary key (ID_prof)
 );
 
-
---CREATE TABLE student(
---ID_student			bigint NOT NULL,
---Lecture_number		bigint DEFAULT NULL,
---constraint pk_prof primary key (ID_student)
---);
-
---alter table student add constraint fk_student_lecture foreign key (Lecture_number) references lecture (Lecture_number) on delete restrict on update restrict;
---create index ix_student_lecture on student (Lecture_number);
-
-
 --
 -- Table structure for table `stats`
 --

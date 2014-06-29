@@ -37,7 +37,7 @@ public class Question {
 			System.out.println("QuestionID: " + rs.getString(1));
 			questionId = Integer.parseInt(rs.getString(1));
 		}
-		System.out.println("QuestionID returned: " + questionId);
+		
 		rs.close();
 		stmt.close();
 		conn.close();
@@ -49,11 +49,11 @@ public class Question {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-		
+
 		sql = "SELECT * FROM question WHERE Course_Id = " + courseId;
-		
+
 		ResultSet result2 = stmt.executeQuery(sql);
-		
+
 		return result2;
 	}
 }

@@ -27,6 +27,9 @@ public class Prof {
 	@Constraints.Required
 	public String Password;
 
+	/*
+	 * List Of professors present in the database.
+	 */
 	public static boolean profDetails(String uname, String pwd)
 			throws SQLException {
 		boolean flag = Boolean.FALSE;

@@ -42,16 +42,16 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*17.14*/routes/*17.20*/.Assets.at("images/logonew.png"))),format.raw/*17.52*/("""" height="60px"
-			width="130px" alt="Live Feed">
+		<a href="/home"><img src=""""),_display_(Seq[Any](/*17.30*/routes/*17.36*/.Assets.at("images/logonew.png"))),format.raw/*17.68*/("""" height="70px"
+			width="150px" alt="Live Feed"></a>
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> 
+			<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
+			<a type="button" class="btn btn-default" href="/contact">Contact</a>
+			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
 	</header>
 
@@ -95,10 +95,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 28 11:38:26 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/contactUsPage.scala.html
-                    HASH: a67334a1c33dfc2577ecd259e3b8f242ced58bde
-                    MATRIX: 863->0|999->101|1013->107|1068->141|1157->195|1171->201|1224->233|1313->287|1327->293|1380->325|1465->375|1479->381|1554->434|1640->484|1655->490|1736->548|1790->566|1805->572|1872->617|2052->761|2067->767|2121->799
+                    DATE: Sun Jun 29 11:00:02 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/contactUsPage.scala.html
+                    HASH: 94539224df01a5d0887e0b3931db28c427fc24a6
+                    MATRIX: 863->0|999->101|1013->107|1068->141|1157->195|1171->201|1224->233|1313->287|1327->293|1380->325|1465->375|1479->381|1554->434|1640->484|1655->490|1736->548|1790->566|1805->572|1872->617|2068->777|2083->783|2137->815
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|45->17|45->17|45->17
                     -- GENERATED --
                 */

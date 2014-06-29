@@ -8,6 +8,7 @@
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/logonew.png")">
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/voteImg.png")">
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/indexStudent.css")">
 <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap/css/bootstrap.css")">
 <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
 
@@ -94,6 +95,7 @@ function displayQuestion(question) {
 					p_question: $("#question").val()
 				}).done(function(){
 					$("#q_area").hide();
+					$('#question	').val('');
 				})
 			});
 		
@@ -104,8 +106,6 @@ function displayQuestion(question) {
 			$("#cancel_button").click(function() {
     				$("#q_area").hide();
   		 	});
-
-  		 	
 		});
 </script>
 
@@ -117,7 +117,7 @@ function displayQuestion(question) {
 			width="150px" alt="Live Feed"></a>
 		</div>
 		<header class="navbar navbar-static-top bs-docs-nav" id="top">
-			<div class="btn-group" style="float: right;">
+			<div class="btn-group">
 				<a type="button" class="btn btn-default" href="/home">Home</a> <a
 					type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
 					type="button" class="btn btn-default" href="/contact">Contact</a> <a
@@ -125,9 +125,9 @@ function displayQuestion(question) {
 			</div>
 		</header>
 		
-		<div class="voting-questions-container" style="width: 80%; margin: 0 auto;">
-			<div id="test" style="width: 55%; margin: 0 auto; padding: 0 20px 20px 20px;">
-				<div class="speed_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+		<div class="voting-questions-container">
+			<div id="test">
+				<div class="speed_container">
 				<!-- <form id="speed_vote" method="get" action="/vote"> -->
 						<div>
 							<h3><b><i>Speed</i></b></h3>
@@ -148,12 +148,12 @@ function displayQuestion(question) {
 								</label>
 							</div>
 							<div align="center">
-								<button id="submit_speed" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+								<button id="submit_speed" type="button" class="btn btn-primary">Vote</button>
 							</div>  
 						</div>
 			 	<!-- </form> -->
 				</div>
-				<div class="loudness_container" style="border: 1px solid black; display: inline-block; background-color: #D6DBFD; padding: 0px 60px 40px 60px; margin: 0 30px; border-radius: 7px; border-color: #3333FF; width: 190px;">
+				<div class="loudness_container">
 			<!-- 	<form id="voice_vote" method="get" action="/vote"> -->
 						<div>
 							<h3><b><i>Voice</i></b></h3>
@@ -174,7 +174,7 @@ function displayQuestion(question) {
 								</label>
 							</div>
 							<div align="center">
-								<button id="submit_volume" type="button" class="btn btn-primary" style="margin-top: 15px; border: 3px solid white;">Vote</button>
+								<button id="submit_volume" type="button" class="btn btn-primary">Vote</button>
 							</div>
 						</div>
 		 	<!--		</form> -->
@@ -184,29 +184,29 @@ function displayQuestion(question) {
 						<div class="col-md-4 col-md-offset-2" style="margin-top: 20px">
 						
 					<button name="pause_vote" value="Pause_count" type="button" id="submit_pause"
-			            class="btn btn-warning" style="width: 300px; height: 56px; font-size: 18px;"><b>Pause</b></button> 
+			            class="btn btn-warning"><b>Pause</b></button> 
 						</div>
 					<!--/form-->  
 				</div>
 				<div class="clear" style="clear: both;"></div>
 			</div>
 			
-			<div id="question-container" style="border: 1px solid #3333FF; width: 80%; margin: 10px auto; padding: 0 20px 20px 20px; background-color: #D6DBFD; border-radius: 7px;">
+			<div id="question-container">
 				<h3><b><i>Q&A Section</i></b></h3>
 				
 				<div id="questions_row1">
-					<div id="posted_question">
+					<div id="posted_questions">
 					@for(questions <- questionList){
-					<div style="background-color: white; margin: 0 10px 10px 0; padding: 7px; border-radius:5px;">
+					<div id="posted-question">
 							 @questions </div>
 					}
 					
 					</div> 
 					<div style="margin-top: 20px;">
-						<a type="button" class="btn btn-primary" id="add" style="margin-top: 10px; border: 3px solid white;">Add Question</a>
+						<a type="button" class="btn btn-primary" id="add">Add Question</a>
 					</div>
 
-					<div id="q_area" style="display: none; margin-top: 10px;">
+					<div id="q_area">
 						<textarea class="form-control" rows="4" columns="50"
 							id="question" placeholder="Enter Question Here" name="p_question"></textarea>
 						<div class="btn-group-justified" style="margin-top: 20px;">

@@ -65,8 +65,8 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     <div class="homepage">
 		<img class="background" />
 		<div class="page-top">
-			<img src=""""),_display_(Seq[Any](/*40.15*/routes/*40.21*/.Assets.at("images/logonew.png"))),format.raw/*40.53*/("""" height="70px"
-				width="150px" alt="Live Feed">
+			<a href="/home"><img src=""""),_display_(Seq[Any](/*40.31*/routes/*40.37*/.Assets.at("images/logonew.png"))),format.raw/*40.69*/("""" height="70px"
+				width="150px" alt="Live Feed"></a>
 		</div>
 		<div id="menu">
 			<header class="navbar navbar-static-top bs-docs-nav" id="top">
@@ -81,7 +81,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 				<div class="well btn-group" id="login">
 					<p>
 						<a type="button" class="btn btn-primary btn-lg btn-block"
-							href="/profSignIn" style="width: 200px;">Tutors</a>
+							href="/profSignIn" style="width: 200px;">Professor</a>
 					</p>
 					<p>
 						<a type="button" class="btn btn-primary btn-lg btn-block"
@@ -106,10 +106,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 28 11:38:26 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/mainPage.scala.html
-                    HASH: 1fe3dda77e110d4fee6ac6c9d776e868d667a24a
-                    MATRIX: 858->0|985->92|999->98|1054->132|1151->194|1165->200|1218->232|1311->290|1325->296|1400->349|1461->375|1475->381|1541->426|1683->540|1712->541|1800->593|1815->599|1869->631|1937->663|1952->669|2006->701|2071->730|2086->736|2140->768|2205->797|2220->803|2274->835|2457->982|2472->988|2526->1020|2738->1204|2767->1205|2843->1253|2872->1254|3069->1423|3098->1424|3218->1516|3247->1517|3304->1547|3333->1548|3515->1694|3530->1700|3584->1732
+                    DATE: Sun Jun 29 11:00:02 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/mainPage.scala.html
+                    HASH: 01427d7d6dc87eade12a9914b89e8901c8ac3145
+                    MATRIX: 858->0|985->92|999->98|1054->132|1151->194|1165->200|1218->232|1311->290|1325->296|1400->349|1461->375|1475->381|1541->426|1683->540|1712->541|1800->593|1815->599|1869->631|1937->663|1952->669|2006->701|2071->730|2086->736|2140->768|2205->797|2220->803|2274->835|2457->982|2472->988|2526->1020|2738->1204|2767->1205|2843->1253|2872->1254|3069->1423|3098->1424|3218->1516|3247->1517|3304->1547|3333->1548|3531->1710|3546->1716|3600->1748
                     LINES: 29->1|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|38->10|38->10|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|47->19|47->19|47->19|51->23|51->23|52->24|52->24|56->28|56->28|60->32|60->32|61->33|61->33|68->40|68->40|68->40
                     -- GENERATED --
                 */

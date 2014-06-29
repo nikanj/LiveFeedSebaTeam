@@ -14,14 +14,18 @@ public class Profsignin extends Controller {
 	public static int profId;
 	public static int flag = 1;
 	private static ArrayList<String> courses = new ArrayList<String>();
+
 	public static Result profSignIn() {
-		flag  = 1;
+		flag = 1;
 		return ok(views.html.profSignIn.render(flag));
 
 	}
 
-	public static Result validate() throws SQLException
-	{
+	/*
+	 * Validate the professor and if true display the list of courses created
+	 * earlier if any.
+	 */
+	public static Result validate() throws SQLException {
 		DynamicForm form = Form.form().bindFromRequest();
 		String username = form.get("p_username");
 		String password = form.get("p_password");
@@ -33,23 +37,18 @@ public class Profsignin extends Controller {
 		result = Prof.profDetails(username, password);
 		profId = NewCourse.getProfId();
 
-		
 		System.out.println("Result: " + result);
-		if(result)
-		{
-			
+		if (result) {
+
 			System.out.println("In validate function");
 			courses = NewCourse.existingCourses(profId);
-			
+
 			return ok(views.html.profHome.render(courses));
-			
-		}
-		else
-		{
+
+		} else {
 			flag = 0;
 			return ok(views.html.profSignIn.render(flag));
 		}
 	}
-
 
 }

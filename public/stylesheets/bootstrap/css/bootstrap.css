@@ -3374,6 +3374,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon {
   padding: 6px 12px;
+  width: 90px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1;

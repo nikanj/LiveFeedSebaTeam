@@ -11,49 +11,44 @@
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src="@routes.Assets.at("images/logonew.png")" height="60px"
-			width="130px" alt="Live Feed">
+		<a href="/home"><img src="@routes.Assets.at("images/logonew.png")" height="70px"
+			width="150px" alt="Live Feed"></a>
 	</div>
-	<header class="navbar navbar-static-top bs-docs-nav" id="top"
-		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+	<header class="navbar navbar-static-top bs-docs-nav" id="top">
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> 
+			<a type="button" class="btn btn-default" href="/aboutus">About Us</a> 
+			<a type="button" class="btn btn-default" href="/contact">Contact</a> 
+			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
 	</header>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <div class="container">
-	<form  method="get" action="/studentValidate" class="form-horizontal" role="form">
-	<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
-		<h1>Please Log In</h1>
-		
-		<div class="input-group" style="margin-top: 20px;">
-			<span class="input-group-addon">Course Name</span> 
-			<input type="text" class="form-control" id="courseNameId" placeholder="CourseName" style="width: 280px" name="courseName">
-		</div>
+	<form  method="get" action="/studentValidate" class="form-horizontal">
+		<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
+			<h1>Enter Lecture</h1>
 			
-		<div class="input-group" style="margin-top: 20px;">
-			<span class="input-group-addon" >Lecture Number</span> 
-			<input type="text" class="form-control" id="lectureId" placeholder="LectureUniqeNumber" style="width: 265px" name="lectureNumber">
-		</div>
-		
-		<div class="btn-group-justified" style="margin-top: 20px;">
-			<button type="submit" class="btn btn-success" style="width: 212px">Enter</button>
-		</div>				
-	</div>
-		@if(flag == 0){	
-			<div class="row col-md-4 col-md-offset-2 error message" id="notify_error" style="padding: 5px 0 0 10px; color: #ff0000;">
+			<div class="input-group" style="margin-top: 20px;">
+				<span class="input-group-addon">Course Name</span> 
+				<input type="text" class="form-control" id="courseNameId" placeholder="Course Name" style="width: 280px" name="courseName">
+			</div>
 				
-						<p>
-							<i><b> Please enter correct lecture id and course name!</b></i>
-						</p>
-			</div>		
-					}
-	
+			<div class="input-group" style="margin-top: 20px;">
+				<span class="input-group-addon" >Lecture Number</span> 
+				<input type="text" class="form-control" id="lectureId" placeholder="Lecture Number" style="width: 265px" name="lectureNumber">
+			</div>
+			
+			<div class="btn-group-justified" style="margin-top: 20px;">
+				<button type="submit" class="btn btn-success" style="width: 212px">Enter</button>
+			</div>
+			@if(flag == 0){	
+				<div class="error message" id="notify_error" style="color: #ff0000; font-weight: bold; font-style: italic; margin-top: 10px;">
+					<p>Please enter correct lecture id and course name!</p>
+				</div>		
+						}				
+		</div>
 	</form>
 	</div>
 </body>

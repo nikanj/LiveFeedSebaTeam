@@ -51,16 +51,16 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 </head>
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src=""""),_display_(Seq[Any](/*26.14*/routes/*26.20*/.Assets.at("images/logonew.png"))),format.raw/*26.52*/("""" height="60px"
-			width="130px" alt="Live Feed">
+		<a href="/home"><img src=""""),_display_(Seq[Any](/*26.30*/routes/*26.36*/.Assets.at("images/logonew.png"))),format.raw/*26.68*/("""" height="70px"
+			width="150px" alt="Live Feed"></a>
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a> 
+			<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
+			<a type="button" class="btn btn-default" href="/contact">Contact</a>
+			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
 	</header>
 
@@ -68,13 +68,13 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 		<div class="row">
 			<div class="col-md-9">
 				<p>
-				<h4>
-					<i>"LiveFeed is inspired to help Professors and students to
-						have live feedback during lecture sessions!"</i>
-				</h4>
+					<h4>
+						<i>"LiveFeed is inspired to help Professors and students to
+							have live feedback during lecture sessions!"</i>
+					</h4>
 				</p>
 				<p>
-				<h3>About the team</h3>
+					<h3>About the team</h3>
 				</p>
 				<p>
 					We are young and enthusiastic Start-Up team. Our story began in
@@ -94,7 +94,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 					width="70px" class="img-circle">
 				<p>Student in MSc Informatics, TUM</p>
 				<p>
-					<i>"On my way to writing a master thesis"</i>
+					<i>"TBD"</i>
 				</p>
 			</div>
 			<div class="col-xs-6">
@@ -141,6 +141,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 			<a href="https://www.plus.google.com/"><img src=""""),_display_(Seq[Any](/*113.54*/routes/*113.60*/.Assets.at("images/google.jpg"))),format.raw/*113.91*/("""" height="30px" width="30px" class="img-rounded"></a>
 			</div>
 		</div>
+	</div>
 </body>
 </html>"""))}
     }
@@ -154,10 +155,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 28 11:38:26 CEST 2014
-                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed/app/views/aboutUsPage.scala.html
-                    HASH: ff8891cc8fc9f190bcbc546498011b9782fe22ff
-                    MATRIX: 861->0|997->101|1011->107|1066->141|1155->195|1169->201|1222->233|1311->287|1325->293|1372->319|1461->373|1475->379|1522->405|1612->459|1627->465|1675->491|1765->545|1780->551|1828->577|1918->631|1933->637|1987->669|2077->723|2092->729|2146->761|2236->815|2251->821|2300->848|2390->902|2405->908|2459->940|2549->994|2564->1000|2619->1033|2709->1087|2724->1093|2777->1124|2863->1174|2878->1180|2954->1233|3040->1283|3055->1289|3136->1347|3190->1365|3205->1371|3272->1416|3452->1560|3467->1566|3521->1598|4929->2970|4944->2976|4992->3002|5278->3252|5293->3258|5341->3284|5628->3535|5643->3541|5691->3567|5951->3791|5966->3797|6014->3823|6304->4076|6320->4082|6375->4114|6478->4180|6494->4186|6549->4218|6740->4372|6756->4378|6806->4405|6961->4523|6977->4529|7032->4561|7174->4666|7190->4672|7246->4705|7391->4813|7407->4819|7461->4850
+                    DATE: Sun Jun 29 11:00:02 CEST 2014
+                    SOURCE: D:/Master's Germany/Sem 4 subs/SEBA/Final/livefeed_Final/livefeed/app/views/aboutUsPage.scala.html
+                    HASH: 1c3489289824ca8d5659697943513c52054acff9
+                    MATRIX: 861->0|997->101|1011->107|1066->141|1155->195|1169->201|1222->233|1311->287|1325->293|1372->319|1461->373|1475->379|1522->405|1612->459|1627->465|1675->491|1765->545|1780->551|1828->577|1918->631|1933->637|1987->669|2077->723|2092->729|2146->761|2236->815|2251->821|2300->848|2390->902|2405->908|2459->940|2549->994|2564->1000|2619->1033|2709->1087|2724->1093|2777->1124|2863->1174|2878->1180|2954->1233|3040->1283|3055->1289|3136->1347|3190->1365|3205->1371|3272->1416|3468->1576|3483->1582|3537->1614|4948->2989|4963->2995|5011->3021|5264->3238|5279->3244|5327->3270|5614->3521|5629->3527|5677->3553|5937->3777|5952->3783|6000->3809|6290->4062|6306->4068|6361->4100|6464->4166|6480->4172|6535->4204|6726->4358|6742->4364|6792->4391|6947->4509|6963->4515|7018->4547|7160->4652|7176->4658|7232->4691|7377->4799|7393->4805|7447->4836
                     LINES: 29->1|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|44->16|44->16|44->16|45->17|45->17|45->17|46->18|46->18|46->18|47->19|47->19|47->19|48->20|48->20|48->20|54->26|54->26|54->26|93->65|93->65|93->65|102->74|102->74|102->74|113->85|113->85|113->85|122->94|122->94|122->94|133->105|133->105|133->105|134->106|134->106|134->106|138->110|138->110|138->110|139->111|139->111|139->111|140->112|140->112|140->112|141->113|141->113|141->113
                     -- GENERATED --
                 */

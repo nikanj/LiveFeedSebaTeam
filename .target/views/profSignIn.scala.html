@@ -79,50 +79,46 @@
 
 <body>
 	<div class="page-header" style="padding-bottom: 0px; margin-top: 5px;">
-		<img src="@routes.Assets.at("images/logonew.png")" height="60px"
-			width="130px" alt="Live Feed">
+		<a href="/home"><img src="@routes.Assets.at("images/logonew.png")" height="70px"
+			width="150px" alt="Live Feed"></a>
 	</div>
 	<header class="navbar navbar-static-top bs-docs-nav" id="top"
 		role="banner">
-		<div class="btn-group" style="margin-left: 75%;">
-			<a type="button" class="btn btn-default" href="/home">Home</a> <a
-				type="button" class="btn btn-default" href="/aboutus">About Us</a> <a
-				type="button" class="btn btn-default" href="/contact">Contact</a> <a
-				type="button" class="btn btn-default" href="/feedback">Feedback</a>
+		<div class="btn-group" style="float: right;">
+			<a type="button" class="btn btn-default" href="/home">Home</a>
+			<a type="button" class="btn btn-default" href="/aboutus">About Us</a>
+			<a type="button" class="btn btn-default" href="/contact">Contact</a>
+			<a type="button" class="btn btn-default" href="/feedback">Feedback</a>
 		</div>
 	</header>
 
 	<div>
-		<form method="get" action="/validate" class="form-horizontal" role="form">
+		<form method="get" action="/validate" class="form-horizontal">
 			<div id="q_area" class="col-sm-4" style="margin-left: 350px;">
 				<h1>Please Sign In</h1>
-				<div class="input-group" style="margin-top: 20px;">
+				<div class="input-group" style="margin-top: 20px; width: 100%;">
 					<span class="input-group-addon">Username</span> <input type="text"
 						class="form-control" id="username" placeholder="Username"
 						name="p_username">
 				</div>
-				<div class="input-group" style="margin-top: 20px;">
+				<div class="input-group" style="margin-top: 20px; width: 100%;">
 					<span class="input-group-addon">Password</span> <input
 						type="password" class="form-control" id="password"
 						placeholder="Password" name="p_password">
 				</div>
-				<div style="margin-top: 20px;">
-					<input type="checkbox"> Remember Me
-				</div>
 				<div class="btn-group-justified" style="margin-top: 20px;">
 					<button type="submit" class="btn btn-success" style="width: 212px">Sign In</button>
 				</div>
-			</div>
-			@if(flag == 0 ){
-			<div class="row col-md-4 col-md-offset-3 error message" id="notify_error" style="padding: 10px 0 0 20px; color: #ff0000;">
-				
-						<p>
-							<i><b> Please enter correct combination of username and
-									password!</b></i>
-						</p>
+				@if(flag == 0 ){
+			<div class="error message" id="notify_error" style="margin-top:10px; color: #ff0000; font-weight: bold; font-style: italic;">
+				<p>Please enter correct combination of username and password!</p>
 			</div>
 			}
+			</div>
+			
+			
 		</form>
+		
 	</div>
 
 	<script

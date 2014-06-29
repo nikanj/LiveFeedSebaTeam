@@ -17,6 +17,10 @@ public class Report extends Controller {
 	private static int questionCount;
 	private static int statsId;
 
+	/*
+	 * To display the number of votes for speed, loudness and pause for the current lecture.
+	 * Display the number of questions asked for the entire course.
+	 */
 	public static Result logout() throws SQLException {
 
 		DynamicForm form = Form.form().bindFromRequest();
